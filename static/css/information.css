@@ -90,8 +90,8 @@ body .post-write-form-section .form-input-section {
     margin-bottom: 24px;
 }
 
-.mb14 {
-    margin-bottom: 10px;
+.mb8 {
+    margin-bottom: 8px;
 }
 
 .content-textarea>.textarea-border {
@@ -100,7 +100,27 @@ body .post-write-form-section .form-input-section {
     border: 1px solid #e0e0e0;
 }
 
+.content-textarea>.textarea-border-changed {
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #452dde;
+}
+
 .content-textarea>.textarea-border>textarea {
+    position: relative;
+    display: block;
+    padding: 8px 12px;
+    width: 100%;
+    min-height: 200px;
+    font-size: 14px;
+    color: #616161;
+    line-height: 24px;
+    resize: none;
+    overflow: auto;
+    border: 0;
+}
+
+.content-textarea>.textarea-border-changed>textarea {
     position: relative;
     display: block;
     padding: 8px 12px;
@@ -143,7 +163,7 @@ body .post-write-form-section .form-input-section {
     padding: 8px 12px 0 12px;
 }
 
-.form-part .attachment-button {
+.form-part .attach-button {
     cursor: pointer;
     display: flex;
     padding: 8px 12px;
