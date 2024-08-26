@@ -11,6 +11,12 @@ body{
     background-color:#f5f5f5;
 }
 
+.empty-component {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
 .header {
     min-width: 1080px;
     font-size: 16px;
@@ -456,6 +462,19 @@ td[data-editable]:hover {
     justify-content: space-between;
     margin-top: 20px;
 }
-#department-container {
-    display: none;
+.img-reply {
+    vertical-align: middle;
+    width: 200px;
+}
+.font-p5-no-border-info-text {
+    margin-top: 15px;
+    margin-bottom: 0;
+    color: #999 !important;
+    line-height: 1;
+}
+.font-p5-bold {
+    font-weight: bold;
+}
+.text-center {
+    text-align: center;
 }
