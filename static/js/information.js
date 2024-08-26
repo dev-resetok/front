@@ -1,11 +1,14 @@
 const textareas = document.querySelectorAll(".moa-textarea");
-const attachInput = document.querySelector("#attach-input");
-const thumbnail = document.querySelector(".thumbnail");
-const attachCancelButton = document.querySelector(".attach-cancel-button");
 const postContent = document.querySelector("#content-textarea");
 const wordLength = document.querySelector(".word-length");
 const helpText = document.querySelector(".help-text");
 const maxWordLength = 5000;
+const attachWrap = document.querySelector(".attach-wrap");
+const attachButton = document.querySelector(".attach-button");
+const attachInput = document.querySelector("#attach-input");
+const thumbnail = document.querySelector(".thumbnail");
+const attachCancelButton = document.querySelector(".attach-cancel-button");
+const attachFilesWrap = document.querySelector(".attach-files-wrap");
 
 textareas.forEach((textarea) => {
     let value = textarea.value;
@@ -68,7 +71,6 @@ attachInput.addEventListener("change", (e) => {
     reader.readAsDataURL(file);
     reader.addEventListener("load", (e) => {
         const path = e.target.result;
-        console.log(path);
         if (path.includes("image")) {
             thumbnail.style.backgroundImage = `url(${path})`;
             attachCancelButton.style.display = "block";
@@ -76,6 +78,19 @@ attachInput.addEventListener("change", (e) => {
             thumbnail.style.backgroundImage = "";
         }
     });
+    const attachFile = `<div class="attach-file">
+                            ${file.name}
+                            <label>
+                                    <div>
+                                        <img
+                                        src="../../../static/images/cancel3.png"
+                                        alt="attach-file-image"
+                                        />
+                                    </div>
+                                    <input type="checkbox" class="attach-check" />
+                            </label>
+                        </div>`;
+    attachFilesWrap.innerHTML += attachFile;
 });
 
 attachCancelButton.addEventListener("click", (e) => {
