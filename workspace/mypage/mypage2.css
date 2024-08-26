@@ -1,0 +1,475 @@
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    box-sizing: border-box;
+    font-family: "NotoSansKR", "Sans-serif";
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+body{
+    background-color:#f5f5f5;
+}
+
+.header {
+    min-width: 1080px;
+    font-size: 16px;
+   
+}
+.left-nav-menu:hover {
+    color: gray;
+}
+
+.base-nav-guest {
+    background-color: #242933;
+    border-bottom: 1px solid #383d47
+}
+.header-service-nav {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #9e9e9e;
+    display: flex;
+    width: 1080px;
+    margin: 0 auto;
+}
+header.header .header-service-nav .container {
+    display: flex;
+}
+.container { 
+    width: 1080px;
+    margin: 0 auto;
+    
+}
+.service-link {
+    display: flex;
+    gap: 4px;
+    cursor: pointer;
+}
+.service-name {
+    line-height: 20px;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.divider {
+    width: 1px;
+    height: 12px;
+    background-color: #eee;
+    margin: 3px 12px 0px 12px;
+}
+.menu-inactive {
+    display: block;
+}
+.menu-active {
+    display: none;
+}
+header.header
+    .header-service-nav
+    .service-link.other-services
+    .service-name {
+    color: #9e9e9e;
+}
+
+.text900{
+    color: #fff;
+}
+a {
+    text-decoration: none;
+    color: #212121;
+}
+
+.nav-logo-wrapper {
+    width: 77px;
+    padding: 20px 0;
+    float: left;
+    margin-right: 24px;
+    font-size: 18px;
+    line-height: 20px;
+    text-indent: -9999em;
+    box-sizing: border-box;
+    background-size: 80px 20px;
+    color: white;
+}
+.nav-logo {
+    width: 100%;
+    height: 24px;
+    background-image: url(	https://www.wishket.com/static/renewal/img/global/wishket_logo_client.svg);
+}
+.left-nav {
+    display: flex;
+    gap: 4px;
+    float: left;
+    color: #fff;
+    
+}
+.left-nav-menu{
+    padding: 20px 12px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+.body-2{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: normal;
+}
+.pr-8{
+    padding-right: 8px;
+}
+.img-container{
+    display: flex;
+    align-items: center;
+    margin-left: 4px;
+}
+.drop-down-list{
+    display: none;
+    width: 200px;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+    margin-left: -12px;
+    z-index: 999;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .16);
+}
+.useguide{
+    background-image: -webkit-image-set
+        (url(https://www.wishket.com/static/renewal/img/global/gradient-bar-1.png) 1x,
+         url(https://www.wishket.com/static/renewal/img/global/gradient-bar-1@2x.png) 2x,
+         url(https://www.wishket.com/static/renewal/img/global/gradient-bar-1@3x.png) 3x);
+}
+.left-bar{
+    width: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.menu-list{
+    padding: 9px 0;
+}
+.nav-divider{
+    margin: 25px 4px 0 4px;
+    height: 14px;
+    border-left: 1px solid #e0e0e0;
+    display: block;
+    float: left;
+}
+.right-nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 64px;
+    position: relative;   
+}
+.log-in-section{
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 4px;
+}
+.sign-up-button{
+    margin-left: 12px;
+    display: flex;
+    padding: 8px 16px;
+    align-items: center;
+    border-radius: 8px;
+    color: #fff;
+    background: linear-gradient(180deg, #5db6d4, #369cc2 100%);
+    cursor: pointer;
+}
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.base-nav-guest::after{
+    display: table;
+    content: "";
+    clear: both;
+}
+
+#nav_advertisement {
+    margin-top: 0;
+    width: 100%;
+    height: 80px;
+    
+}
+header.header .base-nav-guest-renewal .right-nav .profile-img-container, header.header .header-nav .right-nav .profile-img-container, header.header .base-nav-landing-renewal .right-nav .profile-img-container, header.header .base-nav-client-renewal .right-nav .profile-img-container, header.header .base-nav-partner-renewal .right-nav .profile-img-container {
+    position: relative;
+    padding: 17px 0 0 20px;
+    height: 66px;
+}
+.user-img-header
+{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.profile-img-container{
+    position: relative;
+    padding: 17px 0 0 20px;
+    height: 66px;
+}
+#nav_advertisement {
+    width: 100%;
+    height: 80px;
+    margin: -20px 0 10px 0;
+}
+.advertisement {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    padding: 0;
+    display: none;
+}
+a {
+    color: #2099bb;
+    text-decoration: none;
+    background: transparent;
+}
+#wrap {
+    min-height: 100%;
+    margin: 0 auto;
+    padding-bottom: 250px;
+    min-width: 1080px;
+}
+.page {
+    width: 1080px;
+    margin: 0 auto;
+}
+.page-inner {
+    display: flex;
+}
+.sidebar {
+    width: 250px;
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    padding: 15px;
+}
+.user-name-tag-heading {
+    font-size: 16px;
+    margin-bottom: 9px;
+    padding-bottom: 11px;
+    border-bottom: 1px solid #dedede;
+    color: #454545;
+}
+.user-name-tag-body {
+    padding-left: 3px;
+}
+.user-img-box {
+    cursor: pointer;
+}
+.user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #dedede;
+}
+.sidebar .user-name-tag .user-img-box .user-img-edit-icon {
+    position: absolute;
+    margin-top: 32px;
+    margin-left: -18px;
+}
+.username {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+}
+.email {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #999;
+}
+.sidebar-nav ul {
+    width: 220px;
+    list-style: none;
+    padding: 0;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    padding: 8px 8px;
+    
+}
+.sidebar-nav ul li {
+    margin-bottom: 10px;
+}
+.sidebar-nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #999;
+    border-radius: 2px;
+}
+.sidebar-nav ul li.active a {
+    background-color: #446eab;
+    color: #fff;
+}
+.content {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin: 10px;
+}
+.content-header {
+    padding: 30px;
+    border-bottom: 2px solid #dedede;
+}
+.content-inner{
+    margin: 20px;
+}
+.header-text {
+    margin: 0;
+    font-size: 24px;
+}
+.small-text {
+    display: block;
+    margin-top: 10px;
+    font-size: 65%;
+    color: #999;
+}
+.client-info, .client-details, .contact-info {
+    margin-bottom: 30px;
+    padding: 0 30px;
+}
+.client-info h4, .client-details h4, .contact-info h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+.client-info textarea {
+    width: 100%;
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.homepage-section {
+    margin-bottom: 15px;
+}
+.homepage-section label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+.homepage-section input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.btn-save {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #446eab;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
+}
+.btn-save:hover {
+    background-color: #365e8b;
+}
+.client-details table, .contact-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px;
+}
+.client-details th, .client-details td, .contact-info th, .contact-info td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+.client-details th, .contact-info th {
+    background-color: #f9f9f9;
+    width: 30%;
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+}
+td[data-editable] {
+    cursor: pointer;
+    color: #2099bb;
+}
+td[data-editable]:hover {
+    text-decoration: underline;
+}.modal {
+    display: none; /* 기본적으로는 숨김 */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+/* 모달 콘텐츠 스타일 */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+/* 닫기 버튼 스타일 */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 업로드 버튼 스타일 */
+.btn-upload, .btn-default {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #446eab;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-default {
+    background-color: #999;
+}
+
+.btn-upload:hover {
+    background-color: #365e8b;
+}
+
+.btn-default:hover {
+    background-color: #777;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
