@@ -1,4 +1,25 @@
+function showTab(tabId) {
+    // 모든 tab-content를 숨김
+    var tabcontent = document.getElementsByClassName("tab-content");
+    for (var i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+    }
+
+    // 클릭된 tab만 표시
+    document.getElementById(tabId).classList.add("active");
+
+    // 사이드바 메뉴의 활성화 상태 변경
+    var tablinks = document.querySelectorAll(".sidebar-nav ul li");
+    for (var i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+    document
+        .querySelector(`[onclick="showTab('${tabId}')"]`)
+        .parentElement.classList.add("active");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+    // Editable elements script from mypage.js
     const editableElements = document.querySelectorAll("[data-editable]");
 
     editableElements.forEach((element) => {
@@ -30,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // 모달 관련 요소들 선택
     var modal = document.getElementById("profileModal");
     var btn = document.querySelector(".user-img-box img"); // 이미지를 선택
     var span = document.getElementsByClassName("close")[0];
@@ -72,68 +92,56 @@ document.addEventListener("DOMContentLoaded", function () {
                 reader.readAsDataURL(file);
             }
         });
-});
 
-// 기본 이미지로 변경 버튼 클릭 시
-resetBtn.onclick = function () {
-    btn.src = defaultImage; // 기본 이미지로 변경
-    modal.style.display = "none";
-};
+    // 기본 이미지로 변경 버튼 클릭 시
+    resetBtn.onclick = function () {
+        btn.src = defaultImage; // 기본 이미지로 변경
+        modal.style.display = "none";
+    };
 
-const birthYearEl = document.querySelector("#birth-year");
-// option 목록 생성 여부 확인
-let isYearOptionExisted = false;
-birthYearEl.addEventListener("focus", function () {
-    // year 목록 생성되지 않았을 때 (최초 클릭 시)
-    if (!isYearOptionExisted) {
-        isYearOptionExisted = true;
-        for (var i = 1950; i <= 2024; i++) {
-            // option element 생성
-            const YearOption = document.createElement("option");
-            YearOption.setAttribute("value", i);
-            YearOption.innerText = i;
-            // birthYearEl의 자식 요소로 추가
-            this.appendChild(YearOption);
+    // Birthdate and Region Selection script from mypage.js
+    const birthYearEl = document.querySelector("#birth-year");
+    let isYearOptionExisted = false;
+    birthYearEl.addEventListener("focus", function () {
+        if (!isYearOptionExisted) {
+            isYearOptionExisted = true;
+            for (var i = 1950; i <= 2024; i++) {
+                const YearOption = document.createElement("option");
+                YearOption.setAttribute("value", i);
+                YearOption.innerText = i;
+                this.appendChild(YearOption);
+            }
         }
-    }
-});
+    });
 
-const birthMonthEl = document.querySelector("#birth-month");
-// option 목록 생성 여부 확인
-let isMonthOptionExisted = false;
-birthMonthEl.addEventListener("focus", function () {
-    // month 목록 생성되지 않았을 때 (최초 클릭 시)
-    if (!isMonthOptionExisted) {
-        isMonthOptionExisted = true;
-        for (var i = 1; i <= 12; i++) {
-            // option element 생성
-            const MonthOption = document.createElement("option");
-            MonthOption.setAttribute("value", i);
-            MonthOption.innerText = i;
-            // birthMonthEl의 자식 요소로 추가
-            this.appendChild(MonthOption);
+    const birthMonthEl = document.querySelector("#birth-month");
+    let isMonthOptionExisted = false;
+    birthMonthEl.addEventListener("focus", function () {
+        if (!isMonthOptionExisted) {
+            isMonthOptionExisted = true;
+            for (var i = 1; i <= 12; i++) {
+                const MonthOption = document.createElement("option");
+                MonthOption.setAttribute("value", i);
+                MonthOption.innerText = i;
+                this.appendChild(MonthOption);
+            }
         }
-    }
-});
+    });
 
-const birthDayEl = document.querySelector("#birth-day");
-// option 목록 생성 여부 확인
-let isDayOptionExisted = false;
-birthDayEl.addEventListener("focus", function () {
-    // day 목록 생성되지 않았을 때 (최초 클릭 시)
-    if (!isDayOptionExisted) {
-        isDayOptionExisted = true;
-        for (var i = 1; i <= 31; i++) {
-            // option element 생성
-            const DayOption = document.createElement("option");
-            DayOption.setAttribute("value", i);
-            DayOption.innerText = i;
-            // birthDayEl의 자식 요소로 추가
-            this.appendChild(DayOption);
+    const birthDayEl = document.querySelector("#birth-day");
+    let isDayOptionExisted = false;
+    birthDayEl.addEventListener("focus", function () {
+        if (!isDayOptionExisted) {
+            isDayOptionExisted = true;
+            for (var i = 1; i <= 31; i++) {
+                const DayOption = document.createElement("option");
+                DayOption.setAttribute("value", i);
+                DayOption.innerText = i;
+                this.appendChild(DayOption);
+            }
         }
-    }
-});
-document.addEventListener("DOMContentLoaded", function () {
+    });
+
     const sidoSelect = document.getElementById("sido");
     const sigunguSelect = document.getElementById("sigungu");
 
@@ -232,9 +240,7 @@ document.addEventListener("DOMContentLoaded", function () {
             sigunguSelect.appendChild(option);
         });
     });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
     const roleSelect = document.getElementById("role");
     const departmentContainer = document.getElementById("department-container");
 
@@ -250,3 +256,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+document.getElementById("mypage-link").addEventListener("click", function () {
+    showTab("mypage");
+});
+
+document.getElementById("myborder-link").addEventListener("click", function () {
+    showTab("myboard");
+});
+
+document.getElementById("myreply-link").addEventListener("click", function () {
+    showTab("myreply");
+});
+
+document
+    .getElementById("myinquiry-link")
+    .addEventListener("click", function () {
+        showTab("myinquiry");
+    });
