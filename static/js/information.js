@@ -1,7 +1,7 @@
 const textareas = document.querySelectorAll(".moa-textarea");
-const attachButton = document.querySelector(".attach-button");
+const attachInput = document.querySelector("#attach-input");
 const thumbnail = document.querySelector(".thumbnail");
-const cancelButton = document.querySelector(".cancel-button");
+const attachCancelButton = document.querySelector(".attach-cancel-button");
 const postContent = document.querySelector("#content-textarea");
 const wordLength = document.querySelector(".word-length");
 const helpText = document.querySelector(".help-text");
@@ -51,6 +51,7 @@ textareas.forEach((textarea) => {
 });
 
 wordLength.innerText = `${postContent.value.length}/${maxWordLength}`;
+helpText.innerText = `${maxWordLength}자 이내로 작성해주세요.`;
 postContent.addEventListener("click", (e) => {
     wordLength.innerText = `${postContent.value.length}/${maxWordLength}`;
 });
@@ -60,25 +61,25 @@ postContent.addEventListener("keyup", (e) => {
 postContent.addEventListener("blur", (e) => {
     wordLength.innerText = `${postContent.value.length}/${maxWordLength}`;
 });
-helpText.innerText = `${maxWordLength}자 이내로 작성해주세요.`;
 
-// attachButton.addEventListener("click", (e) => {
-//     const [file] = e.target.files;
-//     const reader = new FileReader();
-//     reader.readAsDataURL(file);
-//     reader.addEventListener("load", (e) => {
-//         const path = e.target.result;
-//         if (path.includes("image")) {
-//             thumbnail.style.backgroundImage = `url(${path})`;
-//             cancel.style.display = "block";
-//         } else {
-//             thumbnail.style.backgroundImage = `url(images/attach.png)`;
-//         }
-//     });
-// });
+attachInput.addEventListener("change", (e) => {
+    const [file] = e.target.files;
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.addEventListener("load", (e) => {
+        const path = e.target.result;
+        console.log(path);
+        if (path.includes("image")) {
+            thumbnail.style.backgroundImage = `url(${path})`;
+            attachCancelButton.style.display = "block";
+        } else {
+            thumbnail.style.backgroundImage = "";
+        }
+    });
+});
 
-// cancelButton.addEventListener("click", (e) => {
-//     thumbnail.style.backgroundImage = `url(images/attach.png)`;
-//     input.value = "";
-//     cancel.style.display = "none";
-// });
+attachCancelButton.addEventListener("click", (e) => {
+    thumbnail.style.backgroundImage = "";
+    attachInput.value = "";
+    attachCancelButton.style.display = "none";
+});

@@ -4,7 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>게시글 작성 - 정보게시판</title>
-        <link rel="stylesheet" href="../../../static/css/information.css" />
+        <link
+            rel="stylesheet"
+            href="../../../static/css/information/information_write.css"
+        />
         <link
             rel="shortcut icon"
             href="https://www.wishket.com/static/favicon.ico"
@@ -114,20 +117,24 @@
                                         </div>
                                     </div>
                                     <div class="attach-button">
-                                        <img
-                                            src="https://www.wishket.com/static/renewal/img/project/submit/btn_icon_add_s.svg"
-                                            alt="attachment_img"
-                                        />
-                                        <div
-                                            class="font-body-2-medium text-moa"
-                                        >
-                                            첨부파일
-                                        </div>
-                                        <!-- <div class="thumbnail-wrap">
+                                        <label for="attach-input">
+                                            <img
+                                                src="https://www.wishket.com/static/renewal/img/project/submit/btn_icon_add_s.svg"
+                                                alt="attach_img"
+                                            />
+                                            <div
+                                                class="font-body-2-medium text-moa"
+                                            >
+                                                첨부파일
+                                            </div>
+                                        </label>
+                                        <div class="thumbnail-wrap">
                                             <div class="thumbnail"></div>
-                                            <div class="cancel"></div>
+                                            <div
+                                                class="attach-cancel-button"
+                                            ></div>
                                         </div>
-                                        <input type="file" id="attach" /> -->
+                                        <input type="file" id="attach-input" />
                                     </div>
                                 </div>
                             </div>

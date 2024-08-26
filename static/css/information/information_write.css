@@ -163,7 +163,7 @@ body .post-write-form-section .form-input-section {
     padding: 8px 12px 0 12px;
 }
 
-.form-part .attach-button {
+.form-part .attach-button label {
     cursor: pointer;
     display: flex;
     padding: 8px 12px;
@@ -180,10 +180,35 @@ body .post-write-form-section .form-input-section {
     color: #3ba3c7;
 }
 
-.body-2-medium {
+.font-body-2-medium {
     font-size: 14px;
     line-height: 24px;
     font-weight: 500;
 }
+
+.thumbnail-wrap {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.attach-cancel-button {
+    display: none;
+    position: absolute;
+    background-image: url("../../images/cancel.png");
+    width: 80px;
+    height: 80px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#attach-input {
+    display: none;
+}
+
 
 
