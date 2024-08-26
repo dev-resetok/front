@@ -174,20 +174,22 @@ body .post-write-form-section .form-input-section {
     border: 1px solid #e6ebf0;
     background: #fff;
     margin-top: 29px;
+    width: 120px;
+    height: 32px;
 }
 
 .attach-wrap .attach-files-wrap {
     cursor: pointer;
     display: flex;
-    padding: 8px 12px;
     flex-direction: column;
+    padding: 8px 12px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 4px;
     border-radius: 8px;
-    border: 1px solid #000000;
+    border: 1px solid #e6ebf0;
     background: #fff;
-    margin-top: 29px;
+    margin-top: 13px;
     min-height: 32px;
 }
 
@@ -202,8 +204,8 @@ body .post-write-form-section .form-input-section {
 }
 
 .thumbnail-wrap {
-    width: 400px;
-    height: 400px;
+    width: 20px;
+    height: 20px;
     position: relative;
     margin: 0 auto;
 }
@@ -217,37 +219,47 @@ body .post-write-form-section .form-input-section {
 .thumbnail {
     width: 100%;
     height: 100%;
-    margin-top: 29px;
 }
 
 .attach-cancel-button {
     display: none;
     position: absolute;
-    background-image: url("../../images/cancel2.png");
-    width: 28px;
-    height: 28px;
-    top: 0;
-    right: 0;
+    background-image: url("../../../static/images/cancel3.png");
+    width: 16px;
+    height: 16px;
     cursor: pointer;
+    margin-left: 0;
+    margin-right: 12px;
 }
 
-#attach-input, .attach-check {
+/* #attach-input, .attach-check  */
+input {
     display: none;
 }
 
 .attach-file {
     display: flex;
+    justify-content: flex-start;
 }
 
-.attach-file div {
-    width: 100%;
+.white-box {
+    border-radius: 2px;
+    border: 1px solid #d9dee2;
+}
+
+.attach-file label {
+    width: 16px;
     height: 16px;
 }
 
-.attach-file div img {
-    width: 100%;
-    height: 100%;
-}
+
+
+
+
+
+
+
+/* 헤더부분 */
 
 
 
