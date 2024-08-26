@@ -1,3 +1,36 @@
+@font-face {
+    font-family: "NotoSansKR";
+    font-weight: 700;
+    src: url("fonts/NotoSansKR-Bold.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "NotoSansKR";
+    font-weight: 500;
+    src: url("fonts/NotoSansKR-Medium.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "NotoSansKR";
+    font-weight: 400;
+    src: url("fonts/NotoSansKR-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "NotoSansKR";
+    font-weight: 300;
+    src: url("/static/fonts/NotoSansKR-Light.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "NotoSansKR";
+    font-weight: 100;
+    src: url("/static/fonts/NotoSansKR-Thin.woff2") format("woff2");
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    box-sizing: border-box;
+    font-family: "NotoSansKR", "Sans-serif";
+    -webkit-font-smoothing: antialiased;
+}
 * {
     margin: 0;
     padding: 0;
@@ -405,8 +438,9 @@ td[data-editable] {
 }
 td[data-editable]:hover {
     text-decoration: underline;
+    
 }.modal {
-    display: none; /* 기본적으로는 숨김 */
+    display: none; 
     position: fixed; 
     z-index: 1; 
     left: 0;
