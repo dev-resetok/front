@@ -104,12 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 reader.readAsDataURL(file);
             }
         });
-
-    // 기본 이미지로 변경 버튼 클릭 시
-    resetBtn.onclick = function () {
-        btn.src = defaultImage; // 기본 이미지로 변경
-        modal.style.display = "none"; // 모달 닫기
-    };
 });
 
 // 기본 이미지로 변경 버튼 클릭 시
@@ -118,7 +112,6 @@ resetBtn.onclick = function () {
     modal.style.display = "none";
 };
 
-// '출생 연도' 셀렉트 박스 option 목록 동적 생성
 const birthYearEl = document.querySelector("#birth-year");
 // option 목록 생성 여부 확인
 let isYearOptionExisted = false;
@@ -137,7 +130,6 @@ birthYearEl.addEventListener("focus", function () {
     }
 });
 
-// '출생 월' 셀렉트 박스 option 목록 동적 생성
 const birthMonthEl = document.querySelector("#birth-month");
 // option 목록 생성 여부 확인
 let isMonthOptionExisted = false;
@@ -156,7 +148,6 @@ birthMonthEl.addEventListener("focus", function () {
     }
 });
 
-// '출생 일' 셀렉트 박스 option 목록 동적 생성
 const birthDayEl = document.querySelector("#birth-day");
 // option 목록 생성 여부 확인
 let isDayOptionExisted = false;
