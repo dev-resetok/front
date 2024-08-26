@@ -1,7 +1,7 @@
 @import url("https://www.wishket.com//static/css/general/general.css?231221");
 
 * {
-    font-family: "NotoSansKR", "Sans-serif";
+    font-family: /*"NotoSansKR",*/ "Sans-serif";
     margin: 0;
     padding: 0;
     line-height: 1;
