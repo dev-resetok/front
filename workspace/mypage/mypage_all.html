@@ -415,12 +415,36 @@
                     <div class="content">
                         <div class="content-header action">
                             <h3 class="header-text">
-                                내 문의<small class="small-text"
+                                내 문의
+                                <small class="small-text"
                                     >내 문의를 확인할 수 있습니다.</small
                                 >
                             </h3>
                         </div>
                         <div class="content-inner">
+                            <!-- 탭 메뉴 -->
+                            <div class="tabs">
+                                <button
+                                    class="tab-link active"
+                                    onclick="filterInquiries('answered')"
+                                >
+                                    답변 완료 (<span id="answered-count">0</span
+                                    >)
+                                </button>
+                                <button
+                                    class="tab-link"
+                                    onclick="filterInquiries('pending')"
+                                >
+                                    답변 대기 중 (<span id="pending-count"
+                                        >0</span
+                                    >)
+                                </button>
+                            </div>
+
+                            <!-- 문의 목록 -->
+                            <div id="inquiry-list"></div>
+
+                            <!-- 문의가 없을 때 표시되는 빈 상태 컴포넌트 -->
                             <div class="empty-component">
                                 <img
                                     class="img-reply"
@@ -430,7 +454,7 @@
                                     class="font-p5-no-border-info-text"
                                     style="margin-bottom: 0"
                                 >
-                                    등록된
+                                    사용 가능한
                                     <span class="text-center font-p5-bold"
                                         >'문의'</span
                                     >가 없습니다.
