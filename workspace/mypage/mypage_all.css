@@ -349,6 +349,7 @@ a {
 
 .content-inner {
     margin: 20px;
+    text-align: center;
 }
 
 .header-text {
@@ -590,4 +591,9 @@ td[data-editable]:hover {
     margin-bottom: 10px;
     border-radius: 3px;
     background-color: #f9f9f9;
+}
+.empty-component-inquiry {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
 }

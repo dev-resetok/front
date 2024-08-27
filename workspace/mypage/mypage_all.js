@@ -300,7 +300,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const renderInquiries = (filter) => {
         // 문의 목록이 표시될 영역과 빈 상태 컴포넌트를 가져옴
         const inquiryList = document.getElementById("inquiry-list");
-        const emptyComponent = document.querySelector(".empty-component");
+        const emptyComponent = document.querySelector(
+            ".empty-component-inquiry"
+        );
 
         // 현재 선택된 상태(필터)에 따라 문의 데이터를 필터링
         const filteredInquiries = inquiries.filter(
@@ -355,6 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 현재 선택된 탭에 'active' 클래스를 추가하여 활성화
         if (status === "answered") {
+            // CSS 선택자 사용
             document
                 .querySelector(
                     ".tab-link[onclick=\"filterInquiries('answered')\"]"
