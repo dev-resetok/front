@@ -7,10 +7,8 @@ const attachWrap = document.querySelector(".attach-wrap");
 const attachButton = document.querySelector(".attach-button");
 const attachInput = document.querySelector("#attach-input");
 const attachFilesWrap = document.querySelector(".attach-files-wrap");
+const saveButton = document.querySelector(".save-button");
 let i = 0;
-
-FileReader.prototype.append = Array.prototype.append;
-NodeList.prototype.filter = Array.prototype.filter;
 
 // mouseenter 및 focus가 되었을 때 스타일 적용
 textareas.forEach((textarea) => {
@@ -93,17 +91,13 @@ attachInput.addEventListener("change", (e) => {
 
     dataTransfer.items.add(file);
     attachInfo.files = dataTransfer.files;
-    // console.log(attachInfo.files);
-    // console.log(i);
+    console.log(attachInfo.files);
     attachInput.value = "";
 
     const thumbnailUnique = document.querySelector(`#thumbnail-${i}`);
     const attachCancelButtonUnique = document.querySelector(
         `#attach-cancel-button-${i}`
     );
-    attachCancelButtonUnique.addEventListener("click", (e) => {
-        attachFilesWrap.removeChild(e.target.parentElement.parentElement);
-    });
     reader.addEventListener("load", (e) => {
         const path = e.target.result;
         if (path.includes("image")) {
@@ -114,4 +108,15 @@ attachInput.addEventListener("change", (e) => {
             attachCancelButtonUnique.style.display = "block";
         }
     });
+    const attachCancelButtons = document.querySelectorAll(
+        ".attach-cancel-button"
+    );
+    attachCancelButtons.forEach((attachCancelButton) => {
+        attachCancelButton.addEventListener("click", (e) => {
+            attachFilesWrap.removeChild(e.target.parentElement.parentElement);
+            console.log(e.target.nextElementSibling.files);
+        });
+    });
 });
+
+saveButton.addEventListener("click", (e) => {});
