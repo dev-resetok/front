@@ -557,9 +557,9 @@ td[data-editable]:hover {
     margin-top: 20px;
 }
 
-.img-border {
+.img-border, .img-reply, .img-inquiry {
     vertical-align: middle;
-    width: 300px;
+    width: 100px;
 }
 
 .font-p5-no-border-info-text {
@@ -577,10 +577,6 @@ td[data-editable]:hover {
     text-align: center;
 }
 
-.img-reply {
-    vertical-align: middle;
-    width: 200px;
-}
 
 .tab-content {
     display: none;

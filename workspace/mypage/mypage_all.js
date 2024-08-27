@@ -1,48 +1,48 @@
-function showTab(tabId, element) {
+const showTab = (tabId, element) => {
     // 모든 tab-content를 숨김
-    var tabcontent = document.getElementsByClassName("tab-content");
-    for (var i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].classList.remove("active");
-    }
+    const tabcontent = document.getElementsByClassName("tab-content");
+    Array.from(tabcontent).forEach((content) => {
+        content.classList.remove("active");
+    });
 
     // 클릭된 tab만 표시
     document.getElementById(tabId).classList.add("active");
 
     // 사이드바 메뉴의 활성화 상태 변경
-    var tablinks = document.querySelectorAll(".sidebar-nav ul li");
-    for (var i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
-    }
+    const tablinks = document.querySelectorAll(".sidebar-nav ul li");
+    tablinks.forEach((link) => {
+        link.classList.remove("active");
+    });
 
     // 현재 클릭된 요소의 부모 li에 active 클래스 추가
     element.parentElement.classList.add("active");
-}
+};
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     // 데이터 편집 가능 요소 설정
     const editableElements = document.querySelectorAll("[data-editable]");
     editableElements.forEach((element) => {
-        element.addEventListener("click", function () {
-            const currentText = this.innerText;
+        element.addEventListener("click", () => {
+            const currentText = element.innerText;
             const input = document.createElement("input");
             input.type = "text";
             input.value =
                 currentText.trim() === "정보를 입력해주세요."
                     ? ""
                     : currentText.trim();
-            this.innerHTML = "";
-            this.appendChild(input);
+            element.innerHTML = "";
+            element.appendChild(input);
             input.focus();
 
-            input.addEventListener("blur", function () {
+            input.addEventListener("blur", () => {
                 const newText =
-                    this.value.trim() === ""
+                    input.value.trim() === ""
                         ? "정보를 입력해주세요."
-                        : this.value.trim();
-                this.parentNode.innerText = newText;
+                        : input.value.trim();
+                element.innerText = newText;
             });
 
-            input.addEventListener("keydown", function (e) {
+            input.addEventListener("keydown", (e) => {
                 if (e.key === "Enter") {
                     input.blur();
                 }
@@ -51,25 +51,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // 모달 처리
-    var modal = document.getElementById("profileModal");
-    var btn = document.querySelector(".user-img-box img");
-    var span = document.getElementsByClassName("close")[0];
-    var resetBtn = document.getElementById("resetBtn");
+    const modal = document.getElementById("profileModal");
+    const btn = document.querySelector(".user-img-box img");
+    const span = document.getElementsByClassName("close")[0];
+    const resetBtn = document.getElementById("resetBtn");
     const defaultImage =
         "https://www.wishket.com/static/img/default_avatar_c.png";
 
     // 이미지 클릭 시 모달 열기
-    btn.onclick = function () {
+    btn.onclick = () => {
         modal.style.display = "block";
     };
 
     // 모달의 닫기 버튼 클릭 시 모달 닫기
-    span.onclick = function () {
+    span.onclick = () => {
         modal.style.display = "none";
     };
 
     // 모달 외부 클릭 시 모달 닫기
-    window.onclick = function (event) {
+    window.onclick = (event) => {
         if (event.target == modal) {
             modal.style.display = "none";
         }
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 모달에서 이미지 변경
     document
         .getElementById("uploadForm")
-        .addEventListener("submit", function (event) {
+        .addEventListener("submit", (event) => {
             event.preventDefault();
 
             // 파일 입력 요소
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (file) {
                 const reader = new FileReader();
 
-                reader.onload = function (e) {
+                reader.onload = (e) => {
                     // 업로드된 이미지를 user-img 및 user-img-header에 반영
                     const newImageSrc = e.target.result;
                     document.querySelector(".img-circle.user-img").src =
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     // 기본 이미지로 변경 버튼 클릭 시
-    resetBtn.addEventListener("click", function () {
+    resetBtn.addEventListener("click", () => {
         document.querySelector(".img-circle.user-img").src = defaultImage;
         document.querySelector(".user-img-header").src = defaultImage;
     });
@@ -115,38 +115,38 @@ document.addEventListener("DOMContentLoaded", function () {
     let isMonthOptionExisted = false;
     let isDayOptionExisted = false;
 
-    birthYearEl.addEventListener("focus", function () {
+    birthYearEl.addEventListener("focus", () => {
         if (!isYearOptionExisted) {
             isYearOptionExisted = true;
-            for (var i = 1950; i <= 2024; i++) {
+            for (let i = 1950; i <= 2024; i++) {
                 const YearOption = document.createElement("option");
                 YearOption.setAttribute("value", i);
                 YearOption.innerText = i;
-                this.appendChild(YearOption);
+                birthYearEl.appendChild(YearOption);
             }
         }
     });
 
-    birthMonthEl.addEventListener("focus", function () {
+    birthMonthEl.addEventListener("focus", () => {
         if (!isMonthOptionExisted) {
             isMonthOptionExisted = true;
-            for (var i = 1; i <= 12; i++) {
+            for (let i = 1; i <= 12; i++) {
                 const MonthOption = document.createElement("option");
                 MonthOption.setAttribute("value", i);
                 MonthOption.innerText = i;
-                this.appendChild(MonthOption);
+                birthMonthEl.appendChild(MonthOption);
             }
         }
     });
 
-    birthDayEl.addEventListener("focus", function () {
+    birthDayEl.addEventListener("focus", () => {
         if (!isDayOptionExisted) {
             isDayOptionExisted = true;
-            for (var i = 1; i <= 31; i++) {
+            for (let i = 1; i <= 31; i++) {
                 const DayOption = document.createElement("option");
                 DayOption.setAttribute("value", i);
                 DayOption.innerText = i;
-                this.appendChild(DayOption);
+                birthDayEl.appendChild(DayOption);
             }
         }
     });
@@ -235,12 +235,12 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
     };
 
-    sidoSelect.addEventListener("change", function () {
-        const selectedSido = this.value;
+    sidoSelect.addEventListener("change", () => {
+        const selectedSido = sidoSelect.value;
         const sigunguOptions = regionData[selectedSido] || [];
         sigunguSelect.innerHTML =
             '<option value="" disabled selected>시/군/구를 선택하세요</option>';
-        sigunguOptions.forEach(function (sigungu) {
+        sigunguOptions.forEach((sigungu) => {
             const option = document.createElement("option");
             option.value = sigungu;
             option.textContent = sigungu;
@@ -251,7 +251,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // 사용자 타입에 따른 학과 필드 표시 설정
     const roleSelect = document.getElementById("role");
     const departmentContainer = document.getElementById("department-container");
-    roleSelect.addEventListener("change", function () {
+    departmentContainer.style.display = "none";
+    roleSelect.addEventListener("change", () => {
         if (
             roleSelect.value === "student" ||
             roleSelect.value === "professor"
@@ -262,28 +263,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    //  클릭 이벤트 추가
+    //  클릭 이벤트 추가 div 보여주기
     document
         .getElementById("mypage-link")
-        .addEventListener("click", function () {
-            showTab("mypage", this);
-        });
+        .addEventListener("click", () => showTab("mypage", this));
 
     document
         .getElementById("myborder-link")
-        .addEventListener("click", function () {
-            showTab("myboard", this);
-        });
+        .addEventListener("click", () => showTab("myboard", this));
 
     document
         .getElementById("myreply-link")
-        .addEventListener("click", function () {
-            showTab("myreply", this);
-        });
+        .addEventListener("click", () => showTab("myreply", this));
 
     document
         .getElementById("myinquiry-link")
-        .addEventListener("click", function () {
-            showTab("myinquiry", this);
-        });
+        .addEventListener("click", () => showTab("myinquiry", this));
+});
+
+// "등록 완료" 버튼 클릭 시 데이터 저장
+const saveMypage = document.getElementsByClassName("btn-save");
+saveMypage.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        alert("정보가 저장되었습니다.");
+    });
 });
