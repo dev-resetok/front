@@ -1,4 +1,4 @@
-function showTab(tabId) {
+function showTab(tabId, element) {
     // 모든 tab-content를 숨김
     var tabcontent = document.getElementsByClassName("tab-content");
     for (var i = 0; i < tabcontent.length; i++) {
@@ -13,15 +13,14 @@ function showTab(tabId) {
     for (var i = 0; i < tablinks.length; i++) {
         tablinks[i].classList.remove("active");
     }
-    document
-        .querySelector(`[onclick="showTab('${tabId}')"]`)
-        .parentElement.classList.add("active");
+
+    // 현재 클릭된 요소의 부모 li에 active 클래스 추가
+    element.parentElement.classList.add("active");
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Editable elements script from mypage.js
+    // 데이터 편집 가능 요소 설정
     const editableElements = document.querySelectorAll("[data-editable]");
-
     editableElements.forEach((element) => {
         element.addEventListener("click", function () {
             const currentText = this.innerText;
@@ -51,12 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // 모달 처리
     var modal = document.getElementById("profileModal");
-    var btn = document.querySelector(".user-img-box img"); // 이미지를 선택
+    var btn = document.querySelector(".user-img-box img");
     var span = document.getElementsByClassName("close")[0];
     var resetBtn = document.getElementById("resetBtn");
     const defaultImage =
-        "https://www.wishket.com/static/img/default_avatar_c.png"; // 기본 이미지 경로
+        "https://www.wishket.com/static/img/default_avatar_c.png";
 
     // 이미지 클릭 시 모달 열기
     btn.onclick = function () {
@@ -75,33 +75,46 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // 사진 업로드 폼 처리
+    // 모달에서 이미지 변경
     document
         .getElementById("uploadForm")
         .addEventListener("submit", function (event) {
             event.preventDefault();
-            var fileInput = document.getElementById("fileInput");
-            var file = fileInput.files[0];
+
+            // 파일 입력 요소
+            const fileInput = document.getElementById("fileInput");
+            const file = fileInput.files[0];
 
             if (file) {
-                var reader = new FileReader();
+                const reader = new FileReader();
+
                 reader.onload = function (e) {
-                    btn.src = e.target.result; // 이미지를 업로드된 파일로 변경
-                    modal.style.display = "none"; // 모달 닫기
+                    // 업로드된 이미지를 user-img 및 user-img-header에 반영
+                    const newImageSrc = e.target.result;
+                    document.querySelector(".img-circle.user-img").src =
+                        newImageSrc;
+                    document.querySelector(".user-img-header").src =
+                        newImageSrc;
                 };
+
                 reader.readAsDataURL(file);
             }
         });
 
     // 기본 이미지로 변경 버튼 클릭 시
-    resetBtn.onclick = function () {
-        btn.src = defaultImage; // 기본 이미지로 변경
-        modal.style.display = "none";
-    };
+    resetBtn.addEventListener("click", function () {
+        document.querySelector(".img-circle.user-img").src = defaultImage;
+        document.querySelector(".user-img-header").src = defaultImage;
+    });
 
-    // Birthdate and Region Selection script from mypage.js
+    // 생년월일 선택 필드 설정
     const birthYearEl = document.querySelector("#birth-year");
+    const birthMonthEl = document.querySelector("#birth-month");
+    const birthDayEl = document.querySelector("#birth-day");
     let isYearOptionExisted = false;
+    let isMonthOptionExisted = false;
+    let isDayOptionExisted = false;
+
     birthYearEl.addEventListener("focus", function () {
         if (!isYearOptionExisted) {
             isYearOptionExisted = true;
@@ -114,8 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const birthMonthEl = document.querySelector("#birth-month");
-    let isMonthOptionExisted = false;
     birthMonthEl.addEventListener("focus", function () {
         if (!isMonthOptionExisted) {
             isMonthOptionExisted = true;
@@ -128,8 +139,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const birthDayEl = document.querySelector("#birth-day");
-    let isDayOptionExisted = false;
     birthDayEl.addEventListener("focus", function () {
         if (!isDayOptionExisted) {
             isDayOptionExisted = true;
@@ -142,9 +151,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // 지역 선택 필드 설정
     const sidoSelect = document.getElementById("sido");
     const sigunguSelect = document.getElementById("sigungu");
-
     const regionData = {
         seoul: [
             "강남구",
@@ -229,10 +238,8 @@ document.addEventListener("DOMContentLoaded", function () {
     sidoSelect.addEventListener("change", function () {
         const selectedSido = this.value;
         const sigunguOptions = regionData[selectedSido] || [];
-
         sigunguSelect.innerHTML =
             '<option value="" disabled selected>시/군/구를 선택하세요</option>';
-
         sigunguOptions.forEach(function (sigungu) {
             const option = document.createElement("option");
             option.value = sigungu;
@@ -241,10 +248,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // 사용자 타입에 따른 학과 필드 표시 설정
     const roleSelect = document.getElementById("role");
     const departmentContainer = document.getElementById("department-container");
-
-    // 사용자가 '대학생'이나 '교수'를 선택했을 때 학과 입력 필드를 표시
     roleSelect.addEventListener("change", function () {
         if (
             roleSelect.value === "student" ||
@@ -255,21 +261,29 @@ document.addEventListener("DOMContentLoaded", function () {
             departmentContainer.style.display = "none";
         }
     });
-});
-document.getElementById("mypage-link").addEventListener("click", function () {
-    showTab("mypage");
-});
 
-document.getElementById("myborder-link").addEventListener("click", function () {
-    showTab("myboard");
-});
+    //  클릭 이벤트 추가
+    document
+        .getElementById("mypage-link")
+        .addEventListener("click", function () {
+            showTab("mypage", this);
+        });
 
-document.getElementById("myreply-link").addEventListener("click", function () {
-    showTab("myreply");
-});
+    document
+        .getElementById("myborder-link")
+        .addEventListener("click", function () {
+            showTab("myboard", this);
+        });
 
-document
-    .getElementById("myinquiry-link")
-    .addEventListener("click", function () {
-        showTab("myinquiry");
-    });
+    document
+        .getElementById("myreply-link")
+        .addEventListener("click", function () {
+            showTab("myreply", this);
+        });
+
+    document
+        .getElementById("myinquiry-link")
+        .addEventListener("click", function () {
+            showTab("myinquiry", this);
+        });
+});
