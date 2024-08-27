@@ -349,7 +349,6 @@ a {
 
 .content-inner {
     margin: 20px;
-    text-align: center;
 }
 
 .header-text {
@@ -595,5 +594,4 @@ td[data-editable]:hover {
 .empty-component-inquiry {
     padding-top: 40px;
     padding-bottom: 40px;
-    text-align: center;
 }
