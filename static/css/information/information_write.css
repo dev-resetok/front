@@ -103,7 +103,7 @@ body .post-write-form-section .form-input-section {
 .content-textarea>.textarea-border-changed {
     border-radius: 4px;
     overflow: hidden;
-    border: 1px solid #452dde;
+    border: 1px solid #3ba3c7;
 }
 
 .content-textarea>.textarea-border>textarea {
@@ -171,7 +171,7 @@ body .post-write-form-section .form-input-section {
     align-items: center;
     gap: 4px;
     border-radius: 8px;
-    border: 1px solid #e6ebf0;
+    border: 1px solid #e0e0e0;
     background: #fff;
     margin-top: 29px;
     width: 120px;
@@ -187,10 +187,11 @@ body .post-write-form-section .form-input-section {
     align-items: flex-start;
     gap: 4px;
     border-radius: 8px;
-    border: 1px solid #e6ebf0;
+    border: 1px solid #e0e0e0;
     background: #fff;
     margin-top: 13px;
     min-height: 32px;
+    gap: 4px;
 }
 
 .text-moa {
@@ -224,12 +225,10 @@ body .post-write-form-section .form-input-section {
 .attach-cancel-button {
     display: none;
     position: absolute;
-    background-image: url("../../../static/images/cancel3.png");
-    width: 16px;
-    height: 16px;
+    background-image: url("../../../static/images/cancel4.png");
+    width: 12px;
+    height: 12px;
     cursor: pointer;
-    margin-left: 0;
-    margin-right: 12px;
 }
 
 /* #attach-input, .attach-check  */
@@ -240,26 +239,23 @@ input {
 .attach-file {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
 }
 
 .white-box {
     border-radius: 2px;
-    border: 1px solid #d9dee2;
+    border: 1px solid #e0e0e0;
 }
 
 .attach-file label {
     width: 16px;
     height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-
-
-
-
-
-
-/* 헤더부분 */
-
-
-
+.attach-text-wrap {
+    font-size: 12px;
+}

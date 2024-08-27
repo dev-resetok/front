@@ -68,21 +68,31 @@ postContent.addEventListener("blur", (e) => {
 
 attachInput.addEventListener("change", (e) => {
     const [file] = e.target.files;
+    console.log(file);
+    console.log(e.target);
     const reader = new FileReader();
     reader.readAsDataURL(file);
     const attachFile = `<div class="attach-file">
                             <label>
                                     <div class="attach-cancel-button" id=attach-cancel-button-${++i}></div>
-                                    <input type="file" id=attach-check-${i} disabled/>
+                                    <input type="file" id=attach-info-${i} disabled/>
                             </label>
                             <div class="thumbnail-wrap white-box">
                                 <div class="thumbnail" id=thumbnail-${i}></div>
                             </div>
-                            <div>${file.name}</div>
+                            <div class="attach-text-wrap">${file.name}</div>
                         </div>`;
-    // const attachCheckUnique = document.querySelector(`#attach-check-${i}`);
-    // console.log(attachCheckUnique);
-    // attachCheckUnique.files = file;
+    attachFilesWrap.innerHTML += attachFile;
+
+    const attachInfo = document.querySelector(`#attach-info-${i}`);
+    console.log(attachInfo);
+    attachInfo.files = e.target.files;
+    console.log(attachInfo.files);
+    console.log(e.target.value);
+    console.log(attachInput.value);
+    attachInput.value = "";
+    console.log(attachInput.value);
+    console.log(e.target.value);
     reader.addEventListener("load", (e) => {
         const path = e.target.result;
         const thumbnailUnique = document.querySelector(`#thumbnail-${i}`);
@@ -90,11 +100,12 @@ attachInput.addEventListener("change", (e) => {
             `#attach-cancel-button-${i}`
         );
         if (path.includes("image")) {
-            console.log(i);
+            // console.log(i);
             thumbnailUnique.style.backgroundImage = `url(${path})`;
             attachCancelButtonUnique.style.display = "block";
         } else {
             thumbnailUnique.style.backgroundImage = "";
+            attachCancelButtonUnique.style.display = "block";
         }
     });
     const attachCancelButtons = document.querySelectorAll(
@@ -108,7 +119,6 @@ attachInput.addEventListener("change", (e) => {
             attachCancelButton.style.display = "none";
         });
     });
-    attachFilesWrap.innerHTML += attachFile;
 });
 // else {
 //     // 체크가 해제되었다면,
