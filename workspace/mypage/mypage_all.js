@@ -289,44 +289,40 @@ Array.from(saveMypage).forEach((button) => {
     });
 });
 
-// 문서가 완전히 로드되었을 때 실행될 코드를 설정합니다.
 document.addEventListener("DOMContentLoaded", () => {
-    // 문의 데이터 배열을 정의합니다. 각 객체는 문의 ID, 제목, 상태(답변 완료 또는 대기 중)를 포함합니다.
     let inquiries = [
-        // { id: 1, title: "문의 1", status: "answered" }, // 답변 완료된 문의
-        // { id: 2, title: "문의 2", status: "pending" }, // 답변 대기 중인 문의
-        // { id: 3, title: "문의 3", status: "answered" }, // 답변 완료된 문의
+        { id: 1, title: "문의 1", status: "answered" }, // 답변 완료된 문의
+        // { id: 2, title: "문의 2", status: "pending" },
+        // { id: 3, title: "문의 3", status: "answered" },
         // 데이터 받아오기
     ];
 
-    // 특정 상태의 문의를 화면에 렌더링하는 함수입니다.
     const renderInquiries = (filter) => {
-        // 문의 목록이 표시될 영역과 빈 상태 컴포넌트를 가져옵니다.
+        // 문의 목록이 표시될 영역과 빈 상태 컴포넌트를 가져옴
         const inquiryList = document.getElementById("inquiry-list");
         const emptyComponent = document.querySelector(".empty-component");
 
-        // 현재 선택된 상태(필터)에 따라 문의 데이터를 필터링합니다.
+        // 현재 선택된 상태(필터)에 따라 문의 데이터를 필터링
         const filteredInquiries = inquiries.filter(
             (inquiry) => inquiry.status === filter
         );
 
         // 필터링된 문의가 없을 경우
         if (filteredInquiries.length === 0) {
-            // 문의 목록을 숨기고 빈 상태 컴포넌트를 표시합니다.
+            // 문의 목록을 숨기고 빈 상태 컴포넌트를 표시
             inquiryList.style.display = "none";
             emptyComponent.style.display = "block";
         } else {
-            // 문의 목록을 표시하고 빈 상태 컴포넌트를 숨깁니다.
             inquiryList.style.display = "block";
             emptyComponent.style.display = "none";
-            inquiryList.innerHTML = ""; // 문의 목록 영역을 초기화합니다.
+            inquiryList.innerHTML = ""; // 문의 목록 영역을 초기화
 
-            // 필터링된 각 문의를 화면에 추가합니다.
+            // 필터링된 각 문의를 화면에 추가
             filteredInquiries.forEach((inquiry) => {
-                // 새로운 문의 항목을 생성합니다.
+                // 새로운 문의 항목을 생성
                 const inquiryItem = document.createElement("div");
                 inquiryItem.className = "inquiry-item";
-                // 문의 제목과 상태(답변 완료 또는 대기 중)를 HTML로 설정합니다.
+                // 문의 제목과 상태(답변 완료 또는 대기 중)를 HTML로 설정
                 inquiryItem.innerHTML = `
                     <h4>${inquiry.title}</h4>
                     <p>Status: ${
@@ -335,29 +331,29 @@ document.addEventListener("DOMContentLoaded", () => {
                             : "답변 대기 중"
                     }</p>
                 `;
-                // 문의 항목을 문의 목록 영역에 추가합니다.
+                // 문의 항목을 문의 목록 영역에 추가
                 inquiryList.appendChild(inquiryItem);
             });
         }
 
-        // 답변 완료된 문의의 개수를 세고 해당 숫자를 UI에 업데이트합니다.
+        // 답변 완료된 문의의 개수를 세고 해당 숫자를 UI에 업데이트
         document.getElementById("answered-count").innerText = inquiries.filter(
             (i) => i.status === "answered"
         ).length;
-        // 답변 대기 중인 문의의 개수를 세고 해당 숫자를 UI에 업데이트합니다.
+        // 답변 대기 중인 문의의 개수를 세고 해당 숫자를 UI에 업데이트
         document.getElementById("pending-count").innerText = inquiries.filter(
             (i) => i.status === "pending"
         ).length;
     };
 
-    // 상태에 따라 문의 목록을 필터링하는 함수입니다.
+    // 상태에 따라 문의 목록을 필터링하는 함수
     window.filterInquiries = (status) => {
-        // 모든 탭에서 'active' 클래스를 제거하여 비활성화합니다.
+        // 모든 탭에서 'active' 클래스를 제거하여 비활성화
         document
             .querySelectorAll(".tab-link")
             .forEach((tab) => tab.classList.remove("active"));
 
-        // 현재 선택된 탭에 'active' 클래스를 추가하여 활성화합니다.
+        // 현재 선택된 탭에 'active' 클래스를 추가하여 활성화
         if (status === "answered") {
             document
                 .querySelector(
@@ -372,10 +368,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 .classList.add("active");
         }
 
-        // 선택된 상태에 따라 문의 목록을 렌더링합니다.
+        // 선택된 상태에 따라 문의 목록
         renderInquiries(status);
     };
 
-    // 페이지가 로드될 때 기본으로 '답변 완료' 상태의 문의를 표시합니다.
+    // 페이지가 로드될 때 기본으로 '답변 완료' 상태의 문의를 표시
     renderInquiries("answered");
 });
