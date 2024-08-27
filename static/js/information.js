@@ -9,6 +9,8 @@ const attachInput = document.querySelector("#attach-input");
 const attachFilesWrap = document.querySelector(".attach-files-wrap");
 let i = 0;
 
+NodeList.prototype.filter = Array.prototype.filter;
+
 // mouseenter 및 focus가 되었을 때 스타일 적용
 textareas.forEach((textarea) => {
     let value = textarea.value;
@@ -111,27 +113,28 @@ attachInput.addEventListener("change", (e) => {
     const attachCancelButtons = document.querySelectorAll(
         ".attach-cancel-button"
     );
-    const thumbnails = document.querySelectorAll(".thumbnail");
+    // const thumbnails = document.querySelectorAll(".thumbnail");
     attachCancelButtons.forEach((attachCancelButton) => {
         attachCancelButton.addEventListener("click", (e) => {
-            thumbnail.style.backgroundImage = "";
+            let temp = 0;
+            // thumbnail.style.backgroundImage = "";
             attachInput.value = "";
-            attachCancelButton.style.display = "none";
+            // attachCancelButton.style.display = "none";
+            const attachFiles = document.querySelectorAll(".attach-file");
+            // span태그 중,
+            // 내용이 현재 해제한 체크박스의 value와 다른 것만 추출한다.
+            attachFiles
+                .filter(
+                    (attachFile) =>
+                        attachFile.firstElementChild.firstElementChild.files !==
+                        e.target.files
+                )
+                .forEach((attachFile) => {
+                    // 추출된 span태그를 다시 제작한다.
+                    temp += attachFile;
+                });
+            // 완성된 span태그들을 result에 덮어쓴다.
+            attachFilesWrap.innerHTML = temp;
         });
     });
 });
-// else {
-//     // 체크가 해제되었다면,
-//     // 기존에 p태그에 있었던 모든 span태그를 가져온다.
-//     const spans = document.querySelectorAll("span.text");
-//     // span태그 중,
-//     // 내용이 현재 해제한 체크박스의 value와 다른 것만 추출한다.
-//     spans
-//         .filter((span) => span.innerText !== e.target.value)
-//         .forEach((span) => {
-//             // 추출된 span태그를 다시 제작한다.
-//             text += `<span class="text">${span.innerText}</span>`;
-//         });
-//     // 완성된 span태그들을 result에 덮어쓴다.
-//     result.innerHTML = text;
-// }
