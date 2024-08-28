@@ -560,7 +560,7 @@ document.addEventListener("DOMContentLoaded", () => {
             posts.forEach((post) => {
                 const postItem = document.createElement("div");
                 postItem.className = "post-item";
-                postItem.innerHTML = `<h4>${post.title}</h4><p>${post.summary}</p><span class="post-date">${post.date}</span>`;
+                postItem.innerHTML = `<h4>${post.title}</h4><p>${post.summary}</p>`;
                 postList.appendChild(postItem);
             });
         }
@@ -582,7 +582,7 @@ document.addEventListener("DOMContentLoaded", () => {
             replies.forEach((reply) => {
                 const replyItem = document.createElement("div");
                 replyItem.className = "reply-item";
-                replyItem.innerHTML = `<h4>${reply.postTitle}</h4><p>${reply.summary}</p><span class="reply-date">${reply.date}</span>`;
+                replyItem.innerHTML = `<h4>${reply.postTitle}</h4><p>${reply.summary}</p>`;
                 replyList.appendChild(replyItem);
             });
         }
