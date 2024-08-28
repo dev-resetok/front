@@ -508,7 +508,8 @@ const renderInquiries = (filter) => {
             // 문의 제목과 상태(답변 완료 또는 대기 중)를 HTML로 설정
             inquiryItem.innerHTML = `
                     <h4>${inquiry.title}</h4>
-                    <p>Status: ${
+                    <br>
+                    <p>상태: ${
                         inquiry.status === "answered"
                             ? "답변 완료"
                             : "답변 대기 중"
