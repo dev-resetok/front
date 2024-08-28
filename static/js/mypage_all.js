@@ -576,11 +576,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let replies = [
         /*받아오기*/
-        // {
-        //     id: 1,
-        //     postTitle: "댓글이 달린 게시글 제목",
-        //     summary: "댓글 내용",
-        // },
+        {
+            id: 1,
+            postTitle: "댓글이 달린 게시글 제목",
+            summary: "댓글 내용",
+        },
     ];
 
     const renderPosts = () => {
