@@ -473,43 +473,40 @@ document.addEventListener("DOMContentLoaded", () => {
 //     });
 // });
 
-document.addEventListener("input", () => {
-    let inquiries = [
-        // { id: 1, title: "문의 1", status: "answered" }, // 답변 완료된 문의
-        // { id: 2, title: "문의 2", status: "pending" },
-        // { id: 3, title: "문의 3", status: "answered" },
-        // 데이터 받아오기
-    ];
+let inquiries = [
+    { id: 1, title: "문의 1", status: "answered" }, // 답변 완료된 문의
+    // { id: 2, title: "문의 2", status: "pending" },
+    { id: 3, title: "문의 3", status: "answered" },
+    // 데이터 받아오기
+];
 
-    const renderInquiries = (filter) => {
-        // 문의 목록이 표시될 영역과 빈 상태 컴포넌트를 가져옴
-        const inquiryList = document.getElementById("inquiry-list");
-        const emptyComponent = document.querySelector(
-            ".empty-component-inquiry"
-        );
+const renderInquiries = (filter) => {
+    // 문의 목록이 표시될 영역과 빈 상태 컴포넌트를 가져옴
+    const inquiryList = document.getElementById("inquiry-list");
+    const emptyComponent = document.querySelector(".empty-component-inquiry");
 
-        // 현재 선택된 상태(필터)에 따라 문의 데이터를 필터링
-        const filteredInquiries = inquiries.filter(
-            (inquiry) => inquiry.status === filter
-        );
+    // 현재 선택된 상태(필터)에 따라 문의 데이터를 필터링
+    const filteredInquiries = inquiries.filter(
+        (inquiry) => inquiry.status === filter
+    );
 
-        // 필터링된 문의가 없을 경우
-        if (filteredInquiries.length === 0) {
-            // 문의 목록을 숨기고 빈 상태 컴포넌트를 표시
-            inquiryList.style.display = "none";
-            emptyComponent.style.display = "block";
-        } else {
-            inquiryList.style.display = "block";
-            emptyComponent.style.display = "none";
-            inquiryList.innerHTML = ""; // 문의 목록 영역을 초기화
+    // 필터링된 문의가 없을 경우
+    if (filteredInquiries.length === 0) {
+        // 문의 목록을 숨기고 빈 상태 컴포넌트를 표시
+        inquiryList.style.display = "none";
+        emptyComponent.style.display = "block";
+    } else {
+        inquiryList.style.display = "block";
+        emptyComponent.style.display = "none";
+        inquiryList.innerHTML = ""; // 문의 목록 영역을 초기화
 
-            // 필터링된 각 문의를 화면에 추가
-            filteredInquiries.forEach((inquiry) => {
-                // 새로운 문의 항목을 생성
-                const inquiryItem = document.createElement("div");
-                inquiryItem.className = "inquiry-item";
-                // 문의 제목과 상태(답변 완료 또는 대기 중)를 HTML로 설정
-                inquiryItem.innerHTML = `
+        // 필터링된 각 문의를 화면에 추가
+        filteredInquiries.forEach((inquiry) => {
+            // 새로운 문의 항목을 생성
+            const inquiryItem = document.createElement("div");
+            inquiryItem.className = "inquiry-item";
+            // 문의 제목과 상태(답변 완료 또는 대기 중)를 HTML로 설정
+            inquiryItem.innerHTML = `
                     <h4>${inquiry.title}</h4>
                     <p>Status: ${
                         inquiry.status === "answered"
@@ -517,120 +514,112 @@ document.addEventListener("input", () => {
                             : "답변 대기 중"
                     }</p>
                 `;
-                // 문의 항목을 문의 목록 영역에 추가
-                inquiryList.appendChild(inquiryItem);
-            });
-        }
+            // 문의 항목을 문의 목록 영역에 추가
+            inquiryList.appendChild(inquiryItem);
+        });
+    }
 
-        // 답변 완료된 문의의 개수를 세고 해당 숫자를 UI에 업데이트
-        document.getElementById("answered-count").innerText = inquiries.filter(
-            (i) => i.status === "answered"
-        ).length;
-        // 답변 대기 중인 문의의 개수를 세고 해당 숫자를 UI에 업데이트
-        document.getElementById("pending-count").innerText = inquiries.filter(
-            (i) => i.status === "pending"
-        ).length;
-    };
+    // 답변 완료된 문의의 개수를 세고 해당 숫자를 UI에 업데이트
+    document.getElementById("answered-count").innerText = inquiries.filter(
+        (i) => i.status === "answered"
+    ).length;
+    // 답변 대기 중인 문의의 개수를 세고 해당 숫자를 UI에 업데이트
+    document.getElementById("pending-count").innerText = inquiries.filter(
+        (i) => i.status === "pending"
+    ).length;
+};
 
-    // 상태에 따라 문의 목록을 필터링하는 함수
-    // window.filterInquiries = (status) => {
-    //     // 모든 탭에서 'active' 클래스를 제거하여 비활성화
-    //     document
-    //         .querySelectorAll(".tab-link")
-    //         .forEach((tab) => tab.classList.remove("active"));
+// 상태에 따라 문의 목록을 필터링하는 함수
+const filterInquiries = (status) => {
+    // 모든 탭에서 'active' 클래스를 제거하여 비활성화
+    document
+        .querySelectorAll(".tab-link")
+        .forEach((tab) => tab.classList.remove("active"));
 
-    //     // 현재 선택된 탭에 'active' 클래스를 추가하여 활성화
-    //     if (status === "answered") {
-    //         // CSS 선택자 사용
-    //         document
-    //             .querySelector(
-    //                 ".tab-link[onclick=\"filterInquiries('answered')\"]"
-    //             )
-    //             .classList.add("active");
-    //     } else {
-    //         document
-    //             .querySelector(
-    //                 ".tab-link[onclick=\"filterInquiries('pending')\"]"
-    //             )
-    //             .classList.add("active");
-    //     }
+    // 현재 선택된 탭에 'active' 클래스를 추가하여 활성화
+    if (status === "answered") {
+        // CSS 선택자 사용
+        document
+            .querySelector(".tab-link[onclick=\"filterInquiries('answered')\"]")
+            .classList.add("active");
+    } else {
+        document
+            .querySelector(".tab-link[onclick=\"filterInquiries('pending')\"]")
+            .classList.add("active");
+    }
 
-    //     // 선택된 상태에 따라 문의 목록
-    //     renderInquiries(status);
-    // };
+    // 선택된 상태에 따라 문의 목록
+    renderInquiries(status);
+};
 
-    // 페이지가 로드될 때 기본으로 '답변 완료' 상태의 문의를 표시
-    renderInquiries("answered");
-});
+// 페이지가 로드될 때 기본으로 '답변 완료' 상태의 문의를 표시
+renderInquiries("answered");
 
-document.addEventListener("DOMContentLoaded", () => {
-    // 예시로 게시글과 댓글 데이터를 배열로 정의
-    let posts = [
-        /*받아오기*/
-        {
-            id: 1,
-            title: "내가 작성한 게시글 1",
-            summary: "게시글 내용 요약 (첫 줄)",
-        },
-        {
-            id: 2,
-            title: "내가 작성한 게시글 2",
-            summary: "게시글 내용 요약 (첫 줄)",
-        },
-    ];
+// DOMContentLoaded: html이 준비됐으니 코드를 실행해도 됨
 
-    let replies = [
-        /*받아오기*/
-        {
-            id: 1,
-            postTitle: "댓글이 달린 게시글 제목",
-            summary: "댓글 내용",
-        },
-    ];
+// console.log("들어옴!");
+// 예시로 게시글과 댓글 데이터를 배열로 정의
+let posts = [
+    /*받아오기*/
+    {
+        id: 1,
+        title: "내가 작성한 게시글 1",
+        summary: "게시글 내용 요약 (첫 줄)",
+    },
+    {
+        id: 2,
+        title: "내가 작성한 게시글 2",
+        summary: "게시글 내용 요약 (첫 줄)",
+    },
+];
 
-    const renderPosts = () => {
-        const postList = document.querySelector(".post-list");
-        const emptyComponent = document.querySelector(
-            "#myboard .empty-component"
-        );
+let replies = [
+    /*받아오기*/
+    // {
+    //     id: 1,
+    //     postTitle: "댓글이 달린 게시글 제목",
+    //     summary: "댓글 내용",
+    // },
+];
 
-        if (posts.length === 0) {
-            postList.style.display = "none";
-            emptyComponent.style.display = "block";
-        } else {
-            postList.style.display = "block";
-            emptyComponent.style.display = "none";
+const renderPosts = () => {
+    const postList = document.querySelector(".post-list");
+    const emptyComponent = document.querySelector("#myboard .empty-component");
 
-            posts.forEach((post) => {
-                const postItem = document.createElement("div");
-                postItem.className = "post-item";
-                postItem.innerHTML = `<h4>${post.title}</h4><p>${post.summary}</p>`;
-                postList.append(postItem);
-            });
-        }
-    };
+    if (posts.length === 0) {
+        postList.style.display = "none";
+        emptyComponent.style.display = "block";
+    } else {
+        postList.style.display = "block";
+        emptyComponent.style.display = "none";
 
-    const renderReplies = () => {
-        const replyList = document.querySelector(".reply-list");
-        const emptyComponent = document.querySelector(
-            "#myreply .empty-component"
-        );
+        posts.forEach((post) => {
+            const postItem = document.createElement("div");
+            postItem.className = "post-item";
+            postItem.innerHTML = `<h4>${post.title}</h4><p>${post.summary}</p>`;
+            postList.append(postItem);
+        });
+    }
+};
 
-        if (replies.length === 0) {
-            replyList.style.display = "none";
-            emptyComponent.style.display = "block";
-        } else {
-            replyList.style.display = "block";
-            emptyComponent.style.display = "none";
+const renderReplies = () => {
+    const replyList = document.querySelector(".reply-list");
+    const emptyComponent = document.querySelector("#myreply .empty-component");
 
-            replies.forEach((reply) => {
-                const replyItem = document.createElement("div");
-                replyItem.className = "reply-item";
-                replyItem.innerHTML = `<h4>${reply.postTitle}</h4><p>${reply.summary}</p>`;
-                replyList.append(replyItem);
-            });
-        }
-    };
-    renderPosts();
-    renderReplies();
-});
+    if (replies.length === 0) {
+        replyList.style.display = "none";
+        emptyComponent.style.display = "block";
+    } else {
+        replyList.style.display = "block";
+        emptyComponent.style.display = "none";
+
+        replies.forEach((reply) => {
+            const replyItem = document.createElement("div");
+            replyItem.className = "reply-item";
+            replyItem.innerHTML = `<h4>${reply.postTitle}</h4><p>${reply.summary}</p>`;
+            replyList.append(replyItem);
+        });
+    }
+};
+renderPosts();
+renderReplies();

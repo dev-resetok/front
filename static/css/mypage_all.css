@@ -601,13 +601,6 @@ label.btn-upload:hover {
     margin-bottom: 20px;
 }
 
-.inquiry-item {
-    padding: 15px;
-    border: 1px solid #dedede;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    background-color: #f9f9f9;
-}
 .empty-component-inquiry {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -623,7 +616,8 @@ label.btn-upload:hover {
 }
 
 .post-item,
-.reply-item {
+.reply-item,
+.inquiry-item {
     padding: 15px;
     border: 1px solid #446eab;
     margin-bottom: 10px;
@@ -632,7 +626,8 @@ label.btn-upload:hover {
     cursor: pointer;
 }
 .post-item:hover,
-.reply-item:hover {
+.reply-item:hover,
+.inquiry-item:hover {
     padding: 15px;
     border: 1px solid #446eab;
     margin-bottom: 10px;
