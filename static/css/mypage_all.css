@@ -415,7 +415,6 @@ a {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    float: right;
 }
 
 .btn-save:hover {
@@ -626,10 +625,19 @@ label.btn-upload:hover {
 .post-item,
 .reply-item {
     padding: 15px;
-    border: 1px solid #dedede;
+    border: 1px solid #446eab;
     margin-bottom: 10px;
     border-radius: 3px;
     background-color: #f9f9f9;
+    cursor: pointer;
+}
+.post-item:hover,
+.reply-item:hover {
+    padding: 15px;
+    border: 1px solid #446eab;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background-color: #f1f1f1;
 }
 
 .post-item h4,

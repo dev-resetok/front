@@ -473,7 +473,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //     });
 // });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("input", () => {
     let inquiries = [
         // { id: 1, title: "문의 1", status: "answered" }, // 답변 완료된 문의
         // { id: 2, title: "문의 2", status: "pending" },
@@ -567,11 +567,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // 예시로 게시글과 댓글 데이터를 배열로 정의
     let posts = [
         /*받아오기*/
-        // {
-        //     id: 1,
-        //     title: "내가 작성한 게시글 1",
-        //     summary: "게시글 내용 요약 (첫 줄)",
-        // },
+        {
+            id: 1,
+            title: "내가 작성한 게시글 1",
+            summary: "게시글 내용 요약 (첫 줄)",
+        },
+        {
+            id: 2,
+            title: "내가 작성한 게시글 2",
+            summary: "게시글 내용 요약 (첫 줄)",
+        },
     ];
 
     let replies = [
@@ -600,7 +605,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const postItem = document.createElement("div");
                 postItem.className = "post-item";
                 postItem.innerHTML = `<h4>${post.title}</h4><p>${post.summary}</p>`;
-                postList.appendChild(postItem);
+                postList.append(postItem);
             });
         }
     };
@@ -622,7 +627,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const replyItem = document.createElement("div");
                 replyItem.className = "reply-item";
                 replyItem.innerHTML = `<h4>${reply.postTitle}</h4><p>${reply.summary}</p>`;
-                replyList.appendChild(replyItem);
+                replyList.append(replyItem);
             });
         }
     };
