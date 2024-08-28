@@ -1,7 +1,38 @@
+@font-face {
+    font-family: "NotoSansKR";
+    font-weight: 700;
+    src: url("/fonts/NotoSansKR-Bold.woff2") format("woff2"),url("/fonts/NotoSansKR-Bold.woff") format("woff"),url("/fonts/NotoSansKR-Bold.otf") format("opentype")
+}
+
+@font-face {
+    font-family: "NotoSansKR";
+    font-weight: 500;
+    src: url("/fonts/NotoSansKR-Medium.woff2") format("woff2"),url("/fonts/NotoSansKR-Medium.woff") format("woff"),url("/fonts/NotoSansKR-Medium.otf") format("opentype")
+}
+
+@font-face {
+    font-family: "NotoSansKR";
+    font-weight: 400;
+    src: url("/fonts/NotoSansKR-Regular.woff2") format("woff2"),url("/fonts/NotoSansKR-Regular.woff") format("woff"),url("/fonts/NotoSansKR-Regular.otf") format("opentype")
+}
+
+@font-face {
+    font-family: "NotoSansKR";
+    font-weight: 300;
+    src: url("/fonts/NotoSansKR-Light.woff2") format("woff2"),url("/fonts/NotoSansKR-Light.woff") format("woff"),url("/fonts/NotoSansKR-Light.otf") format("opentype")
+}
+
+@font-face {
+    font-family: "NotoSansKR";
+    font-weight: 100;
+    src: url("/fonts/NotoSansKR-Thin.woff2") format("woff2"),url("/fonts/NotoSansKR-Thin.woff") format("woff"),url("    /fonts/NotoSansKR-Thin.otf") format("opentype")
+}
+
+
 *{
     margin: 0;
     padding: 0;
-    line-height: 1rem;
+    line-height: 1;
     box-sizing: border-box;
     font-family: "NotoSansKR", "Sans-serif";
     -webkit-font-smoothing: antialiased;
@@ -21,15 +52,18 @@ header.header .base-nav-landing-renewal {
     min-height: 65px;
 }
 
+header.header .header-service-nav .container {
+    display: flex;
+}
 header.header .header-service-nav {
         padding-top: 9px;
-        padding-bottom: 9px;
+        padding-bottom: 11px;
         border-bottom: 1px solid #383d47;
         display: flex;
 
 }
 header.header .container {
-    display: flex;
+    
     width: 1080px;
     margin: 0 auto;
 }
@@ -115,7 +149,7 @@ header.header .container {
 
 .left-nav {
     display: flex;
-    gap: 0px;   /*원본은 4px*/
+    gap: 4px;   
     float: left;
 }
 header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
@@ -150,7 +184,7 @@ header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
     display: none;
     width: 200px;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: #242933;
     position: absolute;
     margin-left: -12px;
     z-index: 999;
@@ -173,12 +207,14 @@ header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
 
 .menu-list {
     padding: 9px 0;
+    
 }
 .drop-down-menu{
     width: 192px;
     height: 40px;
     padding: 8px 16px;
     cursor: pointer;
+    
 }
 .text900{
     color: #212121;
@@ -258,7 +294,7 @@ header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
     justify-content: flex-end;
     height: 64px;
     position: relative;
-    left: 10px; 
+    left: -2px; 
 
 }
 .my-project-container{
@@ -308,6 +344,10 @@ header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
     gap: 12px;
     padding: 0 16px;
     cursor: pointer;
+    color: #fff;
+}
+.text777{
+   color: #212121;
 }
 
 .noti-bell-container{
@@ -405,11 +445,19 @@ header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
     text-align: center;
     cursor: pointer;
 }
-.divier{
+.divider{
     height: 1px;
     width: 100%;
     margin: 4px 0;
     background-color: #eee;
+}
+.divider1{
+    height: 1px;
+    width: 100%;
+    margin: 0;
+    background-color: #eee;
+    position: relative;
+    top: -8px;
 }
 .profile-dropdown .drop-down-menu{
     width: 100%;
