@@ -334,7 +334,7 @@ a {
 }
 
 .content {
-    width: 800px;
+    min-width: 800px;
     background-color: #fff;
     border: 1px solid #dedede;
     border-radius: 3px;
@@ -508,10 +508,6 @@ a {
     background-color: #999;
 }
 
-.btn-upload:hover {
-    background-color: #365e8b;
-}
-
 .btn-default:hover {
     background-color: #777;
 }
@@ -523,8 +519,7 @@ a {
 }
 
 .img-border,
-.img-reply,
-.img-inquiry {
+.img-reply {
     vertical-align: middle;
     width: 100px;
 }
@@ -534,6 +529,11 @@ a {
     margin-bottom: 0;
     color: #999 !important;
     line-height: 1;
+}
+.font-p5-no-inquiry-info-text {
+    color: #999 !important;
+    line-height: 1;
+    text-align: center;
 }
 
 .font-p5-bold {
@@ -549,6 +549,7 @@ a {
 }
 
 .tab-content.active {
+    height: 1200px;
     display: block;
 }
 
@@ -593,4 +594,57 @@ a {
 .empty-component-inquiry {
     padding-top: 40px;
     padding-bottom: 40px;
+}
+
+#fileInput {
+    display: none;
+}
+
+label.btn-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #446eab;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+label.btn-upload:hover {
+    background-color: #365e8b;
+}
+
+.post-list,
+.reply-list {
+    margin-top: 20px;
+}
+
+.post-item,
+.reply-item {
+    padding: 15px;
+    border: 1px solid #dedede;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+}
+
+.post-item h4,
+.reply-item h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.post-item p,
+.reply-item p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.post-date,
+.reply-date {
+    font-size: 12px;
+    color: #999;
 }

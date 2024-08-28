@@ -379,6 +379,7 @@
                             </h3>
                         </div>
                         <div class="content-inner">
+                            <!-- 게시글이 없을 때 -->
                             <div class="empty-component">
                                 <img
                                     class="img-border"
@@ -394,6 +395,11 @@
                                     >이 없습니다.
                                 </p>
                             </div>
+
+                            <!-- 게시글이 있을 때 -->
+                            <div class="post-list">
+                                <!-- 추가 게시글 항목들 받아올 것 -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -408,6 +414,7 @@
                             </h3>
                         </div>
                         <div class="content-inner">
+                            <!-- 댓글이 없을 때 -->
                             <div class="empty-component">
                                 <img
                                     class="img-reply"
@@ -422,6 +429,11 @@
                                         >'댓글'</span
                                     >이 없습니다.
                                 </p>
+                            </div>
+
+                            <!-- 댓글이 있을 때 -->
+                            <div class="reply-list">
+                                <!-- 추가 댓글 항목들 받아오기-->
                             </div>
                         </div>
                     </div>
@@ -462,12 +474,8 @@
 
                             <!-- 문의가 없을 때 표시되는 빈 상태 컴포넌트 -->
                             <div class="empty-component-inquiry">
-                                <img
-                                    class="img-inquiry"
-                                    src="../static/images/no-inquiry.png"
-                                />
                                 <p
-                                    class="font-p5-no-border-info-text"
+                                    class="font-p5-no-inquiry-info-text"
                                     style="margin-bottom: 0"
                                 >
                                     등록된
@@ -486,11 +494,16 @@
                     <span class="close"></span>
                     <h2>프로필 사진 변경</h2>
                     <form id="uploadForm">
-                        <input type="file" id="fileInput" accept="image/*" />
                         <div class="btn-group">
-                            <button type="submit" class="btn-upload">
+                            <!-- label 요소로 감싸서 file input을 클릭할 수 있게 만듦 -->
+                            <label class="btn-upload" for="fileInput">
                                 사진 업로드
-                            </button>
+                            </label>
+                            <input
+                                type="file"
+                                id="fileInput"
+                                accept="image/*"
+                            />
                             <button
                                 type="button"
                                 id="resetBtn"
