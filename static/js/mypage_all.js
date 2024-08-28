@@ -562,25 +562,25 @@ renderInquiries("answered");
 // 예시로 게시글과 댓글 데이터를 배열로 정의
 let posts = [
     /*받아오기*/
-    {
-        id: 1,
-        title: "내가 작성한 게시글 1",
-        summary: "게시글 내용 요약 (첫 줄)",
-    },
-    {
-        id: 2,
-        title: "내가 작성한 게시글 2",
-        summary: "게시글 내용 요약 (첫 줄)",
-    },
+    // {
+    //     id: 1,
+    //     title: "내가 작성한 게시글 1",
+    //     summary: "게시글 내용 요약 (첫 줄)",
+    // },
+    // {
+    //     id: 2,
+    //     title: "내가 작성한 게시글 2",
+    //     summary: "게시글 내용 요약 (첫 줄)",
+    // },
 ];
 
 let replies = [
     /*받아오기*/
-    // {
-    //     id: 1,
-    //     postTitle: "댓글이 달린 게시글 제목",
-    //     summary: "댓글 내용",
-    // },
+    {
+        id: 1,
+        postTitle: "댓글이 달린 게시글 제목",
+        summary: "댓글 내용",
+    },
 ];
 
 const renderPosts = () => {

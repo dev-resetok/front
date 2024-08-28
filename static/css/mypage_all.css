@@ -362,7 +362,10 @@ a {
     color: #999;
 }
 
-.client-info,
+.client-info {
+    margin-bottom: 30px;
+    padding: 0 40px;
+}
 .client-details,
 .contact-info {
     margin-bottom: 30px;
