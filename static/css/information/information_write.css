@@ -225,10 +225,11 @@ body .post-write-form-section .form-input-section {
     display: none;
     position: absolute;
     background-image: url("../../../static/images/cancel.png");
-    width: 20px;
-    height: 20px;
-    top: 22px;
+    width: 30px;
+    height: 30px;
+    top: 0;
     cursor: pointer;
+    right: 5px;
 }
 
 /* #attach-input, .attach-check  */
@@ -248,6 +249,7 @@ input {
     border-radius: 12px;
     background-color: #fff;
     box-shadow: 0px 1px 4px 0px rgba(230, 235, 240, .8);
+    position: relative;
 }
 
 .attach-file label {
@@ -262,7 +264,7 @@ input {
     font-size: 12px;
 }
 
-.save-button-divider {
+.complete-save-button-divider {
     position: sticky;
     bottom: 0;
     background-color: white;
@@ -274,10 +276,28 @@ input {
     height: 73px;
 }
 
-.save-button {
+
+.complete-button {
     border: 1px solid #3ba3c7;
     background: #3ba3c7;
     color: #fff;
+    padding: 11px 24px;
+    float: right;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border-radius: 4px;
+    margin-right: 26px;
+    margin-left: 15px;
+}
+
+.save-button {
+    border: 1px solid #3ba3c7;
+    background: #fff;
+    color: #3ba3c7;
     padding: 11px 24px;
     float: right;
     cursor: pointer;
