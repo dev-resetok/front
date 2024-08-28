@@ -562,11 +562,12 @@ label.btn-upload:hover {
 }
 
 .tab-content {
+    min-height: 900px;
     display: none;
 }
 
 .tab-content.active {
-    height: 1200px;
+    height: fit-content;
     display: block;
 }
 

@@ -82,31 +82,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // 모달에서 이미지 변경
-    document
-        .getElementById("uploadForm")
-        .addEventListener("submit", (event) => {
-            event.preventDefault();
+    // 파일 선택 시 바로 이미지 변경
+    document.getElementById("fileInput").addEventListener("change", (event) => {
+        const file = event.target.files[0];
 
-            // 파일 입력 요소
-            const fileInput = document.getElementById("fileInput");
-            const file = fileInput.files[0];
+        if (file) {
+            const reader = new FileReader();
 
-            if (file) {
-                const reader = new FileReader();
+            reader.onload = (e) => {
+                const newImageSrc = e.target.result;
+                document.querySelector(".img-circle.user-img").src =
+                    newImageSrc;
+                document.querySelector(".user-img-header").src = newImageSrc;
+            };
 
-                reader.onload = (e) => {
-                    // 업로드된 이미지를 user-img 및 user-img-header에 반영
-                    const newImageSrc = e.target.result;
-                    document.querySelector(".img-circle.user-img").src =
-                        newImageSrc;
-                    document.querySelector(".user-img-header").src =
-                        newImageSrc;
-                };
-
-                reader.readAsDataURL(file);
-            }
-        });
+            reader.readAsDataURL(file);
+        }
+    });
 
     // 기본 이미지로 변경 버튼 클릭 시
     resetBtn.addEventListener("click", () => {
@@ -541,31 +533,31 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // 상태에 따라 문의 목록을 필터링하는 함수
-    window.filterInquiries = (status) => {
-        // 모든 탭에서 'active' 클래스를 제거하여 비활성화
-        document
-            .querySelectorAll(".tab-link")
-            .forEach((tab) => tab.classList.remove("active"));
+    // window.filterInquiries = (status) => {
+    //     // 모든 탭에서 'active' 클래스를 제거하여 비활성화
+    //     document
+    //         .querySelectorAll(".tab-link")
+    //         .forEach((tab) => tab.classList.remove("active"));
 
-        // 현재 선택된 탭에 'active' 클래스를 추가하여 활성화
-        if (status === "answered") {
-            // CSS 선택자 사용
-            document
-                .querySelector(
-                    ".tab-link[onclick=\"filterInquiries('answered')\"]"
-                )
-                .classList.add("active");
-        } else {
-            document
-                .querySelector(
-                    ".tab-link[onclick=\"filterInquiries('pending')\"]"
-                )
-                .classList.add("active");
-        }
+    //     // 현재 선택된 탭에 'active' 클래스를 추가하여 활성화
+    //     if (status === "answered") {
+    //         // CSS 선택자 사용
+    //         document
+    //             .querySelector(
+    //                 ".tab-link[onclick=\"filterInquiries('answered')\"]"
+    //             )
+    //             .classList.add("active");
+    //     } else {
+    //         document
+    //             .querySelector(
+    //                 ".tab-link[onclick=\"filterInquiries('pending')\"]"
+    //             )
+    //             .classList.add("active");
+    //     }
 
-        // 선택된 상태에 따라 문의 목록
-        renderInquiries(status);
-    };
+    //     // 선택된 상태에 따라 문의 목록
+    //     renderInquiries(status);
+    // };
 
     // 페이지가 로드될 때 기본으로 '답변 완료' 상태의 문의를 표시
     renderInquiries("answered");
@@ -575,16 +567,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // 예시로 게시글과 댓글 데이터를 배열로 정의
     let posts = [
         /*받아오기*/
-        // { id: 1, title: "게시글 제목 1", summary: "게시글 내용의 요약 부분" },
+        // {
+        //     id: 1,
+        //     title: "내가 작성한 게시글 1",
+        //     summary: "게시글 내용 요약 (첫 줄)",
+        // },
     ];
 
     let replies = [
         /*받아오기*/
-        {
-            // id: 1,
-            // postTitle: "댓글이 달린 게시글 제목",
-            // summary: "댓글 내용의 요약 부분",
-        },
+        // {
+        //     id: 1,
+        //     postTitle: "댓글이 달린 게시글 제목",
+        //     summary: "댓글 내용",
+        // },
     ];
 
     const renderPosts = () => {
@@ -630,7 +626,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     };
-
     renderPosts();
     renderReplies();
 });
