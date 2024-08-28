@@ -4,7 +4,6 @@
     line-height: 1;
     box-sizing: border-box;
     font-family: "NotoSansKR", "Sans-serif";
-    -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -448,12 +447,12 @@ a {
     color: #555;
 }
 
-td[data-editable] {
+.data-editable {
     cursor: pointer;
     color: #2099bb;
 }
 
-td[data-editable]:hover {
+.data-editable:hover {
     text-decoration: underline;
 }
 
