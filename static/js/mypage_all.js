@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 모달 처리
     const modal = document.getElementById("profileModal");
     const btn = document.querySelector(".user-img-box img");
-    const span = document.getElementsByClassName("close")[0];
+    const span = document.getElementsByClassName("close");
     const resetBtn = document.getElementById("resetBtn");
     const defaultImage =
         "https://www.wishket.com/static/img/default_avatar_c.png";
@@ -69,18 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.onclick = () => {
         modal.style.display = "block";
     };
-
-    // 모달의 닫기 버튼 클릭 시 모달 닫기
-    span.onclick = () => {
-        modal.style.display = "none";
-    };
-
     // 모달 외부 클릭 시 모달 닫기
     window.onclick = (event) => {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     };
+
+    document;
 
     // 파일 선택 시 바로 이미지 변경
     document.getElementById("fileInput").addEventListener("change", (event) => {
@@ -520,11 +516,11 @@ const renderInquiries = (filter) => {
         });
     }
 
-    // 답변 완료된 문의의 개수를 세고 해당 숫자를 UI에 업데이트
+    // 답변 완료된 문의의 개수를 세고 UI에 업데이트
     document.getElementById("answered-count").innerText = inquiries.filter(
         (i) => i.status === "answered"
     ).length;
-    // 답변 대기 중인 문의의 개수를 세고 해당 숫자를 UI에 업데이트
+    // 답변 대기 중인 문의의 개수를 세고 UI에 업데이트
     document.getElementById("pending-count").innerText = inquiries.filter(
         (i) => i.status === "pending"
     ).length;
