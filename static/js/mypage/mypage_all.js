@@ -512,29 +512,20 @@ let replies = [
 ];
 
 // 페이징 버튼 상태 업데이트
-let updatePaginationButton = (items, currentPage, type) => {
+const updatePaginationButton = (items, currentPage, type) => {
     const totalPages = Math.ceil(items.length / itemsPerPage);
-    let prevButton = document.querySelector(`.${type}-prev`);
+    const prevButton = document.querySelector(`.${type}-prev`);
     const nextButton = document.querySelector(`.${type}-next`);
-    const borderEmpty = document.querySelector("#myboard .empty-component");
-    const replyEmpty = document.querySelector("#myreply .empty-component");
-    const inquiryEmpty = document.querySelector("#myinquiry .empty-component");
 
-    if (currentPage === 1) {
+    if (items.length === 0) {
+        // 데이터가 없으면 버튼 비활성화
         prevButton.disabled = true;
-    } else {
-        prevButton.disabled = false;
-    }
-
-    if (currentPage === totalPages) {
         nextButton.disabled = true;
     } else {
-        nextButton.disabled = false;
+        prevButton.disabled = currentPage === 1;
+
+        nextButton.disabled = currentPage === totalPages;
     }
-
-    if(borderEmpty.length === 0){}
-
-
 };
 
 const renderInquiries = (filter) => {
