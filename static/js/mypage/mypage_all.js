@@ -17,28 +17,35 @@ const showTab = (tabId, element) => {
     // 현재 클릭된 요소의 부모 li에 active 클래스 추가
     element.parentElement.classList.add("active");
 };
-
+// DOMContentLoaded?
 document.addEventListener("DOMContentLoaded", () => {
     // 데이터 편집 가능 요소 설정
-    const editableElements = document.querySelectorAll("[data-editable]");
+    const editableElements = document.querySelectorAll(".data-editable");
+
     editableElements.forEach((element) => {
+        // 각 요소에 대해 반복적으로 처리하는 코드 블록을 정의
         element.addEventListener("click", () => {
             const currentText = element.innerText;
             const input = document.createElement("input");
             input.type = "text";
+            // 생성된 입력 필드의 유형을 text로 설정
+
             input.value =
                 currentText.trim() === "정보를 입력해주세요."
                     ? ""
                     : currentText.trim();
+            // 만약 현재 텍스트가 "정보를 입력해주세요."인 경우, 입력 필드를 비워두고
+            // 그렇지 않으면, 기존 텍스트를 입력 필드에 표시
+            // `trim()` 메서드는 텍스트의 앞뒤 공백 제거
             element.innerHTML = "";
             element.appendChild(input);
             input.focus();
-
             input.addEventListener("blur", () => {
                 const newText =
                     input.value.trim() === ""
                         ? "정보를 입력해주세요."
                         : input.value.trim();
+                // 만약 입력 필드가 비어 있다면, 기본 메시지("정보를 입력해주세요.")를 사용
                 element.innerText = newText;
             });
 
@@ -52,8 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 모달 처리
     const modal = document.getElementById("profileModal");
-    const btn = document.querySelector(".user-img-box img");
-    const span = document.getElementsByClassName("close")[0];
+    const btn = document.querySelector(".user-img-box .user-img-edit-icon");
+    const span = document.getElementsByClassName("close");
     const resetBtn = document.getElementById("resetBtn");
     const defaultImage =
         "https://www.wishket.com/static/img/default_avatar_c.png";
@@ -75,31 +82,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // 모달에서 이미지 변경
-    document
-        .getElementById("uploadForm")
-        .addEventListener("submit", (event) => {
-            event.preventDefault();
+    // 파일 선택 시 바로 이미지 변경
+    document.getElementById("fileInput").addEventListener("change", (event) => {
+        const file = event.target.files[0];
 
-            // 파일 입력 요소
-            const fileInput = document.getElementById("fileInput");
-            const file = fileInput.files[0];
+        if (file) {
+            const reader = new FileReader();
 
-            if (file) {
-                const reader = new FileReader();
+            reader.onload = (e) => {
+                const newImageSrc = e.target.result;
+                document.querySelector(".img-circle.user-img").src =
+                    newImageSrc;
+                document.querySelector(".user-img-header").src = newImageSrc;
+            };
 
-                reader.onload = (e) => {
-                    // 업로드된 이미지를 user-img 및 user-img-header에 반영
-                    const newImageSrc = e.target.result;
-                    document.querySelector(".img-circle.user-img").src =
-                        newImageSrc;
-                    document.querySelector(".user-img-header").src =
-                        newImageSrc;
-                };
-
-                reader.readAsDataURL(file);
-            }
-        });
+            reader.readAsDataURL(file);
+        }
+    });
 
     // 기본 이미지로 변경 버튼 클릭 시
     resetBtn.addEventListener("click", () => {
@@ -253,7 +252,44 @@ document.addEventListener("DOMContentLoaded", () => {
             "고성군",
             "양양군",
         ],
-        chungcheong: [],
+        chungcheong: [
+            "청주시 상당구",
+            "청주시 서원구",
+            "청주시 흥덕구",
+            "청주시 청원구",
+            "충주시",
+            "제천시",
+            "보은군",
+            "옥천군",
+            "영동군",
+            "증평군",
+            "진천군",
+            "괴산군",
+            "음성군",
+            "단양군",
+            "천안시 동남구",
+            "천안시 서북구",
+            "공주시",
+            "보령시",
+            "아산시",
+            "서산시",
+            "논산시",
+            "계룡시",
+            "당진시",
+            "금산군",
+            "부여군",
+            "서천군",
+            "청양군",
+            "홍성군",
+            "예산군",
+            "태안군",
+            "대덕구",
+            "동구",
+            "서구",
+            "유성구",
+            "중구",
+            "세종특별자치시",
+        ],
         jeolla: [
             "전주시 완산구",
             "전주시 덕진구",
@@ -392,7 +428,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const option = document.createElement("option");
             option.value = sigungu;
             option.textContent = sigungu;
-            sigunguSelect.appendChild(option);
+            sigunguSelect.append(option);
         });
     });
 
@@ -429,100 +465,206 @@ document.addEventListener("DOMContentLoaded", () => {
         .addEventListener("click", () => showTab("myinquiry", this));
 });
 
-// "등록 완료" 버튼 클릭 시 데이터 저장
-const saveMypage = document.getElementsByClassName("btn-save");
-Array.from(saveMypage).forEach((button) => {
-    button.addEventListener("click", (e) => {
-        alert("정보가 저장되었습니다.");
-    });
-});
+// // "등록 완료" 버튼 클릭 시 데이터 저장
+// const saveMypage = document.getElementsByClassName("btn-save");
+// Array.from(saveMypage).forEach((button) => {
+//     button.addEventListener("click", (e) => {
+//         alert("정보가 저장되었습니다.");
+//     });
+// });
+let currentPostPage = 1;
+let currentReplyPage = 1;
+let currentInquiryPage = 1;
+const itemsPerPage = 3;
 
-document.addEventListener("DOMContentLoaded", () => {
-    let inquiries = [
-        { id: 1, title: "문의 1", status: "answered" }, // 답변 완료된 문의
-        // { id: 2, title: "문의 2", status: "pending" },
-        // { id: 3, title: "문의 3", status: "answered" },
-        // 데이터 받아오기
-    ];
+// 페이징을 위한 함수
+const paginate = (items, page) => {
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    return items.slice(start, end);
+};
 
-    const renderInquiries = (filter) => {
-        // 문의 목록이 표시될 영역과 빈 상태 컴포넌트를 가져옴
-        const inquiryList = document.getElementById("inquiry-list");
-        const emptyComponent = document.querySelector(
-            ".empty-component-inquiry"
-        );
+// 데이터 예시
+// empty-component 확인해야할 시 데이터 주석처리 해주시면 됩니다!
+let inquiries = [
+    { id: 1, title: "문의 1", status: "answered" },
+    { id: 2, title: "문의 2", status: "pending" },
+    { id: 3, title: "문의 3", status: "answered" },
+    { id: 4, title: "문의 4", status: "pending" },
+    { id: 5, title: "문의 5", status: "answered" },
+    { id: 6, title: "문의 6", status: "answered" },
+];
 
-        // 현재 선택된 상태(필터)에 따라 문의 데이터를 필터링
-        const filteredInquiries = inquiries.filter(
-            (inquiry) => inquiry.status === filter
-        );
+let posts = [
+    // { id: 1, title: "게시글 1", summary: "게시글 내용 요약 1" },
+    // { id: 2, title: "게시글 2", summary: "게시글 내용 요약 2" },
+    // { id: 3, title: "게시글 3", summary: "게시글 내용 요약 3" },
+    // { id: 4, title: "게시글 4", summary: "게시글 내용 요약 4" },
+    // { id: 5, title: "게시글 5", summary: "게시글 내용 요약 5" },
+];
 
-        // 필터링된 문의가 없을 경우
-        if (filteredInquiries.length === 0) {
-            // 문의 목록을 숨기고 빈 상태 컴포넌트를 표시
-            inquiryList.style.display = "none";
-            emptyComponent.style.display = "block";
-        } else {
-            inquiryList.style.display = "block";
-            emptyComponent.style.display = "none";
-            inquiryList.innerHTML = ""; // 문의 목록 영역을 초기화
+let replies = [
+    { id: 1, postTitle: "댓글이 달린 게시글 1", summary: "댓글 내용 1" },
+    { id: 2, postTitle: "댓글이 달린 게시글 2", summary: "댓글 내용 2" },
+    { id: 3, postTitle: "댓글이 달린 게시글 3", summary: "댓글 내용 3" },
+    { id: 4, postTitle: "댓글이 달린 게시글 4", summary: "댓글 내용 4" },
+    { id: 5, postTitle: "댓글이 달린 게시글 5", summary: "댓글 내용 5" },
+];
 
-            // 필터링된 각 문의를 화면에 추가
-            filteredInquiries.forEach((inquiry) => {
-                // 새로운 문의 항목을 생성
-                const inquiryItem = document.createElement("div");
-                inquiryItem.className = "inquiry-item";
-                // 문의 제목과 상태(답변 완료 또는 대기 중)를 HTML로 설정
-                inquiryItem.innerHTML = `
-                    <h4>${inquiry.title}</h4>
-                    <p>Status: ${
-                        inquiry.status === "answered"
-                            ? "답변 완료"
-                            : "답변 대기 중"
-                    }</p>
-                `;
-                // 문의 항목을 문의 목록 영역에 추가
-                inquiryList.appendChild(inquiryItem);
-            });
-        }
+// 페이징 버튼 상태 업데이트
+const updatePaginationButton = (items, currentPage, type) => {
+    const totalPages = Math.ceil(items.length / itemsPerPage);
+    const prevButton = document.querySelector(`.${type}-prev`);
+    const nextButton = document.querySelector(`.${type}-next`);
 
-        // 답변 완료된 문의의 개수를 세고 해당 숫자를 UI에 업데이트
-        document.getElementById("answered-count").innerText = inquiries.filter(
-            (i) => i.status === "answered"
-        ).length;
-        // 답변 대기 중인 문의의 개수를 세고 해당 숫자를 UI에 업데이트
-        document.getElementById("pending-count").innerText = inquiries.filter(
-            (i) => i.status === "pending"
-        ).length;
-    };
+    if (items.length === 0) {
+        // 데이터가 없으면 버튼 비활성화
+        prevButton.disabled = true;
+        nextButton.disabled = true;
+    } else {
+        prevButton.disabled = currentPage === 1;
 
-    // 상태에 따라 문의 목록을 필터링하는 함수
-    window.filterInquiries = (status) => {
-        // 모든 탭에서 'active' 클래스를 제거하여 비활성화
-        document
-            .querySelectorAll(".tab-link")
-            .forEach((tab) => tab.classList.remove("active"));
+        nextButton.disabled = currentPage === totalPages;
+    }
+};
 
-        // 현재 선택된 탭에 'active' 클래스를 추가하여 활성화
-        if (status === "answered") {
-            // CSS 선택자 사용
-            document
-                .querySelector(
-                    ".tab-link[onclick=\"filterInquiries('answered')\"]"
-                )
-                .classList.add("active");
-        } else {
-            document
-                .querySelector(
-                    ".tab-link[onclick=\"filterInquiries('pending')\"]"
-                )
-                .classList.add("active");
-        }
+const renderInquiries = (filter) => {
+    const inquiryList = document.getElementById("inquiry-list");
+    const emptyComponent = document.querySelector(".empty-component-inquiry");
 
-        // 선택된 상태에 따라 문의 목록
-        renderInquiries(status);
-    };
+    const filteredInquiries = inquiries.filter(
+        (inquiry) => inquiry.status === filter
+    );
 
-    // 페이지가 로드될 때 기본으로 '답변 완료' 상태의 문의를 표시
-    renderInquiries("answered");
-});
+    const paginatedInquiries = paginate(filteredInquiries, currentInquiryPage);
+
+    if (paginatedInquiries.length === 0) {
+        inquiryList.style.display = "none";
+        emptyComponent.style.display = "block";
+    } else {
+        inquiryList.style.display = "block";
+        emptyComponent.style.display = "none";
+        inquiryList.innerHTML = "";
+
+        paginatedInquiries.forEach((inquiry) => {
+            const inquiryItem = document.createElement("div");
+            inquiryItem.className = "inquiry-item";
+            inquiryItem.innerHTML = `
+                <h4>${inquiry.title}</h4>
+                <p>상태: ${
+                    inquiry.status === "answered" ? "답변 완료" : "답변 대기 중"
+                }</p>`;
+            inquiryList.appendChild(inquiryItem);
+        });
+        document.getElementById("currentInquiryPage").innerText =
+            currentInquiryPage;
+    }
+
+    document.getElementById("answered-count").innerText = inquiries.filter(
+        (i) => i.status === "answered"
+    ).length;
+
+    document.getElementById("pending-count").innerText = inquiries.filter(
+        (i) => i.status === "pending"
+    ).length;
+
+    updatePaginationButton(filteredInquiries, currentInquiryPage, "inquiry");
+};
+
+const filterInquiries = (status) => {
+    document
+        .querySelectorAll(".tab-link")
+        .forEach((tab) => tab.classList.remove("active"));
+
+    document
+        .querySelector(`.tab-link[onclick="filterInquiries('${status}')"]`)
+        .classList.add("active");
+
+    currentInquiryPage = 1; // 페이징 초기화
+    renderInquiries(status);
+};
+
+let renderPosts = () => {
+    const postList = document.querySelector(".post-list");
+    const emptyComponent = document.querySelector("#myboard .empty-component");
+
+    const paginatedPosts = paginate(posts, currentPostPage);
+
+    if (paginatedPosts.length === 0) {
+        postList.style.display = "none";
+        emptyComponent.style.display = "block";
+    } else {
+        postList.style.display = "block";
+        emptyComponent.style.display = "none";
+        postList.innerHTML = "";
+
+        paginatedPosts.forEach((post) => {
+            const postItem = document.createElement("div");
+            postItem.className = "post-item";
+            postItem.innerHTML = `<h4>${post.title}</h4><p>${post.summary}</p>`;
+            postList.append(postItem);
+        });
+        document.getElementById("currentPostPage").innerText = currentPostPage;
+    }
+
+    updatePaginationButton(posts, currentPostPage, "post");
+};
+
+const renderReplies = () => {
+    const replyList = document.querySelector(".reply-list");
+    const emptyComponent = document.querySelector("#myreply .empty-component");
+
+    const paginatedReplies = paginate(replies, currentReplyPage);
+
+    if (paginatedReplies.length === 0) {
+        replyList.style.display = "none";
+        emptyComponent.style.display = "block";
+    } else {
+        replyList.style.display = "block";
+        emptyComponent.style.display = "none";
+        replyList.innerHTML = "";
+
+        paginatedReplies.forEach((reply) => {
+            const replyItem = document.createElement("div");
+            replyItem.className = "reply-item";
+            replyItem.innerHTML = `<h4>${reply.postTitle}</h4><p>${reply.summary}</p>`;
+            replyList.append(replyItem);
+        });
+        document.getElementById("currentReplyPage").innerText =
+            currentReplyPage;
+    }
+    updatePaginationButton(replies, currentReplyPage, "reply");
+};
+
+const goToNextPage = (type) => {
+    if (type === "post") {
+        currentPostPage++;
+        renderPosts();
+    } else if (type === "reply") {
+        currentReplyPage++;
+        renderReplies();
+    } else if (type === "inquiry") {
+        currentInquiryPage++;
+        // 필터 상태에 맞게 호출
+        renderInquiries("answered");
+    }
+};
+
+const goToPrevPage = (type) => {
+    if (type === "post") {
+        currentPostPage--;
+        renderPosts();
+    } else if (type === "reply") {
+        currentReplyPage--;
+        renderReplies();
+    } else if (type === "inquiry") {
+        currentInquiryPage--;
+        // 필터 상태에 맞게 호출
+        renderInquiries("answered");
+    }
+};
+
+//호출
+renderPosts();
+renderReplies();
+renderInquiries("answered");
