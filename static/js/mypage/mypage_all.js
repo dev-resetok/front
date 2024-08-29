@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 모달 처리
     const modal = document.getElementById("profileModal");
-    const btn = document.querySelector(".user-img-box img");
-    const span = document.getElementsByClassName("close")[0];
+    const btn = document.querySelector(".user-img-box .user-img-edit-icon");
+    const span = document.getElementsByClassName("close");
     const resetBtn = document.getElementById("resetBtn");
     const defaultImage =
         "https://www.wishket.com/static/img/default_avatar_c.png";
@@ -496,11 +496,11 @@ let inquiries = [
 ];
 
 let posts = [
-    { id: 1, title: "게시글 1", summary: "게시글 내용 요약 1" },
-    { id: 2, title: "게시글 2", summary: "게시글 내용 요약 2" },
-    { id: 3, title: "게시글 3", summary: "게시글 내용 요약 3" },
-    { id: 4, title: "게시글 4", summary: "게시글 내용 요약 4" },
-    { id: 5, title: "게시글 5", summary: "게시글 내용 요약 5" },
+    // { id: 1, title: "게시글 1", summary: "게시글 내용 요약 1" },
+    // { id: 2, title: "게시글 2", summary: "게시글 내용 요약 2" },
+    // { id: 3, title: "게시글 3", summary: "게시글 내용 요약 3" },
+    // { id: 4, title: "게시글 4", summary: "게시글 내용 요약 4" },
+    // { id: 5, title: "게시글 5", summary: "게시글 내용 요약 5" },
 ];
 
 let replies = [
@@ -512,10 +512,13 @@ let replies = [
 ];
 
 // 페이징 버튼 상태 업데이트
-const updatePaginationButton = (items, currentPage, type) => {
+let updatePaginationButton = (items, currentPage, type) => {
     const totalPages = Math.ceil(items.length / itemsPerPage);
-    const prevButton = document.querySelector(`.${type}-prev`);
+    let prevButton = document.querySelector(`.${type}-prev`);
     const nextButton = document.querySelector(`.${type}-next`);
+    const borderEmpty = document.querySelector("#myboard .empty-component");
+    const replyEmpty = document.querySelector("#myreply .empty-component");
+    const inquiryEmpty = document.querySelector("#myinquiry .empty-component");
 
     if (currentPage === 1) {
         prevButton.disabled = true;
@@ -528,6 +531,10 @@ const updatePaginationButton = (items, currentPage, type) => {
     } else {
         nextButton.disabled = false;
     }
+
+    if(borderEmpty.length === 0){}
+
+
 };
 
 const renderInquiries = (filter) => {
@@ -586,7 +593,7 @@ const filterInquiries = (status) => {
     renderInquiries(status);
 };
 
-const renderPosts = () => {
+let renderPosts = () => {
     const postList = document.querySelector(".post-list");
     const emptyComponent = document.querySelector("#myboard .empty-component");
 
