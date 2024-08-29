@@ -559,7 +559,7 @@ const renderInquiries = (filter) => {
             inquiryList.appendChild(inquiryItem);
         });
         document.getElementById("currentInquiryPage").innerText =
-        currentInquiryPage;
+            currentInquiryPage;
     }
 
     document.getElementById("answered-count").innerText = inquiries.filter(

@@ -689,8 +689,11 @@ label.btn-upload:hover {
     cursor: not-allowed;
 }
 
-.pagination button:hover:not(:disabled) {
-    background-color: #365e8b;
+.pagination button:hover:disabled {
+    background-color: #ccc;
 }
 .page-number {
+    margin: auto 0px;
+    text-decoration: underline;
+    text-align: center;
 }
