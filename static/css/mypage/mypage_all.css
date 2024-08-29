@@ -466,27 +466,43 @@ label.btn-upload:hover {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    text-align: center;
 }
 
-.pagination button {
-    padding: 10px 20px;
-    background-color: #446eab;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.project-search .pagination {
+    display: block;
+    text-align: center;
+    line-height: 80px;
+}
+ul {
+    list-style: none;
+}
+.project-search .pagination li {
+    display: inline-block;
     cursor: pointer;
 }
-
-.pagination button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+.pagination.theme-wishket li:first-child {
+    margin-left: 0;
+}
+.pagination.theme-wishket li {
+    height: 100%;
+    margin-left: 4px;
+}
+ul li {
+    padding: 0;
+    margin: 0;
 }
 
-.pagination button:hover:disabled {
-    background-color: #ccc;
+.pagination.theme-wishket .page-link {
+    color: #333;
 }
-.page-number {
-    margin: auto 0px;
+.pagination.theme-wishket .page-link:hover {
+    color: #3ba3c7;
+    border: 1px solid;
+    border-color: #bdbdbd;
+    border-radius: 2px;
     text-decoration: underline;
-    text-align: center;
+}
+.project-search .container .pagination li a {
+    cursor: pointer;
 }

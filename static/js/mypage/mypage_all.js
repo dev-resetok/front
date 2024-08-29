@@ -18,7 +18,7 @@ const showTab = (tabId, element) => {
     element.parentElement.classList.add("active");
 };
 // DOMContentLoaded?
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("click", () => {
     // 데이터 편집 가능 요소 설정
     const editableElements = document.querySelectorAll(".data-editable");
 
@@ -432,21 +432,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 사용자 타입에 따른 학과 필드 표시 설정
-    const roleSelect = document.getElementById("role");
-    const departmentContainer = document.getElementById("department-container");
-    departmentContainer.style.display = "none";
-    roleSelect.addEventListener("change", () => {
-        if (
-            roleSelect.value === "student" ||
-            roleSelect.value === "professor"
-        ) {
-            departmentContainer.style.display = "table-row";
-        } else {
-            departmentContainer.style.display = "none";
-        }
-    });
-
     //  클릭 이벤트 추가 div 보여주기
     document
         .getElementById("mypage-link")
@@ -472,21 +457,21 @@ document.addEventListener("DOMContentLoaded", () => {
 //         alert("정보가 저장되었습니다.");
 //     });
 // });
+
+// //호출
+// renderPosts();
+// renderReplies();
+// renderInquiries("answered");
+// 한 페이지에 표시할 항목 수
+const itemsPerPage = 3;
+
+// 현재 페이지 상태
 let currentPostPage = 1;
 let currentReplyPage = 1;
 let currentInquiryPage = 1;
-const itemsPerPage = 3;
-
-// 페이징을 위한 함수
-const paginate = (items, page) => {
-    const start = (page - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    return items.slice(start, end);
-};
 
 // 데이터 예시
-// empty-component 확인해야할 시 데이터 주석처리 해주시면 됩니다!
-let inquiries = [
+const inquiries = [
     { id: 1, title: "문의 1", status: "answered" },
     { id: 2, title: "문의 2", status: "pending" },
     { id: 3, title: "문의 3", status: "answered" },
@@ -495,96 +480,109 @@ let inquiries = [
     { id: 6, title: "문의 6", status: "answered" },
 ];
 
-let posts = [
-    // { id: 1, title: "게시글 1", summary: "게시글 내용 요약 1" },
-    // { id: 2, title: "게시글 2", summary: "게시글 내용 요약 2" },
-    // { id: 3, title: "게시글 3", summary: "게시글 내용 요약 3" },
-    // { id: 4, title: "게시글 4", summary: "게시글 내용 요약 4" },
-    // { id: 5, title: "게시글 5", summary: "게시글 내용 요약 5" },
+const posts = [
+    { id: 1, title: "게시글 1", summary: "게시글 내용 요약 1" },
+    { id: 2, title: "게시글 2", summary: "게시글 내용 요약 2" },
+    { id: 3, title: "게시글 3", summary: "게시글 내용 요약 3" },
+    { id: 4, title: "게시글 4", summary: "게시글 내용 요약 4" },
+    { id: 5, title: "게시글 5", summary: "게시글 내용 요약 5" },
 ];
 
-let replies = [
+const replies = [
     { id: 1, postTitle: "댓글이 달린 게시글 1", summary: "댓글 내용 1" },
     { id: 2, postTitle: "댓글이 달린 게시글 2", summary: "댓글 내용 2" },
     { id: 3, postTitle: "댓글이 달린 게시글 3", summary: "댓글 내용 3" },
     { id: 4, postTitle: "댓글이 달린 게시글 4", summary: "댓글 내용 4" },
     { id: 5, postTitle: "댓글이 달린 게시글 5", summary: "댓글 내용 5" },
+    { id: 6, postTitle: "댓글이 달린 게시글 6", summary: "댓글 내용 6" },
+    { id: 7, postTitle: "댓글이 달린 게시글 7", summary: "댓글 내용 7" },
 ];
 
-// 페이징 버튼 상태 업데이트
-const updatePaginationButton = (items, currentPage, type) => {
-    const totalPages = Math.ceil(items.length / itemsPerPage);
-    const prevButton = document.querySelector(`.${type}-prev`);
-    const nextButton = document.querySelector(`.${type}-next`);
-
-    if (items.length === 0) {
-        // 데이터가 없으면 버튼 비활성화
-        prevButton.disabled = true;
-        nextButton.disabled = true;
-    } else {
-        prevButton.disabled = currentPage === 1;
-
-        nextButton.disabled = currentPage === totalPages;
-    }
+// 페이지네이션을 위한 함수
+const paginate = (items, page) => {
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    return items.slice(start, end);
 };
 
-const renderInquiries = (filter) => {
-    const inquiryList = document.getElementById("inquiry-list");
-    const emptyComponent = document.querySelector(".empty-component-inquiry");
+// 페이지네이션 버튼 상태 업데이트
+const updatePaginationButton = (items, currentPage, paginationId) => {
+    const totalPages = Math.ceil(items.length / itemsPerPage);
+    const paginationList = document.querySelector(
+        `#${paginationId} .pagination`
+    );
+    paginationList.innerHTML = "";
 
-    const filteredInquiries = inquiries.filter(
-        (inquiry) => inquiry.status === filter
+    // '이전' 버튼
+    paginationList.innerHTML += `
+        <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
+            <a class="page-link" href="#" ${
+                currentPage === 1 ? "aria-disabled='true'" : ""
+            }>이전</a>
+        </li>
+    `;
+
+    // 페이지 번호
+    for (let i = 1; i <= totalPages; i++) {
+        paginationList.innerHTML += `
+            <li class="page-item ${currentPage === i ? "active" : ""}">
+                <a class="page-link" href="#">${i}</a>
+            </li>
+        `;
+    }
+
+    // '다음' 버튼
+    paginationList.innerHTML += `
+        <li class="page-item ${currentPage === totalPages ? "disabled" : ""}">
+            <a class="page-link" href="#" ${
+                currentPage === totalPages ? "aria-disabled='true'" : ""
+            }>다음</a>
+        </li>
+    `;
+
+    // 버튼 클릭 이벤트 추가
+    addPaginationEventListeners(paginationId);
+};
+
+// 페이지 버튼 클릭 이벤트 추가
+const addPaginationEventListeners = (paginationId) => {
+    const paginationList = document.querySelector(
+        `#${paginationId} .pagination`
     );
 
-    const paginatedInquiries = paginate(filteredInquiries, currentInquiryPage);
+    paginationList.querySelectorAll(".page-item a").forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const text = link.textContent.trim();
+            let pageNumber = parseInt(text, 10); // 문자열을 정수로 변환
 
-    if (paginatedInquiries.length === 0) {
-        inquiryList.style.display = "none";
-        emptyComponent.style.display = "block";
-    } else {
-        inquiryList.style.display = "block";
-        emptyComponent.style.display = "none";
-        inquiryList.innerHTML = "";
+            // 페이지 번호 결정
+            if (text === "다음") {
+                pageNumber =
+                    (paginationId === "myboard"
+                        ? currentPostPage
+                        : paginationId === "myreply"
+                        ? currentReplyPage
+                        : currentInquiryPage) + 1;
+            } else if (text === "이전") {
+                pageNumber =
+                    (paginationId === "myboard"
+                        ? currentPostPage
+                        : paginationId === "myreply"
+                        ? currentReplyPage
+                        : currentInquiryPage) - 1;
+            }
 
-        paginatedInquiries.forEach((inquiry) => {
-            const inquiryItem = document.createElement("div");
-            inquiryItem.className = "inquiry-item";
-            inquiryItem.innerHTML = `
-                <h4>${inquiry.title}</h4>
-                <p>상태: ${
-                    inquiry.status === "answered" ? "답변 완료" : "답변 대기 중"
-                }</p>`;
-            inquiryList.appendChild(inquiryItem);
+            // 페이지 번호가 정수인지 확인하고 유효한 범위인지 체크
+            if (Number.isInteger(pageNumber) && pageNumber > 0) {
+                goToPage(pageNumber, paginationId);
+            }
         });
-        document.getElementById("currentInquiryPage").innerText =
-            currentInquiryPage;
-    }
-
-    document.getElementById("answered-count").innerText = inquiries.filter(
-        (i) => i.status === "answered"
-    ).length;
-
-    document.getElementById("pending-count").innerText = inquiries.filter(
-        (i) => i.status === "pending"
-    ).length;
-
-    updatePaginationButton(filteredInquiries, currentInquiryPage, "inquiry");
+    });
 };
 
-const filterInquiries = (status) => {
-    document
-        .querySelectorAll(".tab-link")
-        .forEach((tab) => tab.classList.remove("active"));
-
-    document
-        .querySelector(`.tab-link[onclick="filterInquiries('${status}')"]`)
-        .classList.add("active");
-
-    currentInquiryPage = 1; // 페이징 초기화
-    renderInquiries(status);
-};
-
-let renderPosts = () => {
+// 게시글 렌더링
+const renderPosts = () => {
     const postList = document.querySelector(".post-list");
     const emptyComponent = document.querySelector("#myboard .empty-component");
 
@@ -597,19 +595,18 @@ let renderPosts = () => {
         postList.style.display = "block";
         emptyComponent.style.display = "none";
         postList.innerHTML = "";
-
         paginatedPosts.forEach((post) => {
             const postItem = document.createElement("div");
             postItem.className = "post-item";
             postItem.innerHTML = `<h4>${post.title}</h4><p>${post.summary}</p>`;
-            postList.append(postItem);
+            postList.appendChild(postItem);
         });
-        document.getElementById("currentPostPage").innerText = currentPostPage;
     }
 
-    updatePaginationButton(posts, currentPostPage, "post");
+    updatePaginationButton(posts, currentPostPage, "myboard");
 };
 
+// 댓글 렌더링
 const renderReplies = () => {
     const replyList = document.querySelector(".reply-list");
     const emptyComponent = document.querySelector("#myreply .empty-component");
@@ -623,48 +620,103 @@ const renderReplies = () => {
         replyList.style.display = "block";
         emptyComponent.style.display = "none";
         replyList.innerHTML = "";
-
         paginatedReplies.forEach((reply) => {
             const replyItem = document.createElement("div");
             replyItem.className = "reply-item";
             replyItem.innerHTML = `<h4>${reply.postTitle}</h4><p>${reply.summary}</p>`;
-            replyList.append(replyItem);
+            replyList.appendChild(replyItem);
         });
-        document.getElementById("currentReplyPage").innerText =
-            currentReplyPage;
     }
-    updatePaginationButton(replies, currentReplyPage, "reply");
+
+    updatePaginationButton(replies, currentReplyPage, "myreply");
 };
 
-const goToNextPage = (type) => {
-    if (type === "post") {
-        currentPostPage++;
+// 문의 렌더링
+const renderInquiries = (filter) => {
+    const inquiryList = document.querySelector("#inquiry-list");
+    const emptyComponent = document.querySelector(
+        "#myinquiry .empty-component-inquiry"
+    );
+
+    const filteredInquiries = inquiries.filter(
+        (inquiry) => inquiry.status === filter
+    );
+    const paginatedInquiries = paginate(filteredInquiries, currentInquiryPage);
+
+    if (paginatedInquiries.length === 0) {
+        inquiryList.style.display = "none";
+        emptyComponent.style.display = "block";
+    } else {
+        inquiryList.style.display = "block";
+        emptyComponent.style.display = "none";
+        inquiryList.innerHTML = "";
+        paginatedInquiries.forEach((inquiry) => {
+            const inquiryItem = document.createElement("div");
+            inquiryItem.className = "inquiry-item";
+            inquiryItem.innerHTML = `
+                <h4>${inquiry.title}</h4>
+                <p>상태: ${
+                    inquiry.status === "answered" ? "답변 완료" : "답변 대기 중"
+                }</p>
+            `;
+            inquiryList.appendChild(inquiryItem);
+        });
+    }
+
+    updatePaginationButton(filteredInquiries, currentInquiryPage, "myinquiry");
+};
+
+// 페이지 이동 함수
+const goToPage = (pageNumber, paginationId) => {
+    const totalPages = Math.ceil(
+        (paginationId === "myboard"
+            ? posts.length
+            : paginationId === "myreply"
+            ? replies.length
+            : inquiries.filter(
+                  (inquiry) =>
+                      inquiry.status ===
+                      document
+                          .querySelector("#myinquiry .tab-link.active")
+                          .getAttribute("data-filter")
+              ).length) / itemsPerPage
+    );
+    if (pageNumber < 1 || pageNumber > totalPages) return;
+
+    if (paginationId === "myboard") {
+        currentPostPage = pageNumber;
         renderPosts();
-    } else if (type === "reply") {
-        currentReplyPage++;
+    } else if (paginationId === "myreply") {
+        currentReplyPage = pageNumber;
         renderReplies();
-    } else if (type === "inquiry") {
-        currentInquiryPage++;
-        // 필터 상태에 맞게 호출
-        renderInquiries("answered");
+    } else if (paginationId === "myinquiry") {
+        currentInquiryPage = pageNumber;
+        renderInquiries(
+            document
+                .querySelector("#myinquiry .tab-link.active")
+                .getAttribute("data-filter")
+        );
     }
 };
 
-const goToPrevPage = (type) => {
-    if (type === "post") {
-        currentPostPage--;
-        renderPosts();
-    } else if (type === "reply") {
-        currentReplyPage--;
-        renderReplies();
-    } else if (type === "inquiry") {
-        currentInquiryPage--;
-        // 필터 상태에 맞게 호출
-        renderInquiries("answered");
+// 탭 필터링 함수
+const filterInquiries = (status) => {
+    document.querySelectorAll("#myinquiry .tab-link").forEach((tab) => {
+        tab.classList.remove("active"); // active 클래스 제거
+    });
+
+    const activeTab = [
+        ...document.querySelectorAll("#myinquiry .tab-link"),
+    ].find((tab) => tab.getAttribute("data-filter") === status);
+
+    if (activeTab) {
+        activeTab.classList.add("active"); // 선택된 탭에 active 클래스 추가
     }
+
+    renderInquiries(status);
 };
 
-//호출
+// 초기 렌더링
 renderPosts();
 renderReplies();
-renderInquiries("answered");
+filterInquiries("answered"); // 초기 필터는 '답변 완료'

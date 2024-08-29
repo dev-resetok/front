@@ -276,22 +276,94 @@
                                     >이 없습니다.
                                 </p>
                             </div>
-                            <div class="pagination">
-                                <button
-                                    class="post-prev"
-                                    onclick="goToPrevPage('post')"
-                                >
-                                    이전 페이지
-                                </button>
-                                <span id="currentPostPage" class="page-number"
-                                    >1</span
-                                >
-                                <button
-                                    class="post-next"
-                                    onclick="goToNextPage('post')"
-                                >
-                                    다음 페이지
-                                </button>
+                            <div class="pagination-container">
+                                <ul class="pagination theme-wishket">
+                                    <li class="page-item disabled"></li>
+
+                                    <li class="page-item">
+                                        <a class="page-link active">1</a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 2); search_project();"
+                                            >2</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 3); search_project();"
+                                            >3</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 4); search_project();"
+                                            >4</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 5); search_project();"
+                                            >5</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 6); search_project();"
+                                            >6</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 7); search_project();"
+                                            >7</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 8); search_project();"
+                                            >8</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 9); search_project();"
+                                            >9</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 10); search_project();"
+                                            >10</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 2); search_project();"
+                                            >다음</a
+                                        >
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -323,22 +395,94 @@
                                     >이 없습니다.
                                 </p>
                             </div>
-                            <div class="pagination">
-                                <button
-                                    class="reply-prev"
-                                    onclick="goToPrevPage('reply')"
-                                >
-                                    이전 페이지
-                                </button>
-                                <span id="currentReplyPage" class="page-number"
-                                    >1</span
-                                >
-                                <button
-                                    class="reply-next"
-                                    onclick="goToNextPage('reply')"
-                                >
-                                    다음 페이지
-                                </button>
+                            <div class="pagination-container">
+                                <ul class="pagination theme-wishket">
+                                    <li class="page-item disabled"></li>
+
+                                    <li class="page-item">
+                                        <a class="page-link active">1</a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 2); search_project();"
+                                            >2</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 3); search_project();"
+                                            >3</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 4); search_project();"
+                                            >4</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 5); search_project();"
+                                            >5</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 6); search_project();"
+                                            >6</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 7); search_project();"
+                                            >7</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 8); search_project();"
+                                            >8</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 9); search_project();"
+                                            >9</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 10); search_project();"
+                                            >10</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 2); search_project();"
+                                            >다음</a
+                                        >
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -376,24 +520,94 @@
 
                             <!-- 문의 목록 -->
                             <div id="inquiry-list"></div>
-                            <div class="pagination">
-                                <button
-                                    class="inquiry-prev"
-                                    onclick="goToPrevPage('inquiry')"
-                                >
-                                    이전 페이지
-                                </button>
-                                <span
-                                    id="currentInquiryPage"
-                                    class="page-number"
-                                    >1</span
-                                >
-                                <button
-                                    class="inquiry-next"
-                                    onclick="goToNextPage('inquiry')"
-                                >
-                                    다음 페이지
-                                </button>
+                            <div class="pagination-container">
+                                <ul class="pagination theme-wishket">
+                                    <li class="page-item disabled"></li>
+
+                                    <li class="page-item">
+                                        <a class="page-link active">1</a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 2); search_project();"
+                                            >2</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 3); search_project();"
+                                            >3</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 4); search_project();"
+                                            >4</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 5); search_project();"
+                                            >5</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 6); search_project();"
+                                            >6</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 7); search_project();"
+                                            >7</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 8); search_project();"
+                                            >8</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 9); search_project();"
+                                            >9</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 10); search_project();"
+                                            >10</a
+                                        >
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a
+                                            class="page-link"
+                                            onclick="replaceFilter('page', 2); search_project();"
+                                            >다음</a
+                                        >
+                                    </li>
+                                </ul>
                             </div>
 
                             <!-- 문의가 없을 때 표시되는 빈 상태 컴포넌트 -->
