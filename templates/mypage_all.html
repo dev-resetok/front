@@ -381,7 +381,7 @@
                             </h3>
                         </div>
                         <div class="content-inner">
-                            <!-- 게시글이 없을 때 -->
+                            <div class="post-list"></div>
                             <div class="empty-component">
                                 <img
                                     class="img-border"
@@ -397,10 +397,19 @@
                                     >이 없습니다.
                                 </p>
                             </div>
-
-                            <!-- 게시글이 있을 때 -->
-                            <div class="post-list">
-                                <!-- 추가 게시글 항목들 받아올 것 -->
+                            <div class="pagination">
+                                <button
+                                    class="post-prev"
+                                    onclick="goToPrevPage('post')"
+                                >
+                                    이전 페이지
+                                </button>
+                                <button
+                                    class="post-next"
+                                    onclick="goToNextPage('post')"
+                                >
+                                    다음 페이지
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -416,7 +425,7 @@
                             </h3>
                         </div>
                         <div class="content-inner">
-                            <!-- 댓글이 없을 때 -->
+                            <div class="reply-list"></div>
                             <div class="empty-component">
                                 <img
                                     class="img-reply"
@@ -432,10 +441,19 @@
                                     >이 없습니다.
                                 </p>
                             </div>
-
-                            <!-- 댓글이 있을 때 -->
-                            <div class="reply-list">
-                                <!-- 추가 댓글 항목들 -->
+                            <div class="pagination">
+                                <button
+                                    class="reply-prev"
+                                    onclick="goToPrevPage('reply')"
+                                >
+                                    이전 페이지
+                                </button>
+                                <button
+                                    class="reply-next"
+                                    onclick="goToNextPage('reply')"
+                                >
+                                    다음 페이지
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -470,10 +488,23 @@
                                     >)
                                 </button>
                             </div>
-                            <div></div>
 
                             <!-- 문의 목록 -->
                             <div id="inquiry-list"></div>
+                            <div class="pagination">
+                                <button
+                                    class="inquiry-prev"
+                                    onclick="goToPrevPage('inquiry')"
+                                >
+                                    이전 페이지
+                                </button>
+                                <button
+                                    class="inquiry-next"
+                                    onclick="goToNextPage('inquiry')"
+                                >
+                                    다음 페이지
+                                </button>
+                            </div>
 
                             <!-- 문의가 없을 때 표시되는 빈 상태 컴포넌트 -->
                             <div class="empty-component-inquiry">
