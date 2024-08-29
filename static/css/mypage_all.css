@@ -408,7 +408,6 @@ a {
     border: 1px solid #ccc;
     border-radius: 3px;
 }
-
 .btn-save-registration {
     display: inline-block;
     padding: 10px 20px;
@@ -420,6 +419,7 @@ a {
     cursor: pointer;
     margin-left: 570px;
 }
+
 .btn-save-info {
     display: inline-block;
     padding: 10px 20px;
@@ -431,7 +431,7 @@ a {
     cursor: pointer;
     margin-left: 600px;
 }
-
+.btn-write-inquiry:hover,
 .btn-save:hover {
     background-color: #365e8b;
 }
@@ -582,6 +582,12 @@ label.btn-upload:hover {
 
 .tab-content.active {
     height: fit-content;
+    display: block;
+}
+.form-part {
+    display: none;
+}
+.form-part.active {
     display: block;
 }
 
