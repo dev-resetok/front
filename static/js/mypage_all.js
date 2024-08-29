@@ -472,7 +472,6 @@ document.addEventListener("DOMContentLoaded", () => {
 //         alert("정보가 저장되었습니다.");
 //     });
 // });
-
 let currentPostPage = 1;
 let currentReplyPage = 1;
 let currentInquiryPage = 1;
@@ -493,6 +492,7 @@ let inquiries = [
     { id: 3, title: "문의 3", status: "answered" },
     { id: 4, title: "문의 4", status: "pending" },
     { id: 5, title: "문의 5", status: "answered" },
+    { id: 6, title: "문의 6", status: "answered" },
 ];
 
 let posts = [
@@ -512,7 +512,7 @@ let replies = [
 ];
 
 // 페이징 버튼 상태 업데이트
-const updatePaginationButtons = (items, currentPage, type) => {
+const updatePaginationButton = (items, currentPage, type) => {
     const totalPages = Math.ceil(items.length / itemsPerPage);
     const prevButton = document.querySelector(`.${type}-prev`);
     const nextButton = document.querySelector(`.${type}-next`);
@@ -558,6 +558,8 @@ const renderInquiries = (filter) => {
                 }</p>`;
             inquiryList.appendChild(inquiryItem);
         });
+        document.getElementById("currentInquiryPage").innerText =
+        currentInquiryPage;
     }
 
     document.getElementById("answered-count").innerText = inquiries.filter(
@@ -568,7 +570,7 @@ const renderInquiries = (filter) => {
         (i) => i.status === "pending"
     ).length;
 
-    updatePaginationButtons(filteredInquiries, currentInquiryPage, "inquiry");
+    updatePaginationButton(filteredInquiries, currentInquiryPage, "inquiry");
 };
 
 const filterInquiries = (status) => {
@@ -604,9 +606,10 @@ const renderPosts = () => {
             postItem.innerHTML = `<h4>${post.title}</h4><p>${post.summary}</p>`;
             postList.append(postItem);
         });
+        document.getElementById("currentPostPage").innerText = currentPostPage;
     }
 
-    updatePaginationButtons(posts, currentPostPage, "post");
+    updatePaginationButton(posts, currentPostPage, "post");
 };
 
 const renderReplies = () => {
@@ -629,9 +632,10 @@ const renderReplies = () => {
             replyItem.innerHTML = `<h4>${reply.postTitle}</h4><p>${reply.summary}</p>`;
             replyList.append(replyItem);
         });
+        document.getElementById("currentReplyPage").innerText =
+            currentReplyPage;
     }
-
-    updatePaginationButtons(replies, currentReplyPage, "reply");
+    updatePaginationButton(replies, currentReplyPage, "reply");
 };
 
 const goToNextPage = (type) => {
@@ -643,7 +647,8 @@ const goToNextPage = (type) => {
         renderReplies();
     } else if (type === "inquiry") {
         currentInquiryPage++;
-        renderInquiries("answered"); // 필터 상태에 맞게 호출
+        // 필터 상태에 맞게 호출
+        renderInquiries("answered");
     }
 };
 
@@ -656,7 +661,8 @@ const goToPrevPage = (type) => {
         renderReplies();
     } else if (type === "inquiry") {
         currentInquiryPage--;
-        renderInquiries("answered"); // 필터 상태에 맞게 호출
+        // 필터 상태에 맞게 호출
+        renderInquiries("answered");
     }
 };
 

@@ -692,3 +692,5 @@ label.btn-upload:hover {
 .pagination button:hover:not(:disabled) {
     background-color: #365e8b;
 }
+.page-number {
+}
