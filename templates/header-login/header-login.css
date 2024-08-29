@@ -189,17 +189,30 @@ header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
     margin-left: -12px;
     z-index: 999;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .16);
+    max-height: 168px;
+}
+.drop-down-list1 {
+    display: none;
+    width: 200px;
+    border-radius: 8px;
+    background-color: #242933;
+    position: absolute;
+    margin-left: -12px;
+    z-index: 999;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .16);
+    max-height: 129px;
+   
 }
 
 
 .left-bar-useguide img {
-    max-height: 178px; 
+    max-height: 169px; 
     width: 8px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px; 
 }
 .left-bar-postscript img{
-    max-height: 138px; 
+    max-height: 130px; 
     width: 8px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px; 
