@@ -3,7 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../static/css/mypage_all.css" />
+        <link rel="stylesheet" href="../../static/css/mypage/mypage_all.css" />
+        <link
+            rel="shortcut icon"
+            href="https://www.wishket.com/static/favicon.ico"
+        />
         <title>마이페이지</title>
     </head>
     <body>
@@ -142,10 +146,8 @@
                                     src="https://www.wishket.com/static/renewal/img/profile/icon_edit_s.png"
                                 />
                             </div>
-                            <div class="username">ljm21252 -- 받아오기</div>
-                            <div class="email">
-                                ljm21000@gmail.com-- 받아오기
-                            </div>
+                            <div class="username">ljm21252</div>
+                            <div class="email">ljm21000@gmail.com</div>
                         </div>
                     </div>
                     <div class="sidebar-nav">
@@ -199,14 +201,16 @@
                                         placeholder="홈페이지 주소를 입력하세요"
                                     />
                                 </div>
-                                <button class="btn-save">등록 완료</button>
+                                <button class="btn-save-registration">
+                                    등록 완료
+                                </button>
                             </div>
 
                             <div class="client-details">
                                 <h4>사용자 정보</h4>
                                 <table>
                                     <tr>
-                                        <th>사용자 타입 --받아오기</th>
+                                        <th>사용자 타입</th>
                                         <td>
                                             <select name="role" id="role">
                                                 <option value="general">
@@ -223,7 +227,7 @@
                                     </tr>
                                     <tr id="department-container">
                                         <th>학과</th>
-                                        <td data-editable>
+                                        <td class="data-editable">
                                             <input
                                                 type="text"
                                                 id="department"
@@ -233,8 +237,8 @@
                                     </tr>
                                     <tr>
                                         <th>이름</th>
-                                        <td data-editable>
-                                            정보를 입력해주세요
+                                        <td class="data-editable">
+                                            정보를 입력해주세요.
                                         </td>
                                     </tr>
                                     <tr>
@@ -324,42 +328,41 @@
                                     </tr>
                                     <tr>
                                         <th>주소</th>
-                                        <td data-editable>
+                                        <td class="data-editable">
                                             정보를 입력해주세요.
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>이메일 -- 받아오기</th>
-                                        <td data-editable>
-                                            정보를 입력해주세요
+                                        <th>이메일</th>
+                                        <td class="data-editable">
+                                            정보를 입력해주세요.
                                         </td>
                                     </tr>
                                 </table>
                             </div>
-
                             <div class="contact-info">
                                 <h4>연락처 정보</h4>
                                 <table>
                                     <tr>
-                                        <th>핸드폰 번호--받아오기</th>
-                                        <td data-editable>
-                                            정보를 입력해주세요
+                                        <th>핸드폰 번호</th>
+                                        <td class="data-editable">
+                                            정보를 입력해주세요.
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>전화번호</th>
-                                        <td data-editable>
+                                        <td class="data-editable">
                                             정보를 입력해주세요.
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>팩스 번호</th>
-                                        <td data-editable>
+                                        <td class="data-editable">
                                             정보를 입력해주세요.
                                         </td>
                                     </tr>
                                 </table>
-                                <button class="btn-save">저장하기</button>
+                                <button class="btn-save-info">저장하기</button>
                             </div>
                         </div>
                     </div>
@@ -375,10 +378,11 @@
                             </h3>
                         </div>
                         <div class="content-inner">
+                            <div class="post-list"></div>
                             <div class="empty-component">
                                 <img
                                     class="img-border"
-                                    src="../static/images/no-border.png"
+                                    src="../../static/images/no-border.png"
                                 />
                                 <p
                                     class="font-p5-no-border-info-text"
@@ -389,6 +393,23 @@
                                         >'게시글'</span
                                     >이 없습니다.
                                 </p>
+                            </div>
+                            <div class="pagination">
+                                <button
+                                    class="post-prev"
+                                    onclick="goToPrevPage('post')"
+                                >
+                                    이전 페이지
+                                </button>
+                                <span id="currentPostPage" class="page-number"
+                                    >1</span
+                                >
+                                <button
+                                    class="post-next"
+                                    onclick="goToNextPage('post')"
+                                >
+                                    다음 페이지
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -404,10 +425,11 @@
                             </h3>
                         </div>
                         <div class="content-inner">
+                            <div class="reply-list"></div>
                             <div class="empty-component">
                                 <img
                                     class="img-reply"
-                                    src="../static/images/no-reply.png"
+                                    src="../../static/images/no-reply.png"
                                 />
                                 <p
                                     class="font-p5-no-border-info-text"
@@ -418,6 +440,23 @@
                                         >'댓글'</span
                                     >이 없습니다.
                                 </p>
+                            </div>
+                            <div class="pagination">
+                                <button
+                                    class="reply-prev"
+                                    onclick="goToPrevPage('reply')"
+                                >
+                                    이전 페이지
+                                </button>
+                                <span id="currentReplyPage" class="page-number"
+                                    >1</span
+                                >
+                                <button
+                                    class="reply-next"
+                                    onclick="goToNextPage('reply')"
+                                >
+                                    다음 페이지
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -455,15 +494,30 @@
 
                             <!-- 문의 목록 -->
                             <div id="inquiry-list"></div>
+                            <div class="pagination">
+                                <button
+                                    class="inquiry-prev"
+                                    onclick="goToPrevPage('inquiry')"
+                                >
+                                    이전 페이지
+                                </button>
+                                <span
+                                    id="currentInquiryPage"
+                                    class="page-number"
+                                    >1</span
+                                >
+                                <button
+                                    class="inquiry-next"
+                                    onclick="goToNextPage('inquiry')"
+                                >
+                                    다음 페이지
+                                </button>
+                            </div>
 
                             <!-- 문의가 없을 때 표시되는 빈 상태 컴포넌트 -->
                             <div class="empty-component-inquiry">
-                                <img
-                                    class="img-inquiry"
-                                    src="../static/images/no-inquiry.png"
-                                />
                                 <p
-                                    class="font-p5-no-border-info-text"
+                                    class="font-p5-no-inquiry-info-text"
                                     style="margin-bottom: 0"
                                 >
                                     등록된
@@ -482,11 +536,16 @@
                     <span class="close"></span>
                     <h2>프로필 사진 변경</h2>
                     <form id="uploadForm">
-                        <input type="file" id="fileInput" accept="image/*" />
                         <div class="btn-group">
-                            <button type="submit" class="btn-upload">
+                            <!-- label 요소로 감싸서 file input을 클릭할 수 있게 만듦 -->
+                            <label class="btn-upload" for="fileInput">
                                 사진 업로드
-                            </button>
+                            </label>
+                            <input
+                                type="file"
+                                id="fileInput"
+                                accept="image/*"
+                            />
                             <button
                                 type="button"
                                 id="resetBtn"
@@ -500,6 +559,6 @@
             </div>
         </div>
 
-        <script src="../static/js/mypage_all.js"></script>
+        <script src="../../static/js/mypage/mypage_all.js"></script>
     </body>
 </html>
