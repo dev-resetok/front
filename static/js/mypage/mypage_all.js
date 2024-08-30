@@ -17,7 +17,6 @@ const showTab = (tabId, element) => {
     // 현재 클릭된 요소의 부모 li에 active 클래스 추가
     element.parentElement.classList.add("active");
 };
-// DOMContentLoaded?
 document.addEventListener("click", () => {
     // 데이터 편집 가능 요소 설정
     const editableElements = document.querySelectorAll(".data-editable");
@@ -458,45 +457,179 @@ document.addEventListener("click", () => {
 //     });
 // });
 
-// //호출
-// renderPosts();
-// renderReplies();
-// renderInquiries("answered");
-// 한 페이지에 표시할 항목 수
-const itemsPerPage = 3;
+// 예시 데이터
+const posts = [
+    {
+        id: 1,
+        title: "첫 번째 게시글",
+        summary: "첫 번째 게시글 요약",
+        date: "2024.03.01",
+    },
+    {
+        id: 2,
+        title: "두 번째 게시글",
+        summary: "두 번째 게시글 요약",
+        date: "2024.03.02",
+    },
+    {
+        id: 3,
+        title: "세 번째 게시글",
+        summary: "세 번째 게시글 요약",
+        date: "2024.03.03",
+    },
+    {
+        id: 4,
+        title: "네 번째 게시글",
+        summary: "네 번째 게시글 요약",
+        date: "2024.03.04",
+    },
+    {
+        id: 5,
+        title: "다섯 번째 게시글",
+        summary: "다섯 번째 게시글 요약",
+        date: "2024.03.05",
+    },
+    {
+        id: 6,
+        title: "여섯 번째 게시글",
+        summary: "여섯 번째 게시글 요약",
+        date: "2024.03.06",
+    },
+    {
+        id: 7,
+        title: "일곱 번째 게시글",
+        summary: "일곱 번째 게시글 요약",
+        date: "2024.03.07",
+    },
+    {
+        id: 8,
+        title: "여덟 번째 게시글",
+        summary: "여덟 번째 게시글 요약",
+        date: "2024.03.08",
+    },
+    {
+        id: 9,
+        title: "아홉 번째 게시글",
+        summary: "아홉 번째 게시글 요약",
+        date: "2024.03.09",
+    },
+    {
+        id: 10,
+        title: "열 번째 게시글",
+        summary: "열 번째 게시글 요약",
+        date: "2024.03.10",
+    },
+    {
+        id: 11,
+        title: "열한 번째 게시글",
+        summary: "열한 번째 게시글 요약",
+        date: "2024.03.11",
+    },
+];
+
+const replies = [
+    {
+        id: 1,
+        postTitle: "댓글이 달린 게시글 1",
+        summary: "댓글 내용 1",
+        date: "2024.02.01",
+    },
+    {
+        id: 2,
+        postTitle: "댓글이 달린 게시글 2",
+        summary: "댓글 내용 2",
+        date: "2024.02.02",
+    },
+    {
+        id: 3,
+        postTitle: "댓글이 달린 게시글 3",
+        summary: "댓글 내용 2",
+        date: "2024.02.03",
+    },
+    {
+        id: 4,
+        postTitle: "댓글이 달린 게시글 4",
+        summary: "댓글 내용 4",
+        date: "2024.02.08",
+    },
+];
+
+const inquiries = [
+    {
+        id: 1,
+        title: "첫 번째 문의",
+        summary: "첫 번째 문의 요약",
+        date: "2024.03.01",
+    },
+    {
+        id: 2,
+        title: "두 번째 문의",
+        summary: "두 번째 문의 요약",
+        date: "2024.03.02",
+    },
+    {
+        id: 3,
+        title: "세 번째 문의",
+        summary: "세 번째 문의 요약",
+        date: "2024.03.03",
+    },
+    {
+        id: 4,
+        title: "네 번째 문의",
+        summary: "네 번째 문의 요약",
+        date: "2024.03.04",
+    },
+    {
+        id: 5,
+        title: "다섯 번째 문의",
+        summary: "다섯 번째 문의 요약",
+        date: "2024.03.05",
+    },
+    {
+        id: 6,
+        title: "여섯 번째 문의",
+        summary: "여섯 번째 문의 요약",
+        date: "2024.03.06",
+    },
+    {
+        id: 7,
+        title: "일곱 번째 문의",
+        summary: "일곱 번째 문의 요약",
+        date: "2024.03.07",
+    },
+    {
+        id: 8,
+        title: "여덟 번째 문의",
+        summary: "여덟 번째 문의 요약",
+        date: "2024.03.08",
+    },
+    {
+        id: 9,
+        title: "아홉 번째 문의",
+        summary: "아홉 번째 문의 요약",
+        date: "2024.03.09",
+    },
+    {
+        id: 10,
+        title: "열 번째 문의",
+        summary: "열 번째 문의 요약",
+        date: "2024.03.10",
+    },
+    {
+        id: 11,
+        title: "열한 번째 문의",
+        summary: "열한 번째 문의 요약",
+        date: "2024.03.11",
+    },
+];
+
+// 페이지네이션 설정
+const itemsPerPage = 10;
 
 // 현재 페이지 상태
 let currentPostPage = 1;
 let currentReplyPage = 1;
 let currentInquiryPage = 1;
-
-// 데이터 예시
-const inquiries = [
-    { id: 1, title: "문의 1", status: "answered" },
-    { id: 2, title: "문의 2", status: "pending" },
-    { id: 3, title: "문의 3", status: "answered" },
-    { id: 4, title: "문의 4", status: "pending" },
-    { id: 5, title: "문의 5", status: "answered" },
-    { id: 6, title: "문의 6", status: "answered" },
-];
-
-const posts = [
-    { id: 1, title: "게시글 1", summary: "게시글 내용 요약 1" },
-    { id: 2, title: "게시글 2", summary: "게시글 내용 요약 2" },
-    { id: 3, title: "게시글 3", summary: "게시글 내용 요약 3" },
-    { id: 4, title: "게시글 4", summary: "게시글 내용 요약 4" },
-    { id: 5, title: "게시글 5", summary: "게시글 내용 요약 5" },
-];
-
-const replies = [
-    { id: 1, postTitle: "댓글이 달린 게시글 1", summary: "댓글 내용 1" },
-    { id: 2, postTitle: "댓글이 달린 게시글 2", summary: "댓글 내용 2" },
-    { id: 3, postTitle: "댓글이 달린 게시글 3", summary: "댓글 내용 3" },
-    { id: 4, postTitle: "댓글이 달린 게시글 4", summary: "댓글 내용 4" },
-    { id: 5, postTitle: "댓글이 달린 게시글 5", summary: "댓글 내용 5" },
-    { id: 6, postTitle: "댓글이 달린 게시글 6", summary: "댓글 내용 6" },
-    { id: 7, postTitle: "댓글이 달린 게시글 7", summary: "댓글 내용 7" },
-];
 
 // 페이지네이션을 위한 함수
 const paginate = (items, page) => {
@@ -516,7 +649,7 @@ const updatePaginationButton = (items, currentPage, paginationId) => {
     // '이전' 버튼
     paginationList.innerHTML += `
         <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
-            <a class="page-link" href="#" ${
+            <a class="page-link"   ${
                 currentPage === 1 ? "aria-disabled='true'" : ""
             }>이전</a>
         </li>
@@ -524,13 +657,18 @@ const updatePaginationButton = (items, currentPage, paginationId) => {
 
     // 페이지 번호
     for (let i = 1; i <= totalPages; i++) {
-        paginationList.innerHTML += `
-            <li class="page-item ${currentPage === i ? "active" : ""}">
-                <a class="page-link" href="#">${i}</a>
-            </li>
-        `;
+        i === 1
+            ? (paginationList.innerHTML += `
+        <li class="page-item ${currentPage === i ? "active" : ""}">
+            <a class="page-link-1" >${i}</a>
+        </li>
+    `)
+            : (paginationList.innerHTML += `
+    <li class="page-item ${currentPage === i ? "active" : ""}">
+        <a class="page-link" >${i}</a>
+    </li>
+    `);
     }
-
     // '다음' 버튼
     paginationList.innerHTML += `
         <li class="page-item ${currentPage === totalPages ? "disabled" : ""}">
@@ -539,8 +677,6 @@ const updatePaginationButton = (items, currentPage, paginationId) => {
             }>다음</a>
         </li>
     `;
-
-    // 버튼 클릭 이벤트 추가
     addPaginationEventListeners(paginationId);
 };
 
@@ -551,12 +687,12 @@ const addPaginationEventListeners = (paginationId) => {
     );
 
     paginationList.querySelectorAll(".page-item a").forEach((link) => {
-        link.addEventListener("click", (event) => {
+        link.addEventListener("", (event) => {
             event.preventDefault();
             const text = link.textContent.trim();
-            let pageNumber = parseInt(text, 10); // 문자열을 정수로 변환
+            let pageNumber = parseInt(text, 10);
 
-            // 페이지 번호 결정
+            // 이전 , 다음 버튼의 이동할 페이지 번호 결정하기
             if (text === "다음") {
                 pageNumber =
                     (paginationId === "myboard"
@@ -580,13 +716,14 @@ const addPaginationEventListeners = (paginationId) => {
         });
     });
 };
-
 // 게시글 렌더링
 const renderPosts = () => {
     const postList = document.querySelector(".post-list");
     const emptyComponent = document.querySelector("#myboard .empty-component");
 
-    const paginatedPosts = paginate(posts, currentPostPage);
+    // 페이지네이션 처리된 게시글 목록
+    const reversedPosts = posts.slice().reverse(); // 데이터 복사 및 반전
+    const paginatedPosts = paginate(reversedPosts, currentPostPage);
 
     if (paginatedPosts.length === 0) {
         postList.style.display = "none";
@@ -594,24 +731,63 @@ const renderPosts = () => {
     } else {
         postList.style.display = "block";
         emptyComponent.style.display = "none";
-        postList.innerHTML = "";
-        paginatedPosts.forEach((post) => {
-            const postItem = document.createElement("div");
-            postItem.className = "post-item";
-            postItem.innerHTML = `<h4>${post.title}</h4><p>${post.summary}</p>`;
-            postList.appendChild(postItem);
-        });
+        postList.innerHTML = `
+            <table class="news-center-table" style="margin-top: 0; margin-bottom: 20px;">
+                <colgroup>
+                    <col style="width: 57px;">
+                    <col style="width: 132px;">
+                    <col style="width: 703px;">
+                    <col style="width: 104px;">
+                </colgroup>
+                <thead class="news-center-table-head">
+                    <tr>
+                        <th>번호</th>
+                        <th>구분</th>
+                        <th>제목</th>
+                        <th>등록일</th>
+                    </tr>
+                </thead>
+                <tbody class="news-center-table-body">
+                ${paginatedPosts
+                    .map(
+                        (post, index) => `
+                    <tr class="news-data-rows" data-forloop="${
+                        reversedPosts.length -
+                        (currentPostPage - 1) * itemsPerPage -
+                        index
+                    }">
+                        <td class="news-center-table-body-number">${
+                            reversedPosts.length -
+                            (currentPostPage - 1) * itemsPerPage -
+                            index
+                        }</td>
+                        <td class="news-center-table-body-category">게시글</td>
+                        <td class="news-center-table-body-title"><span>${
+                            post.title
+                        }</span></td>
+                        <td class="news-center-table-body-date">${
+                            post.date
+                        }</td>
+                    </tr>
+                `
+                    )
+                    .join("")}
+                </tbody>
+            </table>
+        `;
     }
 
-    updatePaginationButton(posts, currentPostPage, "myboard");
+    updatePaginationButton(reversedPosts, currentPostPage, "myboard");
 };
 
-// 댓글 렌더링
+//댓글 렌더링
 const renderReplies = () => {
     const replyList = document.querySelector(".reply-list");
     const emptyComponent = document.querySelector("#myreply .empty-component");
 
-    const paginatedReplies = paginate(replies, currentReplyPage);
+    // 페이지네이션 처리된 댓글 목록
+    const reversedReplies = replies.slice().reverse(); // 데이터 복사 및 반전
+    const paginatedReplies = paginate(reversedReplies, currentReplyPage);
 
     if (paginatedReplies.length === 0) {
         replyList.style.display = "none";
@@ -619,29 +795,65 @@ const renderReplies = () => {
     } else {
         replyList.style.display = "block";
         emptyComponent.style.display = "none";
-        replyList.innerHTML = "";
-        paginatedReplies.forEach((reply) => {
-            const replyItem = document.createElement("div");
-            replyItem.className = "reply-item";
-            replyItem.innerHTML = `<h4>${reply.postTitle}</h4><p>${reply.summary}</p>`;
-            replyList.appendChild(replyItem);
-        });
+        replyList.innerHTML = `
+            <table class="news-center-table" style="margin-top: 0; margin-bottom: 20px;">
+                <colgroup>
+                    <col style="width: 57px;">
+                    <col style="width: 132px;">
+                    <col style="width: 703px;">
+                    <col style="width: 104px;">
+                </colgroup>
+                <thead class="news-center-table-head">
+                    <tr>
+                        <th>번호</th>
+                        <th>구분</th>
+                        <th>제목</th>
+                        <th>등록일</th>
+                    </tr>
+                </thead>
+                <tbody class="news-center-table-body">
+                ${paginatedReplies
+                    .map(
+                        (reply, index) => `
+                    <tr class="news-data-rows" data-forloop="${
+                        reversedReplies.length -
+                        (currentReplyPage - 1) * itemsPerPage -
+                        index
+                    }">
+                        <td class="news-center-table-body-number">${
+                            reversedReplies.length -
+                            (currentReplyPage - 1) * itemsPerPage -
+                            index
+                        }</td>
+                        <td class="news-center-table-body-category">댓글</td>
+                        <td class="news-center-table-body-title"><span>${
+                            reply.postTitle
+                        }</span></td>
+                        <td class="news-center-table-body-date">${
+                            reply.date
+                        }</td>
+                    </tr>
+                `
+                    )
+                    .join("")}
+                </tbody>
+            </table>
+        `;
     }
 
-    updatePaginationButton(replies, currentReplyPage, "myreply");
+    updatePaginationButton(reversedReplies, currentReplyPage, "myreply");
 };
 
-// 문의 렌더링
-const renderInquiries = (filter) => {
-    const inquiryList = document.querySelector("#inquiry-list");
+//문의 렌더링
+const renderInquiries = () => {
+    const inquiryList = document.querySelector(".inquiry-list");
     const emptyComponent = document.querySelector(
-        "#myinquiry .empty-component-inquiry"
+        "#myinquiry .empty-component"
     );
 
-    const filteredInquiries = inquiries.filter(
-        (inquiry) => inquiry.status === filter
-    );
-    const paginatedInquiries = paginate(filteredInquiries, currentInquiryPage);
+    // 페이지네이션 처리된 문의 목록
+    const reversedInquiries = inquiries.slice().reverse(); // 데이터 복사 및 반전
+    const paginatedInquiries = paginate(reversedInquiries, currentInquiryPage);
 
     if (paginatedInquiries.length === 0) {
         inquiryList.style.display = "none";
@@ -649,40 +861,71 @@ const renderInquiries = (filter) => {
     } else {
         inquiryList.style.display = "block";
         emptyComponent.style.display = "none";
-        inquiryList.innerHTML = "";
-        paginatedInquiries.forEach((inquiry) => {
-            const inquiryItem = document.createElement("div");
-            inquiryItem.className = "inquiry-item";
-            inquiryItem.innerHTML = `
-                <h4>${inquiry.title}</h4>
-                <p>상태: ${
-                    inquiry.status === "answered" ? "답변 완료" : "답변 대기 중"
-                }</p>
-            `;
-            inquiryList.appendChild(inquiryItem);
-        });
+        inquiryList.innerHTML = `
+            <table class="news-center-table" style="margin-top: 0; margin-bottom: 20px;">
+                <colgroup>
+                    <col style="width: 57px;">
+                    <col style="width: 132px;">
+                    <col style="width: 703px;">
+                    <col style="width: 104px;">
+                </colgroup>
+                <thead class="news-center-table-head">
+                    <tr>
+                        <th>번호</th>
+                        <th>구분</th>
+                        <th>제목</th>
+                        <th>등록일</th>
+                    </tr>
+                </thead>
+                <tbody class="news-center-table-body">
+                ${paginatedInquiries
+                    .map(
+                        (inquiry, index) => `
+                    <tr class="news-data-rows" data-forloop="${
+                        reversedInquiries.length -
+                        (currentInquiryPage - 1) * itemsPerPage -
+                        index
+                    }">
+                        <td class="news-center-table-body-number">${
+                            reversedInquiries.length -
+                            (currentInquiryPage - 1) * itemsPerPage -
+                            index
+                        }</td>
+                        <td class="news-center-table-body-category">문의</td>
+                        <td class="news-center-table-body-title"><span>${
+                            inquiry.title
+                        }</span></td>
+                        <td class="news-center-table-body-date">${
+                            inquiry.date
+                        }</td>
+                    </tr>
+                `
+                    )
+                    .join("")}
+                </tbody>
+            </table>
+        `;
     }
 
-    updatePaginationButton(filteredInquiries, currentInquiryPage, "myinquiry");
+    updatePaginationButton(reversedInquiries, currentInquiryPage, "myinquiry");
 };
 
 // 페이지 이동 함수
 const goToPage = (pageNumber, paginationId) => {
-    const totalPages = Math.ceil(
-        (paginationId === "myboard"
+    // 각 탭에 맞는 총 항목 수를 설정
+    const totalItems =
+        paginationId === "myboard"
             ? posts.length
             : paginationId === "myreply"
             ? replies.length
-            : inquiries.filter(
-                  (inquiry) =>
-                      inquiry.status ===
-                      document
-                          .querySelector("#myinquiry .tab-link.active")
-                          .getAttribute("data-filter")
-              ).length) / itemsPerPage
-    );
+            : inquiries.length;
+
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    // 페이지 번호 유효성 검사
     if (pageNumber < 1 || pageNumber > totalPages) return;
 
+    // 페이지 상태 업데이트
     if (paginationId === "myboard") {
         currentPostPage = pageNumber;
         renderPosts();
@@ -691,32 +934,11 @@ const goToPage = (pageNumber, paginationId) => {
         renderReplies();
     } else if (paginationId === "myinquiry") {
         currentInquiryPage = pageNumber;
-        renderInquiries(
-            document
-                .querySelector("#myinquiry .tab-link .active")
-                .getAttribute("data-filter")
-        );
+        renderInquiries();
     }
-};
-
-// 탭 필터링 함수
-const filterInquiries = (status) => {
-    document.querySelectorAll("#myinquiry .tab-link").forEach((tab) => {
-        tab.classList.remove("active"); // active 클래스 제거
-    });
-
-    const activeTab = [
-        ...document.querySelectorAll("#myinquiry .tab-link"),
-    ].find((tab) => tab.getAttribute("data-filter") === status);
-
-    if (activeTab) {
-        activeTab.classList.add("active"); // 선택된 탭에 active 클래스 추가
-    }
-
-    renderInquiries(status);
 };
 
 // 초기 렌더링
 renderPosts();
 renderReplies();
-filterInquiries("answered"); // 초기 필터는 '답변 완료'
+renderInquiries();
