@@ -1,7 +1,7 @@
 @import url("https://www.wishket.com//static/css/general/general.css?231221");
 
 * {
-    font-family: /*"NotoSansKR",*/ "Sans-serif";
+    font-family: /* "NotoSansKR", */ "Sans-serif";
     margin: 0;
     padding: 0;
     line-height: 1;
@@ -27,6 +27,11 @@ ul {
 ul li {
     padding: 0;
     margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #212121;
 }
 
 .wrap {
@@ -77,6 +82,47 @@ body .main-wrap .main-container .main .post-lists .post-list {
 
 .post-list:first-of-type {
     margin: 0;
+}
+
+.post-top {
+    color: #212121;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-top-right {
+    display: flex;
+    gap: 26px;
+    font-size: 12px;
+}
+
+.post-content {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #f7fafc;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #616161;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.post-title, .post-writer-school-major, .post-writer-name, .post-created-date {
+    color: #212121;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.post-writer-school-major, .post-writer-name, .post-created-date {
+    font-size: 12px;
 }
 
 .main .search-box {
@@ -273,31 +319,68 @@ body .main-wrap .main-container .main .post-lists .post-list {
 body .title-inline {
     display: inline-block;
     color: #212121;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
     line-height: 28px;
     margin-top: 8px;
     margin-bottom: 24px;
 }
 
-.post-top {
-    color: #212121;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 26px;
-    margin-bottom: 16px;
+.pagination.theme-moa {
+    display: flex;
 }
 
-.post-content {
-    padding: 8px 12px;
-    border-radius: 8px;
-    background-color: #f7fafc;
-    width: 100%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    color: #616161;
+.pagination.theme-moa li:first-child {
+    margin-left: 0;
+}
+
+.pagination.theme-moa li {
+    height: 100%;
+    margin-left: 4px;
+}
+
+.pagination.theme-wishket li:last-child>.page-link {
+    background-image: url('http://www.w3.org/2000/svg');
+    text-indent: -999999px;
+    background-position: center;
+}
+
+.main .post-lists .pagination {
+    display: block;
+    text-align: center;
+    line-height: 80px;
+}
+
+.main .post-lists .pagination li {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.main .post-lists .pagination li a {
+    cursor: pointer;
+}
+
+.pagination.theme-moa .page-link {
+    position: relative;
+    display: block;
     font-size: 14px;
-    line-height: 24px;
-    font-weight: 400;
+    line-height: 30px;
+    min-width: 32px;
+    text-align: center;
+    padding: 0 8px;
+    font-weight: 500;
+    color: #616161;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+.pagination.theme-moa .page-link.active {
+    color: #3ba3c7;
+    border-color: #bdbdbd;
+    border-radius: 2px;
+}
+
+.pagination.theme-moa .page-link:hover {
+    z-index: 2;
+    color: #3ba3c7;
 }
