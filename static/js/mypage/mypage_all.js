@@ -693,7 +693,7 @@ const goToPage = (pageNumber, paginationId) => {
         currentInquiryPage = pageNumber;
         renderInquiries(
             document
-                .querySelector("#myinquiry .tab-link.active")
+                .querySelector("#myinquiry .tab-link .active")
                 .getAttribute("data-filter")
         );
     }

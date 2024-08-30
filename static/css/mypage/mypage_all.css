@@ -494,6 +494,19 @@ ul li {
 }
 
 .pagination.theme-wishket .page-link {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    line-height: 30px;
+    min-width: 32px;
+    text-align: center;
+    padding: 0 8px;
+    font-weight: 500;
+    color: #616161;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+.pagination.theme-wishket .page-link {
     color: #333;
 }
 .pagination.theme-wishket .page-link:hover {
@@ -501,7 +514,6 @@ ul li {
     border: 1px solid;
     border-color: #bdbdbd;
     border-radius: 2px;
-    text-decoration: underline;
 }
 .project-search .container .pagination li a {
     cursor: pointer;
