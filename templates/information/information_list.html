@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>게시글 목록 - 목록 게시판</title>
+        <link
+            rel="stylesheet"
+            href="../../static/css/information/information_list.css"
+        />
+        <link
+            rel="shortcut icon"
+            href="https://www.wishket.com/static/favicon.ico"
+        />
+    </head>
+    <body>
+        <div id="header-space" style="width: 100px; height: 100px"></div>
+        <div class="wrap">
+            <div>
+                <div class="container">
+                    <div class="main-wrap">
+                        <div class="main-container">
+                            <div class="main">
+                                <div class="title-inline">게시글 목록</div>
+                                <div class="search-box" id="search-box">
+                                    <select
+                                        class="moa-select search-type"
+                                        name="search-type"
+                                        style="display: none"
+                                    >
+                                        <option value="all">제목 + 내용</option>
+                                        <option value="title">제목</option>
+                                        <option value="content">내용</option>
+                                    </select>
+                                    <div
+                                        class="ui-select moa-select theme-moa text-search-type"
+                                        tabindex="0"
+                                        sylte="width: 100%"
+                                    >
+                                        <span class="select-box">
+                                            <p class="select-name">
+                                                제목 + 내용
+                                            </p>
+                                            <i class="select-icon"
+                                                ><svg
+                                                    class="select-icon"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="14"
+                                                    height="14"
+                                                    viewBox="0 0 14 14"
+                                                >
+                                                    <path
+                                                        fill="none"
+                                                        fill-rule="evenodd"
+                                                        stroke="#9E9E9E"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="1.2"
+                                                        d="M1 4l6 6 6-6"
+                                                    ></path></svg
+                                            ></i>
+                                        </span>
+                                        <p class="select-background"></p>
+                                        <ul class="select-drop-down">
+                                            <li data-select-value="all">
+                                                제목 + 내용
+                                            </li>
+                                            <li data-select-value="title">
+                                                제목
+                                            </li>
+                                            <li data-select-value="content">
+                                                내용
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="default-input-type icon-right">
+                                        <div
+                                            class="default-input-moa icon-right"
+                                        >
+                                            <input
+                                                autocomplete="off"
+                                                class="theme-moa moa-text search-text"
+                                                data-input-type="text-input"
+                                                name="search-text"
+                                                type="text"
+                                                style="padding-right: 48px"
+                                            />
+                                            <span class="text-unit active">
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/stack/icon-search@2x.png"
+                                                    style="
+                                                        margin-right: 8px;
+                                                        cursor: pointer;
+                                                        width: 16px;
+                                                    "
+                                                />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="top-divider"></div>
+                                <div class="post-count-wrap">
+                                    <p class="post-count-container">
+                                        <span class="post-count">10,340</span>
+                                        개의 게시글
+                                    </p>
+                                </div>
+                                <div class="post-lists">
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="status-mark new-mark">
+                                                NEW
+                                            </div>
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    한국대 고전 문학 자료 공유
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국대학교 국문학과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        홍박사
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/11
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                한국대 국문과 2학년 고전 문학
+                                                자료 1년치 공유합니다. 편하게
+                                                받아가세요~
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    한국대 고전 문학 자료 공유
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국대학교 체육교육학과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        준라탄
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                한국대 체교과 3학년 수업자료랑
+                                                노트필기 받아가시고, 본인 것도
+                                                공유해주시면 감사하겠습니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    한국대 고전 문학 자료 공유
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 작곡과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                한국대 작곡과 2학년 수업 자료
+                                                1년치 공유합니다. 같이 보면서
+                                                공부하실 분들은 여기로 와주세요
+                                                -> 오픈채팅방 링크
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    한국대 고전 문학 자료 공유
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 작곡과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                한국대 작곡과 2학년 수업 자료
+                                                1년치 공유합니다. 같이 보면서
+                                                공부하실 분들은 여기로 와주세요
+                                                -> 오픈채팅방 링크
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    한국대 고전 문학 자료 공유
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 작곡과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                한국대 작곡과 2학년 수업 자료
+                                                1년치 공유합니다. 같이 보면서
+                                                공부하실 분들은 여기로 와주세요
+                                                -> 오픈채팅방 링크
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    한국대 고전 문학 자료 공유
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 작곡과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                한국대 작곡과 2학년 수업 자료
+                                                1년치 공유합니다. 같이 보면서
+                                                공부하실 분들은 여기로 와주세요
+                                                -> 오픈채팅방 링크
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    한국대 고전 문학 자료 공유
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 작곡과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                한국대 작곡과 2학년 수업 자료
+                                                1년치 공유합니다. 같이 보면서
+                                                공부하실 분들은 여기로 와주세요
+                                                -> 오픈채팅방 링크
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    한국대 고전 문학 자료 공유
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 작곡과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                한국대 작곡과 2학년 수업 자료
+                                                1년치 공유합니다. 같이 보면서
+                                                공부하실 분들은 여기로 와주세요
+                                                -> 오픈채팅방 링크
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    한국대 고전 문학 자료 공유
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 작곡과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                한국대 작곡과 2학년 수업 자료
+                                                1년치 공유합니다. 같이 보면서
+                                                공부하실 분들은 여기로 와주세요
+                                                -> 오픈채팅방 링크
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    한국대 고전 문학 자료 공유
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 작곡과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                한국대 작곡과 2학년 수업 자료
+                                                1년치 공유합니다. 같이 보면서
+                                                공부하실 분들은 여기로 와주세요
+                                                -> 오픈채팅방 링크
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pagination-wrap">
+                                        <ul class="pagination theme-moa">
+                                            <li class="page-item disabled"></li>
+                                            <li class="page-item">
+                                                <a class="page-link active"
+                                                    >1</a
+                                                >
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link">2</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link">3</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link">4</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link">5</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link">다음</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer-space" style="width: 100px; height: 100px"></div>
+    </body>
+    <script src="../../static/js/information/information_list.js"></script>
+</html>

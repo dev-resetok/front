@@ -11,124 +11,6 @@
         <title>마이페이지</title>
     </head>
     <body>
-        <header class="header">
-            <section class="base-nav-guest">
-                <div class="header-service-nav">
-                    <div class="container">
-                        <div class="service-link wishket">
-                            <img
-                                src="https://www.wishket.com/static/renewal/img/global/gnb_wishket.svg"
-                            />
-                            <div class="service-name caption-1">위시켓</div>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="service-link other-services">
-                            <img
-                                class="menu-inactive"
-                                src="https://www.wishket.com/static/renewal/img/global/gnb_yozmit_inactive.svg"
-                            />
-                            <img
-                                class="menu-active"
-                                src="https://www.wishket.com/static/renewal/img/global/gnb_yozmit.svg"
-                            />
-                            <div class="service-name caption-2">요즘IT</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <a href="">
-                        <div class="nav-logo-wrapper">
-                            <div class="nav-logo">위시갯</div>
-                        </div>
-                    </a>
-                    <div class="left-nav">
-                        <a href="https://www.wishket.com/project/create/">
-                            <div
-                                class="left-nav-menu add-project font-body-2 font-text900"
-                            >
-                                프로젝트 등록
-                            </div>
-                        </a>
-                        <a href="https://www.wishket.com/project/#clear">
-                            <div class="left-nav-menu font-body-2 font-text900">
-                                프로젝트 찾기
-                            </div>
-                        </a>
-                        <a href="https://www.wishket.com/partners/#">
-                            <div class="left-nav-menu font-body-2 font-text900">
-                                파트너스 찾기
-                            </div>
-                        </a>
-                        <div class="dropdown-container">
-                            <a
-                                href="https://www.wishket.com/customer-support/client/use-guide"
-                            >
-                                <div
-                                    class="left-nav-menu pr-8 font-body-2 font-text900"
-                                >
-                                    이용방법
-                                    <div class="img-container">
-                                        <img
-                                            src="https://www.wishket.com/static/renewal/img/global/Arrow.png"
-                                        />
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="drop-down-list">
-                                <div class="left-bar useguide"></div>
-                            </div>
-                        </div>
-                        <div class="dropdown-container">
-                            <a href="https://www.wishket.com/customer-case/">
-                                <div
-                                    class="left-nav-menu pr-8 font-body-2 font-text900"
-                                >
-                                    고객 사례
-                                    <div>
-                                        <img
-                                            src="https://www.wishket.com/static/renewal/img/global/Arrow.png"
-                                        />
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="nav-divider"></div>
-                        <a href="https://www.wishket.com/premium/">
-                            <div class="left-nav-menu font-body-2 font-text900">
-                                프리미엄
-                                <div class="img-container">
-                                    <img
-                                        src="https://www.wishket.com/static/renewal/img/global/new-sign.png"
-                                    />
-                                </div>
-                            </div>
-                        </a>
-                        <a href="https://www.wishket.com/store/">
-                            <div class="left-nav-menu font-body-2 font-text900">
-                                스토어
-                            </div>
-                        </a>
-                    </div>
-                    <div class="right-nav">
-                        <a href="/accounts/notifications/">
-                            <div class="noti-bell-container">
-                                <img
-                                    class="noti-bell"
-                                    src="https://www.wishket.com/static/renewal/img/global/client-noti-bell.png"
-                                />
-                            </div>
-                        </a>
-                        <div class="profile-img-container">
-                            <img
-                                alt="ljm21252사진"
-                                class="user-img-header"
-                                src="https://www.wishket.com/static/img/default_avatar_c.png"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </header>
         <div class="page">
             <div class="page-inner">
                 <div class="sidebar">
@@ -394,22 +276,8 @@
                                     >이 없습니다.
                                 </p>
                             </div>
-                            <div class="pagination">
-                                <button
-                                    class="post-prev"
-                                    onclick="goToPrevPage('post')"
-                                >
-                                    이전 페이지
-                                </button>
-                                <span id="currentPostPage" class="page-number"
-                                    >1</span
-                                >
-                                <button
-                                    class="post-next"
-                                    onclick="goToNextPage('post')"
-                                >
-                                    다음 페이지
-                                </button>
+                            <div class="pagination-container">
+                                <ul class="pagination theme-wishket"></ul>
                             </div>
                         </div>
                     </div>
@@ -441,22 +309,8 @@
                                     >이 없습니다.
                                 </p>
                             </div>
-                            <div class="pagination">
-                                <button
-                                    class="reply-prev"
-                                    onclick="goToPrevPage('reply')"
-                                >
-                                    이전 페이지
-                                </button>
-                                <span id="currentReplyPage" class="page-number"
-                                    >1</span
-                                >
-                                <button
-                                    class="reply-next"
-                                    onclick="goToNextPage('reply')"
-                                >
-                                    다음 페이지
-                                </button>
+                            <div class="pagination-container">
+                                <ul class="pagination theme-wishket"></ul>
                             </div>
                         </div>
                     </div>
@@ -473,49 +327,10 @@
                             </h3>
                         </div>
                         <div class="content-inner">
-                            <!-- 탭 메뉴 -->
-                            <div class="tabs">
-                                <button
-                                    class="tab-link active"
-                                    onclick="filterInquiries('answered')"
-                                >
-                                    답변 완료 (<span id="answered-count">0</span
-                                    >)
-                                </button>
-                                <button
-                                    class="tab-link"
-                                    onclick="filterInquiries('pending')"
-                                >
-                                    답변 대기 중 (<span id="pending-count"
-                                        >0</span
-                                    >)
-                                </button>
-                            </div>
-
-                            <!-- 문의 목록 -->
-                            <div id="inquiry-list"></div>
-                            <div class="pagination">
-                                <button
-                                    class="inquiry-prev"
-                                    onclick="goToPrevPage('inquiry')"
-                                >
-                                    이전 페이지
-                                </button>
-                                <span
-                                    id="currentInquiryPage"
-                                    class="page-number"
-                                    >1</span
-                                >
-                                <button
-                                    class="inquiry-next"
-                                    onclick="goToNextPage('inquiry')"
-                                >
-                                    다음 페이지
-                                </button>
-                            </div>
-
-                            <!-- 문의가 없을 때 표시되는 빈 상태 컴포넌트 -->
-                            <div class="empty-component-inquiry">
+                                <div class="inquiry-list"></div>
+                                <!-- 수정된 부분 -->
+                            </table>
+                            <div class="empty-component">
                                 <p
                                     class="font-p5-no-inquiry-info-text"
                                     style="margin-bottom: 0"
@@ -525,6 +340,9 @@
                                         >'문의'</span
                                     >가 없습니다.
                                 </p>
+                            </div>
+                            <div class="pagination-container">
+                                <ul class="pagination theme-wishket"></ul>
                             </div>
                         </div>
                     </div>
@@ -558,6 +376,7 @@
                 </div>
             </div>
         </div>
+    
 
         <script src="../../static/js/mypage/mypage_all.js"></script>
     </body>
