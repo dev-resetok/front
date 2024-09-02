@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>게시글 작성 - 장터 게시판</title>
+        <link rel="stylesheet" href="../../static/css/market/market.css" />
+        <link
+            rel="shortcut icon"
+            href="https://www.wishket.com/static/favicon.ico"
+        />
+    </head>
+    <body>
+        <div id="header-space" style="width: 100px; height: 100px"></div>
+        <div class="wrap">
+            <div>
+                <div class="container">
+                    <form>
+                        <div class="post-write-form-section">
+                            <div class="form-section-header">
+                                <p class="form-section-title subtitle-1">
+                                    게시글 작성
+                                </p>
+                            </div>
+                            <div class="form-input-section">
+                                <div class="form-part">
+                                    <label class="form-title font-body-1-bold"
+                                        >학교 및 학과
+                                    </label>
+                                    <div class="mb8"></div>
+                                    <div class="form-content">
+                                        <div>
+                                            <div class="content-textarea">
+                                                <div class="textarea-border">
+                                                    <textarea
+                                                        class="moa-textarea font-body-2 text6"
+                                                        name="textarea"
+                                                        id="school-major-textarea"
+                                                        maxlength="40"
+                                                        rows="1"
+                                                        style="
+                                                            width: 100%;
+                                                            min-width: 100%;
+                                                            max-width: 100%;
+                                                            min-height: 30px;
+                                                        "
+                                                    >
+학교와 학과를 입력해주세요. ex) 모아대학교 모아학과</textarea
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-part">
+                                    <label class="form-title font-body-1-bold"
+                                        >게시글 제목
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="mb8"></div>
+                                    <div class="form-content">
+                                        <div>
+                                            <div class="content-textarea">
+                                                <div class="textarea-border">
+                                                    <textarea
+                                                        class="moa-textarea font-body-2 text6"
+                                                        name="textarea"
+                                                        id="title-textarea"
+                                                        maxlength="40"
+                                                        rows="1"
+                                                        style="
+                                                            width: 100%;
+                                                            min-width: 100%;
+                                                            max-width: 100%;
+                                                            min-height: 30px;
+                                                        "
+                                                    >
+게시글 제목을 입력해주세요.</textarea
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="local-container">
+                                    <div class="location-field">
+                                        <label for="sido">지역 - 시, 도</label>
+                                        <select id="sido">
+                                            <option value="" disabled selected>
+                                                시/도를 선택하세요
+                                            </option>
+                                            <option value="seoul">
+                                                서울특별시
+                                            </option>
+                                            <option value="gyeonggi">
+                                                경기도
+                                            </option>
+                                            <option value="gangwon">
+                                                강원도
+                                            </option>
+                                            <option value="chungcheong">
+                                                충청도
+                                            </option>
+                                            <option value="jeolla">
+                                                전라도
+                                            </option>
+                                            <option value="gyeongsang">
+                                                경상도
+                                            </option>
+                                            <option value="jeju">제주도</option>
+                                        </select>
+                                    </div>
+                                    <div class="location-field">
+                                        <label for="sigungu"
+                                            >세부 지역 - 시, 군, 구</label
+                                        >
+                                        <select id="sigungu">
+                                            <option value="" disabled selected>
+                                                시/군/구를 선택하세요
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-part">
+                                    <label class="form-title font-body-1-bold"
+                                        >게시글 내용
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="mb8"></div>
+                                    <div class="form-content">
+                                        <div>
+                                            <div class="content-textarea">
+                                                <div class="textarea-border">
+                                                    <textarea
+                                                        class="moa-textarea font-body-2 text6"
+                                                        name="textarea"
+                                                        id="content-textarea"
+                                                        maxlength="5000"
+                                                        rows="15"
+                                                        style="
+                                                            width: 100%;
+                                                            min-width: 100%;
+                                                            max-width: 100%;
+                                                        "
+                                                    >
+게시글 내용을 입력해주세요.</textarea
+                                                    >
+                                                </div>
+                                                <span
+                                                    class="word-length"
+                                                ></span>
+                                                <span class="help-text"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="attach-wrap">
+                                        <div class="attach-button-file-wrap">
+                                            <div class="attach-button">
+                                                <label>
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/submit/btn_icon_add_s.svg"
+                                                        alt="attach_img"
+                                                    />
+                                                    <div
+                                                        class="font-body-2-medium text-moa"
+                                                    >
+                                                        파일첨부
+                                                    </div>
+                                                    <input
+                                                        type="file"
+                                                        class="attach-input"
+                                                    />
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="attach-button-file-wrap">
+                                            <div class="attach-button">
+                                                <label>
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/submit/btn_icon_add_s.svg"
+                                                        alt="attach_img"
+                                                    />
+                                                    <div
+                                                        class="font-body-2-medium text-moa"
+                                                    >
+                                                        파일첨부
+                                                    </div>
+                                                    <input
+                                                        type="file"
+                                                        class="attach-input"
+                                                    />
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="attach-button-file-wrap">
+                                            <div class="attach-button">
+                                                <label>
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/submit/btn_icon_add_s.svg"
+                                                        alt="attach_img"
+                                                    />
+                                                    <div
+                                                        class="font-body-2-medium text-moa"
+                                                    >
+                                                        파일첨부
+                                                    </div>
+                                                    <input
+                                                        type="file"
+                                                        class="attach-input"
+                                                    />
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="complete-save-button-divider">
+                                <div class="complete-button">작성완료</div>
+                                <div class="save-button">저장</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="footer-space" style="width: 100px; height: 100px"></div>
+    </body>
+    <script src="../../static/js/market/market.js"></script>
+</html>
