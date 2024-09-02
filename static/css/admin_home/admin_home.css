@@ -1,0 +1,483 @@
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 400;
+    font-style: normal;
+    src: url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Regular.subset.876e22b0.woff2) format("woff2"),url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Regular.subset.e17e49fe.woff) format("woff"),url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Regular.subset.9645d39e.otf) format("opentype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 500;
+    font-style: normal;
+    src: url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Medium.subset.c6c0fe2b.woff2) format("woff2"),url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Medium.subset.2216ab02.woff) format("woff"),url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Medium.subset.11fc9454.otf) format("opentype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 700;
+    font-style: normal;
+    src: url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Bold.subset.12541844.woff2) format("woff2"),url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Bold.subset.fd82943b.woff) format("woff"),url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Bold.subset.c817dbf1.otf) format("opentype");
+    font-display: swap
+}
+
+element.style {
+    --vh: 6.95px;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+a, address, article, aside, audio, b, big, blockquote, body, button, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, input, label, legend, li, mark, menu, nav, object, ol, p, pre, section, select, small, span, strike, strong, sub, summary, sup, table, tbody, td, textarea, tfoot, th, thead, time, tr, u, ul, var, video {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+html {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+    color: inherit;
+    font-family: pretendard, -apple-system, blinkmacsystemfont, system-ui, roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+    line-height: 1.3;
+    word-break: keep-all;
+    color: #343a40;
+    font-family: pretendard, -apple-system, blinkmacsystemfont, system-ui, roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    overflow-wrap: break-word;
+    height: 100%;
+    overflow: auto;
+}
+
+div {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+button {
+    background-color: transparent;
+    font-family: inherit;
+    color: inherit;
+    outline: none;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+span {
+    font-family: inherit;
+}
+
+img {
+    margin: 0;
+    border: 0;
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+#root {
+    height: 100%;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.app-layout-wrap{
+    overflow-y: auto;
+    position: relative;
+}
+
+.gnb-nav-bar-wrap {
+    height: 72px;
+    box-shadow: 0 1px 0 0 rgba(10, 22, 70, .06);
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 16;
+    background-color: #fff;
+    padding: 0 16px;
+    width: 100%;
+}
+
+.gnb-nav-bar-flex-contatiner {
+    display: flex;
+    flex: 1 1;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.studio-logo-wrap {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.studio-status-state-box-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-gap: 4px; */
+    gap: 4px;
+}
+
+.studio-logo {
+    display: block;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    outline: 0;
+    background-size: cover;
+    background-image: url(https://static.wadiz.kr/studio/funding/static/media/wadiz-studio-logo.db1cb560.svg);
+    width: 190px;
+    height: 21px;
+}
+
+.studio-logo-type {
+    margin-right: 8px;
+    color: #868e96;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.studio-status-state-box-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-gap: 4px; */
+    gap: 4px;
+}
+
+.studio-status-state {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    border-radius: 4px;
+    background-color: #f2f4f6;
+    padding: 1px 6px;
+    color: #495057;
+}
+
+.gnb-nav-bar-flex-right-box-container {
+    justify-content: flex-end;
+    /* grid-gap: 24px; */
+    gap: 24px;
+}
+
+.project-info-wrap {
+    position: relative;
+    margin-right: 0;
+    padding: 0;
+}
+
+.project-info-info-button {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid #f2f4f6;
+    background-color: #f9fafb;
+    padding: 0 16px;
+    width: 100%;
+    height: 37px;
+    color: #868e96;
+    gap: 4px;
+}
+
+.project-info-emphasis {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #00c4c4;
+}
+
+.project-info-text {
+    margin-left: 12px;
+    color: #495057;
+}
+
+.with-icon {
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+}
+
+.announcement-button-wrap {
+    display: flex;
+    position: relative;
+    transition: background-color .3s;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.announcement-button-icon {
+    padding: 4px;
+}
+
+.badge-visible {
+    display: inline-flex;
+}
+
+.announcement-button-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+.badge-dot {
+    margin-left: 2px;
+    border-radius: 4px;
+    background-color: #f66;
+    width: 4px;
+    height: 4px;
+}
+
+.badge-md {
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+.preview-exit-buttons-wrap {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+}
+
+.button-button {
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    background-color: transparent;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.preview-exit-buttons-wrap
+.preview-exit-buttons[class*=button-button] {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: block;
+    border-color: #e9ecef;
+    padding: 8px 24px;
+    height: auto;
+    color: #495057;
+}
+
+.preview-exit-buttons-wrap
+.preview-exit-buttons[class*=button-button]:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.preview-exit-buttons-wrap
+.preview-exit-buttons[class*=button-button]~.preview-exit-buttons {
+    margin-left: -1px;
+    border-left: 1px solid #e9ecef;
+}
+
+.preview-exit-buttons-wrap
+.preview-exit-buttons[class*=button-button]:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.app-layout-wrap .app-layout-main-wrap {
+    display: flex;
+    padding-top: 72px;
+    height: 100%;
+}
+
+.app-nav-bar-layout-container {
+    display: flex;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    flex-flow: column;
+    background-color: #fff;
+    position: relative;
+    transform: none;
+    transition: none;
+    z-index: 0;
+    width: 240px;
+    height: 100%;
+}
+
+.app-nav-bar-content {
+    padding-bottom: 80px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.menu-items-section-app6:first-of-type, 
+.menu-items-section-app6:nth-of-type(2) {
+    border-bottom: 1px solid #f2f4f6;
+}
+
+.menu-items-section-app6.menu-items-center {
+    padding: 16px 0;
+}
+
+.menu-items-title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: block;
+    margin-bottom: 8px;
+    padding: 0 16px;
+    color: #adb5bd;
+}
+
+.zendesk-button-menu-zendesk-button {
+    display: block;
+    position: relative;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.zendesk-button-menu-zendesk-button
+.zendesk-button-menu-label {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    color: #212529;
+    gap: 12px;
+}
+
+.zendesk-button-menu-zendesk-button .zendesk-button-menu-label svg {
+    width: 24px;
+    height: 24px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-items-menu {
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 16px;
+    width: 100%;
+}
+
+.menu-items-section-app6.menu-items-center .menu-items-menu {
+    padding: 8px 16px;
+}
+
+.menu-items-menu .menu-items-label {
+    font-size: 14px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menu-items-active .menu-items-label {
+    color: #212529;
+    font-weight: 700;
+}
+
+.menu-items-section-app6.menu-items-center .menu-items-menu .menu-items-label {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #212529;
+}
+
+.menu-items-section-app6.menu-items-center .menu-items-menu .menu-items-label svg {
+    width: 24px;
+    height: 24px;
+}
+
+.menu-items-menu.menu-items-has-submenu {
+    display: block;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+.menu-items-menu .menu-items-label svg {
+    width: 16px;
+    height: 16px;
+}
+
+.menu-items-menu.menu-items-has-submenu .menu-items-down-icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    margin-top: -8px;
+    color: #adb5bd;
+}
+
+.menu-items-menu.menu-items-has-submenu .menu-items-down-icon .menu-items-open {
+    transform: rotate(180deg);
+}
+
+.menu-items-submenu-container {
+    transition: height .3s ease-out;
+    overflow-y: hidden;
+}
+
+.menu-items-submenu-container#menu-items-closed  {
+    height: 0;
+}
+
+.menu-items-submenu-container#menu-items-closed.menu-items-show  {
+    height: 270px;
+}
+
+.menu-items-submenu-container .menu-items-submenu {
+    display: block;
+    background-color: #f9fafb;
+    cursor: pointer;
+    padding: 12px 16px 12px 44px;
+    color: #495057;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+}
