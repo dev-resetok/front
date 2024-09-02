@@ -294,6 +294,10 @@ header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
     cursor: pointer;
     color: #212121;
 }
+.right-nav-menu{
+    color: #fff;
+    position: relative;
+}
 
 .img-container {
     display: flex;
@@ -314,10 +318,7 @@ header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
     display: flex;
     align-items: center;
 }
-.right-nav-menu{
-    color: #fff;
-    position: relative;
-}
+
 .img-container{
     display: flex;
     align-items: center;
