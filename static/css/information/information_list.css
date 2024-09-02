@@ -69,7 +69,7 @@ body .main-wrap .main-container .main {
 body .main-wrap .main-container .main .post-lists .post-list {
     display: inline-block;
     word-break: break-word;
-    padding: 20px 24px 24px 24px;
+    padding: 12px 24px 24px 24px;
     width: 100%;
     max-width: 784px;
     border-radius: 8px;
