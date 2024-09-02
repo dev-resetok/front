@@ -7,9 +7,15 @@ const searchBoxLeftBox = document.querySelector(
 const searchBoxInput = document.querySelector(".search-text");
 const selectBox = document.querySelector("select.moa-select.search-type");
 const selectedValue = document.querySelector("p.select-name");
+const postCount = document.querySelector(".post-count");
 const paginationButtons = document.querySelectorAll("li.page-item");
+const pagePrevButton = document.querySelector("#page-prev-button");
+const pageNextButton = document.querySelector("#page-next-button");
+let pageIndex = 1;
 
 HTMLCollection.prototype.forEach = Array.prototype.forEach;
+
+postCount.innerText = "10,340";
 
 searchBoxLeftBox.addEventListener("mouseenter", (e) => {
     searchBoxInput.classList.add("active");
@@ -56,14 +62,68 @@ searchBoxInput.addEventListener("click", (e) => {
 });
 
 paginationButtons.forEach((paginationButton, i, paginationButtons) => {
-    if (i != 0 && i != 6) {
+    if (
+        paginationButton != pagePrevButton &&
+        paginationButton != pageNextButton
+    ) {
         paginationButton.addEventListener("click", (e) => {
+            pageIndex = i;
+            if (pageIndex === 1) {
+                pagePrevButton.style.visibility = "hidden";
+                pagePrevButton.style.cursor = "default";
+                pageNextButton.style.visibility = "visible";
+                pageNextButton.style.cursor = "pointer";
+            } else if (pageIndex === 5) {
+                pagePrevButton.style.visibility = "visible";
+                pagePrevButton.style.cursor = "pointer";
+                pageNextButton.style.visibility = "hidden";
+                pageNextButton.style.cursor = "default";
+            } else {
+                console.log(pagePrevButton.firstElementChild);
+                console.log(pageNextButton);
+                pagePrevButton.style.visibility = "visible";
+                pagePrevButton.style.cursor = "pointer";
+                pageNextButton.style.visibility = "visible";
+                pageNextButton.style.cursor = "pointer";
+            }
+
             paginationButtons.forEach((pgButton) => {
-                if (pgButton.firstElementChild != null) {
-                    pgButton.firstElementChild.classList.remove("active");
-                }
+                pgButton.firstElementChild.classList.remove("active");
             });
             e.target.classList.add("active");
         });
     }
+});
+
+pagePrevButton.addEventListener("click", (e) => {
+    pageIndex--;
+
+    if (pageIndex === 1) {
+        pagePrevButton.firstElementChild.style.visibility = "hidden";
+        pagePrevButton.firstElementChild.style.cursor = "default";
+    } else {
+        pagePrevButton.firstElementChild.style.visibility = "visible";
+        pagePrevButton.firstElementChild.style.cursor = "pointer";
+    }
+
+    paginationButtons.forEach((paginationButton) => {
+        paginationButton.firstElementChild.classList.remove("active");
+    });
+    paginationButtons[pageIndex].firstElementChild.classList.add("active");
+});
+pageNextButton.addEventListener("click", (e) => {
+    pageIndex++;
+
+    if (pageIndex === 5) {
+        pageNextButton.firstElementChild.style.visibility = "hidden";
+        pageNextButton.firstElementChild.style.cursor = "default";
+    } else {
+        pageNextButton.firstElementChild.style.visibility = "visible";
+        pageNextButton.firstElementChild.style.cursor = "pointer";
+    }
+
+    paginationButtons.forEach((paginationButton) => {
+        paginationButton.firstElementChild.classList.remove("active");
+    });
+    paginationButtons[pageIndex].firstElementChild.classList.add("active");
 });
