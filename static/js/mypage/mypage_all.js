@@ -1,5 +1,5 @@
 const showTab = (tabId, element) => {
-    // 모든 tab-content를 숨김
+    // 일단 모든 tab-content를 숨김
     const tabcontent = document.getElementsByClassName("tab-content");
     Array.from(tabcontent).forEach((content) => {
         content.classList.remove("active");
@@ -35,7 +35,7 @@ document.addEventListener("click", () => {
                     : currentText.trim();
             // 만약 현재 텍스트가 "정보를 입력해주세요."인 경우, 입력 필드를 비워두고
             // 그렇지 않으면, 기존 텍스트를 입력 필드에 표시
-            // `trim()` 메서드는 텍스트의 앞뒤 공백 제거
+            // trim() 메서드는 텍스트의 앞뒤 공백 제거
             element.innerHTML = "";
             element.appendChild(input);
             input.focus();
