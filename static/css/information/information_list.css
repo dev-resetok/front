@@ -83,6 +83,28 @@ body .main-wrap .main-container .main .post-lists .post-list:first-of-type {
     margin: 0;
 }
 
+.post-view-wrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+}
+
+.post-view {
+    width: 12px;
+    height: 12px;
+    background-image: url("https://www.wishket.com/static/renewal/img/project/search/post-icon-view.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.post-view-count {
+    color: #8181818b;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400; 
+}
 
 .status-mark {
     display: flex;
@@ -385,11 +407,11 @@ body .title-inline {
     font-weight: 600;
 }
 
-.arrange-type-wrap {
+.arrange-type-container {
     display: flex;
     justify-content: flex-end;
-    gap: 32px;
-    width: 50%;
+    gap: 16px;
+    width: 77%;
     margin: 32px 32px 0 0 ;
 }
 
@@ -397,6 +419,7 @@ body .title-inline {
     color: #616161;
     font-size: 12px;
     line-height: 26px;
+    font-weight: 200;
 }
 
 .arrange-type.selected {
