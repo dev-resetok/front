@@ -431,6 +431,21 @@ document.addEventListener("click", () => {
         });
     });
 
+    // 사용자 타입에 따른 학과 필드 표시 설정
+    const roleSelect = document.getElementById("role");
+    const departmentContainer = document.getElementById("department-container");
+
+    roleSelect.addEventListener("change", () => {
+        if (
+            roleSelect.value === "student" ||
+            roleSelect.value === "professor"
+        ) {
+            departmentContainer.style.display = "table-row";
+        } else {
+            departmentContainer.style.display = "none";
+        }
+    });
+
     //  클릭 이벤트 추가 div 보여주기
     document
         .getElementById("mypage-link")
