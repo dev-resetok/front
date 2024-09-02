@@ -360,12 +360,17 @@ body .title-inline {
 }
 
 .post-count-wrap {
-    display: inline-block;
-    width: calc(100% - 400px);
-    margin: 32px 0 0 32px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .post-count-container {
+    display: inline-block;
+    width: 50%;
+    margin: 32px 0 0 32px;
+}
+
+.post-count-inner {
     color: #424242;
     font-size: 12px;
     line-height: 26px;
@@ -377,6 +382,24 @@ body .title-inline {
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
+    font-weight: 600;
+}
+
+.arrange-type-wrap {
+    display: flex;
+    justify-content: flex-end;
+    gap: 32px;
+    width: 50%;
+    margin: 32px 32px 0 0 ;
+}
+
+.arrange-type {
+    color: #616161;
+    font-size: 12px;
+    line-height: 26px;
+}
+
+.arrange-type.selected {
     font-weight: 600;
 }
 
