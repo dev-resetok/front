@@ -142,7 +142,6 @@ body .post-write-form-section .form-input-section {
     border-radius: 4px;
     border: 1px solid #e0e0e0;
 }
-
 .content-textarea > span.word-length {
     float: right;
     padding: 8px 12px 0 0;
@@ -313,22 +312,22 @@ input {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    margin-top: 10px; /* 제목과의 간격 */
-    margin-bottom: 30px; /* 내용과의 간격 */
+    margin-top: 10px;
+    margin-bottom: 30px;
     font-weight: bold;
 }
 
 .location-field {
-    margin-right: 20px; /* 각 필드 간의 간격 */
+    margin-right: 20px;
 }
 
 select {
     margin-top: 20px;
     width: 250px;
-    padding: 10px 15px;
-    border: 1px solid #ccc;
+    padding: 10px 10px;
+    border: 1px solid #e0e0e0;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: white;
     color: #333;
-    font-size: 16px;
+    font-size: 14px;
 }
