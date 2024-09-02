@@ -434,7 +434,6 @@ document.addEventListener("click", () => {
     // 사용자 타입에 따른 학과 필드 표시 설정
     const roleSelect = document.getElementById("role");
     const departmentContainer = document.getElementById("department-container");
-
     roleSelect.addEventListener("change", () => {
         if (
             roleSelect.value === "student" ||
