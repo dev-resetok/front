@@ -7,9 +7,11 @@ const searchBoxLeftBox = document.querySelector(
 const searchBoxInput = document.querySelector(".search-text");
 const selectBox = document.querySelector("select.moa-select.search-type");
 const selectedValue = document.querySelector("p.select-name");
-const paginationButtons = document.querySelectorAll("li.page-item");
+const postCount = document.querySelector(".post-count");
 
 HTMLCollection.prototype.forEach = Array.prototype.forEach;
+
+postCount.innerText = "10,340";
 
 searchBoxLeftBox.addEventListener("mouseenter", (e) => {
     searchBoxInput.classList.add("active");
@@ -52,18 +54,5 @@ searchBoxInput.addEventListener("click", (e) => {
     if (dropDownButton.classList[1] === "active") {
         dropDownButton.classList.remove("active");
         dropDownList.classList.remove("open");
-    }
-});
-
-paginationButtons.forEach((paginationButton, i, paginationButtons) => {
-    if (i != 0 && i != 6) {
-        paginationButton.addEventListener("click", (e) => {
-            paginationButtons.forEach((pgButton) => {
-                if (pgButton.firstElementChild != null) {
-                    pgButton.firstElementChild.classList.remove("active");
-                }
-            });
-            e.target.classList.add("active");
-        });
     }
 });
