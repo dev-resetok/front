@@ -59,7 +59,7 @@ document.querySelectorAll(".select-location").forEach((select) => {
     // 마우스가 나갔을 때
     select.addEventListener("mouseleave", (e) => {
         if (!e.target.matches(":focus")) {
-            // 포커스를 잃은 경우만 원래 상태로 돌림
+            // 포커스를 잃은 경우만 원래 상태로
             e.target.style.border = "1px solid #e0e0e0";
         }
     });
