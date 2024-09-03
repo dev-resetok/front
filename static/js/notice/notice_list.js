@@ -1,4 +1,3 @@
-// let index = 0;
 const titles = document.querySelectorAll(".news-center-table-body-title > a");
 console.log(titles);
 
