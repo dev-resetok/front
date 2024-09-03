@@ -956,3 +956,22 @@ const goToPage = (pageNumber, paginationId) => {
 renderPosts();
 renderReplies();
 renderInquiries();
+
+// 첫 번째 div (label-input-partner) 클릭 시 이벤트 처리
+const inputDiv = document.querySelector(".label-input-partner.table-shape");
+const stackSearchResult = document.querySelector(".stack-search-result");
+
+inputDiv.addEventListener("click", () => {
+    // stack-search-result를 보여줌
+    stackSearchResult.style.display = "block";
+});
+
+// 다른 곳을 클릭하면 stack-search-result를 숨김
+document.addEventListener("click", (event) => {
+    if (
+        !inputDiv.contains(event.target) &&
+        !stackSearchResult.contains(event.target)
+    ) {
+        stackSearchResult.style.display = "none";
+    }
+});
