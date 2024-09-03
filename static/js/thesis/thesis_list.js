@@ -41,7 +41,7 @@ dropDownList.children.forEach((li) => {
     li.addEventListener("click", (e) => {
         selectBox.children.forEach((option) => {
             if (li.dataset.selectValue === option.value) {
-                selectedValue.innerText = option.innerText;
+                selectedValue.innerText = option.innerText.trim();
             }
         });
         dropDownList.children.forEach((child) => {
