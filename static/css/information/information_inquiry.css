@@ -1,0 +1,189 @@
+@import url("https://www.wishket.com//static/css/general/general.css?231221");
+
+* {
+    font-family: /* "NotoSansKR", */ "Sans-serif";
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    height: 100%;
+    background-color: #f5f5f5;
+    width: 1080px;
+    margin: 0 auto;
+}
+
+/* ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 0;
+    margin: 0;
+} */
+
+a {
+    text-decoration: none;
+    color: #212121;
+}
+
+.wrap {
+    min-width: 1080px;
+    height: auto;
+    min-height: 70%;
+}
+
+.app .container {
+    margin-top: 20px;
+}
+
+.app .container .inner {
+    width: 1080px;
+}
+
+.inner {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.app .container .main-wrap {
+    display: flex;
+}
+
+.app .container .main-wrap .main {
+    width: 800px;
+}
+
+.app .container .post {
+    padding: 24px 32px 32px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .16);
+    margin-bottom: 24px;
+}
+
+.status-mark-wrap {
+    margin-bottom: 8px;
+}
+
+.status-mark-container {
+    position: relative;
+    display: flex;
+}
+
+.status-mark-container div.status-mark {
+    display: flex;
+    align-items: center;
+    padding: 1px 7px;
+    border: 1px solid;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.app .container .main-wrap .main .post .post-title-wrap .post-created-date {
+    float: right;
+    margin-top: 2px;
+    display: flex;
+    margin-left: auto;
+    color: #bdbdbd;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.post-title {
+    color: #212121;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 500;
+}
+
+.app .container .main-wrap .divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin-bottom: 24px;
+}
+
+.app .container .post .post-content-wrap .post-content {
+    word-break: break-all;
+    color: #212121;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.app .container .post .post-content-wrap .post-content a {
+    color: #3ba3c7;
+}
+
+.app .container .comment-wrap {
+    padding: 24px 32px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .16);
+    margin-bottom: 40px;
+}
+
+.comment-count-wrap {
+    color: #212121;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+}
+
+.app .container .comment-wrap .comment-count-wrap .comment-count {
+    color: #ff6b21;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+}
+
+.comment-container .comment-inner {
+    padding-top: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+}
+
+.comment-container .comment-inner .comment {
+    word-break: break-all;
+    color: #616161;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.comment-created-date {
+    color: #bdbdbd;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+.comment-container .comment-inner .comment-reply-icon {
+    position: absolute;
+    left: 24px;
+    top: 18px;
+}
+
+.comment-container .comment-inner .comment-reply-icon+.comment-reply-wrap {
+    margin-left: 56px;
+}
+
+.comment-container .comment-writer {
+    position: relative;
+    margin-bottom: 4px;
+}
+
+
+
