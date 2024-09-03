@@ -48,11 +48,11 @@ document.addEventListener("click", () => {
                 element.innerText = newText;
             });
 
-            input.addEventListener("keydown", (e) => {
-                if (e.key === "Enter") {
-                    input.blur();
-                }
-            });
+            // input.addEventListener("keydown", (e) => {
+            //     if (e.key === "Enter") {
+            //         input.blur();
+            //     }
+            // });
         });
     });
 
@@ -964,21 +964,64 @@ document
         const searchResult = document.querySelector(".stack-search-result");
         searchResult.style.display = "flex";
         event.stopPropagation(); // 이벤트 버블링을 막아 부모 요소에 전파되지 않도록 함
+
+        // 기술명* 텍스트 이동 및 색상 변경
+        const label = document.querySelector(".label-input-partner label");
+        label.style.top = "50%";
+        label.style.fontSize = "0.688rem";
+        label.style.transform = "translateY(-20px)"; // 위치 조정
+        label.style.color = "#00a878"; // 색상 변경
+        document.querySelector(".stack-search-typing-input").style.borderColor =
+            "#00a878";
     });
 
-// 다른 곳을 클릭했을 때 결과를 숨기게 하는 코드
+// 다른 곳을 클릭했을 때 결과를 숨기고, label 위치와 색상 복원
 document.addEventListener("click", (event) => {
     const searchResult = document.querySelector(".stack-search-result");
     const searchInput = document.querySelector(".stack-search-typing-input");
 
-    // 클릭한 곳이 검색창이나 결과 목록이 아닌 경우에만 결과를 숨김
+    // 클릭한 곳이 검색창이나 결과 목록이 아닌 경우에만 결과를 숨기고 label 복원
     if (
         !searchInput.contains(event.target) &&
         !searchResult.contains(event.target)
     ) {
         searchResult.style.display = "none";
+
+        // 입력 필드에 값이 없으면 label 위치와 색상 복원
+        if (searchInput.value === "") {
+            const label = document.querySelector(".label-input-partner label");
+            label.style.top = "50%";
+            label.style.fontSize = "14px";
+            label.style.transform = "translateY(-50%)"; // 원래 위치로
+            label.style.color = "#9e9e9e"; // 원래 색상으로 복원
+            searchInput.style.borderColor = "#e0e0e0"; // 원래 테두리 색상으로 복원
+        } else {
+            searchInput.style.borderColor = "#e0e0e0"; // 입력 필드가 비어 있지 않다면 테두리 색상 복원
+        }
     }
 });
+
+// 입력 필드가 blur될 때 label 위치와 색상 복원
+document
+    .querySelector(".stack-search-typing-input")
+    .addEventListener("blur", () => {
+        const searchInput = document.querySelector(
+            ".stack-search-typing-input"
+        );
+
+        // 입력 필드에 값이 없으면 label 위치와 색상 복원
+        if (searchInput.value === "") {
+            const label = document.querySelector(".label-input-partner label");
+            label.style.top = "50%";
+            label.style.fontSize = "14px";
+            label.style.transform = "translateY(-50%)"; // 원래 위치로
+            label.style.color = "#9e9e9e"; // 원래 색상으로 복원
+            searchInput.style.borderColor = "#e0e0e0"; // 원래 테두리 색상으로 복원
+        } else {
+            searchInput.style.borderColor = "#e0e0e0"; // 입력 필드가 비어 있지 않다면 테두리 색상 복원
+            searchInput.style.color = "#9e9e9e";
+        }
+    });
 
 // 기술명 선택 기능
 document.querySelectorAll(".stack-selector").forEach((stackSelector) => {
@@ -992,13 +1035,21 @@ document.querySelectorAll(".stack-selector").forEach((stackSelector) => {
         const inputField = document.querySelector(".stack-search-typing-input");
         inputField.value = selectedTagName;
 
+        // label 고정 위치 및 색상
+        const label = document.querySelector(".label-input-partner label");
+        label.style.top = "50%";
+        label.style.fontSize = "0.688rem";
+        label.style.transform = "translateY(-20px)"; // 위치 조정
+        label.style.color = "#00a878"; // 색상 변경
+        inputField.style.borderColor = "#e0e0e0"; // 테두리 색상 변경
+
         // 결과를 숨김
         const searchResult = document.querySelector(".stack-search-result");
         searchResult.style.display = "none";
     });
 });
 
-// 숙련도 선택 기능
+// 숙련도 및 경험 선택 기능
 document
     .querySelectorAll(".ui-label-select .select-dropdown li")
     .forEach((item) => {
@@ -1006,51 +1057,79 @@ document
             const selectedValue = item.getAttribute("data-select-value");
             const selectedText = item.textContent.trim();
 
-            // 선택한 숙련도를 반영
+            // 선택한 숙련도 또는 경험을 반영
             const selectLabel = item
                 .closest(".ui-label-select")
                 .querySelector(".select-label");
-            selectLabel.textContent = selectedText;
-            selectLabel.style.color = "rgb(97,97,97)"; // 글씨 색상을 검은색으로 변경
+            selectLabel.style.color = "#00a878"; // 글씨 색상을 #00a878으로 변경
+
+            // 선택한 값을 표시할 요소
+            const selectName = item
+                .closest(".ui-label-select")
+                .querySelector(".select-name");
+            selectName.textContent = selectedText; // 선택한 텍스트를 표시
+            selectName.style.color = "#9e9e9e"; // 선택한 텍스트의 색상을 설정
+
             item
                 .closest(".ui-label-select")
-                .querySelector('select[name="rating"]').value = selectedValue;
+                .querySelector(
+                    'select[name="rating"], select[name="experience"]'
+                ).value = selectedValue;
 
             // 드롭다운 닫기
             item.closest(".select-dropdown").classList.remove("open");
             item.closest(".ui-label-select")
                 .querySelector(".select-box")
                 .classList.remove("active");
+
+            // 숙련도 또는 경험 텍스트 이동 및 색상 변경
+            const label = item
+                .closest(".ui-label-select")
+                .querySelector(".select-label");
+            label.style.transform = "translateY(-20px)"; // 위치 조정
+            label.style.color = "#00a878"; // 색상 변경
         });
     });
 
-// Select box 관련 코드
+// 숙련도와 경험의 텍스트를 클릭 시 이동 및 색상 변경
 document.querySelectorAll(".ui-label-select").forEach((selectBox) => {
-    const dropdown = selectBox.querySelector(".select-dropdown");
-
-    // Select box를 클릭할 때 open 클래스를 토글합니다.
     selectBox.addEventListener("click", (event) => {
         event.stopPropagation(); // 이벤트 버블링 방지
+
+        const selectLabel = selectBox.querySelector(".select-label");
+
+        // 텍스트 이동 및 색상 변경
+        selectLabel.style.fontSize = "0.688rem"
+        selectLabel.style.transform = "translateY(-20px)"; // 위치 조정
+        selectLabel.style.color = "#00a878"; // 색상 변경
 
         // 다른 select-dropdown 닫기
         document
             .querySelectorAll(".select-dropdown.open")
             .forEach((openDropdown) => {
-                if (openDropdown !== dropdown) {
+                if (openDropdown.closest(".ui-label-select") !== selectBox) {
                     openDropdown.classList.remove("open");
                     openDropdown
                         .closest(".ui-label-select")
                         .querySelector(".select-box")
                         .classList.remove("active");
+
+                    // 원래 색상으로 복원
+                    const otherLabel = openDropdown
+                        .closest(".ui-label-select")
+                        .querySelector(".select-label");
+                    otherLabel.style.color = "#9e9e9e"; // 원래 색상으로 복원
                 }
             });
 
+        // 현재 select-dropdown을 토글
+        const dropdown = selectBox.querySelector(".select-dropdown");
         dropdown.classList.toggle("open");
         selectBox.querySelector(".select-box").classList.toggle("active");
     });
 });
 
-// 페이지의 다른 부분을 클릭하면 드롭다운이 닫히도록 합니다.
+// 페이지의 다른 부분을 클릭하면 드롭다운이 닫히도록 하고, 색상 복원
 document.addEventListener("click", () => {
     document.querySelectorAll(".select-dropdown.open").forEach((dropdown) => {
         dropdown.classList.remove("open");
@@ -1058,5 +1137,11 @@ document.addEventListener("click", () => {
             .closest(".ui-label-select")
             .querySelector(".select-box")
             .classList.remove("active");
+
+        // 원래 색상으로 복원
+        const selectLabel = dropdown
+            .closest(".ui-label-select")
+            .querySelector(".select-label");
+        selectLabel.style.color = "#9e9e9e"; // 원래 색상으로 복원
     });
 });
