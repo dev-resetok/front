@@ -957,21 +957,106 @@ renderPosts();
 renderReplies();
 renderInquiries();
 
-// 첫 번째 div (label-input-partner) 클릭 시 이벤트 처리
-const inputDiv = document.querySelector(".label-input-partner.table-shape");
-const stackSearchResult = document.querySelector(".stack-search-result");
+// 검색창을 클릭했을 때 결과를 보이게 하는 코드
+document
+    .querySelector(".stack-search-typing-input")
+    .addEventListener("click", (event) => {
+        const searchResult = document.querySelector(".stack-search-result");
+        searchResult.style.display = "flex";
+        event.stopPropagation(); // 이벤트 버블링을 막아 부모 요소에 전파되지 않도록 함
+    });
 
-inputDiv.addEventListener("click", () => {
-    // stack-search-result를 보여줌
-    stackSearchResult.style.display = "block";
+// 다른 곳을 클릭했을 때 결과를 숨기게 하는 코드
+document.addEventListener("click", (event) => {
+    const searchResult = document.querySelector(".stack-search-result");
+    const searchInput = document.querySelector(".stack-search-typing-input");
+
+    // 클릭한 곳이 검색창이나 결과 목록이 아닌 경우에만 결과를 숨김
+    if (
+        !searchInput.contains(event.target) &&
+        !searchResult.contains(event.target)
+    ) {
+        searchResult.style.display = "none";
+    }
 });
 
-// 다른 곳을 클릭하면 stack-search-result를 숨김
-document.addEventListener("click", (event) => {
-    if (
-        !inputDiv.contains(event.target) &&
-        !stackSearchResult.contains(event.target)
-    ) {
-        stackSearchResult.style.display = "none";
-    }
+// 기술명 선택 기능
+document.querySelectorAll(".stack-selector").forEach((stackSelector) => {
+    stackSelector.addEventListener("click", (event) => {
+        event.stopPropagation(); // 이벤트 버블링 방지
+
+        // 선택된 기술의 data-tag-name 값을 가져옴
+        const selectedTagName = stackSelector.getAttribute("data-tag-name");
+
+        // "기술명 *" 입력란에 선택된 값 표시
+        const inputField = document.querySelector(".stack-search-typing-input");
+        inputField.value = selectedTagName;
+
+        // 결과를 숨김
+        const searchResult = document.querySelector(".stack-search-result");
+        searchResult.style.display = "none";
+    });
+});
+
+// 숙련도 선택 기능
+document
+    .querySelectorAll(".ui-label-select .select-dropdown li")
+    .forEach((item) => {
+        item.addEventListener("click", (event) => {
+            const selectedValue = item.getAttribute("data-select-value");
+            const selectedText = item.textContent.trim();
+
+            // 선택한 숙련도를 반영
+            const selectLabel = item
+                .closest(".ui-label-select")
+                .querySelector(".select-label");
+            selectLabel.textContent = selectedText;
+            selectLabel.style.color = "rgb(97,97,97)"; // 글씨 색상을 검은색으로 변경
+            item
+                .closest(".ui-label-select")
+                .querySelector('select[name="rating"]').value = selectedValue;
+
+            // 드롭다운 닫기
+            item.closest(".select-dropdown").classList.remove("open");
+            item.closest(".ui-label-select")
+                .querySelector(".select-box")
+                .classList.remove("active");
+        });
+    });
+
+// Select box 관련 코드
+document.querySelectorAll(".ui-label-select").forEach((selectBox) => {
+    const dropdown = selectBox.querySelector(".select-dropdown");
+
+    // Select box를 클릭할 때 open 클래스를 토글합니다.
+    selectBox.addEventListener("click", (event) => {
+        event.stopPropagation(); // 이벤트 버블링 방지
+
+        // 다른 select-dropdown 닫기
+        document
+            .querySelectorAll(".select-dropdown.open")
+            .forEach((openDropdown) => {
+                if (openDropdown !== dropdown) {
+                    openDropdown.classList.remove("open");
+                    openDropdown
+                        .closest(".ui-label-select")
+                        .querySelector(".select-box")
+                        .classList.remove("active");
+                }
+            });
+
+        dropdown.classList.toggle("open");
+        selectBox.querySelector(".select-box").classList.toggle("active");
+    });
+});
+
+// 페이지의 다른 부분을 클릭하면 드롭다운이 닫히도록 합니다.
+document.addEventListener("click", () => {
+    document.querySelectorAll(".select-dropdown.open").forEach((dropdown) => {
+        dropdown.classList.remove("open");
+        dropdown
+            .closest(".ui-label-select")
+            .querySelector(".select-box")
+            .classList.remove("active");
+    });
 });

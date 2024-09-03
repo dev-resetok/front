@@ -1,3 +1,28 @@
+@font-face {
+    font-family: "NotoSansKR";
+    font-weight: 700;
+    src: url("/templates/fonts/NotoSansKR-Bold.otf") format("woff2");
+}
+@font-face {
+    font-family: "NotoSansKR";
+    font-weight: 500;
+    src: url("/templates/fonts/NotoSansKR-Medium.woff2") format("woff2");
+}
+@font-face {
+    font-family: "NotoSansKR";
+    font-weight: 400;
+    src: url("/templates/fonts/NotoSansKR-Regular.woff2") format("woff2");
+}
+@font-face {
+    font-family: "NotoSansKR";
+    font-weight: 300;
+    src: url("/templates/fonts/NotoSansKR-Light.woff2") format("woff2");
+}
+@font-face {
+    font-family: "NotoSansKR";
+    font-weight: 100;
+    src: url("/templates/fonts/NotoSansKR-Thin.woff2") format("woff2");
+}
 * {
     margin: 0;
     padding: 0;
@@ -669,7 +694,7 @@ body.partners_profile .label-input-partner label {
     display: block;
 }
 .stack-search-form .stack-search-typing-box .stack-search-result {
-    display: flex !important;
+    display: flex;
     border-radius: 4px;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
     background-color: #ffffff;
@@ -791,4 +816,228 @@ a {
     font-size: 12px;
     line-height: 18px;
     font-weight: 400;
+}
+.edit-menu-box .edit-box-view .edit-box .input-box + .input-box {
+    margin-left: -1px;
+}
+.edit-menu-box .edit-box-view .edit-box .input-box.size-s {
+    width: 212px;
+}
+.ui-label-select.theme-partner.table-shape {
+    min-width: 0;
+}
+.ui-label-select.theme-partner {
+    position: relative;
+    color: #616161;
+    font-weight: 400;
+    cursor: pointer;
+    display: inline-block;
+    min-width: 260px;
+    line-height: 0;
+}
+.ui-label-select.theme-partner.table-shape > .select-box {
+    border-radius: 0;
+}
+.ui-label-select.theme-partner > .select-box {
+    position: relative;
+    padding: 25px 51px 8px 13px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    border-radius: 4px;
+    background: #fff;
+    display: block;
+    height: 3.625rem;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+.ui-label-select.theme-partner > .select-box .select-label.basic {
+    transform: translateY(-50%);
+    top: 50%;
+}
+.ui-label-select.theme-partner > .select-box .select-label {
+    position: absolute;
+    left: 13px;
+    font-size: 14px;
+    line-height: 24px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+.select-label {
+    color: #bdbdbd;
+}
+.ui-label-select.theme-partner > .select-box > p.select-name {
+    font-size: 14px;
+    line-height: 1.5rem;
+    opacity: 0;
+    height: 24px;
+    overflow: hidden;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    transition: all 0.3s, dispay 0.1s 0.3s;
+    -webkit-transition: all 0.3s, dispay 0.1s 0.3s;
+}
+.ui-label-select.theme-partner > .select-box > i {
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0.001deg);
+    line-height: 0;
+}
+.ui-label-select.theme-partner > .select-box > i > svg {
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+.ui-label-select.theme-partner > .selectBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    text-indent: -9999999px;
+}
+.ui-label-select.theme-partner > .select-dropdown {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transition: all 0.3s, opacity 0.1s;
+    -webkit-transition: all 0.3s, opacity 0.1s;
+    top: 57px;
+    width: 100%;
+    border-radius: 4px;
+    padding: 8px 0;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+    z-index: 777;
+    background: #fff;
+    max-height: 270px;
+    overflow: auto;
+}
+.ui-label-select.theme-partner > .select-dropdown {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-height: 270px;
+    overflow: auto;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+    z-index: 9999;
+}
+
+.ui-label-select.theme-partner > .select-dropdown.open {
+    opacity: 1;
+    visibility: visible;
+}
+.ui-label-select.theme-partner > .select-box > i {
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0.001deg);
+    line-height: 0;
+}
+.ui-label-select.theme-partner .select-box.active i svg {
+    transform: rotate(180deg);
+}
+
+.ui-label-select.theme-partner > .select-dropdown > li {
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 24px;
+    overflow: hidden;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+}
+.ui-label-select.theme-partner > .select-dropdown > li:hover,
+.ui-label-select.theme-partner > .select-dropdown > li:focus {
+    background: #f5fffc;
+}
+.ui-label-select.theme-partner .select-box i.active svg {
+    transform: rotate(180deg);
+}
+.ui-label-select.theme-partner.table-shape {
+    min-width: 0;
+}
+.ui-label-select.theme-partner {
+    position: relative;
+    color: #616161;
+    font-weight: 400;
+    cursor: pointer;
+    display: inline-block;
+    min-width: 260px;
+    line-height: 0;
+}
+.input-box.size-ss {
+    width: 160px;
+}
+.btn-partner:disabled,
+.btn-partner-not-active:disabled {
+    background-color: #c4ede1;
+    border-color: #c4ede1;
+    cursor: default;
+}
+.btn-partner,
+.btn-partner-not-active {
+    background-color: #00a878;
+    color: #fff;
+    border: #00a878;
+}
+.btn-8-20 {
+    padding: 8px 20px;
+}
+.btn-submit {
+    margin-right: 12px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    border-radius: 4px;
+}
+.btn-gray {
+    background-color: #a1a6ad;
+    color: #fff;
+}
+.btn-gray {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border-radius: 4px;
+    border: none;
+    margin-right: 12px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    border-radius: 4px;
+}
+.edit-menu-box .edit-box-view .edit-box .edit-box-footer .help-text {
+    float: right;
+    margin-top: 10px;
+}
+.text400 {
+    color: #9e9e9e;
+}
+.body-3 {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.edit-menu-box .add-edit-box {
+    font-size: 14px;
+    line-height: 24px;
+    align-items: center;
+    cursor: pointer;
+    display: inline-block;
+    color: #3ba3c7;
+}
+.body-2-medium {
+    font-weight: 500;
+}
+.edit-menu-box .add-edit-box .icon-add-edit-box,
+body.partners_profile .edit-menu-box .add-edit-project-box .icon-add-edit-box {
+    position: relative;
+    margin-right: 4px;
+    top: 2px;
 }
