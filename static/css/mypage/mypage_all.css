@@ -876,6 +876,9 @@ a {
     color: #bdbdbd;
 }
 .ui-label-select.theme-partner > .select-box > p.select-name {
+    opacity: 1;
+    visibility: visible;
+    color: #616161; /* Default color for selected text */
     font-size: 14px;
     line-height: 1.5rem;
     opacity: 0;
