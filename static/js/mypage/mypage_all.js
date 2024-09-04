@@ -956,7 +956,6 @@ const goToPage = (pageNumber, paginationId) => {
 renderPosts();
 renderReplies();
 renderInquiries();
-
 // 검색창을 클릭했을 때 결과를 보이게 하는 코드
 document
     .querySelector(".stack-search-typing-input")
@@ -997,6 +996,8 @@ document.addEventListener("click", (event) => {
             searchInput.style.borderColor = "#e0e0e0"; // 원래 테두리 색상으로 복원
         } else {
             searchInput.style.borderColor = "#e0e0e0"; // 입력 필드가 비어 있지 않다면 테두리 색상 복원
+            const label = document.querySelector(".label-input-partner label");
+            label.style.color = "#9e9e9e"; // 값이 있을 때 색상만 복원
         }
     }
 });
@@ -1041,11 +1042,14 @@ document.querySelectorAll(".stack-selector").forEach((stackSelector) => {
         label.style.fontSize = "0.688rem";
         label.style.transform = "translateY(-20px)"; // 위치 조정
         label.style.color = "#00a878"; // 색상 변경
-        inputField.style.borderColor = "#e0e0e0"; // 테두리 색상 변경
+        inputField.style.borderColor = "#eee"; // 테두리 색상 변경
 
         // 결과를 숨김
         const searchResult = document.querySelector(".stack-search-result");
         searchResult.style.display = "none";
+
+        // 텍스트 색상 복원
+        label.style.color = "#9e9e9e";
     });
 });
 
@@ -1068,7 +1072,9 @@ document
                 .closest(".ui-label-select")
                 .querySelector(".select-name");
             selectName.textContent = selectedText; // 선택한 텍스트를 표시
-            selectName.style.color = "#9e9e9e"; // 선택한 텍스트의 색상을 설정
+            selectName.style.opacity = 1; // 선택한 텍스트를 보이도록 설정
+            selectName.style.visibility = "visible";
+            selectName.style.color = "#616161"; // 선택한 텍스트의 색상을 설정
 
             item
                 .closest(".ui-label-select")
@@ -1087,7 +1093,11 @@ document
                 .closest(".ui-label-select")
                 .querySelector(".select-label");
             label.style.transform = "translateY(-20px)"; // 위치 조정
-            label.style.color = "#00a878"; // 색상 변경
+            label.style.color = "#9e9e9e"; // 값이 있을 때 색상만 복원
+
+            // 선택된 경우 테두리 색상 복원
+            const selectBox = item.closest(".ui-label-select");
+            selectBox.style.borderColor = "#e0e0e0"; // 원래 테두리 색상으로 복원
         });
     });
 
@@ -1099,9 +1109,10 @@ document.querySelectorAll(".ui-label-select").forEach((selectBox) => {
         const selectLabel = selectBox.querySelector(".select-label");
 
         // 텍스트 이동 및 색상 변경
-        selectLabel.style.fontSize = "0.688rem"
-        selectLabel.style.transform = "translateY(-20px)"; // 위치 조정
+        selectLabel.style.fontSize = "0.688rem";
+        selectLabel.style.transform = "translateY(-23px)"; // 위치 조정
         selectLabel.style.color = "#00a878"; // 색상 변경
+        selectBox.querySelector(".select-box").style.borderColor = "#00a878"; // 테두리 색상 변경
 
         // 다른 select-dropdown 닫기
         document
@@ -1119,6 +1130,10 @@ document.querySelectorAll(".ui-label-select").forEach((selectBox) => {
                         .closest(".ui-label-select")
                         .querySelector(".select-label");
                     otherLabel.style.color = "#9e9e9e"; // 원래 색상으로 복원
+                    openDropdown
+                        .closest(".ui-label-select")
+                        .querySelector(".select-box").style.borderColor =
+                        "#e0e0e0"; // 테두리 색상 복원
                 }
             });
 
@@ -1126,6 +1141,15 @@ document.querySelectorAll(".ui-label-select").forEach((selectBox) => {
         const dropdown = selectBox.querySelector(".select-dropdown");
         dropdown.classList.toggle("open");
         selectBox.querySelector(".select-box").classList.toggle("active");
+
+        // 선택된 값이 없을 때 label 위치 복원
+        const selectName = selectBox.querySelector(".select-name");
+        if (!selectName.textContent === "") {
+            selectLabel.style.top = "50%";
+            selectLabel.style.fontSize = "14px";
+            selectLabel.style.transform = "translateY(-50%)"; // 원래 위치로
+            selectLabel.style.color = "#9e9e9e"; // 원래 색상으로
+        }
     });
 });
 
@@ -1143,5 +1167,22 @@ document.addEventListener("click", () => {
             .closest(".ui-label-select")
             .querySelector(".select-label");
         selectLabel.style.color = "#9e9e9e"; // 원래 색상으로 복원
+
+        const selectName = dropdown
+            .closest(".ui-label-select")
+            .querySelector(".select-name");
+        if (selectName.textContent === "") {
+            selectLabel.style.top = "50%";
+            selectLabel.style.fontSize = "14px";
+            selectLabel.style.transform = "translateY(-50%)"; // 원래 위치로
+            selectLabel.style.color = "#9e9e9e"; // 원래 색상으로 복원
+        } else {
+            selectLabel.style.color = "#9e9e9e"; // 값이 있을 때 색상만 복원
+        }
+
+        // 테두리 색상 복원
+        dropdown
+            .closest(".ui-label-select")
+            .querySelector(".select-box").style.borderColor = "#e0e0e0"; // 원래 테두리 색상으로 복원
     });
 });

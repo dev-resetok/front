@@ -178,6 +178,7 @@ a {
     margin-top: 10px;
     font-size: 65%;
     color: #999;
+    line-height: 20px;
 }
 
 .client-info {
@@ -833,6 +834,7 @@ a {
 }
 .ui-label-select.theme-partner.table-shape {
     min-width: 0;
+    width: 99.8% !important;
 }
 .ui-label-select.theme-partner {
     position: relative;
@@ -990,6 +992,7 @@ a {
     background-color: #00a878;
     color: #fff;
     border: #00a878;
+    cursor: pointer;
 }
 .btn-8-20 {
     padding: 8px 20px;
