@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>게시글 작성 - 정보 게시판</title>
+        <!-- <link
+            rel="stylesheet"
+            href="../../static/css/information/information_write.css"
+        /> -->
+        <link rel="stylesheet" href="information_write.css" />
+        <link
+            rel="shortcut icon"
+            href="https://www.wishket.com/static/favicon.ico"
+        />
+    </head>
+    <body>
+        <div id="header-space" style="width: 100px; height: 100px"></div>
+        <div class="wrap">
+            <div>
+                <div class="container">
+                    <form>
+                        <div class="post-write-form-section">
+                            <div class="form-section-header">
+                                <p class="form-section-title subtitle-1">
+                                    프로젝트 협업 작성
+                                </p>
+                            </div>
+                            <div class="form-input-section">
+                                <div class="form-part">
+                                    <label class="form-title font-body-1-bold"
+                                        >학교 및 학과
+                                    </label>
+                                    <div class="mb8"></div>
+                                    <div class="form-content">
+                                        <div>
+                                            <div class="content-textarea">
+                                                <div class="textarea-border">
+                                                    <textarea
+                                                        class="moa-textarea font-body-2 text6"
+                                                        name="textarea"
+                                                        id="school-major-textarea"
+                                                        maxlength="40"
+                                                        rows="1"
+                                                        style="
+                                                            width: 100%;
+                                                            min-width: 100%;
+                                                            max-width: 100%;
+                                                            min-height: 30px;
+                                                        "
+                                                    >
+학교와 학과를 입력해주세요. ex) 모아대학교 모아학과</textarea
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-part">
+                                    <label class="form-title font-body-1-bold"
+                                        >프로젝트 분야
+                                    </label>
+                                    <div class="mb8"></div>
+                                    <div class="form-content">
+                                        <div>
+                                            <div class="content-textarea">
+                                                <div class="textarea-border">
+                                                    <textarea
+                                                        class="moa-textarea font-body-2 text6"
+                                                        name="textarea"
+                                                        id="school-major-textarea"
+                                                        maxlength="40"
+                                                        rows="1"
+                                                        style="
+                                                            width: 100%;
+                                                            min-width: 100%;
+                                                            max-width: 100%;
+                                                            min-height: 30px;
+                                                        "
+                                                    >
+진행할 프로젝트 분야를 입력해 주세요. ex) IT / 네트워크</textarea
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-part">
+                                    <label class="form-title font-body-1-bold"
+                                        >프로젝트 제목
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="mb8"></div>
+                                    <div class="form-content">
+                                        <div>
+                                            <div class="content-textarea">
+                                                <div class="textarea-border">
+                                                    <textarea
+                                                        class="moa-textarea font-body-2 text6"
+                                                        name="textarea"
+                                                        id="title-textarea"
+                                                        maxlength="40"
+                                                        rows="1"
+                                                        style="
+                                                            width: 100%;
+                                                            min-width: 100%;
+                                                            max-width: 100%;
+                                                            min-height: 30px;
+                                                        "
+                                                    >
+프로젝트 제목을 입력해주세요. ex) 삼성 반도체 건설 안전 관리 회사 웹사이트 구축</textarea
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-part">
+                                    <label class="form-title font-body-1-bold"
+                                        >모집 요건
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="mb8"></div>
+                                    <div class="form-content">
+                                        <div>
+                                            <div class="content-textarea">
+                                                <div class="textarea-border">
+                                                    <textarea
+                                                        class="moa-textarea font-body-2 text6"
+                                                        name="textarea"
+                                                        id="title-textarea"
+                                                        maxlength="40"
+                                                        rows="1"
+                                                        style="
+                                                            width: 100%;
+                                                            min-width: 100%;
+                                                            max-width: 100%;
+                                                            min-height: 30px;
+                                                        "
+                                                    >
+모집 요건을 입력해 주세요. ex) 주 1회 미팅 및 대면 작업 가능자</textarea
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-part">
+                                    <label class="form-title font-body-1-bold"
+                                        >요구 기술 조건
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="mb8"></div>
+                                    <div class="form-content">
+                                        <div>
+                                            <div class="content-textarea">
+                                                <div class="textarea-border">
+                                                    <textarea
+                                                        class="moa-textarea font-body-2 text6"
+                                                        name="textarea"
+                                                        id="title-textarea"
+                                                        maxlength="40"
+                                                        rows="1"
+                                                        style="
+                                                            width: 100%;
+                                                            min-width: 100%;
+                                                            max-width: 100%;
+                                                            min-height: 30px;
+                                                        "
+                                                    >
+요구 기술 조건을 입력해 주세요. ex) 한글, 파워포인트 작성이 유능 하신 분</textarea
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divide-wrap"></div>
+                                <div class="form-part">
+                                    <label class="form-title font-body-1-bold"
+                                        >프로젝트 내용
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="mb8"></div>
+                                    <div class="form-content">
+                                        <div>
+                                            <div class="content-textarea">
+                                                <div class="textarea-border">
+                                                    <textarea
+                                                        class="moa-textarea font-body-2 text6"
+                                                        name="textarea"
+                                                        id="content-textarea"
+                                                        maxlength="5000"
+                                                        rows="15"
+                                                        style="
+                                                            width: 100%;
+                                                            min-width: 100%;
+                                                            max-width: 100%;
+                                                        "
+                                                    >
+                                                    </textarea>
+                                                </div>
+                                                <span
+                                                    class="word-length"
+                                                ></span>
+                                                <span class="help-text"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="attach-wrap">
+                                        <div class="attach-button-file-wrap">
+                                            <div class="attach-button">
+                                                <label>
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/submit/btn_icon_add_s.svg"
+                                                        alt="attach_img"
+                                                    />
+                                                    <div
+                                                        class="font-body-2-medium text-moa"
+                                                    >
+                                                        파일첨부
+                                                    </div>
+                                                    <input
+                                                        type="file"
+                                                        class="attach-input"
+                                                    />
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="attach-button-file-wrap">
+                                            <div class="attach-button">
+                                                <label>
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/submit/btn_icon_add_s.svg"
+                                                        alt="attach_img"
+                                                    />
+                                                    <div
+                                                        class="font-body-2-medium text-moa"
+                                                    >
+                                                        파일첨부
+                                                    </div>
+                                                    <input
+                                                        type="file"
+                                                        class="attach-input"
+                                                    />
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="attach-button-file-wrap">
+                                            <div class="attach-button">
+                                                <label>
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/submit/btn_icon_add_s.svg"
+                                                        alt="attach_img"
+                                                    />
+                                                    <div
+                                                        class="font-body-2-medium text-moa"
+                                                    >
+                                                        파일첨부
+                                                    </div>
+                                                    <input
+                                                        type="file"
+                                                        class="attach-input"
+                                                    />
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="complete-save-button-divider">
+                                <div class="complete-button">작성완료</div>
+                                <div class="save-button">저장</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="footer-space" style="width: 100px; height: 100px"></div>
+    </body>
+    <!-- <script src="../../static/js/information/information_write.js"></script> -->
+    <script src="information_write.js"></script>
+    <script>
+        const textarea = document.getElementById("content-textarea");
+        const defaultText = `프로젝트 개요 :
+현재 준비 상황 : 
+필요 요소 :
+개발환경/언어/방식 :
+주요 기능 List/주요 화면 List/메뉴 구성/요구 사항 등 :
+산출물 :
+참고 서비스/사이트 :
+기타 참고 사항/유의 사항 :`;
+
+        // 로컬 저장소에서 저장된 내용 로드
+        function loadContent() {
+            const savedContent = localStorage.getItem("textarea-content");
+            if (savedContent) {
+                textarea.value = savedContent;
+            } else {
+                textarea.value = defaultText;
+            }
+        }
+
+        // 로컬 저장소에 내용 저장
+        function saveContent() {
+            if (textarea.value !== defaultText) {
+                localStorage.setItem("textarea-content", textarea.value);
+            }
+        }
+
+        // 초기 내용 로드
+        loadContent();
+
+        // 포커스 시 기본 텍스트 뒤로 커서 이동
+        textarea.addEventListener("focus", function () {
+            if (textarea.value === defaultText) {
+                textarea.setSelectionRange(
+                    defaultText.length,
+                    defaultText.length
+                );
+            }
+        });
+
+        // 입력 내용 저장
+        textarea.addEventListener("input", function () {
+            // 기본 텍스트와 입력한 내용 분리
+            if (textarea.value.startsWith(defaultText)) {
+                textarea.value =
+                    defaultText + textarea.value.substring(defaultText.length);
+            }
+            saveContent();
+        });
+
+        // 페이지를 벗어나기 전에 내용 저장
+        window.addEventListener("beforeunload", function () {
+            saveContent();
+        });
+    </script>
+</html>
