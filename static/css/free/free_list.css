@@ -166,8 +166,7 @@ body .main-wrap .main-container .main .post-lists .post-list:first-of-type {
 }
 
 .main .search-section-header {
-    padding: 26px 32px 24px;
-    border-bottom: 1px solid #e0e0e0;
+    padding: 26px 32px
 }
 
 .main .search-section-header .search-box {
@@ -219,7 +218,7 @@ body .main-wrap .main-container .main .post-lists .post-list:first-of-type {
 
 .ui-select.theme-moa>.select-box>p.select-name {
     font-size: 14px;
-    line-height: 24px;
+    line-height: 17px;
     opacity: 1;
     overflow: hidden;
     word-break: keep-all;
@@ -336,7 +335,7 @@ body .main-wrap .main-container .main .post-lists .post-list:first-of-type {
     font-weight: 400;
     background: #fff;
     width: 100%;
-    height: inherit;
+    height: 37px;
     padding: 8px 38px 8px 12px;
 }
 
@@ -369,8 +368,13 @@ body .title-inline {
     color: #212121;
     font-weight: 600;
     font-size: 24px;
-    line-height: 28px;
-    margin: 5px 0;
+    line-height: 36px;
+}
+
+.divider {
+    width: calc(100% - 64px);
+    border-bottom: 1px solid #e0e0e0;
+    margin-left: 32px;
 }
 
 .post-count-wrap {
