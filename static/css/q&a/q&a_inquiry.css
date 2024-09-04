@@ -68,11 +68,19 @@ body {
 .detail-contents .alert-box .alert-title {
     font-size: 14px;
     line-height: 24px;
-}
-
-.detail-contents .alert-box .alert-title {
     font-weight: 500;
     margin-bottom: 6px;
+}
+
+.detail-contents .alert-box .alert-title.warning {
+    color: #ff8547;
+}
+
+.detail-contents .alert-box .alert-contents {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #424242;
 }
 
 .flex-box {
@@ -91,4 +99,38 @@ body {
     margin-bottom: 16px;
     border: solid 1px #eee;
     border-radius: 8px;
+}
+
+.body-3-medium {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.detail-section .detail-data .faq-evaluation .evaluation-text {
+    margin-right: 24px;
+}
+
+.text600 {
+    color: #616161;
+}
+
+.detail-section .detail-data .faq-evaluation .evaluation-button {
+    padding: 8px 16px;
+    border: solid 1px #e0e0e0;
+    border-radius: 4px;
+}
+
+.detail-section .detail-data .faq-evaluation .evaluation-button {
+    padding: 8px 16px;
+    border: solid 1px #e0e0e0;
+    border-radius: 4px;
+}
+
+.cs-box .detail-section .detail-data .faq-evaluation .faq-evaluation-icon {
+    margin-right: 8px;
+}
+
+.detail-section .detail-data .faq-evaluation .evaluation-button:not(:first-of-type) {
+    margin-left: 16px;
 }
