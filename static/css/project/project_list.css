@@ -379,7 +379,8 @@ button {
 }
 /* 프로젝트에 마우스 가져다대면 나타나는 효과 */
 .project-info-box-wrapper:hover {
-    border: 1px solid lightsteelblue;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 }
 .project-organic-info {
