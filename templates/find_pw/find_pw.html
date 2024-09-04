@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <title>Moa 통합회원 비밀번호 찾기</title>
+        <link rel="stylesheet" href="/static/css/join_signup/find_pw.css" />
+    </head>
+    <body class="__className_3b537e">
+        <div
+            style="
+                position: fixed;
+                z-index: 9999;
+                top: 80px;
+                left: 16px;
+                right: 16px;
+                bottom: 16px;
+                pointer-events: none;
+            "
+        ></div>
+        <!--$--><!--/$-->
+        <div class="">
+            <div class="box-border false">
+                <div
+                    class="box-border left-0 right-0 top-0 z-50 border-b bg-w-white"
+                >
+                    <div
+                        class="mx-auto grid w-full max-w-container auto-cols-1fr gap-x-5 px-5 desktop:gap-x-6 desktop:px-9 grid-areas-topBar-mobile bg-white py-4 tablet:grid-areas-topBar-tablet desktop:grid-areas-topBar-desktop"
+                    >
+                        <div
+                            class="box-border flex justify-center grid-in-ci desktop:block"
+                            data-testid="topbar"
+                        >
+                            <a class="cursor-default" href=""
+                                ><span
+                                    class="text-subTitle1 font-medium text-w-gray-900 desktop:text-base"
+                                    >Moa 통합회원 비밀번호 찾기</span
+                                ></a
+                            >
+                        </div>
+                        <div
+                            class="box-border hidden items-center justify-end whitespace-nowrap grid-in-action desktop:flex"
+                        >
+                            <div
+                                data-testid="topbar-service-menu"
+                                class="relative z-20 flex cursor-pointer items-center gap-2"
+                            >
+                                <span class="text-body2 text-w-gray-600"
+                                    >서비스 전체보기</span
+                                ><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 14 14"
+                                    fill="none"
+                                    data-testid="topbar-service-menu--arrow-icon"
+                                    class="text-w-gray-600"
+                                >
+                                    <path
+                                        d="M2.99922 5.00073L6.99922 8.99918L10.9992 5.00151"
+                                        stroke="currentColor"
+                                        stroke-width="1.4"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-border flex min-h-screen flex-col bg-w-white">
+                <div
+                    class="box-border h-full flex-1 pb-12 pt-6 desktop:min-h-[80vh] desktop:py-12"
+                >
+                    <div
+                        class="mx-auto grid w-full max-w-container auto-cols-1fr gap-x-5 px-5 desktop:gap-x-6 desktop:px-9 grid-areas-default-mobile tablet:grid-areas-default-tablet desktop:grid-areas-default-desktop"
+                    >
+                        <div
+                            class="box-border m-auto w-full grid-in-content desktop:w-fit"
+                        >
+                            <div
+                                class="box-border h-full w-full bg-w-white desktop:box-border desktop:flex desktop:w-[558px] desktop:flex-col desktop:rounded-2xl desktop:shadow-contents-container desktop:p-0"
+                                data-testid="feature-password-find-form"
+                            >
+                                <div
+                                    class="box-border mb-8 hidden border-b border-w-gray-200 px-8 py-6 desktop:block"
+                                >
+                                    <span class="text-title3 text-w-gray-900"
+                                        >비밀번호 찾기</span
+                                    >
+                                </div>
+                                <div
+                                    class="box-border flex w-full flex-col gap-8 desktop:px-8 desktop:pb-8"
+                                >
+                                    <form class="flex flex-col gap-8">
+                                        <div
+                                            class="box-border whitespace-break-spaces break-keep tablet:whitespace-normal desktop:whitespace-pre-line"
+                                            id="box-border"
+                                        >
+                                            <span class="text-body1"
+                                                >Moa 통합회원에 가입된 이메일을
+                                                입력하시면, <br />비밀번호
+                                                재설정 메일을 전송해드립니다.
+                                            </span>
+                                        </div>
+                                        <div
+                                            class="flex min-w-fit select-none flex-col gap-3 bg-w-white"
+                                        >
+                                            <label
+                                                name="email-input-box"
+                                                role="input-box1"
+                                                class="flex shrink-0 cursor-text items-center gap-3 rounded-xl border px-4 text-[16px] leading-[26px] text-w-gray-600 h-[66px] py-[11px] border-w-gray-200 hover:border-w-primary bg-w-white"
+                                                ><label
+                                                    class="relative flex w-full flex-col"
+                                                >
+                                                    <input
+                                                        class="w-full outline-none placeholder:text-w-gray-300 disabled:bg-w-gray-10 text-w-gray-600 pt-[14px]"
+                                                        role="text-input"
+                                                        value=""
+                                                        name="email-Input"
+                                                        id="email"
+                                                    />
+                                                    <div
+                                                        class="absolute text-w-gray-300 text-[16px] transition-all duration-300 translate-y-2 origin-top-left -top-[1px]"
+                                                        id="email-placeholder"
+                                                    >
+                                                        이메일
+                                                    </div>
+                                                </label>
+                                            </label>
+                                            <p id="email-message"></p>
+                                        </div>
+                                        <!-- type-원래 button 대신에 submit임 -->
+                                        <button
+                                            class="box-border flex cursor-pointer items-center justify-center border rounded-xl h-[50px] px-[15px] text-base -[26px] gap-x-1.5 text-w-white bg-primary-500 border-primary-500 hover:border-primary-700 hover:bg-primary-700 w-full"
+                                            type="button"
+                                            id="reSetting-Button"
+                                        >
+                                            비밀번호 재설정 메일 보내기
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="/static/js/join_signup/find_pw.js"></script>
+</html>
