@@ -53,3 +53,42 @@ body {
     margin-bottom: 48px;
     word-break: keep-all;
 }
+
+.detail-contents .bold-text {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #212121;
+}
+
+.alert-box {
+    margin-top: 32px;
+}
+
+.detail-contents .alert-box .alert-title {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.detail-contents .alert-box .alert-title {
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.flex-box {
+    display: flex;
+    align-items: center;
+}
+
+.flex-box.space-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail-section .detail-data .faq-evaluation {
+    padding: 16px 24px;
+    margin-bottom: 16px;
+    border: solid 1px #eee;
+    border-radius: 8px;
+}
