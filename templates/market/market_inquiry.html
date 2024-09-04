@@ -53,7 +53,9 @@
                                     <h1 class="post-title">
                                         한국대 고전 문학 자료 판매
                                     </h1>
-                                    <div class="for-report">신고하기</div>
+                                    <div class="for-report" id="report-btn">
+                                        신고하기
+                                    </div>
                                 </div>
                                 <div class="divider"></div>
                                 <div class="post-content-wrap">
@@ -353,6 +355,75 @@
                         </div>
                     </section>
                 </div>
+            </div>
+        </div>
+        <div id="profileModal" class="modal">
+            <div class="modal-content">
+                <span class="close"></span>
+                <h3>게시글 신고</h3>
+                <form id="uploadForm">
+                    <div class="btn-group">
+                        <!-- 체크박스 4개 -->
+                        <div>
+                            <label class="checkbox-moa">
+                                <input
+                                    type="checkbox"
+                                    name="option1"
+                                    value="option1"
+                                />
+                                <span class="report-reason">신고 사유 1</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="checkbox-moa">
+                                <input
+                                    type="checkbox"
+                                    name="option2"
+                                    value="option2"
+                                />
+                                <span class="report-reason">신고 사유 2</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="checkbox-moa">
+                                <input
+                                    type="checkbox"
+                                    name="option3"
+                                    value="option3"
+                                />
+                                <span class="report-reason">신고 사유 3</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="checkbox-moa">
+                                <input
+                                    type="checkbox"
+                                    name="option4"
+                                    value="option4"
+                                />
+                                <span class="report-reason">신고 사유 4</span>
+                            </label>
+                        </div>
+
+                        <!-- 텍스트 입력 부분 -->
+                        <div>
+                            <label for="textInput">기타:</label>
+                            <input
+                                type="text"
+                                id="textInput"
+                                name="textInput"
+                                placeholder="신고 사유를 입력해주세요."
+                            />
+                        </div>
+                    </div>
+                </form>
+                <button
+                    type="button"
+                    class="report-submit-btn"
+                    id="reportSubmitBtn"
+                >
+                    신고하기
+                </button>
             </div>
         </div>
         <div id="footer-space" style="width: 100px; height: 100px"></div>
