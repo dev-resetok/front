@@ -42,10 +42,15 @@ textareas.forEach((textarea) => {
         if (!e.target.parentElement.className.includes("changed")) {
             e.target.parentElement.className = "textarea-border-changed";
             e.target.value = "";
+            console.log("1");
         } else {
+            console.log("2");
             e.target.parentElement.className = "textarea-border";
             if (!e.target.value) {
                 e.target.value = value;
+                console.log("3");
+            } else {
+                console.log("4 ", e.target.value);
             }
         }
     });

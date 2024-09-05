@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="shortcut icon"
+            href="https://www.wishket.com/static/renewal/img/global/gnb_wishket.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../static/css/project_list/project_list.css"
+        />
+        <link rel="stylesheet" href="project_list.css" />
+        <title>협업 프로젝트 찾기 - Moa</title>
+    </head>
+    <body>
+        <header></header>
+        <a
+            class="advertisement active"
+            id="nav_advertisement"
+            href="https://www.wishket.com/project/create/"
+            style="
+                background-image: url('https://cdn.wishket.com/guide/%EB%B9%84%ED%9A%8C%EC%9B%90%20/%20%EC%83%81%EB%8B%B4%20%EC%84%9C%EB%B9%84%EC%8A%A4%20/1_20230912_152403.png');
+            "
+        ></a>
+        <div class="gaia">
+            <div
+                class="project-prevent-market-escape-sticky"
+                id="prevent-market-escape-sticky"
+                style="left: 0px; display: none; top: -200px"
+            ></div>
+            <div class="container project-list-view">
+                <form id="searchProjectListForm" onsubmit="return false;">
+                    <div class="search-header">
+                        <div class="page-title subtitle-1-medium">
+                            협업 프로젝트 찾기
+                        </div>
+                        <div class="text-search-box" id="inner_text_search_box">
+                            <select
+                                class="wishket-select theme-wishket text-search-type"
+                                style="display: none"
+                            >
+                                <option value="a">전체</option>
+                                <option value="a">전체</option>
+                                <option value="b">제목</option>
+                                <option value="c">관련 기술</option>
+                                <option value="d">프로젝트 내용</option>
+                            </select>
+                            <div
+                                class="ui-select wishket-select theme-wishket text-search-type"
+                            >
+                                <span class="select-box">
+                                    <p class="select-name">전체</p>
+                                    <i class="select-icon">
+                                        <svg
+                                            class="select-icon"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="14"
+                                            height="14"
+                                            viewbox="0 0 14 14"
+                                        >
+                                            <path
+                                                fill="none"
+                                                fill-rule="evenodd"
+                                                stroke="#9E9E9E"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="1.2"
+                                                d="M1 4l6 6 6-6"
+                                            ></path>
+                                        </svg>
+                                    </i>
+                                </span>
+                                <p class="selectBg"></p>
+                                <ul class="select-dropdown">
+                                    <li data-select-value="a" class="select-li">
+                                        전체
+                                    </li>
+                                    <li data-select-value="t" class="select-li">
+                                        제목
+                                    </li>
+                                    <li data-select-value="s" class="select-li">
+                                        관련기술
+                                    </li>
+                                    <li data-select-value="d" class="select-li">
+                                        프로젝트 내용
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="default-input-type icon-right">
+                                <div class="default-input-wishket icon-right">
+                                    <input
+                                        autocomplete="off"
+                                        class="theme-wishket wishket-text search-text"
+                                        data-input-type="text-input"
+                                        name="search_text"
+                                        type="text"
+                                        style="padding-left: 140px"
+                                    />
+                                    <span
+                                        class="text-unit active"
+                                        data-action-icon="search"
+                                        ><img
+                                            src="https://www.wishket.com/static/renewal/img/stack/icon-search.png"
+                                            style="
+                                                margin-right: 8px;
+                                                cursor: pointer;
+                                            "
+                                    /></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-filter-group">
+                        <div class="search-filter-manage-group">
+                            <button
+                                class="btn-text btn-transparent btn-search-action filter-reset"
+                                style="margin-right: 20px"
+                            >
+                                <img
+                                    src="https://www.wishket.com/static/renewal/img/project/search/btn-icon-refresh-s.png"
+                                />
+                                필터 초기화
+                            </button>
+                            <div class="sticky-modal-group">
+                                <button
+                                    class="btn-text btn-transparent btn-search-action filter-save"
+                                    style="margin-right: 4px"
+                                >
+                                    <img
+                                        src="https://www.wishket.com/static/renewal/img/project/search/btn-icon-save-s.png"
+                                        class="img-inactive"
+                                    />
+                                    필터 저장
+                                </button>
+                                <div></div>
+                            </div>
+                            <div class="sticky-modal-group">
+                                <button
+                                    class="btn-text btn-transparent btn-search-action filter-saved"
+                                    style="margin-left: 8px"
+                                >
+                                    <img
+                                        src="https://www.wishket.com/static/renewal/img/project/search/btn-icon-filter-s.png"
+                                        class="img-inactive"
+                                    />
+                                    저장한 필터
+                                </button>
+                            </div>
+                        </div>
+                        <div class="search-filter-part">
+                            <div
+                                class="search-filter-wrapper search-filter-wrapper-temp"
+                            ></div>
+                            <div class="search-filter-wrapper">
+                                <div
+                                    class="search-filter-selected-viewer"
+                                    style="height: 0px; padding-top: 0px"
+                                ></div>
+                                <div></div>
+                                <button></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-sorting-group mb32">
+                        <div class="result-count-box">
+                            <p class="body-1 text700">
+                                <span
+                                    class="body-1-medium text700"
+                                    id="help-text"
+                                ></span>
+                            </p>
+                        </div>
+                        <div class="result-sort-box">
+                            <button
+                                class="btn-sort-box btn-exclude-closed body-2 text600"
+                            >
+                                <img
+                                    src="https://www.wishket.com/static/renewal/img/project/search/input-checkbox-round-on.png"
+                                    class="sort-btn-inactive-check"
+                                />
+                                <img
+                                    src="https://www.wishket.com/static/renewal/img/project/search/input-checkbox-round-off.png"
+                                    class="sort-btn-inactive"
+                                />
+                                모집 마감 제외
+                            </button>
+                            <button
+                                class="btn-sort-box dropdown-opener body-2 text600"
+                            >
+                                <span class="select-dropdown-content"
+                                    >기본 정렬 순</span
+                                >
+                                <img
+                                    src="https://www.wishket.com/static/renewal/img/project/search/sorting-icon-down-gray.png"
+                                />
+                            </button>
+                            <div class="sort-box-dropdown">
+                                <button
+                                    class="btn-sort-box-dropdown body-2 text600"
+                                >
+                                    기본 정렬 순
+                                </button>
+                                <button
+                                    class="btn-sort-box-dropdown body-2 text600"
+                                >
+                                    금액 높은 순
+                                </button>
+                                <button
+                                    class="btn-sort-box-dropdown body-2 text600"
+                                >
+                                    지원 적은 순
+                                </button>
+                                <button
+                                    class="btn-sort-box-dropdown body-2 text600"
+                                >
+                                    최신 등록 순
+                                </button>
+                                <button
+                                    class="btn-sort-box-dropdown body-2 text600"
+                                >
+                                    마감 임박순
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-section">
+                        <div class="search-result">
+                            <div class="project-info-box">
+                                <div class="project-info-box-wrapper">
+                                    <section class="project-organic-info">
+                                        <div
+                                            class="project-status-label recruiting-status mb12"
+                                            style="justify-content: flex-start"
+                                        >
+                                            <div
+                                                class="status-mark recruiting-mark"
+                                            >
+                                                모집 중
+                                            </div>
+                                            <div class="status-mark new-mark">
+                                                NEW
+                                            </div>
+                                        </div>
+                                        <a
+                                            href="프로젝트 상세보기 페이지로 이동"
+                                            class="subtitle-2-medium project-link"
+                                        >
+                                            <p
+                                                class="subtitle-1-half-medium mb10"
+                                            >
+                                                B2B API 시스템의 개선을 위한
+                                                추가적인 인프라 구축
+                                            </p>
+                                        </a>
+                                        <div class="project-core-info mb10">
+                                            <p class="budget body-1 text700">
+                                                예상금액
+                                                <span class="body-1-medium"
+                                                    >4,000,000원</span
+                                                >
+                                            </p>
+                                            <span class="info-divider"></span>
+                                            <p class="term body-1 text700">
+                                                예상 기간
+                                                <span class="body-1-medium"
+                                                    >10일</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="project-classification-info mb32"
+                                        >
+                                            <p
+                                                class="project-category-or-role body-2 text700"
+                                            >
+                                                개발 · 기획
+                                            </p>
+                                            <p
+                                                class="project-field body-2 text700"
+                                            >
+                                                기타
+                                            </p>
+                                            <p
+                                                class="project-field-subcategory body-2 text700"
+                                            >
+                                                기타(IT 서비스 구축) 외 2개
+                                            </p>
+                                        </div>
+
+                                        <div class="project-minor-info">
+                                            <div
+                                                class="project-status-label recruiting-status"
+                                            >
+                                                <div
+                                                    class="status-mark project-type-mark with-img"
+                                                >
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/task-based-icon.svg"
+                                                        class="project-type-mark-img"
+                                                    />
+                                                    외주
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="project-skills-info">
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >AWS</span
+                                                >
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >JSON</span
+                                                >
+                                            </div>
+                                            <p
+                                                class="body-3 text500 location-data"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-location.png"
+                                                />
+                                                서울특별시 송파구
+                                            </p>
+                                            <p
+                                                class="body-3 text300 start-recruitment-data"
+                                            >
+                                                · 등록일자 2024.08.09.
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <section class="proposal-and-client-info">
+                                        <div class="proposal-info">
+                                            <p
+                                                class="info-detail body-2 mb8 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-4.png"
+                                                />
+                                                마감
+                                                <span
+                                                    class="body-2-medium text600"
+                                                >
+                                                    1주 5일 전
+                                                </span>
+                                            </p>
+                                            <p
+                                                class="info-detail body-2 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-3.png"
+                                                />
+                                                지원자
+                                                <span
+                                                    class="body-2-medium text600"
+                                                    >5명</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div class="minor-info has-value">
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon view-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            조회 수가 아주 높은
+                                                            프로젝트입니다.
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >아주 높음</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon comment-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            6개의 프로젝트
+                                                            문의가 있습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >6</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon interest-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            7명의 파트너가 관심
+                                                            프로젝트로
+                                                            추가했습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >7</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="client-info">
+                                            <div class="profile-box mb12">
+                                                <img
+                                                    src="https://www.wishket.com/static/img/default_avatar_c.png"
+                                                    class="client-profile-img"
+                                                />
+                                                <p
+                                                    class="username body-3-medium"
+                                                >
+                                                    sh******
+                                                </p>
+                                                <div
+                                                    class="simple-chip client-chip caption-1-medium"
+                                                >
+                                                    클라이언트
+                                                </div>
+                                            </div>
+                                            <div class="badge-box">
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-verification.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >인증 완료</span
+                                                    >
+                                                </i>
+                                                <i class="project-tooltip">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-client-pro.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >평가 우수</span
+                                                    >
+                                                </i>
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-review-star-full.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >5.0</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-box-wrapper">
+                                    <section class="project-organic-info">
+                                        <div
+                                            class="project-status-label recruiting-status mb12"
+                                            style="justify-content: flex-start"
+                                        >
+                                            <div
+                                                class="status-mark recruiting-mark"
+                                            >
+                                                모집 중
+                                            </div>
+                                            <div class="status-mark new-mark">
+                                                NEW
+                                            </div>
+                                        </div>
+                                        <a
+                                            href="프로젝트 상세보기 페이지로 이동"
+                                            class="subtitle-2-medium project-link"
+                                        >
+                                            <p
+                                                class="subtitle-1-half-medium mb10"
+                                            >
+                                                B2B API 시스템의 개선을 위한
+                                                추가적인 인프라 구축
+                                            </p>
+                                        </a>
+                                        <div class="project-core-info mb10">
+                                            <p class="budget body-1 text700">
+                                                예상금액
+                                                <span class="body-1-medium"
+                                                    >4,000,000원</span
+                                                >
+                                            </p>
+                                            <span class="info-divider"></span>
+                                            <p class="term body-1 text700">
+                                                예상 기간
+                                                <span class="body-1-medium"
+                                                    >10일</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="project-classification-info mb32"
+                                        >
+                                            <p
+                                                class="project-category-or-role body-2 text700"
+                                            >
+                                                개발 · 기획
+                                            </p>
+                                            <p
+                                                class="project-field body-2 text700"
+                                            >
+                                                기타
+                                            </p>
+                                            <p
+                                                class="project-field-subcategory body-2 text700"
+                                            >
+                                                기타(IT 서비스 구축) 외 2개
+                                            </p>
+                                        </div>
+
+                                        <div class="project-minor-info">
+                                            <div
+                                                class="project-status-label recruiting-status"
+                                            >
+                                                <div
+                                                    class="status-mark project-type-mark with-img"
+                                                >
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/task-based-icon.svg"
+                                                        class="project-type-mark-img"
+                                                    />
+                                                    외주
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="project-skills-info">
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >AWS</span
+                                                >
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >JSON</span
+                                                >
+                                            </div>
+                                            <p
+                                                class="body-3 text500 location-data"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-location.png"
+                                                />
+                                                서울특별시 송파구
+                                            </p>
+                                            <p
+                                                class="body-3 text300 start-recruitment-data"
+                                            >
+                                                · 등록일자 2024.08.09.
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <section class="proposal-and-client-info">
+                                        <div class="proposal-info">
+                                            <p
+                                                class="info-detail body-2 mb8 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-4.png"
+                                                />
+                                                마감
+                                                <span
+                                                    class="body-2-medium text600"
+                                                >
+                                                    1주 5일 전
+                                                </span>
+                                            </p>
+                                            <p
+                                                class="info-detail body-2 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-3.png"
+                                                />
+                                                지원자
+                                                <span
+                                                    class="body-2-medium text600"
+                                                    >16명</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div class="minor-info has-value">
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon view-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            조회 수가 아주 높은
+                                                            프로젝트입니다.
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >아주 높음</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon comment-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            6개의 프로젝트
+                                                            문의가 있습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >6</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon interest-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            7명의 파트너가 관심
+                                                            프로젝트로
+                                                            추가했습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >7</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="client-info">
+                                            <div class="profile-box mb12">
+                                                <img
+                                                    src="https://www.wishket.com/static/img/default_avatar_c.png"
+                                                    class="client-profile-img"
+                                                />
+                                                <p
+                                                    class="username body-3-medium"
+                                                >
+                                                    sh******
+                                                </p>
+                                                <div
+                                                    class="simple-chip client-chip caption-1-medium"
+                                                >
+                                                    클라이언트
+                                                </div>
+                                            </div>
+                                            <div class="badge-box">
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-verification.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >인증 완료</span
+                                                    >
+                                                </i>
+                                                <i class="project-tooltip">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-client-pro.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >평가 우수</span
+                                                    >
+                                                </i>
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-review-star-full.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >5.0</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-box-wrapper">
+                                    <section class="project-organic-info">
+                                        <div
+                                            class="project-status-label recruiting-status mb12"
+                                            style="justify-content: flex-start"
+                                        >
+                                            <div
+                                                class="status-mark recruiting-mark"
+                                            >
+                                                모집 중
+                                            </div>
+                                            <div class="status-mark new-mark">
+                                                NEW
+                                            </div>
+                                        </div>
+                                        <a
+                                            href="프로젝트 상세보기 페이지로 이동"
+                                            class="subtitle-2-medium project-link"
+                                        >
+                                            <p
+                                                class="subtitle-1-half-medium mb10"
+                                            >
+                                                B2B API 시스템의 개선을 위한
+                                                추가적인 인프라 구축
+                                            </p>
+                                        </a>
+                                        <div class="project-core-info mb10">
+                                            <p class="budget body-1 text700">
+                                                예상금액
+                                                <span class="body-1-medium"
+                                                    >4,000,000원</span
+                                                >
+                                            </p>
+                                            <span class="info-divider"></span>
+                                            <p class="term body-1 text700">
+                                                예상 기간
+                                                <span class="body-1-medium"
+                                                    >10일</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="project-classification-info mb32"
+                                        >
+                                            <p
+                                                class="project-category-or-role body-2 text700"
+                                            >
+                                                개발 · 기획
+                                            </p>
+                                            <p
+                                                class="project-field body-2 text700"
+                                            >
+                                                기타
+                                            </p>
+                                            <p
+                                                class="project-field-subcategory body-2 text700"
+                                            >
+                                                기타(IT 서비스 구축) 외 2개
+                                            </p>
+                                        </div>
+
+                                        <div class="project-minor-info">
+                                            <div
+                                                class="project-status-label recruiting-status"
+                                            >
+                                                <div
+                                                    class="status-mark project-type-mark with-img"
+                                                >
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/task-based-icon.svg"
+                                                        class="project-type-mark-img"
+                                                    />
+                                                    외주
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="project-skills-info">
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >AWS</span
+                                                >
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >JSON</span
+                                                >
+                                            </div>
+                                            <p
+                                                class="body-3 text500 location-data"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-location.png"
+                                                />
+                                                서울특별시 송파구
+                                            </p>
+                                            <p
+                                                class="body-3 text300 start-recruitment-data"
+                                            >
+                                                · 등록일자 2024.08.09.
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <section class="proposal-and-client-info">
+                                        <div class="proposal-info">
+                                            <p
+                                                class="info-detail body-2 mb8 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-4.png"
+                                                />
+                                                마감
+                                                <span
+                                                    class="body-2-medium text600"
+                                                >
+                                                    1주 5일 전
+                                                </span>
+                                            </p>
+                                            <p
+                                                class="info-detail body-2 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-3.png"
+                                                />
+                                                지원자
+                                                <span
+                                                    class="body-2-medium text600"
+                                                    >16명</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div class="minor-info has-value">
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon view-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            조회 수가 아주 높은
+                                                            프로젝트입니다.
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >아주 높음</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon comment-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            6개의 프로젝트
+                                                            문의가 있습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >6</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon interest-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            7명의 파트너가 관심
+                                                            프로젝트로
+                                                            추가했습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >7</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="client-info">
+                                            <div class="profile-box mb12">
+                                                <img
+                                                    src="https://www.wishket.com/static/img/default_avatar_c.png"
+                                                    class="client-profile-img"
+                                                />
+                                                <p
+                                                    class="username body-3-medium"
+                                                >
+                                                    sh******
+                                                </p>
+                                                <div
+                                                    class="simple-chip client-chip caption-1-medium"
+                                                >
+                                                    클라이언트
+                                                </div>
+                                            </div>
+                                            <div class="badge-box">
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-verification.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >인증 완료</span
+                                                    >
+                                                </i>
+                                                <i class="project-tooltip">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-client-pro.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >평가 우수</span
+                                                    >
+                                                </i>
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-review-star-full.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >5.0</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-box-wrapper">
+                                    <section class="project-organic-info">
+                                        <div
+                                            class="project-status-label recruiting-status mb12"
+                                            style="justify-content: flex-start"
+                                        >
+                                            <div
+                                                class="status-mark recruiting-mark"
+                                            >
+                                                모집 중
+                                            </div>
+                                            <div class="status-mark new-mark">
+                                                NEW
+                                            </div>
+                                        </div>
+                                        <a
+                                            href="프로젝트 상세보기 페이지로 이동"
+                                            class="subtitle-2-medium project-link"
+                                        >
+                                            <p
+                                                class="subtitle-1-half-medium mb10"
+                                            >
+                                                B2B API 시스템의 개선을 위한
+                                                추가적인 인프라 구축
+                                            </p>
+                                        </a>
+                                        <div class="project-core-info mb10">
+                                            <p class="budget body-1 text700">
+                                                예상금액
+                                                <span class="body-1-medium"
+                                                    >4,000,000원</span
+                                                >
+                                            </p>
+                                            <span class="info-divider"></span>
+                                            <p class="term body-1 text700">
+                                                예상 기간
+                                                <span class="body-1-medium"
+                                                    >10일</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="project-classification-info mb32"
+                                        >
+                                            <p
+                                                class="project-category-or-role body-2 text700"
+                                            >
+                                                개발 · 기획
+                                            </p>
+                                            <p
+                                                class="project-field body-2 text700"
+                                            >
+                                                기타
+                                            </p>
+                                            <p
+                                                class="project-field-subcategory body-2 text700"
+                                            >
+                                                기타(IT 서비스 구축) 외 2개
+                                            </p>
+                                        </div>
+
+                                        <div class="project-minor-info">
+                                            <div
+                                                class="project-status-label recruiting-status"
+                                            >
+                                                <div
+                                                    class="status-mark project-type-mark with-img"
+                                                >
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/task-based-icon.svg"
+                                                        class="project-type-mark-img"
+                                                    />
+                                                    외주
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="project-skills-info">
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >AWS</span
+                                                >
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >JSON</span
+                                                >
+                                            </div>
+                                            <p
+                                                class="body-3 text500 location-data"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-location.png"
+                                                />
+                                                서울특별시 송파구
+                                            </p>
+                                            <p
+                                                class="body-3 text300 start-recruitment-data"
+                                            >
+                                                · 등록일자 2024.08.09.
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <section class="proposal-and-client-info">
+                                        <div class="proposal-info">
+                                            <p
+                                                class="info-detail body-2 mb8 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-4.png"
+                                                />
+                                                마감
+                                                <span
+                                                    class="body-2-medium text600"
+                                                >
+                                                    1주 5일 전
+                                                </span>
+                                            </p>
+                                            <p
+                                                class="info-detail body-2 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-3.png"
+                                                />
+                                                지원자
+                                                <span
+                                                    class="body-2-medium text600"
+                                                    >16명</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div class="minor-info has-value">
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon view-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            조회 수가 아주 높은
+                                                            프로젝트입니다.
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >아주 높음</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon comment-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            6개의 프로젝트
+                                                            문의가 있습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >6</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon interest-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            7명의 파트너가 관심
+                                                            프로젝트로
+                                                            추가했습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >7</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="client-info">
+                                            <div class="profile-box mb12">
+                                                <img
+                                                    src="https://www.wishket.com/static/img/default_avatar_c.png"
+                                                    class="client-profile-img"
+                                                />
+                                                <p
+                                                    class="username body-3-medium"
+                                                >
+                                                    sh******
+                                                </p>
+                                                <div
+                                                    class="simple-chip client-chip caption-1-medium"
+                                                >
+                                                    클라이언트
+                                                </div>
+                                            </div>
+                                            <div class="badge-box">
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-verification.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >인증 완료</span
+                                                    >
+                                                </i>
+                                                <i class="project-tooltip">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-client-pro.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >평가 우수</span
+                                                    >
+                                                </i>
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-review-star-full.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >5.0</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-box-wrapper">
+                                    <section class="project-organic-info">
+                                        <div
+                                            class="project-status-label recruiting-status mb12"
+                                            style="justify-content: flex-start"
+                                        >
+                                            <div
+                                                class="status-mark recruiting-mark"
+                                            >
+                                                모집 중
+                                            </div>
+                                            <div class="status-mark new-mark">
+                                                NEW
+                                            </div>
+                                        </div>
+                                        <a
+                                            href="프로젝트 상세보기 페이지로 이동"
+                                            class="subtitle-2-medium project-link"
+                                        >
+                                            <p
+                                                class="subtitle-1-half-medium mb10"
+                                            >
+                                                B2B API 시스템의 개선을 위한
+                                                추가적인 인프라 구축
+                                            </p>
+                                        </a>
+                                        <div class="project-core-info mb10">
+                                            <p class="budget body-1 text700">
+                                                예상금액
+                                                <span class="body-1-medium"
+                                                    >4,000,000원</span
+                                                >
+                                            </p>
+                                            <span class="info-divider"></span>
+                                            <p class="term body-1 text700">
+                                                예상 기간
+                                                <span class="body-1-medium"
+                                                    >10일</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="project-classification-info mb32"
+                                        >
+                                            <p
+                                                class="project-category-or-role body-2 text700"
+                                            >
+                                                개발 · 기획
+                                            </p>
+                                            <p
+                                                class="project-field body-2 text700"
+                                            >
+                                                기타
+                                            </p>
+                                            <p
+                                                class="project-field-subcategory body-2 text700"
+                                            >
+                                                기타(IT 서비스 구축) 외 2개
+                                            </p>
+                                        </div>
+
+                                        <div class="project-minor-info">
+                                            <div
+                                                class="project-status-label recruiting-status"
+                                            >
+                                                <div
+                                                    class="status-mark project-type-mark with-img"
+                                                >
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/task-based-icon.svg"
+                                                        class="project-type-mark-img"
+                                                    />
+                                                    외주
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="project-skills-info">
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >AWS</span
+                                                >
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >JSON</span
+                                                >
+                                            </div>
+                                            <p
+                                                class="body-3 text500 location-data"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-location.png"
+                                                />
+                                                서울특별시 송파구
+                                            </p>
+                                            <p
+                                                class="body-3 text300 start-recruitment-data"
+                                            >
+                                                · 등록일자 2024.08.09.
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <section class="proposal-and-client-info">
+                                        <div class="proposal-info">
+                                            <p
+                                                class="info-detail body-2 mb8 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-4.png"
+                                                />
+                                                마감
+                                                <span
+                                                    class="body-2-medium text600"
+                                                >
+                                                    1주 5일 전
+                                                </span>
+                                            </p>
+                                            <p
+                                                class="info-detail body-2 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-3.png"
+                                                />
+                                                지원자
+                                                <span
+                                                    class="body-2-medium text600"
+                                                    >16명</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div class="minor-info has-value">
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon view-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            조회 수가 아주 높은
+                                                            프로젝트입니다.
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >아주 높음</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon comment-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            6개의 프로젝트
+                                                            문의가 있습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >6</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon interest-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            7명의 파트너가 관심
+                                                            프로젝트로
+                                                            추가했습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >7</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="client-info">
+                                            <div class="profile-box mb12">
+                                                <img
+                                                    src="https://www.wishket.com/static/img/default_avatar_c.png"
+                                                    class="client-profile-img"
+                                                />
+                                                <p
+                                                    class="username body-3-medium"
+                                                >
+                                                    sh******
+                                                </p>
+                                                <div
+                                                    class="simple-chip client-chip caption-1-medium"
+                                                >
+                                                    클라이언트
+                                                </div>
+                                            </div>
+                                            <div class="badge-box">
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-verification.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >인증 완료</span
+                                                    >
+                                                </i>
+                                                <i class="project-tooltip">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-client-pro.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >평가 우수</span
+                                                    >
+                                                </i>
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-review-star-full.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >5.0</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-box-wrapper">
+                                    <section class="project-organic-info">
+                                        <div
+                                            class="project-status-label recruiting-status mb12"
+                                            style="justify-content: flex-start"
+                                        >
+                                            <div
+                                                class="status-mark recruiting-mark"
+                                            >
+                                                모집 중
+                                            </div>
+                                            <div class="status-mark new-mark">
+                                                NEW
+                                            </div>
+                                        </div>
+                                        <a
+                                            href="프로젝트 상세보기 페이지로 이동"
+                                            class="subtitle-2-medium project-link"
+                                        >
+                                            <p
+                                                class="subtitle-1-half-medium mb10"
+                                            >
+                                                B2B API 시스템의 개선을 위한
+                                                추가적인 인프라 구축
+                                            </p>
+                                        </a>
+                                        <div class="project-core-info mb10">
+                                            <p class="budget body-1 text700">
+                                                예상금액
+                                                <span class="body-1-medium"
+                                                    >4,000,000원</span
+                                                >
+                                            </p>
+                                            <span class="info-divider"></span>
+                                            <p class="term body-1 text700">
+                                                예상 기간
+                                                <span class="body-1-medium"
+                                                    >10일</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="project-classification-info mb32"
+                                        >
+                                            <p
+                                                class="project-category-or-role body-2 text700"
+                                            >
+                                                개발 · 기획
+                                            </p>
+                                            <p
+                                                class="project-field body-2 text700"
+                                            >
+                                                기타
+                                            </p>
+                                            <p
+                                                class="project-field-subcategory body-2 text700"
+                                            >
+                                                기타(IT 서비스 구축) 외 2개
+                                            </p>
+                                        </div>
+
+                                        <div class="project-minor-info">
+                                            <div
+                                                class="project-status-label recruiting-status"
+                                            >
+                                                <div
+                                                    class="status-mark project-type-mark with-img"
+                                                >
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/task-based-icon.svg"
+                                                        class="project-type-mark-img"
+                                                    />
+                                                    외주
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="project-skills-info">
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >AWS</span
+                                                >
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >JSON</span
+                                                >
+                                            </div>
+                                            <p
+                                                class="body-3 text500 location-data"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-location.png"
+                                                />
+                                                서울특별시 송파구
+                                            </p>
+                                            <p
+                                                class="body-3 text300 start-recruitment-data"
+                                            >
+                                                · 등록일자 2024.08.09.
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <section class="proposal-and-client-info">
+                                        <div class="proposal-info">
+                                            <p
+                                                class="info-detail body-2 mb8 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-4.png"
+                                                />
+                                                마감
+                                                <span
+                                                    class="body-2-medium text600"
+                                                >
+                                                    1주 5일 전
+                                                </span>
+                                            </p>
+                                            <p
+                                                class="info-detail body-2 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-3.png"
+                                                />
+                                                지원자
+                                                <span
+                                                    class="body-2-medium text600"
+                                                    >4명</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div class="minor-info has-value">
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon view-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            조회 수가 아주 높은
+                                                            프로젝트입니다.
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >아주 높음</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon comment-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            6개의 프로젝트
+                                                            문의가 있습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >6</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon interest-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            7명의 파트너가 관심
+                                                            프로젝트로
+                                                            추가했습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >7</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="client-info">
+                                            <div class="profile-box mb12">
+                                                <img
+                                                    src="https://www.wishket.com/static/img/default_avatar_c.png"
+                                                    class="client-profile-img"
+                                                />
+                                                <p
+                                                    class="username body-3-medium"
+                                                >
+                                                    sh******
+                                                </p>
+                                                <div
+                                                    class="simple-chip client-chip caption-1-medium"
+                                                >
+                                                    클라이언트
+                                                </div>
+                                            </div>
+                                            <div class="badge-box">
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-verification.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >인증 완료</span
+                                                    >
+                                                </i>
+                                                <i class="project-tooltip">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-client-pro.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >평가 우수</span
+                                                    >
+                                                </i>
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-review-star-full.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >5.0</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-box-wrapper">
+                                    <section class="project-organic-info">
+                                        <div
+                                            class="project-status-label recruiting-status mb12"
+                                            style="justify-content: flex-start"
+                                        >
+                                            <div
+                                                class="status-mark recruiting-mark"
+                                            >
+                                                모집 중
+                                            </div>
+                                            <div class="status-mark new-mark">
+                                                NEW
+                                            </div>
+                                        </div>
+                                        <a
+                                            href="프로젝트 상세보기 페이지로 이동"
+                                            class="subtitle-2-medium project-link"
+                                        >
+                                            <p
+                                                class="subtitle-1-half-medium mb10"
+                                            >
+                                                B2B API 시스템의 개선을 위한
+                                                추가적인 인프라 구축
+                                            </p>
+                                        </a>
+                                        <div class="project-core-info mb10">
+                                            <p class="budget body-1 text700">
+                                                예상금액
+                                                <span class="body-1-medium"
+                                                    >4,000,000원</span
+                                                >
+                                            </p>
+                                            <span class="info-divider"></span>
+                                            <p class="term body-1 text700">
+                                                예상 기간
+                                                <span class="body-1-medium"
+                                                    >10일</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="project-classification-info mb32"
+                                        >
+                                            <p
+                                                class="project-category-or-role body-2 text700"
+                                            >
+                                                개발 · 기획
+                                            </p>
+                                            <p
+                                                class="project-field body-2 text700"
+                                            >
+                                                기타
+                                            </p>
+                                            <p
+                                                class="project-field-subcategory body-2 text700"
+                                            >
+                                                기타(IT 서비스 구축) 외 2개
+                                            </p>
+                                        </div>
+
+                                        <div class="project-minor-info">
+                                            <div
+                                                class="project-status-label recruiting-status"
+                                            >
+                                                <div
+                                                    class="status-mark project-type-mark with-img"
+                                                >
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/task-based-icon.svg"
+                                                        class="project-type-mark-img"
+                                                    />
+                                                    외주
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="project-skills-info">
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >AWS</span
+                                                >
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >JSON</span
+                                                >
+                                            </div>
+                                            <p
+                                                class="body-3 text500 location-data"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-location.png"
+                                                />
+                                                서울특별시 송파구
+                                            </p>
+                                            <p
+                                                class="body-3 text300 start-recruitment-data"
+                                            >
+                                                · 등록일자 2024.08.09.
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <section class="proposal-and-client-info">
+                                        <div class="proposal-info">
+                                            <p
+                                                class="info-detail body-2 mb8 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-4.png"
+                                                />
+                                                마감
+                                                <span
+                                                    class="body-2-medium text600"
+                                                >
+                                                    1주 5일 전
+                                                </span>
+                                            </p>
+                                            <p
+                                                class="info-detail body-2 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-3.png"
+                                                />
+                                                지원자
+                                                <span
+                                                    class="body-2-medium text600"
+                                                    >16명</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div class="minor-info has-value">
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon view-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            조회 수가 아주 높은
+                                                            프로젝트입니다.
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >아주 높음</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon comment-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            6개의 프로젝트
+                                                            문의가 있습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >6</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon interest-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            7명의 파트너가 관심
+                                                            프로젝트로
+                                                            추가했습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >7</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="client-info">
+                                            <div class="profile-box mb12">
+                                                <img
+                                                    src="https://www.wishket.com/static/img/default_avatar_c.png"
+                                                    class="client-profile-img"
+                                                />
+                                                <p
+                                                    class="username body-3-medium"
+                                                >
+                                                    sh******
+                                                </p>
+                                                <div
+                                                    class="simple-chip client-chip caption-1-medium"
+                                                >
+                                                    클라이언트
+                                                </div>
+                                            </div>
+                                            <div class="badge-box">
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-verification.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >인증 완료</span
+                                                    >
+                                                </i>
+                                                <i class="project-tooltip">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-client-pro.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >평가 우수</span
+                                                    >
+                                                </i>
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-review-star-full.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >5.0</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-box-wrapper">
+                                    <section class="project-organic-info">
+                                        <div
+                                            class="project-status-label recruiting-status mb12"
+                                            style="justify-content: flex-start"
+                                        >
+                                            <div
+                                                class="status-mark recruiting-mark"
+                                            >
+                                                모집 중
+                                            </div>
+                                            <div class="status-mark new-mark">
+                                                NEW
+                                            </div>
+                                        </div>
+                                        <a
+                                            href="프로젝트 상세보기 페이지로 이동"
+                                            class="subtitle-2-medium project-link"
+                                        >
+                                            <p
+                                                class="subtitle-1-half-medium mb10"
+                                            >
+                                                B2B API 시스템의 개선을 위한
+                                                추가적인 인프라 구축
+                                            </p>
+                                        </a>
+                                        <div class="project-core-info mb10">
+                                            <p class="budget body-1 text700">
+                                                예상금액
+                                                <span class="body-1-medium"
+                                                    >4,000,000원</span
+                                                >
+                                            </p>
+                                            <span class="info-divider"></span>
+                                            <p class="term body-1 text700">
+                                                예상 기간
+                                                <span class="body-1-medium"
+                                                    >10일</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="project-classification-info mb32"
+                                        >
+                                            <p
+                                                class="project-category-or-role body-2 text700"
+                                            >
+                                                개발 · 기획
+                                            </p>
+                                            <p
+                                                class="project-field body-2 text700"
+                                            >
+                                                기타
+                                            </p>
+                                            <p
+                                                class="project-field-subcategory body-2 text700"
+                                            >
+                                                기타(IT 서비스 구축) 외 2개
+                                            </p>
+                                        </div>
+
+                                        <div class="project-minor-info">
+                                            <div
+                                                class="project-status-label recruiting-status"
+                                            >
+                                                <div
+                                                    class="status-mark project-type-mark with-img"
+                                                >
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/task-based-icon.svg"
+                                                        class="project-type-mark-img"
+                                                    />
+                                                    외주
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="project-skills-info">
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >AWS</span
+                                                >
+                                                <span
+                                                    class="skill-chip body-3 text600"
+                                                    >JSON</span
+                                                >
+                                            </div>
+                                            <p
+                                                class="body-3 text500 location-data"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-location.png"
+                                                />
+                                                서울특별시 송파구
+                                            </p>
+                                            <p
+                                                class="body-3 text300 start-recruitment-data"
+                                            >
+                                                · 등록일자 2024.08.09.
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <section class="proposal-and-client-info">
+                                        <div class="proposal-info">
+                                            <p
+                                                class="info-detail body-2 mb8 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-4.png"
+                                                />
+                                                마감
+                                                <span
+                                                    class="body-2-medium text600"
+                                                >
+                                                    1주 5일 전
+                                                </span>
+                                            </p>
+                                            <p
+                                                class="info-detail body-2 text600"
+                                            >
+                                                <img
+                                                    src="https://www.wishket.com/static/renewal/img/project/search/icon-project-features-3.png"
+                                                />
+                                                지원자
+                                                <span
+                                                    class="body-2-medium text600"
+                                                    >16명</span
+                                                >
+                                            </p>
+                                        </div>
+                                        <div class="minor-info has-value">
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon view-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            조회 수가 아주 높은
+                                                            프로젝트입니다.
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >아주 높음</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon comment-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            6개의 프로젝트
+                                                            문의가 있습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >6</span
+                                                    >
+                                                </i>
+                                            </div>
+                                            <div class="status-wrap">
+                                                <i
+                                                    class="project-tooltip status-icon interest-status"
+                                                >
+                                                    <div
+                                                        class="tooltip-container"
+                                                    >
+                                                        <p
+                                                            class="subtext body-3 text900"
+                                                        >
+                                                            7명의 파트너가 관심
+                                                            프로젝트로
+                                                            추가했습니다
+                                                        </p>
+                                                    </div>
+                                                    <span
+                                                        class="caption-1 text400"
+                                                        >7</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="client-info">
+                                            <div class="profile-box mb12">
+                                                <img
+                                                    src="https://www.wishket.com/static/img/default_avatar_c.png"
+                                                    class="client-profile-img"
+                                                />
+                                                <p
+                                                    class="username body-3-medium"
+                                                >
+                                                    sh******
+                                                </p>
+                                                <div
+                                                    class="simple-chip client-chip caption-1-medium"
+                                                >
+                                                    클라이언트
+                                                </div>
+                                            </div>
+                                            <div class="badge-box">
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-verification.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >인증 완료</span
+                                                    >
+                                                </i>
+                                                <i class="project-tooltip">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-badge-client-pro.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >평가 우수</span
+                                                    >
+                                                </i>
+                                                <i class="client-badge">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/project/search/icon-review-star-full.png"
+                                                    />
+                                                    <span
+                                                        class="caption-1 text600"
+                                                        >5.0</span
+                                                    >
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <!-- 여기에 search-result 통채로 붙여놓고 수정하기 -->
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link link-back">이전</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link link-1 link active"
+                                        >1</a
+                                    >
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link link-2 link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link link-3 link">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link link-4 link">4</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link link-5 link">5</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link link-6 link">6</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link link-7 link">7</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link link-8 link">8</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link link-9 link">9</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link link-10 link">10</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link link-next">다음</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div></div>
+            <script src="../../static/js/project_list/project_list.js"></script>
+            <script src="project_list.js"></script>
+        </div>
+    </body>
+</html>

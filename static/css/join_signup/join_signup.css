@@ -1,29 +1,26 @@
 @font-face {
-    font-family: __pretendard_3b537e;
-    src: url(/templates/fonts/2cfaf186eda0c132-s.p.woff2) format("woff2");
+    font-family: "__pretendard_3b537e";
+    src: url("/templates/fonts/2cfaf186eda0c132-s.p.woff2") format("woff2");
     font-display: swap;
     font-weight: 400;
-    font-style: normal
 }
 
 @font-face {
-    font-family: __pretendard_3b537e;
-    src: url(/templates/fonts/352c8e191b014582-s.p.woff2) format("woff2");
+    font-family: "__pretendard_3b537e";
+    src: url("/templates/fonts/62f2cc7c46d83665-s.p.woff2") format("woff2");
     font-display: swap;
     font-weight: 500;
-    font-style: normal
 }
 
 @font-face {
-    font-family: __pretendard_3b537e;
-    src: url(/templates/fonts/62f2cc7c46d83665-s.p.woff2) format("woff2");
+    font-family: "__pretendard_3b537e";
+    src: url("/templates/fonts/352c8e191b014582-s.p.woff2") format("woff2");
     font-display: swap;
     font-weight: 700;
-    font-style: normal
 }
 
 @font-face {
-    font-family: __pretendard_Fallback_3b537e;
+    font-family: "__pretendard_Fallback_3b537e";
     src: local("Arial");
     ascent-override:93.76%;descent-override:23.75%;line-gap-override:0.00%;size-adjust:101.55%}
 
