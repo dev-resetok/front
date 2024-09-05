@@ -119,13 +119,13 @@ section {
 .mb6 {
     margin-bottom: 6px;
 }
-body.landing .client-list .rolling-interview {
+body.landing .client-list .interview-title {
     position: relative;
 }
 
 
 
-.text900 {
+.text9 {
     color: #212121;
 }
 
@@ -138,13 +138,13 @@ body.landing .client-list .rolling-interview {
     font-weight: 700;
 }
 
-body.landing .client-list .rolling-interview .btn-interview-step.left {
+body.landing .client-list .interview-title .btn-interview-step.left {
     right: 56px;
 }
-body.landing .client-list .rolling-interview .btn-interview-step:hover {
+body.landing .client-list .interview-title .btn-interview-step:hover {
     top: 4px;
 }
-body.landing .client-list .rolling-interview .btn-interview-step {
+body.landing .client-list .interview-title .btn-interview-step {
     position: absolute;
     width: 40px;
     height: 40px;
@@ -185,23 +185,23 @@ button {
     border-color: buttonborder;
     border-image: initial;
 }
-body.landing .client-list .rolling-interview .btn-interview-step img {
+body.landing .client-list .interview-title .btn-interview-step img {
     margin-top: 2px;
 }
 
-body.landing .client-list .rolling-interview .btn-interview-step.right {
+body.landing .client-list .interview-title .btn-interview-step.right {
     right: 0;
 }
-body.landing .client-list .rolling-interview .btn-interview-step:hover {
+body.landing .client-list .interview-title .btn-interview-step:hover {
     top: 4px;
 }
-body.landing .client-list .rolling-interview .btn-interview-step img {
+body.landing .client-list .interview-title .btn-interview-step img {
     margin-top: 2px;
 }
-body.landing .client-list .rolling-interview {
+body.landing .client-list .interview-title {
     position: relative;
 }
-body.landing .client-list .rolling-interview .rolling-list {
+body.landing .client-list .interview-title .rolling-list {
     overflow-x: hidden;
     overflow-y: visible;
     padding-left: calc(50% - 540px);
@@ -211,7 +211,7 @@ body.landing .client-list .rolling-interview .rolling-list {
     display: block;
     position: relative;
 }
-body.landing .client-list .rolling-interview .rolling-list .bd-filter.left {
+body.landing .client-list .interview-title .rolling-list .bd-filter.left {
     background: linear-gradient(to left, rgba(247, 250, 252, 0) 0%, rgba(247, 250, 252, 0.5) 20%, rgb(247, 250, 252) 70%);
     left: 0;
     top: 0;
@@ -219,10 +219,10 @@ body.landing .client-list .rolling-interview .rolling-list .bd-filter.left {
     bottom: 0;
     width: calc(50% - 540px);
 }
-body.landing .client-list .rolling-interview .rolling-list .bd-filter {
+body.landing .client-list .interview-title .rolling-list .bd-filter {
     position: absolute;
 }
-body.landing .client-list .rolling-interview .rolling-list .bd-filter.right {
+body.landing .client-list .interview-title .rolling-list .bd-filter.right {
     background: linear-gradient(to right, rgba(247, 250, 252, 0) 0%, rgba(247, 250, 252, 0.5) 20%, rgb(247, 250, 252) 70%);
     z-index: 83;
     right: 0;
@@ -230,14 +230,14 @@ body.landing .client-list .rolling-interview .rolling-list .bd-filter.right {
     bottom: 0;
     width: calc(50% - 540px);
 }
-body.landing .client-list .rolling-interview .rolling-list .rolling-inner {
+body.landing .client-list .interview-title .rolling-list .rolling-inner {
     display: flex;
     gap: 24px;
     padding-top: 60px;
     padding-bottom: 100px;
     width: 2184px;
 }
-body.landing .client-list .rolling-interview .rolling-list .rolling-item {
+body.landing .client-list .interview-title .rolling-list .rolling-item {
     transition: top ease .5s;
     top: 0;
     flex: 1;
@@ -250,7 +250,7 @@ body.landing .client-list .rolling-interview .rolling-list .rolling-item {
     border-radius: 24px;
     box-shadow: 0px 48px 48px -12px rgba(46, 107, 170, .12);
 }
-body.landing .client-list .rolling-interview .rolling-list .rolling-item:hover {
+body.landing .client-list .interview-title .rolling-list .rolling-item:hover {
     border: 1px solid #3ba3c7;
     padding: 23px;
     top: -4px;
@@ -259,7 +259,7 @@ body.landing .client-list .rolling-interview .rolling-list .rolling-item:hover {
 .mb32 {
     margin-bottom: 32px;
 }
-body.landing .client-list .rolling-interview .rolling-list .rolling-item .item-head img {
+body.landing .client-list .interview-title .rolling-list .rolling-item .item-head img {
     display: inline-block;
     vertical-align: middle;
     width: 32px;
@@ -267,11 +267,11 @@ body.landing .client-list .rolling-interview .rolling-list .rolling-item .item-h
     border-radius: 32px;
     margin-right: 16px;
 }
-body.landing .client-list .rolling-interview .rolling-list .rolling-item .item-head .head-info {
+body.landing .client-list .interview-title .rolling-list .rolling-item .item-head .head-info {
     vertical-align: middle;
     display: inline-block;
 }
-.text700 {
+.text7 {
     color: #424242;
 }
 
@@ -280,7 +280,7 @@ body.landing .client-list .rolling-interview .rolling-list .rolling-item .item-h
     font-size: 14px;
     line-height: 24px;
 }
-.text500 {
+.text5 {
     color: #757575;
 }
 .body-3{
@@ -298,14 +298,14 @@ font-weight: 400;
     font-weight: 500;
 }
 
-body.landing .client-list .rolling-interview .rolling-list .rolling-item .open-interview-btn {
+body.landing .client-list .interview-title .rolling-list .rolling-item .open-interview-btn {
     position: absolute;
     right: 24px;
     bottom: 24px;
     border-radius: 24px;
     transition: box-shadow ease .5s;
 }
-body.landing .client-list .rolling-interview .rolling-list .rolling-item{
+body.landing .client-list .interview-title .rolling-list .rolling-item{
     transition: top ease .5s;
     top: 0;
     flex: 1;
@@ -330,7 +330,7 @@ subtitle-2-medium{
 .mb36 {
     margin-bottom: 36px;
 }
-body.landing .client-list .rolling-interview .rolling-list .rolling-item .view-success-btn {
+body.landing .client-list .interview-title .rolling-list .rolling-item .view-success-btn {
     display: block;
     text-align: center;
     background: #3ba3c7;
