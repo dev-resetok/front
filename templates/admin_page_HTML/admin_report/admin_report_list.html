@@ -4,10 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>관리자페이지 - 신고 관리</title>
-
+        <link
+            rel="shortcut icon"
+            href="https://www.wishket.com/static/renewal/img/global/gnb_wishket.svg"
+        />
         <link rel="stylesheet" href="../../../static/css/admin_page_CSS/amdin_main/sub_main.css">
         <link rel="stylesheet" href="../../../static/css/admin_page_CSS/amdin_main/common_main.css">
-        <link rel="stylesheet" href="../../../static/css/admin_page_CSS/admin_service/sub_service.css">
+       <link rel="stylesheet" href="../../../static/css/admin_page_CSS/admin_report/admin_report_list.css">
         <link rel="stylesheet" href="../../../static/css/admin_page_CSS/admin_service/main_service.css">
     </head>
     <body>
@@ -413,13 +416,13 @@
                                             id="addServiceBtn"
                                             class="addServiceBtn"
                                         >
-                                            게시글 추가
+                                            보류
                                         </button>
                                         <button
                                             id="deleteSelectedBtn"
                                             class="deleteSelectedBtn"
                                         >
-                                            게시글 삭제
+                                            처리
                                         </button>
                                     </div>
                                 </div>
@@ -463,7 +466,7 @@
                                             <div
                                                 class="ServiceTable_cell headerCell"
                                             >
-                                                신고수
+                                                조회수
                                             </div>
                                             <div
                                                 class="ServiceTable_cell headerCell"
@@ -479,7 +482,7 @@
                                             <div
                                                 class="ServiceTable_cell headerCell"
                                             >
-                                                Actions
+                                                상태
                                             </div>
                                         </div>
                                     </div>
@@ -533,7 +536,7 @@
                                             <div
                                                 class="ServiceTable_cell editBtn"
                                             >
-                                                <button class="">수정</button>
+                                                <button class="report-status">대기중</button>
                                             </div>
                                         </div>
                                         <div class="ServiceTable_row">
@@ -583,7 +586,7 @@
                                             <div
                                                 class="ServiceTable_cell editBtn"
                                             >
-                                                <button class="">수정</button>
+                                                <button class="report-status">처리</button>
                                             </div>
                                         </div>
                                         <div class="ServiceTable_row">
@@ -633,7 +636,7 @@
                                             <div
                                                 class="ServiceTable_cell editBtn"
                                             >
-                                                <button class="">수정</button>
+                                                <button class="report-status">보류</button>
                                             </div>
                                         </div>
                                         <div class="ServiceTable_row">
@@ -683,7 +686,7 @@
                                             <div
                                                 class="ServiceTable_cell editBtn"
                                             >
-                                                <button class="">수정</button>
+                                                <button class="report-status">대기중</button>
                                             </div>
                                         </div>
                                         <div class="ServiceTable_row">
@@ -733,7 +736,7 @@
                                             <div
                                                 class="ServiceTable_cell editBtn"
                                             >
-                                                <button class="">수정</button>
+                                                <button class="report-status">대기중</button>
                                             </div>
                                         </div>
                                         
@@ -885,5 +888,5 @@
 
     <script src="../../../static/js/adminPage_JS/admin_page/admin.js"></script>
     <script src="../../../static/js/adminPage_JS/admin_post/postList_filter.js"></script>
-    <script src="../../../static/js/adminPage_JS/admin_service/service_Main.js"></script>
+    <script src="../../../static/js/adminPage_JS/admin_report/admin_report_list.js"></script>
 </html>

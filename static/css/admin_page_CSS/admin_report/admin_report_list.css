@@ -1,0 +1,159 @@
+.SortFilterOptions {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    white-space: nowrap;
+    margin-right: 20px;
+}
+
+.sort-filter-option.selected {
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.sort-filter-option {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter_wrap {
+    justify-content: space-between;
+    display: flex;
+}
+
+.addServiceBtn,
+.deleteSelectedBtn {
+    height: 40px;
+    border-radius: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: rgb(244, 244, 118) !important;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.addServiceBtn {
+    white-space: nowrap; /* 버튼 텍스트가 한 줄에 표시되도록 설정 */
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #768f21; /* 배경색 조정 */
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.deleteSelectedBtn {
+    white-space: nowrap; /* 버튼 텍스트가 한 줄에 표시되도록 설정 */
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: rgb(245, 88, 88) !important; /* 배경색 조정 */
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.addServiceBtn:hover {
+    background-color: yellow !important; /* 버튼에 호버 효과 추가 */
+}
+.deleteSelectedBtn:hover {
+    background-color: red !important;
+}
+
+/* 모달 배경 */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1000; /* 다른 콘텐츠 위에 위치 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+}
+
+/* 모달 콘텐츠 */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+/* 닫기 버튼 */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#saveChanges {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#saveChanges:hover {
+    background-color: #0056b3;
+}
+
+.Filter_searchInput {
+    flex-grow: 1;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    outline: none;
+    min-width: 0;
+    transition: border-color 0.3s;
+}
+
+.Filter_searchInput:focus {
+    border-color: #00c4c4;
+}
+.report-status {
+    width: 70px !important;
+    height: 30px !important;
+    border: 1px solid #e2e8f0;
+}

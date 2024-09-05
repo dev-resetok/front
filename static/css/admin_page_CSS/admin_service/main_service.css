@@ -226,6 +226,8 @@ ul {
     color: #ffffff; /* 글자를 하얀색으로 */
 }
 
-.ServiceTable_cell .post_kind {
+.ServiceTable_cell .post_kind,
+.post_title {
     overflow: hidden;
+    white-space: nowrap;
 }
