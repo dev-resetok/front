@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Moa 회원가입</title>
+        <link rel="stylesheet" href="/static/css/join_signup/join_signup.css" />
+    </head>
+    <body class="__className_3b537e">
+        <div
+            style="
+                position: fixed;
+                z-index: 9999;
+                inset: 80px 16px 16px;
+                pointer-events: none;
+            "
+        ></div>
+        <div>
+            <div
+                class="box-border py-6 desktop:min-h-screen desktop:bg-w-gray-10 desktop:py-[120px]"
+            >
+                <div
+                    class="mx-auto grid w-full max-w-container auto-cols-1fr gap-x-5 px-5 desktop:gap-x-6 desktop:px-9 grid-areas-signUp-mobile tablet:grid-areas-signUp-tablet desktop:grid-areas-signUp-desktop"
+                >
+                    <div class="box-border grid-in-form" id="center">
+                        <div
+                            class="box-border h-full w-full bg-w-white desktop:box-border desktop:flex desktop:w-[558px] desktop:flex-col desktop:rounded-2xl desktop:p-8 desktop:shadow-contents-container"
+                            data-testid="account-signup-form--container"
+                        >
+                            <span
+                                class="text-title3 mb-8 hidden text-w-gray-900 desktop:block"
+                                >회원가입</span
+                            >
+                            <div class="box-border flex items-center pb-8">
+                                <label
+                                    class="flex h-full items-center justify-start gap-3"
+                                    style="width: 80px"
+                                >
+                                    <label class="flex size-fit">
+                                        <label class="flex size-fit">
+                                            <input
+                                                class="absolute h-0 w-0 opacity-0"
+                                                type="checkbox"
+                                                name="remember1"
+                                                id="professor-save-checkbox"
+                                            />
+                                            <div
+                                                id="professor-checkboxDiv"
+                                                class="relative m-px box-border size-4 cursor-pointer border rounded hover:border-primary-500 border-w-gray-200 bg-white flex items-center"
+                                                role="checkbox-button"
+                                            >
+                                                <div
+                                                    class="relative z-10 h-full w-full cursor-pointer bg-transparent"
+                                                >
+                                                    <div
+                                                        id="professor-changediv3"
+                                                        class="absolute left-[3.2px] top-[5.45px] h-[2px] origin-top-left rotate-45 rounded bg-white transition-[width] duration-100 ease-linear w-0"
+                                                    ></div>
+                                                    <div
+                                                        id="professor-changediv4"
+                                                        class="absolute left-[4.5px] top-[8.95px] h-[2px] origin-top-left -rotate-45 rounded bg-white transition-[width] duration-100 ease-linear w-0 delay-0"
+                                                    ></div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </label>
+                                    <span
+                                        class="text-body1 cursor-pointer text-w-gray-900"
+                                        >교수
+                                    </span>
+                                </label>
+                                <label
+                                    class="flex h-full items-center justify-start gap-3"
+                                    style="width: 95px"
+                                >
+                                    <label class="flex size-fit">
+                                        <label class="flex size-fit">
+                                            <input
+                                                class="absolute h-0 w-0 opacity-0"
+                                                type="checkbox"
+                                                name="remember1"
+                                                id="academic-save-checkbox"
+                                            />
+                                            <div
+                                                id="academic-checkboxDiv"
+                                                class="relative m-px box-border size-4 cursor-pointer border rounded hover:border-primary-500 border-w-gray-200 bg-white flex items-center"
+                                                role="checkbox-button"
+                                            >
+                                                <div
+                                                    class="relative z-10 h-full w-full cursor-pointer bg-transparent"
+                                                >
+                                                    <div
+                                                        id="academic-changediv5"
+                                                        class="absolute left-[3.2px] top-[5.45px] h-[2px] origin-top-left rotate-45 rounded bg-white transition-[width] duration-100 ease-linear w-0"
+                                                    ></div>
+                                                    <div
+                                                        id="academic-changediv6"
+                                                        class="absolute left-[4.5px] top-[8.95px] h-[2px] origin-top-left -rotate-45 rounded bg-white transition-[width] duration-100 ease-linear w-0 delay-0"
+                                                    ></div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </label>
+                                    <span
+                                        class="text-body1 cursor-pointer text-w-gray-900"
+                                        >대학생
+                                    </span>
+                                </label>
+                                <label
+                                    class="flex h-full items-center justify-start gap-3"
+                                >
+                                    <label class="flex size-fit">
+                                        <label class="flex size-fit">
+                                            <input
+                                                class="absolute h-0 w-0 opacity-0"
+                                                type="checkbox"
+                                                name="remember1"
+                                                id="user-save-checkbox"
+                                            />
+                                            <div
+                                                id="user-checkboxDiv"
+                                                class="relative m-px box-border size-4 cursor-pointer border rounded hover:border-primary-500 border-w-gray-200 bg-white flex items-center"
+                                                role="checkbox-button"
+                                            >
+                                                <div
+                                                    class="relative z-10 h-full w-full cursor-pointer bg-transparent"
+                                                >
+                                                    <div
+                                                        id="user-changediv7"
+                                                        class="absolute left-[3.2px] top-[5.45px] h-[2px] origin-top-left rotate-45 rounded bg-white transition-[width] duration-100 ease-linear w-0"
+                                                    ></div>
+                                                    <div
+                                                        id="user-changediv8"
+                                                        class="absolute left-[4.5px] top-[8.95px] h-[2px] origin-top-left -rotate-45 rounded bg-white transition-[width] duration-100 ease-linear w-0 delay-0"
+                                                    ></div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </label>
+                                    <span
+                                        class="text-body1 cursor-pointer text-w-gray-900"
+                                        >일반
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <p id="check-message"></p>
+                            </div>
+                            <div class="box-border flex flex-col gap-4">
+                                <form id="sign_up" class="flex flex-col gap-6">
+                                    <div
+                                        class="box-border relative flex flex-col gap-2"
+                                    >
+                                        <div
+                                            class="flex min-w-fit select-none flex-col gap-3 bg-w-white"
+                                        >
+                                            <label
+                                                name="email-input-box"
+                                                role="input-box1"
+                                                class="flex shrink-0 cursor-text items-center gap-3 rounded-xl border px-4 text-[16px] leading-[26px] text-w-gray-600 h-[66px] py-[11px] border-w-gray-200 hover:border-w-primary bg-w-white"
+                                                ><label
+                                                    class="relative flex w-full flex-col"
+                                                >
+                                                    <input
+                                                        class="w-full outline-none placeholder:text-w-gray-300 disabled:bg-w-gray-10 text-w-gray-600 pt-[14px]"
+                                                        role="text-input"
+                                                        value=""
+                                                        name="emailInput"
+                                                        id="email"
+                                                    />
+                                                    <div
+                                                        class="absolute text-w-gray-300 text-[16px] transition-all duration-300 translate-y-2 origin-top-left -top-[1px]"
+                                                        id="email-placeholder"
+                                                    >
+                                                        이메일
+                                                    </div>
+                                                </label>
+                                            </label>
+                                            <p id="email-message"></p>
+                                        </div>
+                                        <span
+                                            class="text-body2 box-border flex w-full items-center gap-2 px-4 text-w-gray-400"
+                                            style="margin-top: -5px"
+                                            >비즈니스용 이메일 사용을
+                                            권장합니다.
+                                            <div
+                                                class="box-border mt-[0.5px] w-4 desktop:mt-0"
+                                                data-testid="account-signup-form--info-icon"
+                                            >
+                                                <svg
+                                                    width="16"
+                                                    height="16"
+                                                    viewBox="0 0 16 16"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <circle
+                                                        cx="8"
+                                                        cy="8"
+                                                        r="6.4"
+                                                        stroke="#9E9E9E"
+                                                        stroke-width="1.2"
+                                                        stroke-linejoin="round"
+                                                    ></circle>
+                                                    <path
+                                                        d="M8 11.0625V7.5625"
+                                                        stroke="#9E9E9E"
+                                                        stroke-width="1.2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    ></path>
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M7.99779 5.8125C7.51041 5.80988 7.12104 5.4135 7.12454 4.92612C7.12891 4.46062 7.52966 4.0625 7.99604 4.0625C8.47466 4.0625 8.88066 4.47025 8.87454 4.94713C8.86929 5.42225 8.47029 5.81512 7.99779 5.8125Z"
+                                                        fill="#9E9E9E"
+                                                    ></path>
+                                                </svg></div
+                                        ></span>
+                                    </div>
+                                    <div
+                                        class="flex min-w-fit select-none flex-col gap-3 bg-w-white"
+                                    >
+                                        <label
+                                            name="id-input-box"
+                                            role="input-box"
+                                            class="flex shrink-0 cursor-text items-center gap-3 rounded-xl border px-4 text-[16px] leading-[26px] text-w-gray-600 h-[66px] py-[11px] border-w-gray-200 hover:border-w-primary bg-w-white"
+                                            ><label
+                                                class="relative flex w-full flex-col"
+                                            >
+                                                <input
+                                                    class="w-full outline-none placeholder:text-w-gray-300 disabled:bg-w-gray-10 text-w-gray-600 pt-[14px]"
+                                                    role="text-input"
+                                                    maxlength="20"
+                                                    value=""
+                                                    name="idinput"
+                                                    id="id"
+                                                />
+                                                <div
+                                                    class="absolute text-w-gray-300 transition-all duration-300 scale-[0.6875] -translate-y-0.5 origin-top-left"
+                                                    id="id-placeholder"
+                                                >
+                                                    아이디
+                                                </div>
+                                            </label>
+                                        </label>
+                                        <p id="id-message"></p>
+                                    </div>
+                                    <div
+                                        class="flex min-w-fit select-none flex-col gap-3 bg-w-white"
+                                    >
+                                        <label
+                                            name="pw-input-box"
+                                            role="input-box"
+                                            class="flex shrink-0 cursor-text items-center gap-3 rounded-xl border px-4 text-[16px] leading-[26px] text-w-gray-600 h-[66px] py-[11px] border-w-gray-200 hover:border-w-primary bg-w-white"
+                                            ><label
+                                                class="relative flex w-full flex-col"
+                                            >
+                                                <input
+                                                    class="w-full outline-none placeholder:text-w-gray-300 disabled:bg-w-gray-10 text-w-gray-600 pt-[14px]"
+                                                    role="text-input"
+                                                    maxlength="32"
+                                                    type="password"
+                                                    value=""
+                                                    name="passwordinput"
+                                                    id="password"
+                                                />
+                                                <div
+                                                    id="pw-placeholder"
+                                                    class="absolute text-w-gray-300 text-[16px] transition-all duration-300 translate-y-2 origin-top-left -top-[1px]"
+                                                >
+                                                    비밀번호
+                                                </div>
+                                            </label>
+                                            <label>
+                                                <svg
+                                                    id="toggle-password"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="16"
+                                                    height="16"
+                                                    viewBox="0 0 16 16"
+                                                    fill="none"
+                                                    class="text-w-gray-400"
+                                                >
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M15 8C13.731 4.7278 11.488 3.59448 9.883 3.20781L9.884 3.2067C9.876 3.20448 9.869 3.20448 9.861 3.20226C9.566 3.13226 9.289 3.08448 9.048 3.0567V3.05448C9.015 3.05115 8.986 3.04893 8.953 3.0467C8.842 3.03559 8.74 3.0267 8.646 3.02115C8.53 3.01337 8.441 3.01448 8.336 3.01004C8.307 3.00893 8.281 3.00893 8.252 3.00781C8.068 3.00226 7.901 2.99781 7.754 3.00115C7.678 3.00226 7.608 3.00448 7.537 3.0067C7.431 3.01226 7.346 3.01559 7.27 3.02226C6.533 3.07559 6.114 3.2067 6.114 3.2067V3.20892C4.509 3.59559 2.268 4.72891 1 8C2.269 11.2722 4.512 12.4066 6.117 12.7922L6.116 12.7933C6.124 12.7955 6.131 12.7955 6.139 12.7977C6.434 12.8677 6.711 12.9155 6.952 12.9433V12.9455C6.985 12.9489 7.014 12.9511 7.047 12.9533C7.158 12.9644 7.26 12.9733 7.354 12.9789C7.47 12.9866 7.559 12.9855 7.664 12.99C7.693 12.9911 7.719 12.9911 7.748 12.9922C7.932 12.9977 8.099 13.0022 8.246 12.9989C8.322 12.9977 8.392 12.9955 8.463 12.9933C8.569 12.9877 8.654 12.9844 8.73 12.9777C9.467 12.9244 9.886 12.7933 9.886 12.7933V12.7911C11.491 12.4044 13.732 11.2711 15 8Z"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    ></path>
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M10 8C10 9.10462 9.10454 10 8.00039 10C6.89546 10 6 9.10462 6 8C6 6.89538 6.89546 6 8.00039 6C9.10454 6 10 6.89538 10 8Z"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    ></path>
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M15 8C13.731 4.7278 11.488 3.59448 9.883 3.20781L9.884 3.2067C9.876 3.20448 9.869 3.20448 9.861 3.20226C9.566 3.13226 9.289 3.08448 9.048 3.0567V3.05448C9.015 3.05115 8.986 3.04893 8.953 3.0467C8.842 3.03559 8.74 3.0267 8.646 3.02115C8.53 3.01337 8.441 3.01448 8.336 3.01004C8.307 3.00893 8.281 3.00893 8.252 3.00781C8.068 3.00226 7.901 2.99781 7.754 3.00115C7.678 3.00226 7.608 3.00448 7.537 3.0067C7.431 3.01226 7.346 3.01559 7.27 3.02226C6.533 3.07559 6.114 3.2067 6.114 3.2067V3.20892C4.509 3.59559 2.268 4.72891 1 8C2.269 11.2722 4.512 12.4066 6.117 12.7922L6.116 12.7933C6.124 12.7955 6.131 12.7955 6.139 12.7977C6.434 12.8677 6.711 12.9155 6.952 12.9433V12.9455C6.985 12.9489 7.014 12.9511 7.047 12.9533C7.158 12.9644 7.26 12.9733 7.354 12.9789C7.47 12.9866 7.559 12.9855 7.664 12.99C7.693 12.9911 7.719 12.9911 7.748 12.9922C7.932 12.9977 8.099 13.0022 8.246 12.9989C8.322 12.9977 8.392 12.9955 8.463 12.9933C8.569 12.9877 8.654 12.9844 8.73 12.9777C9.467 12.9244 9.886 12.7933 9.886 12.7933V12.7911C11.491 12.4044 13.732 11.2711 15 8Z"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    ></path>
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M10 8C10 9.10462 9.10454 10 8.00039 10C6.89546 10 6 9.10462 6 8C6 6.89538 6.89546 6 8.00039 6C9.10454 6 10 6.89538 10 8Z"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    ></path>
+                                                </svg>
+                                            </label>
+                                        </label>
+                                        <p id="pw-message"></p>
+                                        <div
+                                            role="support-container"
+                                            class="flex justify-between px-4 text-sm leading-5 text-w-gray-400"
+                                        >
+                                            <div style="margin-top: -5px">
+                                                8자 이상 32자 이하로 입력해
+                                                주세요.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex min-w-fit select-none flex-col gap-3 bg-w-white"
+                                    >
+                                        <label
+                                            name="repw-input-box"
+                                            role="input-box"
+                                            class="flex shrink-0 cursor-text items-center gap-3 rounded-xl border px-4 text-[16px] leading-[26px] text-w-gray-600 h-[66px] py-[11px] border-w-gray-200 hover:border-w-primary bg-w-white"
+                                            ><label
+                                                class="relative flex w-full flex-col"
+                                            >
+                                                <input
+                                                    class="w-full outline-none placeholder:text-w-gray-300 disabled:bg-w-gray-10 text-w-gray-600 pt-[14px]"
+                                                    role="text-input"
+                                                    maxlength="32"
+                                                    type="repassword"
+                                                    value=""
+                                                    name="repasswordinput"
+                                                    id="repassword"
+                                                />
+                                                <div
+                                                    id="repw-placeholder"
+                                                    class="absolute text-w-gray-300 text-[16px] transition-all duration-300 translate-y-2 origin-top-left -top-[1px]"
+                                                >
+                                                    비밀번호 확인
+                                                </div>
+                                            </label>
+                                            <label>
+                                                <svg
+                                                    id="retoggle-password"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="16"
+                                                    height="16"
+                                                    viewBox="0 0 16 16"
+                                                    fill="none"
+                                                    class="text-w-gray-400"
+                                                >
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M15 8C13.731 4.7278 11.488 3.59448 9.883 3.20781L9.884 3.2067C9.876 3.20448 9.869 3.20448 9.861 3.20226C9.566 3.13226 9.289 3.08448 9.048 3.0567V3.05448C9.015 3.05115 8.986 3.04893 8.953 3.0467C8.842 3.03559 8.74 3.0267 8.646 3.02115C8.53 3.01337 8.441 3.01448 8.336 3.01004C8.307 3.00893 8.281 3.00893 8.252 3.00781C8.068 3.00226 7.901 2.99781 7.754 3.00115C7.678 3.00226 7.608 3.00448 7.537 3.0067C7.431 3.01226 7.346 3.01559 7.27 3.02226C6.533 3.07559 6.114 3.2067 6.114 3.2067V3.20892C4.509 3.59559 2.268 4.72891 1 8C2.269 11.2722 4.512 12.4066 6.117 12.7922L6.116 12.7933C6.124 12.7955 6.131 12.7955 6.139 12.7977C6.434 12.8677 6.711 12.9155 6.952 12.9433V12.9455C6.985 12.9489 7.014 12.9511 7.047 12.9533C7.158 12.9644 7.26 12.9733 7.354 12.9789C7.47 12.9866 7.559 12.9855 7.664 12.99C7.693 12.9911 7.719 12.9911 7.748 12.9922C7.932 12.9977 8.099 13.0022 8.246 12.9989C8.322 12.9977 8.392 12.9955 8.463 12.9933C8.569 12.9877 8.654 12.9844 8.73 12.9777C9.467 12.9244 9.886 12.7933 9.886 12.7933V12.7911C11.491 12.4044 13.732 11.2711 15 8Z"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    ></path>
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M10 8C10 9.10462 9.10454 10 8.00039 10C6.89546 10 6 9.10462 6 8C6 6.89538 6.89546 6 8.00039 6C9.10454 6 10 6.89538 10 8Z"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    ></path>
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M15 8C13.731 4.7278 11.488 3.59448 9.883 3.20781L9.884 3.2067C9.876 3.20448 9.869 3.20448 9.861 3.20226C9.566 3.13226 9.289 3.08448 9.048 3.0567V3.05448C9.015 3.05115 8.986 3.04893 8.953 3.0467C8.842 3.03559 8.74 3.0267 8.646 3.02115C8.53 3.01337 8.441 3.01448 8.336 3.01004C8.307 3.00893 8.281 3.00893 8.252 3.00781C8.068 3.00226 7.901 2.99781 7.754 3.00115C7.678 3.00226 7.608 3.00448 7.537 3.0067C7.431 3.01226 7.346 3.01559 7.27 3.02226C6.533 3.07559 6.114 3.2067 6.114 3.2067V3.20892C4.509 3.59559 2.268 4.72891 1 8C2.269 11.2722 4.512 12.4066 6.117 12.7922L6.116 12.7933C6.124 12.7955 6.131 12.7955 6.139 12.7977C6.434 12.8677 6.711 12.9155 6.952 12.9433V12.9455C6.985 12.9489 7.014 12.9511 7.047 12.9533C7.158 12.9644 7.26 12.9733 7.354 12.9789C7.47 12.9866 7.559 12.9855 7.664 12.99C7.693 12.9911 7.719 12.9911 7.748 12.9922C7.932 12.9977 8.099 13.0022 8.246 12.9989C8.322 12.9977 8.392 12.9955 8.463 12.9933C8.569 12.9877 8.654 12.9844 8.73 12.9777C9.467 12.9244 9.886 12.7933 9.886 12.7933V12.7911C11.491 12.4044 13.732 11.2711 15 8Z"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    ></path>
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M10 8C10 9.10462 9.10454 10 8.00039 10C6.89546 10 6 9.10462 6 8C6 6.89538 6.89546 6 8.00039 6C9.10454 6 10 6.89538 10 8Z"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    ></path>
+                                                </svg>
+                                            </label>
+                                        </label>
+                                    </div>
+                                    <p id="repw-message"></p>
+                                    <label class="flex w-full gap-4"
+                                        ><div
+                                            class="box-border flex h-[26px] items-center"
+                                            data-testid="signup-agreement-checkbox-root"
+                                        >
+                                            <label class="flex size-fit">
+                                                <label class="flex size-fit">
+                                                    <input
+                                                        class="absolute h-0 w-0 opacity-0"
+                                                        type="checkbox"
+                                                        name="remember"
+                                                        id="agreement-checkbox"
+                                                    />
+                                                    <div
+                                                        id="agreementDiv"
+                                                        class="relative m-px box-border size-4 cursor-pointer border rounded hover:border-primary-500 border-w-gray-200 bg-white flex items-center"
+                                                        role="checkbox-button"
+                                                    >
+                                                        <div
+                                                            class="relative z-10 h-full w-full cursor-pointer bg-transparent"
+                                                        >
+                                                            <div
+                                                                id="rechangediv1"
+                                                                class="absolute left-[3.2px] top-[5.45px] h-[2px] origin-top-left rotate-45 rounded bg-white transition-[width] duration-100 ease-linear w-0"
+                                                            ></div>
+                                                            <div
+                                                                id="rechangediv2"
+                                                                class="absolute left-[4.5px] top-[8.95px] h-[2px] origin-top-left -rotate-45 rounded bg-white transition-[width] duration-100 ease-linear w-0 delay-0"
+                                                            ></div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </label>
+                                        </div>
+                                        <div
+                                            class="box-border flex h-fit flex-col gap-1.5 text-w-gray-900"
+                                        >
+                                            <span class="text-body1"
+                                                ><a
+                                                    target=""
+                                                    class="font-medium text-w-primary no-underline"
+                                                    href=""
+                                                    >이용약관</a
+                                                >&nbsp;및&nbsp;<a
+                                                    target=""
+                                                    class="font-medium text-w-primary no-underline"
+                                                    href=""
+                                                    >개인정보 처리방침</a
+                                                >에 동의합니다.</span
+                                            >
+                                        </div>
+                                    </label>
+                                    <p id="agreement-Message"></p>
+                                    <button
+                                        class="box-border flex cursor-pointer items-center justify-center border rounded-xl h-[50px] px-[15px] text-base leading-[26px] gap-x-1.5 text-w-white bg-primary-500 border-primary-500 hover:border-primary-700 hover:bg-primary-700 mt-2 w-full"
+                                        type="button"
+                                    >
+                                        <!-- type-원래 button 대신에 submit임 -->
+                                        회원가입
+                                    </button>
+                                </form>
+                                <div
+                                    class="box-border flex flex-col justify-center gap-6"
+                                >
+                                    <div
+                                        class="box-border flex w-full items-center justify-center"
+                                    >
+                                        <div
+                                            data-testid="design-system-divider"
+                                            class="flex-shrink-0 bg-w-gray-200 h-px w-[40%]"
+                                        ></div>
+                                        <span
+                                            class="text-caption1 mx-3 flex w-14 justify-center text-w-gray-500"
+                                            >또는</span
+                                        >
+                                        <div
+                                            data-testid="design-system-divider"
+                                            class="flex-shrink-0 bg-w-gray-200 h-px w-[40%]"
+                                        ></div>
+                                    </div>
+                                    <div class="box-border flex flex-col gap-4">
+                                        <button
+                                            class="box-border flex cursor-pointer items-center justify-center border px-[15px] text-base leading-[26px] gap-x-1.5 bg-w-white border-w-gray-200 hover:border-primary-500 h-[50px] w-full rounded-xl text-w-gray-600"
+                                            type="button"
+                                        >
+                                            <svg
+                                                id="background"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 16 16"
+                                                fill="none"
+                                                data-testid="social-form-button-icon--google"
+                                                class="text-w-gray-900"
+                                            >
+                                                <g>
+                                                    <path></path>
+                                                    <path></path>
+                                                    <path></path>
+                                                    <path></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath
+                                                        id="clip0_2735_3764"
+                                                    >
+                                                        <rect
+                                                            width="16"
+                                                            height="16"
+                                                            fill="white"
+                                                        ></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span class="text-body1 w-full"
+                                                >카카오로 회원가입</span
+                                            >
+                                        </button>
+                                    </div>
+                                    <span
+                                        class="text-body1 text-center font-normal text-w-gray-600"
+                                        >이미 Moa 통합회원이신가요? &nbsp;<a
+                                            class="font-medium text-w-primary no-underline"
+                                            href=""
+                                            >로그인</a
+                                        ></span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="/static/js/join_signup/join_signup.js"></script>
+</html>

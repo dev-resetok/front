@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>게시글 목록 - 목록 게시판</title>
+        <title>게시글 목록 - 정보 게시판</title>
         <link
             rel="stylesheet"
             href="../../static/css/information/information_list.css"
@@ -21,99 +21,130 @@
                     <div class="main-wrap">
                         <div class="main-container">
                             <div class="main">
-                                <div class="title-inline">게시글 목록</div>
-                                <div class="search-box" id="search-box">
-                                    <select
-                                        class="moa-select search-type"
-                                        name="search-type"
-                                        style="display: none"
-                                    >
-                                        <option value="all">제목 + 내용</option>
-                                        <option value="title">제목</option>
-                                        <option value="content">내용</option>
-                                    </select>
-                                    <div
-                                        class="ui-select moa-select theme-moa text-search-type"
-                                        tabindex="0"
-                                        sylte="width: 100%"
-                                    >
-                                        <span class="select-box">
-                                            <p class="select-name">
-                                                제목 + 내용
-                                            </p>
-                                            <i class="select-icon"
-                                                ><svg
-                                                    class="select-icon"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="14"
-                                                    height="14"
-                                                    viewBox="0 0 14 14"
-                                                >
-                                                    <path
-                                                        fill="none"
-                                                        fill-rule="evenodd"
-                                                        stroke="#9E9E9E"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        stroke-width="1.2"
-                                                        d="M1 4l6 6 6-6"
-                                                    ></path></svg
-                                            ></i>
-                                        </span>
-                                        <p class="select-background"></p>
-                                        <ul class="select-drop-down">
-                                            <li data-select-value="all">
-                                                제목 + 내용
-                                            </li>
-                                            <li data-select-value="title">
-                                                제목
-                                            </li>
-                                            <li data-select-value="content">
-                                                내용
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="default-input-type icon-right">
-                                        <div
-                                            class="default-input-moa icon-right"
+                                <div class="search-section-header">
+                                    <div class="title-inline">게시글 목록</div>
+                                    <div class="search-box" id="search-box">
+                                        <select
+                                            class="moa-select search-type"
+                                            name="search-type"
+                                            style="display: none"
                                         >
-                                            <input
-                                                autocomplete="off"
-                                                class="theme-moa moa-text search-text"
-                                                data-input-type="text-input"
-                                                name="search-text"
-                                                type="text"
-                                                style="padding-right: 48px"
-                                            />
-                                            <span class="text-unit active">
-                                                <img
-                                                    src="https://www.wishket.com/static/renewal/img/stack/icon-search@2x.png"
-                                                    style="
-                                                        margin-right: 8px;
-                                                        cursor: pointer;
-                                                        width: 16px;
-                                                    "
-                                                />
+                                            <option value="all">
+                                                제목 + 내용
+                                            </option>
+                                            <option value="title">제목</option>
+                                            <option value="content">
+                                                내용
+                                            </option>
+                                        </select>
+                                        <div
+                                            class="ui-select moa-select theme-moa text-search-type"
+                                            tabindex="0"
+                                            style="width: 100%"
+                                        >
+                                            <span class="select-box">
+                                                <p class="select-name">
+                                                    제목 + 내용
+                                                </p>
+                                                <i class="select-icon"
+                                                    ><svg
+                                                        class="select-icon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="14"
+                                                        height="14"
+                                                        viewBox="0 0 14 14"
+                                                    >
+                                                        <path
+                                                            fill="none"
+                                                            fill-rule="evenodd"
+                                                            stroke="#9E9E9E"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            stroke-width="1.2"
+                                                            d="M1 4l6 6 6-6"
+                                                        ></path></svg
+                                                ></i>
                                             </span>
+                                            <p class="select-background"></p>
+                                            <ul class="select-drop-down">
+                                                <li data-select-value="all">
+                                                    제목 + 내용
+                                                </li>
+                                                <li data-select-value="title">
+                                                    제목
+                                                </li>
+                                                <li data-select-value="content">
+                                                    내용
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div
+                                            class="default-input-type icon-right"
+                                        >
+                                            <div
+                                                class="default-input-moa icon-right"
+                                            >
+                                                <input
+                                                    autocomplete="off"
+                                                    class="theme-moa moa-text search-text"
+                                                    data-input-type="text-input"
+                                                    name="search-text"
+                                                    type="text"
+                                                    style="padding-right: 48px"
+                                                />
+                                                <span class="text-unit active">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/stack/icon-search@2x.png"
+                                                        style="
+                                                            margin-right: 8px;
+                                                            cursor: pointer;
+                                                            width: 16px;
+                                                        "
+                                                    />
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="top-divider"></div>
+                                <div class="divider"></div>
                                 <div class="post-count-wrap">
-                                    <p class="post-count-container">
-                                        <span class="post-count">10,340</span>
-                                        개의 게시글
-                                    </p>
+                                    <div class="post-count-container">
+                                        <p class="post-count-inner">
+                                            <span class="post-count"></span>
+                                            개의 게시글
+                                        </p>
+                                    </div>
+                                    <div class="arrange-type-wrap">
+                                        <ul class="arrange-type-container">
+                                            <li class="arrange-type selected">
+                                                <a href="#">• 최신순</a>
+                                            </li>
+                                            <li class="arrange-type">
+                                                <a href="#">• 인기순</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="post-lists">
                                     <div class="post-list">
                                         <div class="post-all">
-                                            <div class="status-mark new-mark">
-                                                NEW
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
                                             </div>
                                             <div class="post-top">
-                                                <div class="post-title">
-                                                    한국대 고전 문학 자료 공유
+                                                <div class="post-title-wrap">
+                                                    <div class="post-title">
+                                                        한국대 고전 문학 자료
+                                                        공유
+                                                    </div>
+                                                    <div
+                                                        class="status-mark new-mark"
+                                                    >
+                                                        NEW
+                                                    </div>
                                                 </div>
                                                 <div class="post-top-right">
                                                     <div
@@ -142,6 +173,12 @@
                                     </div>
                                     <div class="post-list">
                                         <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
                                             <div class="post-top">
                                                 <div class="post-title">
                                                     한국대 고전 문학 자료 공유
@@ -173,6 +210,12 @@
                                     </div>
                                     <div class="post-list">
                                         <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
                                             <div class="post-top">
                                                 <div class="post-title">
                                                     한국대 고전 문학 자료 공유
@@ -205,6 +248,12 @@
                                     </div>
                                     <div class="post-list">
                                         <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
                                             <div class="post-top">
                                                 <div class="post-title">
                                                     한국대 고전 문학 자료 공유
@@ -237,6 +286,12 @@
                                     </div>
                                     <div class="post-list">
                                         <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
                                             <div class="post-top">
                                                 <div class="post-title">
                                                     한국대 고전 문학 자료 공유
@@ -269,6 +324,12 @@
                                     </div>
                                     <div class="post-list">
                                         <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
                                             <div class="post-top">
                                                 <div class="post-title">
                                                     한국대 고전 문학 자료 공유
@@ -301,6 +362,12 @@
                                     </div>
                                     <div class="post-list">
                                         <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
                                             <div class="post-top">
                                                 <div class="post-title">
                                                     한국대 고전 문학 자료 공유
@@ -333,6 +400,12 @@
                                     </div>
                                     <div class="post-list">
                                         <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
                                             <div class="post-top">
                                                 <div class="post-title">
                                                     한국대 고전 문학 자료 공유
@@ -365,6 +438,12 @@
                                     </div>
                                     <div class="post-list">
                                         <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
                                             <div class="post-top">
                                                 <div class="post-title">
                                                     한국대 고전 문학 자료 공유
@@ -397,6 +476,12 @@
                                     </div>
                                     <div class="post-list">
                                         <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
                                             <div class="post-top">
                                                 <div class="post-title">
                                                     한국대 고전 문학 자료 공유
@@ -429,7 +514,12 @@
                                     </div>
                                     <div class="pagination-wrap">
                                         <ul class="pagination theme-moa">
-                                            <li class="page-item disabled"></li>
+                                            <li
+                                                class="page-item"
+                                                id="page-prev-button"
+                                            >
+                                                <a class="page-link">이전</a>
+                                            </li>
                                             <li class="page-item">
                                                 <a class="page-link active"
                                                     >1</a
@@ -447,7 +537,10 @@
                                             <li class="page-item">
                                                 <a class="page-link">5</a>
                                             </li>
-                                            <li class="page-item">
+                                            <li
+                                                class="page-item"
+                                                id="page-next-button"
+                                            >
                                                 <a class="page-link">다음</a>
                                             </li>
                                         </ul>

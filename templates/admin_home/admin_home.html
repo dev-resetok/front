@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="../../static/css/admin_home/admin_home.css"
+        />
+        <title>관리자 | 홈</title>
+    </head>
+    <body>
+        <!-- 페이지 이동을 필요로 하는 모든 a태그에 href 뺐음 -->
+        <div id="root">
+            <div id="app-layout-wrap" class="app-layout-wrap">
+                <div class="gnb-nav-bar-wrap">
+                    <div class="gnb-nav-bar-flex-contatiner">
+                        <div class="studio-logo-wrap">
+                            <button
+                                class="studio-logo"
+                                aria-label="로고 버튼"
+                            ></button>
+                            <div class="studio-logo-type">펀딩·프리오더</div>
+                        </div>
+                        <div class="studio-status-state-box-wrap">
+                            <span class="studio-status-state">작성 중</span>
+                        </div>
+                    </div>
+                    <div
+                        class="gnb-nav-bar-flex-contatiner gnb-nav-bar-flex-right-box-container"
+                    >
+                        <div class="project-info-wrap">
+                            <button
+                                type="button"
+                                class="project-info-info-button"
+                            >
+                                <!-- 프로젝트 번호 -->
+                                <span class="project-info-emphasis"
+                                    >(관리지 정보)님</span
+                                >
+                                <span class="project-info-text"
+                                    >환영합니다.</span
+                                >
+                                <!-- <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    focusable="false"
+                                    role="presentation"
+                                    class="with-icon"
+                                    aria-hidden="true"
+                                    style="width: 12px; height: 12px"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M2.576 7.924l.848-.848L12 15.652l8.576-8.576.848.848L12 17.35 2.576 7.924z"
+                                    ></path>
+                                </svg> -->
+                            </button>
+                        </div>
+                        <!-- <div class="announcement-button-wrap" role="button">
+                            <img
+                                src="https://static.wadiz.kr/studio/funding/static/media/announcement.56f4b8e3.svg"
+                                class="announcement-button-icon"
+                            />
+                            <span
+                                class="badge-visible announcement-button-badge"
+                            >
+                                <span class="badge badge-dot badge-md"></span>
+                            </span>
+                        </div> -->
+                        <div class="preview-exit-buttons-wrap">
+                            <button
+                                class="button-button preview-exit-buttons"
+                                type="button"
+                            >
+                                <span>
+                                    <span class="button-children"
+                                        >로그아웃</span
+                                    >
+                                </span>
+                            </button>
+                            <!-- <button
+                                class="button-button preview-exit-buttons"
+                                type="button"
+                            >
+                                <span>
+                                    <span class="button-children">나가기</span>
+                                </span>
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="app-layout-main-wrap">
+                    <nav class="app-nav-bar-layout-container">
+                        <div class="app-nav-bar-content">
+                            <div
+                                class="menu-items-section-app6 menu-items-center"
+                            >
+                                <strong class="menu-items-title"
+                                    >관리자 홈</strong
+                                >
+                                <a>
+                                    <button
+                                        type="button"
+                                        class="zendesk-button-menu-zendesk-button"
+                                        aria-label="와디즈 고객센터 문의"
+                                    >
+                                        <div class="zendesk-button-menu-label">
+                                            <svg
+                                                viewBox="0 0 22 22"
+                                                fill="none"
+                                                focusable="false"
+                                                role="presentation"
+                                                class="with-icon"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M21.45 11C21.45 5.229 16.77.55 11 .55 5.228.55.55 5.229.55 11c0 5.771 4.678 10.45 10.45 10.45 1.716 0 3.335-.414 4.764-1.147l3.878 1.147-.755-3.594A10.41 10.41 0 0 0 21.45 11zm-11.204.94c-.154.37-.232.869-.232 1.493h1.597c.01-.676.169-1.19.478-1.543l.866-.852c.713-.742 1.07-1.496 1.07-2.262 0-.86-.265-1.528-.792-2.007-.528-.48-1.263-.719-2.206-.719-.914 0-1.65.242-2.205.726-.556.483-.839 1.14-.848 1.972h1.71c0-.39.123-.698.369-.926.246-.228.57-.342.974-.342.422 0 .742.116.96.349.219.232.328.57.328 1.01 0 .334-.094.644-.282.93-.122.189-.411.505-.869.948-.457.444-.763.852-.918 1.223zm.67 2.808h-.142a.798.798 0 0 0-.804.793v.166c0 .438.36.793.804.793h.142a.798.798 0 0 0 .804-.793v-.166a.798.798 0 0 0-.804-.793z"
+                                                ></path>
+                                            </svg>
+                                            공지사항 관리
+                                        </div>
+                                    </button>
+                                </a>
+                                <a class="menu-items-menu">
+                                    <span class="menu-items-label">
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            focusable="false"
+                                            role="presentation"
+                                            class="with-icon"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M4 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H4zm2.397 5.188a.86.86 0 1 0-1.074 1.343l5.373 4.298c.762.61 1.846.61 2.608 0l5.373-4.298a.86.86 0 1 0-1.074-1.343l-5.373 4.299a.368.368 0 0 1-.46 0L6.397 8.188z"
+                                            ></path>
+                                        </svg>
+                                        문의 관리
+                                    </span>
+                                </a>
+                                <a class="menu-items-menu">
+                                    <span class="menu-items-label">
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            focusable="false"
+                                            role="presentation"
+                                            class="with-icon"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12s4.477 10 10 10 10-4.477 10-10zm-7.917-4.285c0 .856-.676 1.549-1.51 1.549s-1.51-.693-1.51-1.549c0-.855.676-1.548 1.51-1.548s1.51.693 1.51 1.548zm-3.654 4.246a6.287 6.287 0 0 0 0-1.798l3.117-.55c-.373 1.932-1.061 5.856-.828 6.095.234.24.975 0 1.316-.15-.156.2-.39.783-.488 1.05-.39 1.318-1.688 1.315-2.289 1.148-1.286-.44-1.412-1.648-1.315-2.198l.487-3.597z"
+                                            ></path>
+                                        </svg>
+                                        신고 관리
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="menu-items-section-app6">
+                                <a
+                                    class="menu-items-menu menu-items-has-submenu menu-items-active"
+                                    id="drop-down-menu"
+                                >
+                                    <span class="menu-items-label">
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            focusable="false"
+                                            role="presentation"
+                                            class="with-icon"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M6.656 3.944a1.4 1.4 0 0 1 .92-.344h9.448c.375 0 .735.15.998.417l2.84 2.883H3.258l3.398-2.956zM2.6 8.1V19A1.4 1.4 0 0 0 4 20.4h16a1.4 1.4 0 0 0 1.4-1.4V8.1H2.6zm4.976-5.7a2.6 2.6 0 0 0-1.706.638L2.293 6.15a2.6 2.6 0 0 0-.894 1.962V19A2.6 2.6 0 0 0 4 21.6h16a2.6 2.6 0 0 0 2.6-2.6V8.02a2.6 2.6 0 0 0-.747-1.825l-2.976-3.02a2.6 2.6 0 0 0-1.852-.775h-9.45zM9.4 12a.6.6 0 0 1 .6-.6h4a.6.6 0 1 1 0 1.2h-4a.6.6 0 0 1-.6-.6z"
+                                            ></path>
+                                        </svg>
+                                        게시판 관리
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            focusable="false"
+                                            role="presentation"
+                                            class="with-icon menu-items-down-icon menu-items-open"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M2.576 7.924l.848-.848L12 15.652l8.576-8.576.848.848L12 17.35 2.576 7.924z"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <div
+                                    class="menu-items-submenu-container"
+                                    id="menu-items-closed"
+                                >
+                                    <a href="" class="menu-items-submenu"
+                                        >정보 게시판</a
+                                    >
+                                    <a href="" class="menu-items-submenu"
+                                        >자유 게시판</a
+                                    >
+                                    <a href="" class="menu-items-submenu"
+                                        >장터 게시판</a
+                                    >
+                                    <a href="" class="menu-items-submenu"
+                                        >논문 게시판</a
+                                    >
+                                    <a href="" class="menu-items-submenu"
+                                        >협업 게시판</a
+                                    >
+                                </div>
+                                <a href="" class="menu-items-menu">
+                                    <span class="menu-items-label">
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            focusable="false"
+                                            role="presentation"
+                                            class="with-icon"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M.4 5A2.6 2.6 0 0 1 3 2.4h18A2.6 2.6 0 0 1 23.6 5v1.965a.565.565 0 0 1 0 .07V19a2.6 2.6 0 0 1-2.6 2.6H3A2.6 2.6 0 0 1 .4 19V5zm22 0v1.4H1.6V5A1.4 1.4 0 0 1 3 3.6h18A1.4 1.4 0 0 1 22.4 5zM1.6 19V7.6h20.8V19a1.4 1.4 0 0 1-1.4 1.4H3A1.4 1.4 0 0 1 1.6 19zm5.696-2.5H5.25v-5h2.046c1.743 0 2.766 1.15 2.766 2.5s-1.015 2.5-2.766 2.5zm-.79-4.029v3.058h.674c1.069 0 1.588-.736 1.588-1.529 0-.793-.519-1.529-1.588-1.529h-.675zm7.18 4.029h1.408l-1.959-5h-1.341l-1.95 5h1.407l.197-.607h2.041l.197.607zm-1.941-1.514l.724-2.222.724 2.222h-1.448zM17.86 11.5l-1.003 1.971L15.7 11.5h-1.46l1.926 3.114V16.5h1.398v-1.886L19.25 11.5h-1.39z"
+                                            ></path>
+                                        </svg>
+                                        회원 관리
+                                    </span>
+                                </a>
+                                <a href="" class="menu-items-menu">
+                                    <span class="menu-items-label">
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            focusable="false"
+                                            role="presentation"
+                                            class="with-icon"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M.4 5A2.6 2.6 0 0 1 3 2.4h18A2.6 2.6 0 0 1 23.6 5v1.965a.565.565 0 0 1 0 .07V19a2.6 2.6 0 0 1-2.6 2.6H3A2.6 2.6 0 0 1 .4 19V5zm22 0v1.4H1.6V5A1.4 1.4 0 0 1 3 3.6h18A1.4 1.4 0 0 1 22.4 5zM1.6 19V7.6h20.8V19a1.4 1.4 0 0 1-1.4 1.4H3A1.4 1.4 0 0 1 1.6 19zm5.696-2.5H5.25v-5h2.046c1.743 0 2.766 1.15 2.766 2.5s-1.015 2.5-2.766 2.5zm-.79-4.029v3.058h.674c1.069 0 1.588-.736 1.588-1.529 0-.793-.519-1.529-1.588-1.529h-.675zm7.18 4.029h1.408l-1.959-5h-1.341l-1.95 5h1.407l.197-.607h2.041l.197.607zm-1.941-1.514l.724-2.222.724 2.222h-1.448zM17.86 11.5l-1.003 1.971L15.7 11.5h-1.46l1.926 3.114V16.5h1.398v-1.886L19.25 11.5h-1.39z"
+                                            ></path>
+                                        </svg>
+                                        Q&A 관리
+                                    </span>
+                                </a>
+                            </div>
+                            <!-- <div
+                                class="menu-items-section-app6 menu-items-boosting"
+                            >
+                                <strong>프로젝트 부스팅</strong>
+                                <a href=""></a>
+                                <a href=""></a>
+                                <a href=""></a>
+                                <a href=""></a>
+                                <button class=""></button>
+                            </div> -->
+                        </div>
+                    </nav>
+                    <div
+                        id="app-layout-contents"
+                        class="app-layout-contents-wrap"
+                    >
+                        <div class="funding-container">
+                            <div class="funding-header-wrap">
+                                <h2>회원 관리</h2>
+                                <p>
+                                    프로젝트를 공개하는 데 필요한 내용을
+                                    작성해주세요.
+                                </p>
+                            </div>
+                            <div class="funding-layout-wrap"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="../../static/js/admin_home/admin_home.js"></script>
+</html>
