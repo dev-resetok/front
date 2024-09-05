@@ -1,3 +1,5 @@
+@import url("https://www.wishket.com//static/css/general/general.css?231221");
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,6 +16,8 @@ html {
 
 body {
     height: 100%;
+    width: 1080px;
+    margin: 0 auto;
 }
 
 .detail-section {
@@ -24,9 +28,9 @@ body {
 }
 
 .detail-section, .detail-title {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 28px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .detail-section .detail-title {
@@ -76,6 +80,19 @@ body {
     color: #ff8547;
 }
 
+.detail-contents .alert-box .alert-title:before {
+    content: "";
+    margin-top: 4px;
+    background-size: 16px 16px;
+    margin-right: 8px;
+    height: 16px;
+    width: 16px;
+}
+
+.detail-contents .alert-box .alert-title.warning:before {
+    background-image: url(https://www.wishket.com/static/renewal/img/global/guide-icon-warning.png);
+}
+
 .detail-contents .alert-box .alert-contents {
     font-size: 14px;
     line-height: 24px;
@@ -121,16 +138,276 @@ body {
     border-radius: 4px;
 }
 
-.detail-section .detail-data .faq-evaluation .evaluation-button {
-    padding: 8px 16px;
-    border: solid 1px #e0e0e0;
-    border-radius: 4px;
+.detail-section .detail-data .faq-evaluation .evaluation-button:hover {
+    cursor: pointer;
+    background-color: #fafafa;
 }
 
-.cs-box .detail-section .detail-data .faq-evaluation .faq-evaluation-icon {
+.detail-section .detail-data .faq-evaluation .faq-evaluation-icon {
     margin-right: 8px;
 }
 
 .detail-section .detail-data .faq-evaluation .evaluation-button:not(:first-of-type) {
     margin-left: 16px;
+}
+
+.comment-wrap {
+    padding: 24px 32px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .16);
+    margin-top: 24px;
+    margin-bottom: 40px;
+    width: 800px;
+}
+
+.comment-count-wrap {
+    color: #212121;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+.comment-wrap .comment-count-wrap .comment-count {
+    color: #ff6b21;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+}
+
+.comment-container .comment-inner {
+    padding-top: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+}
+
+.comment-container .comment-inner .comment {
+    word-break: break-all;
+    color: #616161;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.comment-created-date {
+    color: #bdbdbd;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.comment-container .comment-inner .comment-reply-icon {
+    position: absolute;
+    left: 24px;
+    top: 18px;
+}
+
+.comment-container .comment-inner .comment-reply-icon+.comment-reply-wrap {
+    margin-left: 56px;
+}
+
+.comment-container .comment-writer {
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.comment-container .comment-writer .comment-writer-image {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    left: 0;
+    top: 2px;
+}
+
+.comment-container .comment-writer .comment-writer-username {
+    margin-left: 28px;
+    display: inline-block;
+    text-decoration: none;
+    color: #3ba3c7;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.reaction-button {
+    color: #616161;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border-radius: 4px;
+    border: none;
+}
+
+.comment-container .comment-write-wrap {
+    padding: 16px 0;
+}
+
+.comment-container .comment-write-container {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.comment-container .comment-write-container .comment-writer {
+    margin: 8px 12px;
+    position: relative;
+}
+
+.comment-container .comment-writer .comment-writer-image {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    left: 0;
+    top: 2px;
+}
+
+.comment-writer-username {
+    color: #616161;
+    margin-left: 28px;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.comment-write-textarea {
+    border: none;
+    width: 100%;
+    resize: none;
+    margin: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: #616161;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.comment-container .comment-write-container .comment-guide-wrap {
+    background-color: #f7fafc;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e6ebf0;
+}
+
+.comment-guide {
+    color: #757575;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+.comment-container .comment-write-container .comment-complete-button-wrap {
+    padding: 16px 12px;
+}
+
+.comment-container .comment-write-container .comment-complete-button-wrap .secret-comment-option {
+    display: inline-block;
+}
+
+.checkbox-moa {
+    padding: 0;
+    color: rgba(0, 0, 0, 0.65);
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox-moa:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.checkbox-moa:hover>span:first-child>span {
+    border-color: #3ba3c7;
+}
+
+.checkbox-moa>span:first-child>input:checked+span .checked-icon {
+    stroke-dashoffset: 0;
+}
+
+.secret-comment-checkbox {
+    position: absolute;
+    top: 1px;
+    left: 0;
+}
+
+.secret-comment-input {
+    box-sizing: border-box;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+}
+
+.secret-comment-input:checked+span {
+    background: #3ba3c7 !important;
+    border-color: #3ba3c7 !important;
+}
+
+.secret-comment-checkbox-image {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    top: 3px;
+    left: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #fff;
+}
+
+.checked-icon {
+    transition: stroke-dashoffset 0.18s cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+    stroke-dashoffset: 29.7833385;
+    stroke-dasharray: 29.7833385;
+}
+
+.checkbox-moa>span:last-child {
+    user-select: none;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    color: #212121;
+    line-height: 1.5rem;
+    padding-left: 28px;
+    display: inline-block;
+    word-break: keep-all;
+}
+
+.comment-container .comment-write-container .comment-complete-button-wrap .secret-comment-option+.comment-complete-button {
+    margin-top: -4px;
+    background-color: #2099bb;
+    color: #fff;
+    border: #2099bb;
+    padding: 4px 16px;
+    float: right;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
 }
