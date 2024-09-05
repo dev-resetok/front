@@ -9,6 +9,10 @@
             href="../../static/css/information/information_inquiry.css"
         />
         <link
+            rel="stylesheet"
+            href="../../static/css/admin_page_CSS/admin_report/report.css"
+        />
+        <link
             rel="shortcut icon"
             href="https://www.wishket.com/static/favicon.ico"
         />
@@ -53,6 +57,14 @@
                                     <h1 class="post-title">
                                         한국대 고전 문학 자료 공유
                                     </h1>
+                                    <div class="report-container">
+                                        <span class="for-report" id="report-btn"
+                                            ><img
+                                                class="img-report"
+                                                src="../../static/images/report.png"
+                                            />신고하기</span
+                                        >
+                                    </div>
                                 </div>
                                 <div class="divider"></div>
                                 <div class="post-content-wrap">
@@ -355,7 +367,81 @@
                 </div>
             </div>
         </div>
+        <div id="profileModal" class="modal">
+            <div class="modal-content">
+                <span class="close"></span>
+                <h2>게시글 신고</h2>
+                <form id="uploadForm">
+                    <div class="btn-group">
+                        <!-- 체크박스 4개 -->
+                        <div>
+                            <label class="checkbox-moa">
+                                <input
+                                    type="checkbox"
+                                    name="option1"
+                                    value="option1"
+                                />
+                                <span class="report-reason"
+                                    >폭력적 또는 혐오스러운 게시글</span
+                                >
+                            </label>
+                        </div>
+                        <div>
+                            <label class="checkbox-moa">
+                                <input
+                                    type="checkbox"
+                                    name="option2"
+                                    value="option2"
+                                />
+                                <span class="report-reason">잘못된 정보</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="checkbox-moa">
+                                <input
+                                    type="checkbox"
+                                    name="option3"
+                                    value="option3"
+                                />
+                                <span class="report-reason"
+                                    >스팸 또는 혼동을 야기하는 게시글</span
+                                >
+                            </label>
+                        </div>
+                        <div>
+                            <label class="checkbox-moa">
+                                <input
+                                    type="checkbox"
+                                    name="option4"
+                                    value="option4"
+                                />
+                                <span class="report-reason">성적인 게시글</span>
+                            </label>
+                        </div>
+
+                        <!-- 텍스트 입력 부분 -->
+                        <div>
+                            <label for="textInput">기타:</label>
+                            <input
+                                type="text"
+                                id="textInput"
+                                name="textInput"
+                                placeholder="신고 사유를 입력해주세요."
+                            />
+                        </div>
+                    </div>
+                </form>
+                <button
+                    type="button"
+                    class="report-submit-btn"
+                    id="reportSubmitBtn"
+                >
+                    신고하기
+                </button>
+            </div>
+        </div>
         <div id="footer-space" style="width: 100px; height: 100px"></div>
     </body>
     <script src="../../static/js/information/information_inquiry.js"></script>
+    <script src="../../static/js/adminPage_JS/admin_report/report.js"></script>
 </html>
