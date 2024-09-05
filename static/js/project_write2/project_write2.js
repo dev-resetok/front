@@ -7,50 +7,6 @@ const attachInputs = document.querySelectorAll(".attach-input");
 const saveButton = document.querySelector(".save-button");
 let i = 0;
 
-// 마우스의 움직임과 focus 유무에 따라 모든 textarea에 스타일 적용
-textareas.forEach((textarea) => {
-    let value = textarea.value;
-    let focusCheck = false;
-    // 마우스가 들어왔을 때
-    textarea.addEventListener("mouseenter", (e) => {
-        e.target.parentElement.className = "textarea-border-changed";
-    });
-    // 마우스가 나갔을 떄
-    textarea.addEventListener("mouseleave", (e) => {
-        if (focusCheck) {
-            e.target.parentElement.className = "textarea-border-changed";
-        } else {
-            e.target.parentElement.className = "textarea-border";
-        }
-    });
-    // focus를 받았을 때
-    textarea.addEventListener("focus", (e) => {
-        focusCheck = true;
-        if (e.target.parentElement.className.includes("changed")) {
-            e.target.parentElement.className = "textarea-border-changed";
-            if (e.target.value == value) {
-                e.target.value = "";
-            }
-        } else {
-            e.target.parentElement.className = "textarea-border";
-            e.target.value = value;
-        }
-    });
-    // focus를 잃었을 때
-    textarea.addEventListener("blur", (e) => {
-        focusCheck = false;
-        if (!e.target.parentElement.className.includes("changed")) {
-            e.target.parentElement.className = "textarea-border-changed";
-            e.target.value = "";
-        } else {
-            e.target.parentElement.className = "textarea-border";
-            if (!e.target.value) {
-                e.target.value = value;
-            }
-        }
-    });
-});
-
 // 게시글의 현재 글자수 및 최대 글자수 안내
 // 게시글 좌측 하단 - 최대 글자수 안내
 helpText.innerText = `${maxWordLength}자 이내로 작성해주세요.`;
@@ -136,3 +92,67 @@ attachInputs.forEach((attachInput) => {
 
 // 게시글 저장버튼에 입력된 정보 저장 기능 추가
 // saveButton.addEventListener("click", (e) => {});
+
+// 기본 양식 텍스트
+// inquiryData 객체를 생성하여 초기 데이터를 설정합니다.
+const inquiryData = {
+    content: `<아래는 예시 양식입니다!>\n\n프로젝트 개요 : \n현재 준비 상황 : \n필요 요소 : \n개발환경/언어/방식 : \n주요 기능 List/주요 화면 List/메뉴 구성/요구 사항 등 : \n산출물 : \n참고 서비스/사이트 : \n기타 참고 사항/유의 사항 :`,
+};
+
+// name 속성이 'textarea'인 요소를 선택합니다.
+
+const fixTextArea = document.getElementById("content-textarea");
+window.addEventListener("load", function () {
+    if (fixTextArea) {
+        fixTextArea.value = inquiryData.content;
+    } else {
+        console.error("Element with name 'textarea' not found.");
+    }
+});
+
+textareas.forEach((textarea) => {
+    let value = textarea.value;
+    let focusCheck = false;
+    textarea.addEventListener("mouseenter", (e) => {
+        e.target.parentElement.classList.add("textarea-border-changed");
+        e.target.parentElement.classList.remove("textarea-border");
+    });
+
+    textarea.addEventListener("mouseleave", (e) => {
+        if (focusCheck) {
+            e.target.parentElement.classList.add("textarea-border-changed");
+            e.target.parentElement.classList.remove("textarea-border");
+        } else {
+            e.target.parentElement.classList.add("textarea-border");
+            e.target.parentElement.classList.remove("textarea-border-changed");
+        }
+    });
+
+    textarea.addEventListener("focus", (e) => {
+        focusCheck = true;
+        if (
+            e.target.parentElement.classList.contains("textarea-border-changed")
+        ) {
+            e.target.parentElement.classList.add("textarea-border-changed");
+            e.target.parentElement.classList.remove("textarea-border");
+        } else {
+            e.target.parentElement.classList.add("textarea-border");
+            e.target.parentElement.classList.remove("textarea-border-changed");
+        }
+    });
+
+    textarea.addEventListener("blur", (e) => {
+        focusCheck = false;
+        if (
+            !e.target.parentElement.classList.contains(
+                "textarea-border-changed"
+            )
+        ) {
+            e.target.parentElement.classList.add("textarea-border-changed");
+            e.target.parentElement.classList.remove("textarea-border");
+        } else {
+            e.target.parentElement.classList.add("textarea-border");
+            e.target.parentElement.classList.remove("textarea-border-changed");
+        }
+    });
+});
