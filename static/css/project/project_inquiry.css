@@ -1,7 +1,7 @@
 @font-face {
     font-family: "NotoSansKR";
     font-weight: 700;
-    src: url("/templates/fonts/NotoSansKR-Bold.otf") format("woff2");
+    src: url("/templates/fonts/NotoSansKR-Bold.woff2") format("woff2");
 }
 @font-face {
     font-family: "NotoSansKR";
