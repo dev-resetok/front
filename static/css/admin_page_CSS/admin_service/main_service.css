@@ -2,27 +2,42 @@
     font-family: "Pretendard";
     font-weight: 400;
     font-style: normal;
-    src: url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Regular.subset.876e22b0.woff2) format("woff2"),url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Regular.subset.e17e49fe.woff) format("woff"),url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Regular.subset.9645d39e.otf) format("opentype");
-    font-display: swap
+    src: url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Regular.subset.876e22b0.woff2)
+            format("woff2"),
+        url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Regular.subset.e17e49fe.woff)
+            format("woff"),
+        url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Regular.subset.9645d39e.otf)
+            format("opentype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Pretendard";
     font-weight: 500;
     font-style: normal;
-    src: url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Medium.subset.c6c0fe2b.woff2) format("woff2"),url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Medium.subset.2216ab02.woff) format("woff"),url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Medium.subset.11fc9454.otf) format("opentype");
-    font-display: swap
+    src: url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Medium.subset.c6c0fe2b.woff2)
+            format("woff2"),
+        url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Medium.subset.2216ab02.woff)
+            format("woff"),
+        url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Medium.subset.11fc9454.otf)
+            format("opentype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Pretendard";
     font-weight: 700;
     font-style: normal;
-    src: url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Bold.subset.12541844.woff2) format("woff2"),url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Bold.subset.fd82943b.woff) format("woff"),url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Bold.subset.c817dbf1.otf) format("opentype");
-    font-display: swap
+    src: url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Bold.subset.12541844.woff2)
+            format("woff2"),
+        url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Bold.subset.fd82943b.woff)
+            format("woff"),
+        url(https://static.wadiz.kr/studio/funding/static/media/Pretendard-Bold.subset.c817dbf1.otf)
+            format("opentype");
+    font-display: swap;
 }
 
-.ServiceLayout_container{
+.ServiceLayout_container {
     width: 1300px;
 }
 
@@ -32,14 +47,13 @@
     flex-direction: column;
 }
 
-.header_wrapper{
+.header_wrapper {
     width: 1300px;
 }
 
-.ServiceTable_row_wrapper{
+.ServiceTable_row_wrapper {
     width: 1300px;
 }
-
 
 .ServiceHeader_container .ServiceHeader_title {
     line-height: 44px;
@@ -56,7 +70,6 @@
     margin: 0 0 32px;
 }
 
-
 .ServiceTable_container {
     width: 100%;
     border: 1px solid #dee2e6;
@@ -66,16 +79,16 @@
     text-align: center;
 }
 
-.ServiceTable_header, .ServiceTable_row{
+.ServiceTable_header,
+.ServiceTable_row {
     display: table-row;
     width: 100%; /* 행의 전체 너비를 100%로 설정 */
 }
 
 .ServiceTable_header {
     background-color: #f8f9fa;
-    
+
     font-weight: bold;
-    
 }
 
 .ServiceTable_cell {
@@ -91,20 +104,15 @@
 }
 
 .editBtn {
-   
-    
-    
-    
 }
 
-.editBtn button{
-        
-        background: #007bff;
-        width: 67px;
-        height: 25px;
-        border-radius: 4px;
-        color: white;
-        cursor: pointer;    
+.editBtn button {
+    background: #007bff;
+    width: 67px;
+    height: 25px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
 }
 
 .editBtn button:hover {
@@ -144,22 +152,17 @@
 
 .headerCell:nth-child(7),
 .ServiceTable_cell:nth-child(7) {
-    
     width: 190px; /* Role 열 너비 */
-    
 }
 
 .headerCell:nth-child(8),
 .ServiceTable_cell:nth-child(8) {
-    
     width: 100px; /* Role 열 너비 */
-    
 }
 
 .headerCell:nth-child(9),
 .ServiceTable_cell:nth-child(9) {
     width: 99px; /* Role 열 너비 */
-    
 }
 
 .pagination {
@@ -186,7 +189,10 @@ ul {
     height: auto;
 }
 
-.pagination-first, .pagination-prev, .pagination-next, .pagination-last {
+.pagination-first,
+.pagination-prev,
+.pagination-next,
+.pagination-last {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -220,3 +226,8 @@ ul {
     color: #ffffff; /* 글자를 하얀색으로 */
 }
 
+.ServiceTable_cell .post_kind,
+.post_title {
+    overflow: hidden;
+    white-space: nowrap;
+}
