@@ -68,6 +68,7 @@
 }
 .report-reason {
     padding: 10px;
+    font-weight: bold !important;
 }
 /* 텍스트 입력 스타일 */
 #textInput {
