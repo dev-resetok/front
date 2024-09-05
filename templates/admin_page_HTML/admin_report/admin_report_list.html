@@ -3,11 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-
+        <title>관리자페이지 - 신고 관리</title>
+        <link
+            rel="shortcut icon"
+            href="https://www.wishket.com/static/renewal/img/global/gnb_wishket.svg"
+        />
         <link rel="stylesheet" href="../../../static/css/admin_page_CSS/amdin_main/sub_main.css">
         <link rel="stylesheet" href="../../../static/css/admin_page_CSS/amdin_main/common_main.css">
-        <link rel="stylesheet" href="../../../static/css/admin_page_CSS/admin_service/sub_service.css">
+       <link rel="stylesheet" href="../../../static/css/admin_page_CSS/admin_report/admin_report_list.css">
         <link rel="stylesheet" href="../../../static/css/admin_page_CSS/admin_service/main_service.css">
     </head>
     <body>
@@ -378,9 +381,9 @@
                         <div class="Service_wrapper">
                             <!-- body_header -->
                             <div class="ServiceHeader_container">
-                                <h2 class="ServiceHeader_title">게시글 관리</h2>
+                                <h2 class="ServiceHeader_title">신고 관리</h2>
                                 <p class="ServiceHeader_description">
-                                    게시글 목록을 조회합니다.
+                                    신고 목록을 조회합니다.
                                 </p>
                             </div>
                             <hr
@@ -413,13 +416,13 @@
                                             id="addServiceBtn"
                                             class="addServiceBtn"
                                         >
-                                            게시글 추가
+                                            보류
                                         </button>
                                         <button
                                             id="deleteSelectedBtn"
                                             class="deleteSelectedBtn"
                                         >
-                                            게시글 삭제
+                                            처리
                                         </button>
                                     </div>
                                 </div>
@@ -448,7 +451,7 @@
                                             <div
                                                 class="ServiceTable_cell headerCell"
                                             >
-                                                작성자
+                                                신고자
                                             </div>
                                             <div
                                                 class="ServiceTable_cell headerCell"
@@ -458,7 +461,7 @@
                                             <div
                                                 class="ServiceTable_cell headerCell"
                                             >
-                                                게시글 제목
+                                                신고 게시글 제목
                                             </div>
                                             <div
                                                 class="ServiceTable_cell headerCell"
@@ -474,12 +477,12 @@
                                                 class="ServiceTable_cell headerCell"
                                                 
                                             >
-                                                유형
+                                                신고 사유
                                             </div>
                                             <div
                                                 class="ServiceTable_cell headerCell"
                                             >
-                                                Actions
+                                                상태
                                             </div>
                                         </div>
                                     </div>
@@ -512,7 +515,7 @@
                                             <div
                                                 class="ServiceTable_cell post_title"
                                             >
-                                                어제 챔스 하이라이트 봄?
+                                                한국대 고전 문학 자료
                                             </div>
                                             <div
                                                 class="ServiceTable_cell hit_ctn"
@@ -528,12 +531,12 @@
                                                 class="ServiceTable_cell post_kind"
                                                 
                                             >
-                                                잡담
+                                                폭력적 게시글
                                             </div>
                                             <div
                                                 class="ServiceTable_cell editBtn"
                                             >
-                                                <button class="">수정</button>
+                                                <button class="report-status">대기중</button>
                                             </div>
                                         </div>
                                         <div class="ServiceTable_row">
@@ -562,7 +565,7 @@
                                             <div
                                                 class="ServiceTable_cell post_title"
                                             >
-                                                XXX팀 여기 들어갈만 한가요?
+                                            한국대 고전 문학 자료
                                             </div>
                                             <div
                                                 class="ServiceTable_cell hit_ctn"
@@ -578,12 +581,12 @@
                                                 class="ServiceTable_cell post_kind"
                                                 
                                             >
-                                                질문
+                                                잘못된 정보
                                             </div>
                                             <div
                                                 class="ServiceTable_cell editBtn"
                                             >
-                                                <button class="">수정</button>
+                                                <button class="report-status">처리</button>
                                             </div>
                                         </div>
                                         <div class="ServiceTable_row">
@@ -612,7 +615,7 @@
                                             <div
                                                 class="ServiceTable_cell post_title"
                                             >
-                                                송파 배드민턴장 대여 후기
+                                            한국대 고전 문학 자료
                                             </div>
                                             <div
                                                 class="ServiceTable_cell hit_ctn"
@@ -628,12 +631,12 @@
                                                 class="ServiceTable_cell post_kind"
                                                 
                                             >
-                                                후기
+                                                성적인 게시글
                                             </div>
                                             <div
                                                 class="ServiceTable_cell editBtn"
                                             >
-                                                <button class="">수정</button>
+                                                <button class="report-status">보류</button>
                                             </div>
                                         </div>
                                         <div class="ServiceTable_row">
@@ -662,7 +665,7 @@
                                             <div
                                                 class="ServiceTable_cell post_title"
                                             >
-                                                어제 둘리팀이랑 경기하고 왔습니다.
+                                            한국대 고전 문학 자료
                                             </div>
                                             <div
                                                 class="ServiceTable_cell hit_ctn"
@@ -678,12 +681,12 @@
                                                 class="ServiceTable_cell post_kind"
                                                 
                                             >
-                                                후기
+                                                스팸
                                             </div>
                                             <div
                                                 class="ServiceTable_cell editBtn"
                                             >
-                                                <button class="">수정</button>
+                                                <button class="report-status">대기중</button>
                                             </div>
                                         </div>
                                         <div class="ServiceTable_row">
@@ -712,7 +715,7 @@
                                             <div
                                                 class="ServiceTable_cell post_title"
                                             >
-                                                로또 3등 당첨됨
+                                            한국대 고전 문학 자료
                                             </div>
                                             <div
                                                 class="ServiceTable_cell hit_ctn"
@@ -728,12 +731,12 @@
                                                 class="ServiceTable_cell post_kind"
                                                 
                                             >
-                                                잡담
+                                                기타
                                             </div>
                                             <div
                                                 class="ServiceTable_cell editBtn"
                                             >
-                                                <button class="">수정</button>
+                                                <button class="report-status">대기중</button>
                                             </div>
                                         </div>
                                         
@@ -856,9 +859,9 @@
                             </nav>
                         </div>
 
-                    <!-- 모달창 -->
-<div id="editModal" class="modal">
-    <div class="modal-content" style="max-height: 80vh; overflow-y: auto;">
+        <!-- 모달창 -->
+        <div id="editModal" class="modal">
+         <div class="modal-content" style="max-height: 80vh; overflow-y: auto;">
         <span class="close-button">&times;</span>
         <h2>게시글 수정</h2>
         <form id="editForm">
@@ -880,10 +883,10 @@
             <!-- 댓글이 동적으로 추가될 부분 -->
         </ul>
     </div>
-</div>
+    </div>
     </body>
 
     <script src="../../../static/js/adminPage_JS/admin_page/admin.js"></script>
     <script src="../../../static/js/adminPage_JS/admin_post/postList_filter.js"></script>
-    <script src="../../../static/js/adminPage_JS/admin_service/service_Main.js"></script>
+    <script src="../../../static/js/adminPage_JS/admin_report/admin_report_list.js"></script>
 </html>

@@ -9,10 +9,88 @@
         />
         <link
             rel="stylesheet"
+            href="../../static/css/admin_page_CSS/admin_report/report.css"
+        />
+        <link
+            rel="stylesheet"
             href="../../static/css/project/project_inquiry.css"
         />
         <title>프로젝트 찾기 - 모아</title>
     </head>
+
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close"></span>
+            <h2>게시글 신고</h2>
+            <form id="uploadForm">
+                <div class="btn-group">
+                    <!-- 체크박스 4개 -->
+                    <div>
+                        <label class="checkbox-moa">
+                            <input
+                                type="checkbox"
+                                name="option1"
+                                value="option1"
+                            />
+                            <span class="report-reason"
+                                >폭력적 또는 혐오스러운 게시글</span
+                            >
+                        </label>
+                    </div>
+                    <div>
+                        <label class="checkbox-moa">
+                            <input
+                                type="checkbox"
+                                name="option2"
+                                value="option2"
+                            />
+                            <span class="report-reason">잘못된 정보</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="checkbox-moa">
+                            <input
+                                type="checkbox"
+                                name="option3"
+                                value="option3"
+                            />
+                            <span class="report-reason"
+                                >스팸 또는 혼동을 야기하는 게시글</span
+                            >
+                        </label>
+                    </div>
+                    <div>
+                        <label class="checkbox-moa">
+                            <input
+                                type="checkbox"
+                                name="option4"
+                                value="option4"
+                            />
+                            <span class="report-reason">성적인 게시글</span>
+                        </label>
+                    </div>
+
+                    <!-- 텍스트 입력 부분 -->
+                    <div>
+                        <label for="textInput">기타:</label>
+                        <input
+                            type="text"
+                            id="textInput"
+                            name="textInput"
+                            placeholder="신고 사유를 입력해주세요."
+                        />
+                    </div>
+                </div>
+            </form>
+            <button
+                type="button"
+                class="report-submit-btn"
+                id="reportSubmitBtn"
+            >
+                신고하기
+            </button>
+        </div>
+    </div>
     <body>
         <div class="gala">
             <div class="project-detail-view">
@@ -112,6 +190,16 @@
                                                 >랜딩ㆍ소개 페이지</span
                                             >
                                         </p>
+                                        <div class="report-container">
+                                            <span
+                                                class="for-report"
+                                                id="report-btn"
+                                                ><img
+                                                    class="img-report"
+                                                    src="../../static/images/report.png"
+                                                />신고하기</span
+                                            >
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="layer-divider mb24"></div>
@@ -227,6 +315,9 @@
                                         </div>
                                     </div>
                                     <div class="mb32"></div>
+                                    <h2 class="subtitle-2-medium text900 mb16">
+                                        프로젝트 예정 사항
+                                    </h2>
                                     <div
                                         class="project-detail-condition task_based mb40"
                                     >
@@ -467,43 +558,6 @@
                                                 class="recruit-condition-data body-2 text900"
                                             >
                                                 법인 사업자 가능
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="layer-divider mt40mb32"></div>
-                                <div
-                                    class="project-meeting-condition"
-                                    style="position: relative"
-                                >
-                                    <h2
-                                        class="meeting-condition-title subtitle-2-medium text900 mb16"
-                                    >
-                                        미팅
-                                    </h2>
-                                    <div class="meeting-condition-box">
-                                        <div class="meeting-condition-row mb8">
-                                            <p
-                                                class="meeting-condition-title body-2 text500"
-                                            >
-                                                사전 미팅 방식
-                                            </p>
-                                            <p
-                                                class="meeting-condition-data body-2 text900"
-                                            >
-                                                온라인 (카카오톡, 화상미팅 등)
-                                            </p>
-                                        </div>
-                                        <div class="meeting-condition-row mb8">
-                                            <p
-                                                class="meeting-condition-title body-2 text500"
-                                            >
-                                                클라이언트 위치
-                                            </p>
-                                            <p
-                                                class="meeting-condition-data body-2 text900"
-                                            >
-                                                서울특별시 강남구
                                             </p>
                                         </div>
                                     </div>
@@ -880,5 +934,7 @@
             </div>
         </div>
     </body>
+
     <script src="../../static/js/project/project_inquiry.js"></script>
+    <script src="../../static/js/adminPage_JS/admin_report/report.js"></script>
 </html>
