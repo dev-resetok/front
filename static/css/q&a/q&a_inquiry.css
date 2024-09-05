@@ -1,4 +1,4 @@
-@import url("https://www.wishket.com//static/css/general/general.css?231221");
+/* @import url("https://www.wishket.com//static/css/general/general.css?231221"); */
 
 * {
     box-sizing: border-box;
@@ -27,10 +27,19 @@ body {
     background-color: #fff;
 }
 
-.detail-section, .detail-title {
+.detail-section, .detail-title div {
     font-size: 20px;
     line-height: 28px;
     font-weight: 600;
+}
+
+.detail-title {
+    display: flex;
+}
+
+.question-title {
+    line-height: normal;
+    margin-left: 7px;
 }
 
 .detail-section .detail-title {
