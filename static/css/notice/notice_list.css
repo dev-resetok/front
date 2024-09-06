@@ -1,16 +1,16 @@
 @font-face {
     font-family: "NanumGothic-Bold";
-    src: url(../font/NanumGothic-Bold.woff2) format("woff2") ;
+    src: url(../notice/NanumGothic-Bold.woff2) format("woff2") ;
 }
 
 @font-face {
     font-family: "Nanum Gothic";
-    src: url(../font/NanumGothic-Regular.woff2) format("woff2") ;
+    src: url(../notice/NanumGothic-Regular.woff2) format("woff2") ;
 }
 
 @font-face {
     font-family: "FontAwesome";
-    src: url(../font/fontawesome-webfont.woff2) format("woff2") ;
+    src: url(../notice/fontawesome-webfont.woff2) format("woff2") ;
 }
 
 * {

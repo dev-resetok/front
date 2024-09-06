@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../static/css/q&a/q&a_list.css" />
+        <title>Q&A 게시판- 목록</title>
+    </head>
+    <body>
+        <div class="wrap">
+            <div>
+                <div class="container">
+                    <div class="main-wrap">
+                        <div class="main-container">
+                            <div class="main">
+                                <div class="search-section-header">
+                                    <div class="title-inline">Q&A 목록</div>
+                                    <div class="search-box" id="search-box">
+                                        <select
+                                            class="moa-select search-type"
+                                            name="search-type"
+                                            style="display: none"
+                                        >
+                                            <option value="all">
+                                                제목 + 내용
+                                            </option>
+                                            <option value="title">제목</option>
+                                            <option value="content">
+                                                내용
+                                            </option>
+                                        </select>
+                                        <div
+                                            class="ui-select moa-select theme-moa text-search-type"
+                                            tabindex="0"
+                                            style="width: 100%"
+                                        >
+                                            <span class="select-box">
+                                                <p class="select-name">
+                                                    제목 + 내용
+                                                </p>
+                                                <i class="select-icon"
+                                                    ><svg
+                                                        class="select-icon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="14"
+                                                        height="14"
+                                                        viewBox="0 0 14 14"
+                                                    >
+                                                        <path
+                                                            fill="none"
+                                                            fill-rule="evenodd"
+                                                            stroke="#9E9E9E"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            stroke-width="1.2"
+                                                            d="M1 4l6 6 6-6"
+                                                        ></path></svg
+                                                ></i>
+                                            </span>
+                                            <p class="select-background"></p>
+                                            <ul class="select-drop-down">
+                                                <li data-select-value="all">
+                                                    제목 + 내용
+                                                </li>
+                                                <li data-select-value="title">
+                                                    제목
+                                                </li>
+                                                <li data-select-value="content">
+                                                    내용
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div
+                                            class="default-input-type icon-right"
+                                        >
+                                            <div
+                                                class="default-input-moa icon-right"
+                                            >
+                                                <input
+                                                    autocomplete="off"
+                                                    class="theme-moa moa-text search-text"
+                                                    data-input-type="text-input"
+                                                    name="search-text"
+                                                    type="text"
+                                                    style="padding-right: 48px"
+                                                />
+                                                <span class="text-unit active">
+                                                    <img
+                                                        src="https://www.wishket.com/static/renewal/img/stack/icon-search@2x.png"
+                                                        style="
+                                                            margin-right: 8px;
+                                                            cursor: pointer;
+                                                            width: 16px;
+                                                        "
+                                                    />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="post-count-wrap">
+                                    <div class="post-count-container">
+                                        <p class="post-count-inner">
+                                            <span class="post-count"
+                                                >10,340</span
+                                            >
+                                            개의 Q&A
+                                        </p>
+                                    </div>
+                                    <div class="arrange-type-wrap">
+                                        <ul class="arrange-type-container">
+                                            <li class="arrange-type selected">
+                                                <a href="#">• 최신순</a>
+                                            </li>
+                                            <li class="arrange-type">
+                                                <a href="#">• 인기순</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="post-lists">
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
+                                            <div class="post-top">
+                                                <div class="post-title-wrap">
+                                                    <div class="post-title">
+                                                        <div
+                                                            class="QA-font-style"
+                                                        >
+                                                            Q.
+                                                        </div>
+                                                        <div
+                                                            class="QA-title-font"
+                                                        >
+                                                            作成와 作業의 作발음
+                                                            차이?
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="status-mark new-mark"
+                                                    >
+                                                        NEW
+                                                    </div>
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국대학교 일본어학과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        미쿠짱
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/11
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="QA-font-style">
+                                                    A.
+                                                </div>
+                                                <div class="QA-title-font">
+                                                    첫번째 作은 さく, 두번째作는
+                                                    さ로 읽습니다!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    <div class="QA-font-style">
+                                                        Q.
+                                                    </div>
+                                                    <div class="QA-title-font">
+                                                        비트연산에 대해서 자세히
+                                                        설명해주실 분 계신가요?
+                                                    </div>
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국대학교 컴퓨터공학과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        준라탄
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="QA-font-style">
+                                                    A.
+                                                </div>
+                                                <div class="QA-title-font">
+                                                    비트 연산자는 비트(bit)
+                                                    단위로 논리 연산을 할 때
+                                                    사용하는 연산자입니다. 또한,
+                                                    비트 단위로 전체 비트를
+                                                    왼쪽이나 오른쪽으로 이동시킬
+                                                    때도 사용합니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    <div class="QA-font-style">
+                                                        Q.
+                                                    </div>
+                                                    <div class="QA-title-font">
+                                                        인지심리학과
+                                                        행동심리학의 차이점은
+                                                        무엇인가요?
+                                                    </div>
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국대학교 심리학과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        난 오은영
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="QA-font-style">
+                                                    A.
+                                                </div>
+                                                <div class="QA-title-font">
+                                                    인지심리학은 인간의 인지
+                                                    과정, 즉 기억, 학습, 문제
+                                                    해결, 언어 등 정신 과정에
+                                                    대한 연구를 다룹니다. 반면,
+                                                    행동심리학은 행동주의 이론을
+                                                    바탕으로 외부 자극과 반응
+                                                    간의 관계에 초점을 맞추며,
+                                                    행동이 환경에 의해 어떻게
+                                                    변화하는지를 연구합니다.
+                                                    인지심리학은 내부적인 정신
+                                                    과정을 탐구하고,
+                                                    행동심리학은 외부적인 행동을
+                                                    관찰합니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    <div class="QA-font-style">
+                                                        Q.
+                                                    </div>
+                                                    <div class="QA-title-font">
+                                                        열역학 제1법칙에 대해
+                                                        설명해주세요!
+                                                    </div>
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국대학교 기계공학과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="QA-font-style">
+                                                    A.
+                                                </div>
+                                                <div class="QA-title-font">
+                                                    -- 아직 등록 된 답변이
+                                                    없습니다. --
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    <div class="QA-font-style">
+                                                        Q.
+                                                    </div>
+                                                    <div class="QA-title-font">
+                                                        원자 궤도함수와 분자
+                                                        궤도함수의 차이를
+                                                        설명해주실분?
+                                                    </div>
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 화학과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="QA-font-style">
+                                                    A.
+                                                </div>
+                                                <div class="QA-title-font">
+                                                    원자 궤도함수는 개별 원자의
+                                                    전자가 존재할 확률을
+                                                    나타내는 함수입니다. 반면,
+                                                    분자 궤도함수는 결합된
+                                                    분자의 전자가 존재할 확률을
+                                                    나타냅니다. 분자 궤도함수는
+                                                    원자 궤도함수가 결합하면서
+                                                    형성됩니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    <div class="QA-font-style">
+                                                        Q.
+                                                    </div>
+                                                    <div class="QA-title-font">
+                                                        원자 궤도함수와 분자
+                                                        궤도함수의 차이를
+                                                        설명해주실분?
+                                                    </div>
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 작곡과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="QA-font-style">
+                                                    A.
+                                                </div>
+                                                <div class="QA-title-font">
+                                                    원자 궤도함수는 개별 원자의
+                                                    전자가 존재할 확률을
+                                                    나타내는 함수입니다. 반면,
+                                                    분자 궤도함수는 결합된
+                                                    분자의 전자가 존재할 확률을
+                                                    나타냅니다. 분자 궤도함수는
+                                                    원자 궤도함수가 결합하면서
+                                                    형성됩니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    <div class="QA-font-style">
+                                                        Q.
+                                                    </div>
+                                                    <div class="QA-title-font">
+                                                        원자 궤도함수와 분자
+                                                        궤도함수의 차이를
+                                                        설명해주실분?
+                                                    </div>
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 작곡과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="QA-font-style">
+                                                    A.
+                                                </div>
+                                                <div class="QA-title-font">
+                                                    원자 궤도함수는 개별 원자의
+                                                    전자가 존재할 확률을
+                                                    나타내는 함수입니다. 반면,
+                                                    분자 궤도함수는 결합된
+                                                    분자의 전자가 존재할 확률을
+                                                    나타냅니다. 분자 궤도함수는
+                                                    원자 궤도함수가 결합하면서
+                                                    형성됩니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    <div class="QA-font-style">
+                                                        Q.
+                                                    </div>
+                                                    <div class="QA-title-font">
+                                                        원자 궤도함수와 분자
+                                                        궤도함수의 차이를
+                                                        설명해주실분?
+                                                    </div>
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 작곡과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="QA-font-style">
+                                                    A.
+                                                </div>
+                                                <div class="QA-title-font">
+                                                    원자 궤도함수는 개별 원자의
+                                                    전자가 존재할 확률을
+                                                    나타내는 함수입니다. 반면,
+                                                    분자 궤도함수는 결합된
+                                                    분자의 전자가 존재할 확률을
+                                                    나타냅니다. 분자 궤도함수는
+                                                    원자 궤도함수가 결합하면서
+                                                    형성됩니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    <div class="QA-font-style">
+                                                        Q.
+                                                    </div>
+                                                    <div class="QA-title-font">
+                                                        원자 궤도함수와 분자
+                                                        궤도함수의 차이를
+                                                        설명해주실분?
+                                                    </div>
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 작곡과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="QA-font-style">
+                                                    A.
+                                                </div>
+                                                <div class="QA-title-font">
+                                                    원자 궤도함수는 개별 원자의
+                                                    전자가 존재할 확률을
+                                                    나타내는 함수입니다. 반면,
+                                                    분자 궤도함수는 결합된
+                                                    분자의 전자가 존재할 확률을
+                                                    나타냅니다. 분자 궤도함수는
+                                                    원자 궤도함수가 결합하면서
+                                                    형성됩니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-list">
+                                        <div class="post-all">
+                                            <div class="post-view-wrap">
+                                                <div class="post-view"></div>
+                                                <div class="post-view-count">
+                                                    1
+                                                </div>
+                                            </div>
+                                            <div class="post-top">
+                                                <div class="post-title">
+                                                    <div class="QA-font-style">
+                                                        Q.
+                                                    </div>
+                                                    <div class="QA-title-font">
+                                                        원자 궤도함수와 분자
+                                                        궤도함수의 차이를
+                                                        설명해주실분?
+                                                    </div>
+                                                </div>
+                                                <div class="post-top-right">
+                                                    <div
+                                                        class="post-writer-school-major"
+                                                    >
+                                                        한국예술대학교 작곡과
+                                                    </div>
+                                                    <div
+                                                        class="post-writer-name"
+                                                    >
+                                                        마에스트로장
+                                                    </div>
+                                                    <div
+                                                        class="post-created-date"
+                                                    >
+                                                        2024/12/10
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="QA-font-style">
+                                                    A.
+                                                </div>
+                                                <div class="QA-title-font">
+                                                    원자 궤도함수는 개별 원자의
+                                                    전자가 존재할 확률을
+                                                    나타내는 함수입니다. 반면,
+                                                    분자 궤도함수는 결합된
+                                                    분자의 전자가 존재할 확률을
+                                                    나타냅니다. 분자 궤도함수는
+                                                    원자 궤도함수가 결합하면서
+                                                    형성됩니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pagination-wrap">
+                                        <ul class="pagination theme-moa">
+                                            <li
+                                                class="page-item"
+                                                id="page-prev-button"
+                                            >
+                                                <a class="page-link">이전</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link active"
+                                                    >1</a
+                                                >
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link">2</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link">3</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link">4</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link">5</a>
+                                            </li>
+                                            <li
+                                                class="page-item"
+                                                id="page-next-button"
+                                            >
+                                                <a class="page-link">다음</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="../../static/js/information/information_list.js"></script>
+</html>
