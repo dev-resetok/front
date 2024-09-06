@@ -1,11 +1,11 @@
 const showTab = (tabId, element) => {
-    // 일단 모든 tab-content를 숨김
+    // 모든 탭을 숨김
     const tabcontent = document.getElementsByClassName("tab-content");
     Array.from(tabcontent).forEach((content) => {
         content.classList.remove("active");
     });
 
-    // 클릭된 tab만 표시
+    // 선택한 탭만 표시
     document.getElementById(tabId).classList.add("active");
 
     // 사이드바 메뉴의 활성화 상태 변경
@@ -14,9 +14,10 @@ const showTab = (tabId, element) => {
         link.classList.remove("active");
     });
 
-    // 현재 클릭된 요소의 부모 li에 active 클래스 추가
+    // 클릭된 요소의 부모 li에 active 클래스 추가
     element.parentElement.classList.add("active");
 };
+
 document.addEventListener("click", () => {
     // 데이터 편집 가능 요소 설정
     const editableElements = document.querySelectorAll(".data-editable");
@@ -446,13 +447,10 @@ document.addEventListener("click", () => {
     });
 
     //  클릭 이벤트 추가 div 보여주기
+    // 클릭 이벤트 추가
     document
         .getElementById("mypage-link")
         .addEventListener("click", () => showTab("mypage", this));
-
-    document
-        .getElementById("myborder-link")
-        .addEventListener("click", () => showTab("myboard", this));
 
     document
         .getElementById("myreply-link")
@@ -461,6 +459,14 @@ document.addEventListener("click", () => {
     document
         .getElementById("myinquiry-link")
         .addEventListener("click", () => showTab("myinquiry", this));
+
+    document
+        .getElementById("mypoints-link")
+        .addEventListener("click", () => showTab("mypoints", this));
+
+    document
+        .getElementById("mynotice-link")
+        .addEventListener("click", () => showTab("mynotice", this));
 });
 
 // // "등록 완료" 버튼 클릭 시 데이터 저장

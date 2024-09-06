@@ -1055,3 +1055,51 @@ body.partners_profile .edit-menu-box .add-edit-project-box .icon-add-edit-box {
     margin-right: 4px;
     top: 2px;
 }
+.noti-center-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 26px 17px 26px 36px;
+}
+
+.noti-center-refresh {
+    display: flex;
+    align-items: center;
+    color: #616161;
+    margin-right: 20px; /* 새로고침과 divider 사이 간격 추가 */
+    padding-right: 10px;
+    border-right: solid 1px #e0e0e0;
+    flex-shrink: 0; /* 크기가 줄어들지 않게 함 */
+}
+
+.noti-center-header .noti-center-refresh .refresh-img {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
+}
+
+.noti-center-refresh .refresh-btn {
+    font-size: 13px;
+    cursor: pointer;
+    color: #616161;
+}
+
+.noti-setting {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* 오른쪽 끝으로 이동 */
+}
+
+.noti-setting-text {
+    width: 54px !important;
+    height: 20px !important;
+    color: #3ba3c7;
+}
+
+.noti-center-header .noti-setting .noti-setting-img {
+    margin-left: 8px;
+    position: relative;
+    top: 2px;
+}
