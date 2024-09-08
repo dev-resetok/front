@@ -1351,3 +1351,7 @@ body.partners_profile .edit-menu-box .add-edit-project-box .icon-add-edit-box {
     border-radius: 5px;
     background-color: #191718;
 }
+.selected {
+    background-color: #2e6baa; 
+    color: white !important; 
+}
