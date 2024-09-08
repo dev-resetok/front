@@ -200,7 +200,7 @@ a {
 .client-details,
 .contact-info {
     margin-bottom: 30px;
-    padding: 0 30px;
+    padding: 0 52.5px;
 }
 
 .client-info h4,
@@ -242,7 +242,7 @@ a {
 .btn-save-registration {
     display: inline-block;
     padding: 10px 20px;
-    font-size: 12px;
+    font-size: 11px;
     color: #fff;
     background-color: #446eab;
     border: none;
@@ -1352,6 +1352,6 @@ body.partners_profile .edit-menu-box .add-edit-project-box .icon-add-edit-box {
     background-color: #191718;
 }
 .selected {
-    background-color: #2e6baa; 
-    color: white !important; 
+    background-color: #2e6baa; /* 원하는 배경색으로 설정 */
+    color: white !important;
 }
