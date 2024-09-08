@@ -1227,3 +1227,33 @@ document.addEventListener("click", () => {
             .querySelector(".select-box").style.borderColor = "#e0e0e0"; // 원래 테두리 색상으로 복원
     });
 });
+
+//내 포인트 날짜
+// 초기 디폴트 값 설정 (9월 1일 ~ 9월 30일)
+setDefaultDateRange("202409");
+
+function setDefaultDateRange(month) {
+    const fromDateInput = document.getElementById("fromDate");
+    const toDateInput = document.getElementById("toDate");
+
+    // 날짜 계산
+    const year = month.substring(0, 4);
+    const monthNum = parseInt(month.substring(4, 6));
+
+    const fromDate = `${year}-${monthNum.toString().padStart(2, "0")}-01`;
+    const lastDay = new Date(year, monthNum, 0).getDate(); // 해당 월의 마지막 날 계산
+    const toDate = `${year}-${monthNum.toString().padStart(2, "0")}-${lastDay}`;
+
+    // 입력 필드에 값 설정
+    fromDateInput.value = fromDate;
+    toDateInput.value = toDate;
+}
+
+const monthButtons = document.querySelectorAll("#monthListArea2 li a");
+
+monthButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+        const month = this.parentElement.getAttribute("value");
+        setDefaultDateRange(month);
+    });
+});
