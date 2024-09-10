@@ -1,6 +1,6 @@
 const leftArrow = document.querySelector(".btn-interview-step.left");
 const rightArrow = document.querySelector(".btn-interview-step.right");
-const rollingList = document.getElementById("rolling-interview-list");
+const rollingList = document.getElementById("interview-title-list");
 
 let currentIndex = 0; // 현재 표시된 첫 번째 아이템의 인덱스
 const itemWidth = 252; // 각 아이템의 너비
