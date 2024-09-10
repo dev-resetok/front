@@ -1,11 +1,11 @@
 const showTab = (tabId, element) => {
-    // 일단 모든 tab-content를 숨김
+    // 모든 탭을 숨김
     const tabcontent = document.getElementsByClassName("tab-content");
     Array.from(tabcontent).forEach((content) => {
         content.classList.remove("active");
     });
 
-    // 클릭된 tab만 표시
+    // 선택한 탭만 표시
     document.getElementById(tabId).classList.add("active");
 
     // 사이드바 메뉴의 활성화 상태 변경
@@ -14,9 +14,10 @@ const showTab = (tabId, element) => {
         link.classList.remove("active");
     });
 
-    // 현재 클릭된 요소의 부모 li에 active 클래스 추가
+    // 클릭된 요소의 부모 li에 active 클래스 추가
     element.parentElement.classList.add("active");
 };
+
 document.addEventListener("click", () => {
     // 데이터 편집 가능 요소 설정
     const editableElements = document.querySelectorAll(".data-editable");
@@ -446,13 +447,10 @@ document.addEventListener("click", () => {
     });
 
     //  클릭 이벤트 추가 div 보여주기
+    // 클릭 이벤트 추가
     document
         .getElementById("mypage-link")
         .addEventListener("click", () => showTab("mypage", this));
-
-    document
-        .getElementById("myborder-link")
-        .addEventListener("click", () => showTab("myboard", this));
 
     document
         .getElementById("myreply-link")
@@ -461,6 +459,14 @@ document.addEventListener("click", () => {
     document
         .getElementById("myinquiry-link")
         .addEventListener("click", () => showTab("myinquiry", this));
+
+    document
+        .getElementById("mypoints-link")
+        .addEventListener("click", () => showTab("mypoints", this));
+
+    document
+        .getElementById("mynotice-link")
+        .addEventListener("click", () => showTab("mynotice", this));
 });
 
 // // "등록 완료" 버튼 클릭 시 데이터 저장
@@ -637,13 +643,185 @@ const inquiries = [
     },
 ];
 
+const points = [
+    {
+        id: 1,
+        description: "포인트 적립 - 쇼핑",
+        points: 500,
+        date: "2024.01.15",
+    },
+    {
+        id: 2,
+        description: "포인트 사용 - 쿠폰",
+        points: -300,
+        date: "2024.02.03",
+    },
+    {
+        id: 3,
+        description: "포인트 환불 - 이벤트",
+        points: 200,
+        date: "2024.02.10",
+    },
+    {
+        id: 1,
+        description: "포인트 적립 - 쇼핑",
+        points: 500,
+        date: "2024.01.15",
+    },
+    {
+        id: 2,
+        description: "포인트 사용 - 쿠폰",
+        points: -300,
+        date: "2024.02.03",
+    },
+    {
+        id: 3,
+        description: "포인트 환불 - 이벤트",
+        points: 200,
+        date: "2024.02.10",
+    },
+    {
+        id: 1,
+        description: "포인트 적립 - 쇼핑",
+        points: 500,
+        date: "2024.01.15",
+    },
+    {
+        id: 2,
+        description: "포인트 사용 - 쿠폰",
+        points: -300,
+        date: "2024.02.03",
+    },
+    {
+        id: 3,
+        description: "포인트 환불 - 이벤트",
+        points: 200,
+        date: "2024.02.10",
+    },
+    {
+        id: 1,
+        description: "포인트 적립 - 쇼핑",
+        points: 500,
+        date: "2024.01.15",
+    },
+    {
+        id: 2,
+        description: "포인트 사용 - 쿠폰",
+        points: -300,
+        date: "2024.02.03",
+    },
+    {
+        id: 3,
+        description: "포인트 환불 - 이벤트",
+        points: 200,
+        date: "2024.02.10",
+    },
+    {
+        id: 1,
+        description: "포인트 적립 - 쇼핑",
+        points: 500,
+        date: "2024.01.15",
+    },
+    {
+        id: 2,
+        description: "포인트 사용 - 쿠폰",
+        points: -300,
+        date: "2024.02.03",
+    },
+    {
+        id: 3,
+        description: "포인트 환불 - 이벤트",
+        points: 200,
+        date: "2024.02.10",
+    },
+    {
+        id: 1,
+        description: "포인트 적립 - 쇼핑",
+        points: 500,
+        date: "2024.01.15",
+    },
+    {
+        id: 2,
+        description: "포인트 사용 - 쿠폰",
+        points: -300,
+        date: "2024.02.03",
+    },
+    {
+        id: 3,
+        description: "포인트 환불 - 이벤트",
+        points: 200,
+        date: "2024.02.10",
+    },
+];
+
+const notifications = [
+    {
+        id: 1,
+        type: "message",
+        content: "새로운 메시지가 도착했습니다.",
+        date: "2024.09.01 오후 2시 45분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+    {
+        id: 2,
+        type: "alert",
+        content: "프로젝트 지원자가 있습니다.",
+        date: "2024.09.01 오후 3시 00분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+    {
+        id: 1,
+        type: "message",
+        content: "새로운 메시지가 도착했습니다.",
+        date: "2024.09.01 오후 2시 45분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+    {
+        id: 1,
+        type: "message",
+        content: "새로운 메시지가 도착했습니다.",
+        date: "2024.09.01 오후 2시 45분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+    {
+        id: 1,
+        type: "message",
+        content: "새로운 메시지가 도착했습니다.",
+        date: "2024.09.01 오후 2시 45분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+    {
+        id: 2,
+        type: "alert",
+        content: "프로젝트 지원자가 있습니다.",
+        date: "2024.09.01 오후 3시 00분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+    {
+        id: 1,
+        type: "message",
+        content: "새로운 메시지가 도착했습니다.",
+        date: "2024.09.01 오후 2시 45분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+    {
+        id: 1,
+        type: "message",
+        content: "새로운 메시지가 도착했습니다.",
+        date: "2024.09.01 오후 2시 45분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+];
+
 // 페이지네이션 설정
-const itemsPerPage = 10;
+const itemsPerPage = 5;
 
 // 현재 페이지 상태
 let currentPostPage = 1;
 let currentReplyPage = 1;
 let currentInquiryPage = 1;
+let currentPointPage = 1;
+let currentNotificationPage = 1; // 알림 페이지 상태 추가
 
 // 페이지네이션을 위한 함수
 const paginate = (items, page) => {
@@ -663,34 +841,26 @@ const updatePaginationButton = (items, currentPage, paginationId) => {
     // '이전' 버튼
     paginationList.innerHTML += `
         <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
-            <a class="page-link"   ${
-                currentPage === 1 ? "aria-disabled='true'" : ""
-            }>이전</a>
+            <a class="page-link" href="#">이전</a>
         </li>
     `;
 
     // 페이지 번호
     for (let i = 1; i <= totalPages; i++) {
-        i === 1
-            ? (paginationList.innerHTML += `
-        <li class="page-item ${currentPage === i ? "active" : ""}">
-            <a class="page-link-1" >${i}</a>
-        </li>
-    `)
-            : (paginationList.innerHTML += `
-    <li class="page-item ${currentPage === i ? "active" : ""}">
-        <a class="page-link" >${i}</a>
-    </li>
-    `);
+        paginationList.innerHTML += `
+            <li class="page-item ${currentPage === i ? "active" : ""}">
+                <a class="page-link" href="#">${i}</a>
+            </li>
+        `;
     }
+
     // '다음' 버튼
     paginationList.innerHTML += `
         <li class="page-item ${currentPage === totalPages ? "disabled" : ""}">
-            <a class="page-link" href="#" ${
-                currentPage === totalPages ? "aria-disabled='true'" : ""
-            }>다음</a>
+            <a class="page-link" href="#">다음</a>
         </li>
     `;
+
     addPaginationEventListeners(paginationId);
 };
 
@@ -713,6 +883,10 @@ const addPaginationEventListeners = (paginationId) => {
                         ? currentPostPage
                         : paginationId === "myreply"
                         ? currentReplyPage
+                        : paginationId === "mypoints"
+                        ? currentPointPage
+                        : paginationId === "mynotice"
+                        ? currentNotificationPage
                         : currentInquiryPage) + 1;
             } else if (text === "이전") {
                 pageNumber =
@@ -720,6 +894,10 @@ const addPaginationEventListeners = (paginationId) => {
                         ? currentPostPage
                         : paginationId === "myreply"
                         ? currentReplyPage
+                        : paginationId === "mypoints"
+                        ? currentPointPage
+                        : paginationId === "mynotice"
+                        ? currentNotificationPage
                         : currentInquiryPage) - 1;
             }
 
@@ -730,6 +908,42 @@ const addPaginationEventListeners = (paginationId) => {
         });
     });
 };
+
+// 페이지 이동 함수
+const goToPage = (pageNumber, paginationId) => {
+    const totalItems =
+        paginationId === "myboard"
+            ? posts.length
+            : paginationId === "myreply"
+            ? replies.length
+            : paginationId === "mypoints"
+            ? points.length
+            : paginationId === "mynotice"
+            ? notifications.length
+            : inquiries.length;
+
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    if (pageNumber < 1 || pageNumber > totalPages) return;
+
+    if (paginationId === "myboard") {
+        currentPostPage = pageNumber;
+        renderPosts();
+    } else if (paginationId === "myreply") {
+        currentReplyPage = pageNumber;
+        renderReplies();
+    } else if (paginationId === "mypoints") {
+        currentPointPage = pageNumber;
+        renderPoints();
+    } else if (paginationId === "mynotice") {
+        currentNotificationPage = pageNumber;
+        renderNotifications();
+    } else {
+        currentInquiryPage = pageNumber;
+        renderInquiries();
+    }
+};
+
 // 게시글 렌더링
 const renderPosts = () => {
     const postList = document.querySelector(".post-list");
@@ -858,7 +1072,7 @@ const renderReplies = () => {
     updatePaginationButton(reversedReplies, currentReplyPage, "myreply");
 };
 
-//문의 렌더링
+// 문의 렌더링
 const renderInquiries = () => {
     const inquiryList = document.querySelector(".inquiry-list");
     const emptyComponent = document.querySelector(
@@ -924,38 +1138,152 @@ const renderInquiries = () => {
     updatePaginationButton(reversedInquiries, currentInquiryPage, "myinquiry");
 };
 
-// 페이지 이동 함수
-const goToPage = (pageNumber, paginationId) => {
-    // 각 탭에 맞는 총 항목 수를 설정
-    const totalItems =
-        paginationId === "myboard"
-            ? posts.length
-            : paginationId === "myreply"
-            ? replies.length
-            : inquiries.length;
+// 필터링 함수 (조회 버튼 클릭 시 호출)
+const filterPoints = () => {
+    const filterValue = document.getElementById("selType").value;
+    let filteredPoints = points;
 
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
-
-    // 페이지 번호 유효성 검사
-    if (pageNumber < 1 || pageNumber > totalPages) return;
-
-    // 페이지 상태 업데이트
-    if (paginationId === "myboard") {
-        currentPostPage = pageNumber;
-        renderPosts();
-    } else if (paginationId === "myreply") {
-        currentReplyPage = pageNumber;
-        renderReplies();
-    } else if (paginationId === "myinquiry") {
-        currentInquiryPage = pageNumber;
-        renderInquiries();
+    if (filterValue === "0") {
+        filteredPoints = points.filter((point) =>
+            point.description.includes("포인트 적립")
+        );
+    } else if (filterValue === "1") {
+        filteredPoints = points.filter((point) =>
+            point.description.includes("포인트 사용")
+        );
+    } else if (filterValue === "2") {
+        filteredPoints = points.filter((point) =>
+            point.description.includes("포인트 환불")
+        );
     }
+
+    renderPoints(filteredPoints);
 };
 
+// 포인트 렌더링 함수
+const renderPoints = (filteredPoints = points) => {
+    const pointList = document.querySelector(".point-list");
+    const emptyComponent = document.querySelector("#mypoints .empty-component");
+
+    const reversedPoints = filteredPoints.slice().reverse(); // 포인트 데이터를 역순으로 표시
+    const paginatedPoints = paginate(reversedPoints, currentPointPage);
+
+    if (paginatedPoints.length === 0) {
+        pointList.style.display = "none";
+        emptyComponent.style.display = "block";
+    } else {
+        pointList.style.display = "block";
+        emptyComponent.style.display = "none";
+        pointList.innerHTML = `
+             <table class="news-center-table" style="margin-top: 0; margin-bottom: 20px;">
+                <colgroup>
+                    <col style="width: 57px;">
+                    <col style="width: 132px;">
+                    <col style="width: 703px;">
+                    <col style="width: 104px;">
+                </colgroup>
+                <thead class="news-center-table-head">
+                    <tr>
+                        <th>번호</th>
+                        <th>포인트</th>
+                        <th>설명</th>
+                        <th>날짜</th>
+                    </tr>
+                </thead>
+                <tbody class="news-center-table-body">
+                ${paginatedPoints
+                    .map(
+                        (point, index) => `
+                    <tr>
+                        <td class="news-center-table-body-number">${
+                            reversedPoints.length -
+                            (currentPointPage - 1) * itemsPerPage -
+                            index
+                        }</td>
+                       <td class="news-center-table-body-category">${
+                           point.points > 0 ? `+${point.points}` : point.points
+                       }</td>
+                             <td class="news-center-table-body-title">${
+                                 point.description
+                             }</td>
+                        <td class="news-center-table-body-date">${
+                            point.date
+                        }</td>
+                    </tr>
+                `
+                    )
+                    .join("")}
+                </tbody>
+            </table>
+        `;
+    }
+
+    updatePaginationButton(reversedPoints, currentPointPage, "mypoints");
+};
+
+// 알림 렌더링 함수
+const renderNotifications = (notificationData = notifications) => {
+    const notificationList = document.querySelector(".noti-body");
+    const emptyComponent = document.querySelector("#mynotice .empty-component");
+
+    const reversedNotifications = notificationData.slice().reverse(); // 알림 데이터를 역순으로 표시
+    const paginatedNotifications = paginate(
+        reversedNotifications,
+        currentNotificationPage
+    );
+
+    if (paginatedNotifications.length === 0) {
+        notificationList.style.display = "none";
+        emptyComponent.style.display = "block";
+    } else {
+        notificationList.style.display = "block";
+        emptyComponent.style.display = "none";
+        notificationList.innerHTML = paginatedNotifications
+            .map(
+                (notification) => `
+                <div class="noti-box unread">
+                    <div class="noti-box-wrapper with-img">
+                        <img
+                            class="noti-img"
+                            src="${notification.img}"
+                            alt="알림 이미지"
+                        />
+                        <div class="noti-box-content">
+                            <div class="noti-title">
+                                ${notification.content}
+                            </div>
+                            <div class="noti-date">
+                                ${notification.date}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            `
+            )
+            .join("");
+    }
+
+    updatePaginationButton(
+        reversedNotifications,
+        currentNotificationPage,
+        "mynotice"
+    );
+};
+
+// 조회 버튼 클릭 시 필터 적용
+document
+    .getElementById("searchPointHistoryList")
+    .addEventListener("click", (event) => {
+        event.preventDefault(); // 기본 동작 방지 (폼 제출 방지)
+        filterPoints(); // 필터링 실행
+    });
 // 초기 렌더링
 renderPosts();
 renderReplies();
 renderInquiries();
+renderPoints();
+renderNotifications();
 
 // 기술명과 경험 필드의 값이 빈 값이 아닌지 확인하는 함수
 function updateButtonState() {
@@ -1219,5 +1547,42 @@ document.addEventListener("click", () => {
         dropdown
             .closest(".ui-label-select")
             .querySelector(".select-box").style.borderColor = "#e0e0e0"; // 원래 테두리 색상으로 복원
+    });
+});
+
+//내 포인트 날짜
+// 초기 디폴트 값 설정 (9월 1일 ~ 9월 30일)
+setDefaultDateRange("202409");
+
+function setDefaultDateRange(month) {
+    const fromDateInput = document.getElementById("fromDate");
+    const toDateInput = document.getElementById("toDate");
+
+    // 날짜 계산
+    const year = month.substring(0, 4);
+    const monthNum = parseInt(month.substring(4, 6));
+
+    const fromDate = `${year}-${monthNum.toString().padStart(2, "0")}-01`;
+    const lastDay = new Date(year, monthNum, 0).getDate(); // 해당 월의 마지막 날 계산
+    const toDate = `${year}-${monthNum.toString().padStart(2, "0")}-${lastDay}`;
+
+    // 입력 필드에 값 설정
+    fromDateInput.value = fromDate;
+    toDateInput.value = toDate;
+}
+
+const monthButtons = document.querySelectorAll("#monthListArea2 li a");
+
+monthButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+        // 모든 버튼에서 'selected' 클래스를 제거
+        monthButtons.forEach((btn) => btn.classList.remove("selected"));
+
+        // 클릭된 버튼에 'selected' 클래스 추가
+        this.classList.add("selected");
+
+        // 날짜 범위 설정
+        const month = this.parentElement.getAttribute("value");
+        setDefaultDateRange(month);
     });
 });
