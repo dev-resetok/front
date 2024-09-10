@@ -5,7 +5,7 @@ const dropdownContainers = document.querySelectorAll(".drop-down-container");
 function hideAll() {
     dropdownContainers.forEach((container) => {
         const dropdownLists = container.querySelectorAll(
-            ".drop-down-list, .drop-down-list1"
+            ".drop-down-list1, .drop-down-list2"
         );
         dropdownLists.forEach((list) => (list.style.display = "none"));
 
@@ -24,7 +24,7 @@ function hideAll() {
 dropdownContainers.forEach((container) => {
     const dropdownMenus = container.querySelectorAll(".left-nav-menu");
     const dropdownLists = container.querySelectorAll(
-        ".drop-down-list, .drop-down-list1"
+        ".drop-down-list1, .drop-down-list2"
     );
 
     dropdownMenus.forEach((dropdownMenu, index) => {
