@@ -3423,54 +3423,18 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="noti-body">
-                            <div class="noti-box date-box">
-                                <div class="noti-box-wrapper">
-                                    <p class="noti-date-title body-1-bold">
-                                        08월 23일 금요일
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="noti-box unread">
-                                <div class="noti-box-wrapper with-img">
-                                    <img
-                                        class="noti-img"
-                                        src="https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png"
-                                    />
-                                    <div class="noti-box-content">
-                                        <div class="noti-title">
-                                            반갑습니다. ljm21252님!<br />빠르고
-                                            안전한 위시켓에서 프로젝트를
-                                            등록하고, 견적과 지원서를 무료로
-                                            받아보세요.<br />
-                                            <div
-                                                class="btn btn-8-20 btn-client"
-                                            >
-                                                무료로 프로젝트 등록하기
-                                            </div>
-                                        </div>
-                                        <div class="noti-date">
-                                            2024.08.23. 오후 3시 22분
-                                        </div>
-                                    </div>
-                                    <form
-                                        action="/accounts/notifications/mark/3971870"
-                                        method="POST"
-                                        style="display: none"
-                                    >
-                                        <input
-                                            name="csrfmiddlewaretoken"
-                                            type="hidden"
-                                            value="VGP3dn3tmPOwxFB6QUarTRUw2s0iqEh7Hpxv0Z8lL0bDqIf3sQkYot8egqPkDgus"
-                                        /><input
-                                            name="destination"
-                                            type="hidden"
-                                            value="/project/create/"
-                                        />
-                                    </form>
-                                </div>
-                                <div class="noti-center-footer no-more"></div>
-                            </div>
+                            <!-- 알림 리스트가 동적으로 렌더링됩니다 -->
+                        </div>
+
+                        <div class="empty-component" style="display: none">
+                            <p>알림이 없습니다.</p>
+                        </div>
+
+                        <!-- 페이지네이션 -->
+                        <div class="pagination-container">
+                            <ul class="pagination theme-wishket"></ul>
                         </div>
                     </div>
                 </div>
