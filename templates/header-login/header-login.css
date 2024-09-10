@@ -1,31 +1,31 @@
 @font-face {
     font-family: "NotoSansKR";
     font-weight: 700;
-    src: url("/fonts/NotoSansKR-Bold.woff2") format("woff2"),url("/fonts/NotoSansKR-Bold.woff") format("woff"),url("/fonts/NotoSansKR-Bold.otf") format("opentype")
+    src: url("/templates/fonts/NotoSansKR-Bold.woff2") format("woff2"),url("/templates/fonts/NotoSansKR-Bold.woff") format("woff"),url("/templates/fonts/NotoSansKR-Bold.otf") format("opentype")
 }
 
 @font-face {
     font-family: "NotoSansKR";
     font-weight: 500;
-    src: url("/fonts/NotoSansKR-Medium.woff2") format("woff2"),url("/fonts/NotoSansKR-Medium.woff") format("woff"),url("/fonts/NotoSansKR-Medium.otf") format("opentype")
+    src: url("/templates/fonts/NotoSansKR-Medium.woff2") format("woff2"),url("/templates/fonts/NotoSansKR-Medium.woff") format("woff"),url("/templates/fonts/NotoSansKR-Medium.otf") format("opentype")
 }
 
 @font-face {
     font-family: "NotoSansKR";
     font-weight: 400;
-    src: url("/fonts/NotoSansKR-Regular.woff2") format("woff2"),url("/fonts/NotoSansKR-Regular.woff") format("woff"),url("/fonts/NotoSansKR-Regular.otf") format("opentype")
+    src: url("/templates/fonts/NotoSansKR-Regular.woff2") format("woff2"),url("/templates/fonts/NotoSansKR-Regular.woff") format("woff"),url("/templates/fonts/NotoSansKR-Regular.otf") format("opentype")
 }
 
 @font-face {
     font-family: "NotoSansKR";
     font-weight: 300;
-    src: url("/fonts/NotoSansKR-Light.woff2") format("woff2"),url("/fonts/NotoSansKR-Light.woff") format("woff"),url("/fonts/NotoSansKR-Light.otf") format("opentype")
+    src: url("/templates/fonts/NotoSansKR-Light.woff2") format("woff2"),url("/templates/fonts/NotoSansKR-Light.woff") format("woff"),url("/templates/fonts/NotoSansKR-Light.otf") format("opentype")
 }
 
 @font-face {
     font-family: "NotoSansKR";
     font-weight: 100;
-    src: url("/fonts/NotoSansKR-Thin.woff2") format("woff2"),url("/fonts/NotoSansKR-Thin.woff") format("woff"),url("    /fonts/NotoSansKR-Thin.otf") format("opentype")
+    src: url("/templates/fonts/NotoSansKR-Thin.woff2") format("woff2"),url("/templates/fonts/NotoSansKR-Thin.woff") format("woff"),url("/templates/fonts/NotoSansKR-Thin.otf") format("opentype")
 }
 
 
@@ -46,7 +46,7 @@ header .header {
     font-size: 16px;
     
 }
-header.header .base-nav-landing-renewal {
+header.header .wrap {
     background-color: #242933;
     border-bottom: 1px solid #383d47;
     min-height: 65px;
@@ -152,7 +152,7 @@ header.header .container {
     gap: 4px;   
     float: left;
 }
-header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
+header.header .wrap .left-nav .left-nav-menu:hover {
     color: #ccd1d6
 }
 .left-nav .left-nav-menu {
@@ -180,7 +180,7 @@ header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
     align-items: center;
     margin-left: 4px;
 }
-.drop-down-list {
+.drop-down-list1 {
     display: none;
     width: 200px;
     border-radius: 8px;
@@ -191,7 +191,7 @@ header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .16);
     max-height: 168px;
 }
-.drop-down-list1 {
+.drop-down-list2 {
     display: none;
     width: 200px;
     border-radius: 8px;
@@ -211,7 +211,7 @@ header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px; 
 }
-.left-bar-postscript img{
+.left-customer-case img{
     max-height: 130px; 
     width: 8px;
     border-top-left-radius: 8px;
@@ -229,7 +229,7 @@ header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
     cursor: pointer;
     
 }
-.text900{
+.text9{
     color: #212121;
 
 }
@@ -436,7 +436,7 @@ header.header .base-nav-landing-renewal .left-nav .left-nav-menu:hover {
     text-overflow: ellipsis;
     overflow: hidden;
 }
-.text600 {
+.text6 {
     color: #616161;
 }
 .font-body-3{

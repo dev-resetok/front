@@ -7,10 +7,14 @@
         <link rel="stylesheet" href="/header-login/header-login.css" />
         <link rel="stylesheet" href="/main-basic/main-basic.css" />
         <link rel="stylesheet" href="/footer/footer.css" />
+        <link
+            rel="shortcut icon"
+            href="https://upload.wikimedia.org/wikipedia/commons/c/c1/Wishket-logo.png"
+        />
     </head>
     <body class="landing">
         <header class="header">
-            <section class="base-nav-landing-renewal">
+            <section class="wrap">
                 <div class="header-service-nav">
                     <div class="container">
                         <div class="service-link wishket">
@@ -29,7 +33,7 @@
                     </a>
                     <div class="left-nav">
                         <a href="">
-                            <div class="left-nav-menu add-project font-body-2">
+                            <div class="left-nav-menu font-body-2">
                                 프로젝트 등록
                             </div>
                         </a>
@@ -60,7 +64,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <div class="drop-down-list">
+                            <div class="drop-down-list1">
                                 <div class="left-bar-useguide">
                                     <img
                                         src="https://www.wishket.com/static/renewal/img/global/gradient-bar-1.png"
@@ -111,8 +115,8 @@
                                     </div>
                                 </div>
                             </a>
-                            <div class="drop-down-list1">
-                                <div class="left-bar-postscript">
+                            <div class="drop-down-list2">
+                                <div class="left-customer-case">
                                     <img
                                         src="https://www.wishket.com/static/renewal/img/global/gradient-bar-1.png"
                                         srcset="
@@ -180,7 +184,7 @@
                                 <div class="my-project-drop-down">
                                     <div class="my-project">
                                         <div
-                                            class="sub-headline caption-2 text400"
+                                            class="sub-headline caption-2 text4"
                                         >
                                             내 프로젝트
                                         </div>
@@ -196,7 +200,7 @@
                                                     "
                                                 />
                                                 <div
-                                                    class="cap font-body-2 text900"
+                                                    class="cap font-body-2 text9"
                                                 >
                                                     검수 중
                                                 </div>
@@ -213,7 +217,7 @@
                                                     "
                                                 />
                                                 <div
-                                                    class="cap font-body-2 text900"
+                                                    class="cap font-body-2 text9"
                                                 >
                                                     지원자 모집 중
                                                 </div>
@@ -230,7 +234,7 @@
                                                     "
                                                 />
                                                 <div
-                                                    class="cap font-body-2 text900"
+                                                    class="cap font-body-2 text9"
                                                 >
                                                     진행 중인 프로젝트
                                                 </div>
@@ -247,7 +251,7 @@
                                                     "
                                                 />
                                                 <div
-                                                    class="cap font-body-2 text900"
+                                                    class="cap font-body-2 text9"
                                                 >
                                                     종료된 프로젝트
                                                 </div>
@@ -290,12 +294,12 @@
                                     </div>
                                     <div class="user-info">
                                         <div
-                                            class="font-body-2-medium text900 mb4"
+                                            class="font-body-2-medium text9 mb4"
                                         >
                                             id.name
                                         </div>
                                         <div
-                                            class="font-body-3 text600 email-info"
+                                            class="font-body-3 text6 email-info"
                                         >
                                             email.name
                                         </div>
@@ -304,7 +308,7 @@
                                 <div class="section-2">
                                     <a href=""
                                         ><div
-                                            class="section-2-btn font-body-2 text600"
+                                            class="section-2-btn font-body-2 text6"
                                         >
                                             마이위시켓
                                         </div></a
@@ -328,14 +332,14 @@
                                 <div class="divider1"></div>
                                 <a href="">
                                     <div
-                                        class="drop-down-menu gray font-body-2 text600"
+                                        class="drop-down-menu gray font-body-2 text6"
                                     >
                                         계정 설정
                                     </div>
                                 </a>
                                 <a href=""
                                     ><div
-                                        class="drop-down-menu gray font-body-2 text600"
+                                        class="drop-down-menu gray font-body-2 text6"
                                     >
                                         로그아웃
                                     </div></a
@@ -349,8 +353,8 @@
         <div class="client-list">
             <section class="container first-container">
                 <p class="body-1-bold text-wishket mb6">성공사례</p>
-                <div class="rolling-interview">
-                    <p class="title-2-bold text900">
+                <div class="interview-title">
+                    <p class="title-2-bold text9">
                         위시켓과 함께 성공한 기업들의 이야기
                     </p>
                     <button class="btn-interview-step left" id="interviewPrev">
@@ -358,7 +362,10 @@
                             src="https://www.wishket.com/static/img/acquisition/icon_interview_prev.svg"
                         />
                     </button>
-                    <button class="btn-interview-step right" id="interviewNext">
+                    <button
+                        class="btn-interview-step right"
+                        id="interview-next"
+                    >
                         <img
                             src="	https://www.wishket.com/static/img/acquisition/icon_interview_next.svg
                         "
@@ -367,13 +374,13 @@
                 </div>
             </section>
             <section>
-                <div class="rolling-interview">
+                <div class="interview-title">
                     <div class="rolling-list">
                         <div class="bd-filter left"></div>
                         <div class="bd-filter right"></div>
                         <div
                             class="rolling-inner"
-                            id="rolling-interview-list"
+                            id="interview-title-list"
                             style="margin: left -550px"
                         >
                             <a href="" target="_blank"
@@ -383,9 +390,7 @@
                                             src="https://www.wishket.com/static/img/acquisition/logo_interview_ktds.svg"
                                         />
                                         <div class="head-info">
-                                            <p
-                                                class="font-body-2-medium text700"
-                                            >
+                                            <p class="font-body-2-medium text7">
                                                 kt DS
                                             </p>
                                             <p class="body-3 text500">
@@ -394,7 +399,7 @@
                                         </div>
                                     </div>
                                     <p
-                                        class="item-body subtitle-2-medium text900"
+                                        class="item-body subtitle-2-medium text9"
                                     >
                                         검증된 프리랜서 개발자를
                                         <br />
@@ -413,9 +418,7 @@
                                             src="https://www.wishket.com/static/img/acquisition/logo_interview_mbcedugrp.svg"
                                         />
                                         <div class="head-info">
-                                            <p
-                                                class="font-body-2-medium text700"
-                                            >
+                                            <p class="font-body-2-medium text7">
                                                 민병철교육그룹
                                             </p>
                                             <p class="body-3 text500">
@@ -424,7 +427,7 @@
                                         </div>
                                     </div>
                                     <p
-                                        class="item-body subtitle-2-medium text900"
+                                        class="item-body subtitle-2-medium text9"
                                     >
                                         부족한 개발자를 위시켓을
                                         <br />
@@ -443,9 +446,7 @@
                                             src="https://www.wishket.com/static/img/acquisition/logo_interview_cj.svg"
                                         />
                                         <div class="head-info">
-                                            <p
-                                                class="font-body-2-medium text700"
-                                            >
+                                            <p class="font-body-2-medium text7">
                                                 CJ ENM
                                             </p>
                                             <p class="body-3 text500">
@@ -454,7 +455,7 @@
                                         </div>
                                     </div>
                                     <p
-                                        class="item-body subtitle-2-medium text900"
+                                        class="item-body subtitle-2-medium text9"
                                     >
                                         웹 리뉴얼 외주로 진행하고
                                         <br />
@@ -473,9 +474,7 @@
                                             src="https://www.wishket.com/static/img/acquisition/logo_interview_lgcns.svg"
                                         />
                                         <div class="head-info">
-                                            <p
-                                                class="font-body-2-medium text700"
-                                            >
+                                            <p class="font-body-2-medium text7">
                                                 LG CNS
                                             </p>
                                             <p class="body-3 text500">
@@ -484,7 +483,7 @@
                                         </div>
                                     </div>
                                     <p
-                                        class="item-body subtitle-2-medium text900"
+                                        class="item-body subtitle-2-medium text9"
                                     >
                                         프론트엔드부터 AA까지
                                         <br />
@@ -503,9 +502,7 @@
                                             src="https://www.wishket.com/static/img/acquisition/logo_interview_lotte.svg"
                                         />
                                         <div class="head-info">
-                                            <p
-                                                class="font-body-2-medium text700"
-                                            >
+                                            <p class="font-body-2-medium text7">
                                                 롯데제과
                                             </p>
                                             <p class="body-3 text500">
@@ -514,7 +511,7 @@
                                         </div>
                                     </div>
                                     <p
-                                        class="item-body subtitle-2-medium text900"
+                                        class="item-body subtitle-2-medium text9"
                                     >
                                         관련 경험이 많은 전문가를
                                         <br />
@@ -533,9 +530,7 @@
                                             src="https://www.wishket.com/static/img/acquisition/logo_interview_shinsegae.svg"
                                         />
                                         <div class="head-info">
-                                            <p
-                                                class="font-body-2-medium text700"
-                                            >
+                                            <p class="font-body-2-medium text7">
                                                 신세계 아이앤씨
                                             </p>
                                             <p class="body-3 text500">
@@ -544,7 +539,7 @@
                                         </div>
                                     </div>
                                     <p
-                                        class="item-body subtitle-2-medium text900"
+                                        class="item-body subtitle-2-medium text9"
                                     >
                                         빠른 시간 안에 원하는
                                         <br />
@@ -563,9 +558,7 @@
                                             src="https://www.wishket.com/static/img/acquisition/logo_interview_jgd.svg"
                                         />
                                         <div class="head-info">
-                                            <p
-                                                class="font-body-2-medium text700"
-                                            >
+                                            <p class="font-body-2-medium text7">
                                                 종근당
                                             </p>
                                             <p class="body-3 text500">
@@ -574,7 +567,7 @@
                                         </div>
                                     </div>
                                     <p
-                                        class="item-body subtitle-2-medium text900"
+                                        class="item-body subtitle-2-medium text9"
                                     >
                                         내부 개발자 없이 빠르게
                                         <br />
@@ -593,7 +586,7 @@
                                         src="https://www.wishket.com/static/img/acquisition/icon_more_interview.svg"
                                         style="margin-top: 16px"
                                     />
-                                    <p class="subtitle-2-medium text900 mb36">
+                                    <p class="subtitle-2-medium text9 mb36">
                                         더 많은 성공사례가
                                         <br />
                                         궁금하다면?
@@ -638,7 +631,7 @@
                 <p class="text-center body-1-bold text-wishket mb6">
                     IT에 특화된 플랫폼
                 </p>
-                <p class="title-2-bold text-center text900 mb60">
+                <p class="title-2-bold text-center text9 mb60">
                     비즈니스에 필요한 모든 IT 프로젝트를 진행할 수 있어요
                 </p>
                 <div class="project-fields-group">
@@ -647,56 +640,56 @@
                             class="mb8"
                             src="https://www.wishket.com/static/img/acquisition/field_icon_itservice.svg"
                         />
-                        <p class="body-1-medium text700">IT 서비스</p>
+                        <p class="body-1-medium text7">IT 서비스</p>
                     </a>
                     <a class="project-field-box hover-top-btn">
                         <img
                             class="mb8"
                             src="https://www.wishket.com/static/img/acquisition/field_icon_manage.svg"
                         />
-                        <p class="body-1-medium text700">업무 시스템</p>
+                        <p class="body-1-medium text7">업무 시스템</p>
                     </a>
                     <a class="project-field-box hover-top-btn">
                         <img
                             class="mb8"
                             src="https://www.wishket.com/static/img/acquisition/field_icon_web.svg"
                         />
-                        <p class="body-1-medium text700">웹 사이트</p>
+                        <p class="body-1-medium text7">웹 사이트</p>
                     </a>
                     <a class="project-field-box hover-top-btn">
                         <img
                             class="mb8"
                             src="https://www.wishket.com/static/img/acquisition/field_icon_ai.svg"
                         />
-                        <p class="body-1-medium text700">AI</p>
+                        <p class="body-1-medium text7">AI</p>
                     </a>
                     <a class="project-field-box hover-top-btn">
                         <img
                             class="mb8"
                             src="	https://www.wishket.com/static/img/acquisition/field_icon_operate.svg"
                         />
-                        <p class="body-1-medium text700">유지보수</p>
+                        <p class="body-1-medium text7">유지보수</p>
                     </a>
                     <a class="project-field-box hover-top-btn">
                         <img
                             class="mb8"
                             src="https://www.wishket.com/static/img/acquisition/field_icon_commerce.svg"
                         />
-                        <p class="body-1-medium text700">커머스</p>
+                        <p class="body-1-medium text7">커머스</p>
                     </a>
                     <a class="project-field-box hover-top-btn">
                         <img
                             class="mb8"
                             src="https://www.wishket.com/static/img/acquisition/field_icon_cloud.svg"
                         />
-                        <p class="body-1-medium text700">클라우드</p>
+                        <p class="body-1-medium text7">클라우드</p>
                     </a>
                     <a class="project-field-box hover-top-btn">
                         <img
                             class="mb8"
                             src="https://www.wishket.com/static/img/acquisition/field_icon_consulting.svg"
                         />
-                        <p class="body-1-medium text700">컨설팅</p>
+                        <p class="body-1-medium text7">컨설팅</p>
                     </a>
                 </div>
             </section>
