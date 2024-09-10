@@ -3281,6 +3281,8 @@
                                 </li>
                             </ul>
                         </div>
+
+                        <!-- 포인트 조회 조건 설정 영역 -->
                         <div class="point-container">
                             <div class="points-inquiry">
                                 <h2 class="header-sub-text">사용 내역 조회</h2>
@@ -3290,36 +3292,42 @@
                                 <ul class="monthList" id="monthListArea2">
                                     <li value="202404">
                                         <a
+                                            href="#"
                                             onclick="usageList.setSearchHistoryList('202404')"
                                             >4월</a
                                         >
                                     </li>
                                     <li value="202405">
                                         <a
+                                            href="#"
                                             onclick="usageList.setSearchHistoryList('202405')"
                                             >5월</a
                                         >
                                     </li>
                                     <li value="202406">
                                         <a
+                                            href="#"
                                             onclick="usageList.setSearchHistoryList('202406')"
                                             >6월</a
                                         >
                                     </li>
                                     <li value="202407">
                                         <a
+                                            href="#"
                                             onclick="usageList.setSearchHistoryList('202407')"
                                             >7월</a
                                         >
                                     </li>
                                     <li value="202408">
                                         <a
+                                            href="#"
                                             onclick="usageList.setSearchHistoryList('202408')"
                                             >8월</a
                                         >
                                     </li>
                                     <li value="202409" class="on">
                                         <a
+                                            href="#"
                                             onclick="usageList.setSearchHistoryList('202409')"
                                             >9월</a
                                         >
@@ -3331,13 +3339,13 @@
                                             type="text"
                                             id="fromDate"
                                             class="input-period"
-                                            readonly=""
-                                        /><span class="dash">~</span
-                                        ><input
+                                            readonly
+                                        /><span class="dash">~</span>
+                                        <input
                                             type="text"
                                             id="toDate"
                                             class="input-period"
-                                            readonly=""
+                                            readonly
                                         />
                                     </li>
                                     <li>
@@ -3365,7 +3373,11 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="contNoneArea">
+
+                            <div class="point-list"></div>
+
+                            <!-- 데이터가 없을 때 표시될 빈 컴포넌트 -->
+                            <div class="empty-component" style="display: none">
                                 <div class="contNoneBox">
                                     <p class="noneTxt1">
                                         해당 기간에 조회된 내역이 없습니다.
@@ -3376,9 +3388,15 @@
                                     </p>
                                 </div>
                             </div>
+
+                            <!-- 페이지네이션 영역 -->
+                            <div class="pagination-container">
+                                <ul class="pagination theme-wishket"></ul>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <div id="mynotice" class="tab-content">
                     <div class="right-side">
                         <div class="noti-center-header">
@@ -3395,8 +3413,7 @@
                                     </div>
                                 </div>
                                 <div class="noti-setting">
-                                    <a
-                                        href="/accounts/settings/notification_setting/"
+                                    <a href=""
                                         ><span class="noti-setting-text"
                                             >알림 설정</span
                                         ><img

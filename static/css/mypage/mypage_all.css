@@ -455,7 +455,8 @@ label.btn-upload:hover {
 
 .post-list,
 .reply-list,
-.inquiry-list {
+.inquiry-list,
+.point-list {
     margin-top: 20px;
 }
 
