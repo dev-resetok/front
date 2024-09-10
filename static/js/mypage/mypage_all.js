@@ -1,11 +1,11 @@
 const showTab = (tabId, element) => {
-    // 모든 탭을 숨김
+    // 일단 모든 tab-content를 숨김
     const tabcontent = document.getElementsByClassName("tab-content");
     Array.from(tabcontent).forEach((content) => {
         content.classList.remove("active");
     });
 
-    // 선택한 탭만 표시
+    // 클릭된 tab만 표시
     document.getElementById(tabId).classList.add("active");
 
     // 사이드바 메뉴의 활성화 상태 변경
@@ -14,10 +14,9 @@ const showTab = (tabId, element) => {
         link.classList.remove("active");
     });
 
-    // 클릭된 요소의 부모 li에 active 클래스 추가
+    // 현재 클릭된 요소의 부모 li에 active 클래스 추가
     element.parentElement.classList.add("active");
 };
-
 document.addEventListener("click", () => {
     // 데이터 편집 가능 요소 설정
     const editableElements = document.querySelectorAll(".data-editable");
@@ -447,10 +446,13 @@ document.addEventListener("click", () => {
     });
 
     //  클릭 이벤트 추가 div 보여주기
-    // 클릭 이벤트 추가
     document
         .getElementById("mypage-link")
         .addEventListener("click", () => showTab("mypage", this));
+
+    document
+        .getElementById("myborder-link")
+        .addEventListener("click", () => showTab("myboard", this));
 
     document
         .getElementById("myreply-link")
@@ -459,14 +461,6 @@ document.addEventListener("click", () => {
     document
         .getElementById("myinquiry-link")
         .addEventListener("click", () => showTab("myinquiry", this));
-
-    document
-        .getElementById("mypoints-link")
-        .addEventListener("click", () => showTab("mypoints", this));
-
-    document
-        .getElementById("mynotice-link")
-        .addEventListener("click", () => showTab("mynotice", this));
 });
 
 // // "등록 완료" 버튼 클릭 시 데이터 저장
@@ -477,7 +471,6 @@ document.addEventListener("click", () => {
 //     });
 // });
 
-// 예시 데이터
 const posts = [
     {
         id: 1,
@@ -662,98 +655,7 @@ const points = [
         points: 200,
         date: "2024.02.10",
     },
-    {
-        id: 1,
-        description: "포인트 적립 - 쇼핑",
-        points: 500,
-        date: "2024.01.15",
-    },
-    {
-        id: 2,
-        description: "포인트 사용 - 쿠폰",
-        points: -300,
-        date: "2024.02.03",
-    },
-    {
-        id: 3,
-        description: "포인트 환불 - 이벤트",
-        points: 200,
-        date: "2024.02.10",
-    },
-    {
-        id: 1,
-        description: "포인트 적립 - 쇼핑",
-        points: 500,
-        date: "2024.01.15",
-    },
-    {
-        id: 2,
-        description: "포인트 사용 - 쿠폰",
-        points: -300,
-        date: "2024.02.03",
-    },
-    {
-        id: 3,
-        description: "포인트 환불 - 이벤트",
-        points: 200,
-        date: "2024.02.10",
-    },
-    {
-        id: 1,
-        description: "포인트 적립 - 쇼핑",
-        points: 500,
-        date: "2024.01.15",
-    },
-    {
-        id: 2,
-        description: "포인트 사용 - 쿠폰",
-        points: -300,
-        date: "2024.02.03",
-    },
-    {
-        id: 3,
-        description: "포인트 환불 - 이벤트",
-        points: 200,
-        date: "2024.02.10",
-    },
-    {
-        id: 1,
-        description: "포인트 적립 - 쇼핑",
-        points: 500,
-        date: "2024.01.15",
-    },
-    {
-        id: 2,
-        description: "포인트 사용 - 쿠폰",
-        points: -300,
-        date: "2024.02.03",
-    },
-    {
-        id: 3,
-        description: "포인트 환불 - 이벤트",
-        points: 200,
-        date: "2024.02.10",
-    },
-    {
-        id: 1,
-        description: "포인트 적립 - 쇼핑",
-        points: 500,
-        date: "2024.01.15",
-    },
-    {
-        id: 2,
-        description: "포인트 사용 - 쿠폰",
-        points: -300,
-        date: "2024.02.03",
-    },
-    {
-        id: 3,
-        description: "포인트 환불 - 이벤트",
-        points: 200,
-        date: "2024.02.10",
-    },
 ];
-
 const notifications = [
     {
         id: 1,
@@ -777,10 +679,10 @@ const notifications = [
         img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
     },
     {
-        id: 1,
-        type: "message",
-        content: "새로운 메시지가 도착했습니다.",
-        date: "2024.09.01 오후 2시 45분",
+        id: 2,
+        type: "alert",
+        content: "프로젝트 지원자가 있습니다.",
+        date: "2024.09.01 오후 3시 00분",
         img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
     },
     {
@@ -797,23 +699,7 @@ const notifications = [
         date: "2024.09.01 오후 3시 00분",
         img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
     },
-    {
-        id: 1,
-        type: "message",
-        content: "새로운 메시지가 도착했습니다.",
-        date: "2024.09.01 오후 2시 45분",
-        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
-    },
-    {
-        id: 1,
-        type: "message",
-        content: "새로운 메시지가 도착했습니다.",
-        date: "2024.09.01 오후 2시 45분",
-        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
-    },
 ];
-
-// 페이지네이션 설정
 const itemsPerPage = 5;
 
 // 현재 페이지 상태
@@ -821,7 +707,7 @@ let currentPostPage = 1;
 let currentReplyPage = 1;
 let currentInquiryPage = 1;
 let currentPointPage = 1;
-let currentNotificationPage = 1; // 알림 페이지 상태 추가
+let currentNotificationPage = 1;
 
 // 페이지네이션을 위한 함수
 const paginate = (items, page) => {
@@ -871,7 +757,7 @@ const addPaginationEventListeners = (paginationId) => {
     );
 
     paginationList.querySelectorAll(".page-item a").forEach((link) => {
-        link.addEventListener("", (event) => {
+        link.addEventListener("click", (event) => {
             event.preventDefault();
             const text = link.textContent.trim();
             let pageNumber = parseInt(text, 10);
@@ -1008,7 +894,7 @@ const renderPosts = () => {
     updatePaginationButton(reversedPosts, currentPostPage, "myboard");
 };
 
-//댓글 렌더링
+// 댓글 렌더링
 const renderReplies = () => {
     const replyList = document.querySelector(".reply-list");
     const emptyComponent = document.querySelector("#myreply .empty-component");
@@ -1224,7 +1110,7 @@ const renderPoints = (filteredPoints = points) => {
 // 알림 렌더링 함수
 const renderNotifications = (notificationData = notifications) => {
     const notificationList = document.querySelector(".noti-body");
-    const emptyComponent = document.querySelector("#mynotice .empty-component");
+    const emptyComponent = document.querySelector(".empty-component");
 
     const reversedNotifications = notificationData.slice().reverse(); // 알림 데이터를 역순으로 표시
     const paginatedNotifications = paginate(
@@ -1258,7 +1144,6 @@ const renderNotifications = (notificationData = notifications) => {
                         </div>
                     </div>
                 </div>
-                <br>
             `
             )
             .join("");
@@ -1550,11 +1435,7 @@ document.addEventListener("click", () => {
     });
 });
 
-//내 포인트 날짜
-// 초기 디폴트 값 설정 (9월 1일 ~ 9월 30일)
-setDefaultDateRange("202409");
-
-function setDefaultDateRange(month) {
+const setDefaultDateRange = (month) => {
     const fromDateInput = document.getElementById("fromDate");
     const toDateInput = document.getElementById("toDate");
 
@@ -1563,26 +1444,33 @@ function setDefaultDateRange(month) {
     const monthNum = parseInt(month.substring(4, 6));
 
     const fromDate = `${year}-${monthNum.toString().padStart(2, "0")}-01`;
-    const lastDay = new Date(year, monthNum, 0).getDate(); // 해당 월의 마지막 날 계산
+    const lastDay = new Date(year, monthNum, 0).getDate();
     const toDate = `${year}-${monthNum.toString().padStart(2, "0")}-${lastDay}`;
 
     // 입력 필드에 값 설정
     fromDateInput.value = fromDate;
     toDateInput.value = toDate;
-}
+};
 
+// 모든 월 버튼에 대한 이벤트 리스너 추가
 const monthButtons = document.querySelectorAll("#monthListArea2 li a");
 
 monthButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-        // 모든 버튼에서 'selected' 클래스를 제거
+    button.addEventListener("click", (e) => {
+        // 기본 동작 중단(필요한 경우에만 사용)
+        e.preventDefault();
+
+        // 모든 버튼에서 'selected' 클래스 제거
         monthButtons.forEach((btn) => btn.classList.remove("selected"));
 
         // 클릭된 버튼에 'selected' 클래스 추가
-        this.classList.add("selected");
+        button.classList.add("selected");
 
         // 날짜 범위 설정
-        const month = this.parentElement.getAttribute("value");
+        const month = button.parentElement.getAttribute("value");
         setDefaultDateRange(month);
     });
 });
+
+// 초기 디폴트 값 설정 (9월 1일 ~ 9월 30일)
+setDefaultDateRange("202409");
