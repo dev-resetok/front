@@ -373,10 +373,11 @@ label.btn-upload:hover {
     background-color: #365e8b;
 }
 
-.btn-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+.btnGroup {
+    display: table;
+    margin: -14px auto;
+    margin-top: -19px;
+    width: 100%;
 }
 
 .img-border,
@@ -1273,6 +1274,7 @@ body.partners_profile .edit-menu-box .add-edit-project-box .icon-add-edit-box {
     color: #212121;
     border-radius: 4px;
     margin-left: 10px;
+    border: 1px solid #8e8d8d;
 }
 .btn01.btn_search {
     color: #212121;
@@ -1297,7 +1299,7 @@ body.partners_profile .edit-menu-box .add-edit-project-box .icon-add-edit-box {
 .contNoneBox {
     margin: 0 auto;
     margin-top: 40px;
-    padding: 4rem 2rem 2rem;
+    padding: 2rem 2rem 2rem;
     width: 100%;
     background: #eee;
     border-radius: 5px;
@@ -1315,20 +1317,19 @@ body.partners_profile .edit-menu-box .add-edit-project-box .icon-add-edit-box {
 .btnGroup {
     display: table;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: -40px;
     width: 100%;
 }
 .noneBtnArea {
-    margin-top: 40px;
-    padding: 0 2px;
+    padding: 0 40px;
     height: 20px;
     text-align: center;
 }
 .noneBtnArea li:first-of-type {
-    margin-left: 0;
+    margin-left: 600px;
 }
 .btnGroup li {
-    width: 40%;
+    width: 15%;
     background: #4e4e56;
     opacity: 0.5;
     border-radius: 5px;
@@ -1343,7 +1344,7 @@ body.partners_profile .edit-menu-box .add-edit-project-box .icon-add-edit-box {
 }
 .noneBtn {
     font-size: 13px;
-    line-height: 32px;
+    line-height: 30px;
     cursor: pointer;
 }
 
