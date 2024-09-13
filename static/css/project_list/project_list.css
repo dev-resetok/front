@@ -830,6 +830,7 @@ li:last-child > .page-link {
 }
 .sort-box-dropdown {
     display: block;
+    margin-right: 100px;
 }
 .result-sort-box .sort-box-dropdown {
     position: absolute;
@@ -870,4 +871,5 @@ li:last-child > .page-link {
     display: flex;
     display: block;
     padding: 8px 16px;
+    margin-top: -8px;
 }
