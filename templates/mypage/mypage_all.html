@@ -54,6 +54,12 @@
                                     >내 문의</a
                                 >
                             </li>
+                        
+                            <li>
+                                <a href="#" onclick="showTab('mynotice', this)"
+                                    >내 알림</a
+                                >
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -2998,7 +3004,9 @@
                                                             </svg>
                                                         </i>
                                                     </span>
-                                                    <p class="selectBg"></p>
+                                                    <p
+                                                        class="select-back-ground"
+                                                    ></p>
                                                     <ul class="select-dropdown">
                                                         <li
                                                             data-select-value="1"
@@ -3087,7 +3095,9 @@
                                                             </svg>
                                                         </i>
                                                     </span>
-                                                    <p class="selectBg"></p>
+                                                    <p
+                                                        class="select-back-ground"
+                                                    ></p>
                                                     <ul class="select-dropdown">
                                                         <li
                                                             data-select-value="1"
@@ -3252,6 +3262,176 @@
                         </div>
                     </div>
                 </div>
+                <div id="mypoints" class="tab-content">
+                    <div class="content">
+                        <div class="content-header action">
+                            <h3 class="header-text">
+                                내 포인트
+                                <small class="small-text"
+                                    >내 포인트를 확인할 수 있습니다.</small
+                                >
+                            </h3>
+                            <ul class="noneBtnArea btnGroup">
+                                <li>
+                                    <a class="noneBtn">포인트 충전하기</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 포인트 조회 조건 설정 영역 -->
+                        <div class="point-container">
+                            <div class="points-inquiry">
+                                <h2 class="header-sub-text">사용 내역 조회</h2>
+                            </div>
+
+                            <div class="conditionArea flex-between">
+                                <ul class="monthList" id="monthListArea2">
+                                    <li value="202404">
+                                        <a
+                                            href="#"
+                                            onclick="usageList.setSearchHistoryList('202404')"
+                                            >4월</a
+                                        >
+                                    </li>
+                                    <li value="202405">
+                                        <a
+                                            href="#"
+                                            onclick="usageList.setSearchHistoryList('202405')"
+                                            >5월</a
+                                        >
+                                    </li>
+                                    <li value="202406">
+                                        <a
+                                            href="#"
+                                            onclick="usageList.setSearchHistoryList('202406')"
+                                            >6월</a
+                                        >
+                                    </li>
+                                    <li value="202407">
+                                        <a
+                                            href="#"
+                                            onclick="usageList.setSearchHistoryList('202407')"
+                                            >7월</a
+                                        >
+                                    </li>
+                                    <li value="202408">
+                                        <a
+                                            href="#"
+                                            onclick="usageList.setSearchHistoryList('202408')"
+                                            >8월</a
+                                        >
+                                    </li>
+                                    <li value="202409" class="on">
+                                        <a
+                                            href="#"
+                                            onclick="usageList.setSearchHistoryList('202409')"
+                                            >9월</a
+                                        >
+                                    </li>
+                                </ul>
+                                <ul class="searchList">
+                                    <li>
+                                        <input
+                                            type="text"
+                                            id="fromDate"
+                                            class="input-period"
+                                            readonly
+                                        /><span class="dash">~</span>
+                                        <input
+                                            type="text"
+                                            id="toDate"
+                                            class="input-period"
+                                            readonly
+                                        />
+                                    </li>
+                                    <li>
+                                        <select class="selectBox" id="selType">
+                                            <option value="">전체내역</option>
+                                            <option value="0">
+                                                포인트 적립
+                                            </option>
+                                            <option value="1">
+                                                포인트 사용
+                                            </option>
+                                            <option value="2">
+                                                포인트 환불
+                                            </option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <button
+                                            type="submit"
+                                            id="searchPointHistoryList"
+                                            class="btn01 btn_search"
+                                        >
+                                            조회
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="point-list"></div>
+
+                            <!-- 데이터가 없을 때 표시될 빈 컴포넌트 -->
+                            <div class="empty-component" style="display: none">
+                                <div class="contNoneBox">
+                                    <p class="noneTxt1">
+                                        해당 기간에 조회된 내역이 없습니다.
+                                    </p>
+                                    <p class="noneTxt2">
+                                        월 또는 기간을 선택해 포인트 사용 내역을
+                                        조회할 수 있습니다.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- 페이지네이션 영역 -->
+                            <div class="pagination-container">
+                                <ul class="pagination theme-wishket"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="mynotice" class="tab-content">
+                    <div class="right-side">
+                        <div class="noti-center-header">
+                            <div class="subtitle-1 noti-center-title">
+                                전체 알림
+                            </div>
+                            <div class="noti-center-header-more">
+                                <div class="body-2 noti-center-refresh">
+                                    <div class="refresh-btn">
+                                        <img
+                                            class="refresh-img"
+                                            src="https://www.wishket.com/static/renewal/img/account/notifications/refresh.png"
+                                        />새로고침
+                                    </div>
+                                </div>
+                                <div class="noti-setting">
+                                    <a href=""
+                                        ><span class="noti-setting-text"
+                                            >알림 설정</span
+                                        ><img
+                                            class="noti-setting-img"
+                                            src="https://www.wishket.com/static/renewal/img/account/notifications/btn_icon_go_s.png"
+                                    /></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="noti-body"></div>
+
+                        <div class="empty-component" style="display: none">
+                            <p>알림이 없습니다.</p>
+                        </div>
+
+                        <!-- 페이지네이션 -->
+                        <div class="pagination-container">
+                            <ul class="pagination theme-wishket"></ul>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="profileModal" class="modal">
@@ -3282,6 +3462,6 @@
             </div>
         </div>
 
-        <script src="../../static/css/mypage/mypage_all.css"></script>
+        <script src="../../static/js/mypage/mypage_all.js"></script>
     </body>
 </html>

@@ -471,7 +471,6 @@ document.addEventListener("click", () => {
 //     });
 // });
 
-// 예시 데이터
 const posts = [
     {
         id: 1,
@@ -637,13 +636,58 @@ const inquiries = [
     },
 ];
 
-// 페이지네이션 설정
-const itemsPerPage = 10;
+const notifications = [
+    {
+        id: 1,
+        type: "message",
+        content: "새로운 메시지가 도착했습니다.",
+        date: "2024.09.01 오후 2시 45분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+    {
+        id: 2,
+        type: "alert",
+        content: "프로젝트 지원자가 있습니다.",
+        date: "2024.09.01 오후 3시 00분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+    {
+        id: 1,
+        type: "message",
+        content: "새로운 메시지가 도착했습니다.",
+        date: "2024.09.01 오후 2시 45분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+    {
+        id: 2,
+        type: "alert",
+        content: "프로젝트 지원자가 있습니다.",
+        date: "2024.09.01 오후 3시 00분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+    {
+        id: 1,
+        type: "message",
+        content: "새로운 메시지가 도착했습니다.",
+        date: "2024.09.01 오후 2시 45분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+    {
+        id: 2,
+        type: "alert",
+        content: "프로젝트 지원자가 있습니다.",
+        date: "2024.09.01 오후 3시 00분",
+        img: "https://www.wishket.com/static/renewal/img/account/notifications/alarm_icon_finish_c.png",
+    },
+];
+const itemsPerPage = 5;
 
 // 현재 페이지 상태
 let currentPostPage = 1;
 let currentReplyPage = 1;
 let currentInquiryPage = 1;
+let currentPointPage = 1;
+let currentNotificationPage = 1;
 
 // 페이지네이션을 위한 함수
 const paginate = (items, page) => {
@@ -663,34 +707,26 @@ const updatePaginationButton = (items, currentPage, paginationId) => {
     // '이전' 버튼
     paginationList.innerHTML += `
         <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
-            <a class="page-link"   ${
-                currentPage === 1 ? "aria-disabled='true'" : ""
-            }>이전</a>
+            <a class="page-link" href="#">이전</a>
         </li>
     `;
 
     // 페이지 번호
     for (let i = 1; i <= totalPages; i++) {
-        i === 1
-            ? (paginationList.innerHTML += `
-        <li class="page-item ${currentPage === i ? "active" : ""}">
-            <a class="page-link-1" >${i}</a>
-        </li>
-    `)
-            : (paginationList.innerHTML += `
-    <li class="page-item ${currentPage === i ? "active" : ""}">
-        <a class="page-link" >${i}</a>
-    </li>
-    `);
+        paginationList.innerHTML += `
+            <li class="page-item ${currentPage === i ? "active" : ""}">
+                <a class="page-link" href="#">${i}</a>
+            </li>
+        `;
     }
+
     // '다음' 버튼
     paginationList.innerHTML += `
         <li class="page-item ${currentPage === totalPages ? "disabled" : ""}">
-            <a class="page-link" href="#" ${
-                currentPage === totalPages ? "aria-disabled='true'" : ""
-            }>다음</a>
+            <a class="page-link" href="#">다음</a>
         </li>
     `;
+
     addPaginationEventListeners(paginationId);
 };
 
@@ -701,7 +737,7 @@ const addPaginationEventListeners = (paginationId) => {
     );
 
     paginationList.querySelectorAll(".page-item a").forEach((link) => {
-        link.addEventListener("", (event) => {
+        link.addEventListener("click", (event) => {
             event.preventDefault();
             const text = link.textContent.trim();
             let pageNumber = parseInt(text, 10);
@@ -713,6 +749,10 @@ const addPaginationEventListeners = (paginationId) => {
                         ? currentPostPage
                         : paginationId === "myreply"
                         ? currentReplyPage
+                        : paginationId === "mypoints"
+                        ? currentPointPage
+                        : paginationId === "mynotice"
+                        ? currentNotificationPage
                         : currentInquiryPage) + 1;
             } else if (text === "이전") {
                 pageNumber =
@@ -720,6 +760,10 @@ const addPaginationEventListeners = (paginationId) => {
                         ? currentPostPage
                         : paginationId === "myreply"
                         ? currentReplyPage
+                        : paginationId === "mypoints"
+                        ? currentPointPage
+                        : paginationId === "mynotice"
+                        ? currentNotificationPage
                         : currentInquiryPage) - 1;
             }
 
@@ -730,6 +774,42 @@ const addPaginationEventListeners = (paginationId) => {
         });
     });
 };
+
+// 페이지 이동 함수
+const goToPage = (pageNumber, paginationId) => {
+    const totalItems =
+        paginationId === "myboard"
+            ? posts.length
+            : paginationId === "myreply"
+            ? replies.length
+            : paginationId === "mypoints"
+            ? points.length
+            : paginationId === "mynotice"
+            ? notifications.length
+            : inquiries.length;
+
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    if (pageNumber < 1 || pageNumber > totalPages) return;
+
+    if (paginationId === "myboard") {
+        currentPostPage = pageNumber;
+        renderPosts();
+    } else if (paginationId === "myreply") {
+        currentReplyPage = pageNumber;
+        renderReplies();
+    } else if (paginationId === "mypoints") {
+        currentPointPage = pageNumber;
+        renderPoints();
+    } else if (paginationId === "mynotice") {
+        currentNotificationPage = pageNumber;
+        renderNotifications();
+    } else {
+        currentInquiryPage = pageNumber;
+        renderInquiries();
+    }
+};
+
 // 게시글 렌더링
 const renderPosts = () => {
     const postList = document.querySelector(".post-list");
@@ -794,7 +874,7 @@ const renderPosts = () => {
     updatePaginationButton(reversedPosts, currentPostPage, "myboard");
 };
 
-//댓글 렌더링
+// 댓글 렌더링
 const renderReplies = () => {
     const replyList = document.querySelector(".reply-list");
     const emptyComponent = document.querySelector("#myreply .empty-component");
@@ -858,7 +938,7 @@ const renderReplies = () => {
     updatePaginationButton(reversedReplies, currentReplyPage, "myreply");
 };
 
-//문의 렌더링
+// 문의 렌더링
 const renderInquiries = () => {
     const inquiryList = document.querySelector(".inquiry-list");
     const emptyComponent = document.querySelector(
@@ -924,38 +1004,61 @@ const renderInquiries = () => {
     updatePaginationButton(reversedInquiries, currentInquiryPage, "myinquiry");
 };
 
-// 페이지 이동 함수
-const goToPage = (pageNumber, paginationId) => {
-    // 각 탭에 맞는 총 항목 수를 설정
-    const totalItems =
-        paginationId === "myboard"
-            ? posts.length
-            : paginationId === "myreply"
-            ? replies.length
-            : inquiries.length;
+// 알림 렌더링 함수
+const renderNotifications = (notificationData = notifications) => {
+    const notificationList = document.querySelector(".noti-body");
+    const emptyComponent = document.querySelector(".empty-component");
 
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const reversedNotifications = notificationData.slice().reverse(); // 알림 데이터를 역순으로 표시
+    const paginatedNotifications = paginate(
+        reversedNotifications,
+        currentNotificationPage
+    );
 
-    // 페이지 번호 유효성 검사
-    if (pageNumber < 1 || pageNumber > totalPages) return;
-
-    // 페이지 상태 업데이트
-    if (paginationId === "myboard") {
-        currentPostPage = pageNumber;
-        renderPosts();
-    } else if (paginationId === "myreply") {
-        currentReplyPage = pageNumber;
-        renderReplies();
-    } else if (paginationId === "myinquiry") {
-        currentInquiryPage = pageNumber;
-        renderInquiries();
+    if (paginatedNotifications.length === 0) {
+        notificationList.style.display = "none";
+        emptyComponent.style.display = "block";
+    } else {
+        notificationList.style.display = "block";
+        emptyComponent.style.display = "none";
+        notificationList.innerHTML = paginatedNotifications
+            .map(
+                (notification) => `
+                <div class="noti-box unread">
+                    <div class="noti-box-wrapper with-img">
+                        <img
+                            class="noti-img"
+                            src="${notification.img}"
+                            alt="알림 이미지"
+                        />
+                        <div class="noti-box-content">
+                            <div class="noti-title">
+                                ${notification.content}
+                            </div>
+                            <div class="noti-date">
+                                ${notification.date}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+            )
+            .join("");
     }
+
+    updatePaginationButton(
+        reversedNotifications,
+        currentNotificationPage,
+        "mynotice"
+    );
 };
 
 // 초기 렌더링
 renderPosts();
 renderReplies();
 renderInquiries();
+// renderPoints();
+renderNotifications();
 
 // 기술명과 경험 필드의 값이 빈 값이 아닌지 확인하는 함수
 function updateButtonState() {
@@ -1221,3 +1324,43 @@ document.addEventListener("click", () => {
             .querySelector(".select-box").style.borderColor = "#e0e0e0"; // 원래 테두리 색상으로 복원
     });
 });
+
+const setDefaultDateRange = (month) => {
+    const fromDateInput = document.getElementById("fromDate");
+    const toDateInput = document.getElementById("toDate");
+
+    // 날짜 계산
+    const year = month.substring(0, 4);
+    const monthNum = parseInt(month.substring(4, 6));
+
+    const fromDate = `${year}-${monthNum.toString().padStart(2, "0")}-01`;
+    const lastDay = new Date(year, monthNum, 0).getDate();
+    const toDate = `${year}-${monthNum.toString().padStart(2, "0")}-${lastDay}`;
+
+    // 입력 필드에 값 설정
+    fromDateInput.value = fromDate;
+    toDateInput.value = toDate;
+};
+
+// 모든 월 버튼에 대한 이벤트 리스너 추가
+const monthButtons = document.querySelectorAll("#monthListArea2 li a");
+
+monthButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        // 기본 동작 중단(필요한 경우에만 사용)
+        e.preventDefault();
+
+        // 모든 버튼에서 'selected' 클래스 제거
+        monthButtons.forEach((btn) => btn.classList.remove("selected"));
+
+        // 클릭된 버튼에 'selected' 클래스 추가
+        button.classList.add("selected");
+
+        // 날짜 범위 설정
+        const month = button.parentElement.getAttribute("value");
+        setDefaultDateRange(month);
+    });
+});
+
+// 초기 디폴트 값 설정 (9월 1일 ~ 9월 30일)
+setDefaultDateRange("202409");
