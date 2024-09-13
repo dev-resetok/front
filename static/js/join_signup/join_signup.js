@@ -988,6 +988,7 @@ signButton.addEventListener("click", () => {
 const agreementCheckBox = document.getElementById("agreement-checkbox");
 const agreementMessage = document.getElementById("agreement-Message");
 
+// 동의 체크박스의 상태를 변경할 때마다 메시지 업데이트
 agreementCheckBox.addEventListener("change", function (e) {
     if (e.target.checked) {
         agreementMessage.style.display = "none";
@@ -998,4 +999,38 @@ agreementCheckBox.addEventListener("change", function (e) {
         agreementMessage.textContent =
             "Moa 서비스 이용을 위해서 반드시 동의를 해주셔야 합니다.";
     }
+});
+
+// 입력 필드에서 'Enter' 키를 눌렀을 때 동의 체크박스를 검사하는 함수
+function validateAgreementCheckbox() {
+    if (!agreementCheckBox.checked) {
+        agreementMessage.style.display = "block";
+        agreementMessage.style.color = "red";
+        agreementMessage.style.fontSize = "13px";
+        agreementMessage.textContent =
+            "Moa 서비스 이용을 위해서 반드시 동의를 해주셔야 합니다.";
+    } else {
+        agreementMessage.style.display = "none";
+    }
+}
+
+// 각 입력 필드에 'keydown' 이벤트 리스너 추가 (Enter 키가 눌렸을 때 처리)
+function addEnterEventListenerToField(inputField) {
+    inputField.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault(); // 기본 동작 방지 (폼 제출 등)
+            validateAgreementCheckbox(); // 동의 체크박스 유효성 검사 실행
+        }
+    });
+}
+
+// 이벤트 리스너를 각 필드에 추가
+addEnterEventListenerToField(emailinputField);
+addEnterEventListenerToField(idinputField);
+addEnterEventListenerToField(pwinputField);
+addEnterEventListenerToField(repwinputField);
+
+// 로그인 버튼 클릭 이벤트 추가
+signButton.addEventListener("click", function () {
+    validateAgreementCheckbox(); // 동의 체크박스 유효성 검사 실행
 });

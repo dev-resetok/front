@@ -377,6 +377,23 @@ body .title-inline {
     margin-left: 32px;
 }
 
+.post-write-button {
+    background-color: #2099bb;
+    color: #fff;
+    border: #2099bb;
+    padding: 4px 16px;
+    float: right;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
 .post-count-wrap {
     display: flex;
     justify-content: space-between;
@@ -407,7 +424,7 @@ body .title-inline {
     display: flex;
     justify-content: flex-end;
     gap: 16px;
-    width: 77%;
+    width: 88%;
     margin: 32px 32px 0 0 ;
 }
 
