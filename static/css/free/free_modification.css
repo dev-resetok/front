@@ -39,19 +39,14 @@ body .post-write-form-section {
     background-color: #fff;
     width: 800px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .16);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
     margin: 0 auto;
 }
 
 body .post-write-form-section .form-section-header {
     padding: 26px 32px;
-    position: relative;
-}
-
-.divider {
-    width: calc(100% - 64px);
     border-bottom: 1px solid #e0e0e0;
-    margin-left: 32px;
+    position: relative;
 }
 
 .subtitle-1 {
@@ -81,7 +76,7 @@ body .post-write-form-section .form-input-section {
 
 .form-part .form-title .required {
     color: #ff6b21;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 .font-body-2 {
@@ -98,19 +93,19 @@ body .post-write-form-section .form-input-section {
     margin-bottom: 8px;
 }
 
-.content-textarea>.textarea-border {
+.content-textarea > .textarea-border {
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid #e0e0e0;
 }
 
-.content-textarea>.textarea-border-changed {
+.content-textarea > .textarea-border-changed {
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid #3ba3c7;
 }
 
-.content-textarea>.textarea-border>textarea {
+.content-textarea > .textarea-border > textarea {
     position: relative;
     display: block;
     padding: 8px 12px;
@@ -124,7 +119,7 @@ body .post-write-form-section .form-input-section {
     border: 0;
 }
 
-.content-textarea>.textarea-border-changed>textarea {
+.content-textarea > .textarea-border-changed > textarea {
     position: relative;
     display: block;
     padding: 8px 12px;
@@ -147,13 +142,12 @@ body .post-write-form-section .form-input-section {
     border-radius: 4px;
     border: 1px solid #e0e0e0;
 }
-
-.content-textarea>span.word-length {
+.content-textarea > span.word-length {
     float: right;
     padding: 8px 12px 0 0;
 }
 
-.content-textarea>span {
+.content-textarea > span {
     font-size: 0.813rem;
     font-weight: 400;
     font-size: 13px;
@@ -162,7 +156,7 @@ body .post-write-form-section .form-input-section {
     display: inline-block;
 }
 
-.content-textarea>span.help-text {
+.content-textarea > span.help-text {
     float: left;
     padding: 8px 12px 0 12px;
 }
@@ -195,7 +189,7 @@ body .post-write-form-section .form-input-section {
     border: 1px dashed #e6ebf0;
     border-radius: 12px;
     background-color: #fff;
-    box-shadow: 0px 1px 4px 0px rgba(230, 235, 240, .8);
+    box-shadow: 0px 1px 4px 0px rgba(230, 235, 240, 0.8);
 }
 
 .text-moa {
@@ -215,7 +209,8 @@ body .post-write-form-section .form-input-section {
     margin: 0 auto;
 }
 
-.thumbnail, .attach-cancel-button {
+.thumbnail,
+.attach-cancel-button {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -253,7 +248,7 @@ input {
     border: 1px dashed #e6ebf0;
     border-radius: 12px;
     background-color: #fff;
-    box-shadow: 0px 1px 4px 0px rgba(230, 235, 240, .8);
+    box-shadow: 0px 1px 4px 0px rgba(230, 235, 240, 0.8);
     position: relative;
 }
 
@@ -280,7 +275,6 @@ input {
     border-bottom-right-radius: 8px;
     height: 73px;
 }
-
 
 .complete-button {
     border: 1px solid #3ba3c7;
@@ -312,4 +306,36 @@ input {
     vertical-align: middle;
     user-select: none;
     border-radius: 4px;
+}
+
+.local-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.location-field {
+    margin-right: 20px;
+}
+
+.select-location {
+    margin-top: 20px;
+    width: 250px;
+    padding: 10px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    font-size: 14px;
+}
+
+.modification-ment {
+    color: gray;
+    font-size: 14px;
+}
+.modify-title {
+    margin-top: 1%;
 }
