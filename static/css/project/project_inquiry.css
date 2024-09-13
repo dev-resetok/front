@@ -568,6 +568,7 @@ a {
     color: #fff;
     border: #00a878;
 }
+
 .btn-11-24 {
     padding: 11px 24px;
     font-size: 16px;
@@ -590,6 +591,7 @@ a {
     background-color: #d3d3d3;
     color: #fff;
     border: #00a878;
+    margin-bottom: 7px;
 }
 .interest-button {
     text-align: center;
