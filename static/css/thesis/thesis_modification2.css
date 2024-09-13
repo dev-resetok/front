@@ -45,13 +45,8 @@ body .post-write-form-section {
 
 body .post-write-form-section .form-section-header {
     padding: 26px 32px;
-    position: relative;
-}
-
-.divider {
-    width: calc(100% - 64px);
     border-bottom: 1px solid #e0e0e0;
-    margin-left: 32px;
+    position: relative;
 }
 
 .subtitle-1 {
@@ -312,4 +307,12 @@ input {
     vertical-align: middle;
     user-select: none;
     border-radius: 4px;
+}
+
+.modification-ment {
+    color: gray;
+    font-size: 14px;
+}
+.modify-title {
+    margin-top: 1%;
 }
