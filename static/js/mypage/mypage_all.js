@@ -636,26 +636,6 @@ const inquiries = [
     },
 ];
 
-const points = [
-    {
-        id: 1,
-        description: "포인트 적립 - 쇼핑",
-        points: 500,
-        date: "2024.01.15",
-    },
-    {
-        id: 2,
-        description: "포인트 사용 - 쿠폰",
-        points: -300,
-        date: "2024.02.03",
-    },
-    {
-        id: 3,
-        description: "포인트 환불 - 이벤트",
-        points: 200,
-        date: "2024.02.10",
-    },
-];
 const notifications = [
     {
         id: 1,
@@ -1024,89 +1004,6 @@ const renderInquiries = () => {
     updatePaginationButton(reversedInquiries, currentInquiryPage, "myinquiry");
 };
 
-// 필터링 함수 (조회 버튼 클릭 시 호출)
-const filterPoints = () => {
-    const filterValue = document.getElementById("selType").value;
-    let filteredPoints = points;
-
-    if (filterValue === "0") {
-        filteredPoints = points.filter((point) =>
-            point.description.includes("포인트 적립")
-        );
-    } else if (filterValue === "1") {
-        filteredPoints = points.filter((point) =>
-            point.description.includes("포인트 사용")
-        );
-    } else if (filterValue === "2") {
-        filteredPoints = points.filter((point) =>
-            point.description.includes("포인트 환불")
-        );
-    }
-
-    renderPoints(filteredPoints);
-};
-
-// 포인트 렌더링 함수
-const renderPoints = (filteredPoints = points) => {
-    const pointList = document.querySelector(".point-list");
-    const emptyComponent = document.querySelector("#mypoints .empty-component");
-
-    const reversedPoints = filteredPoints.slice().reverse(); // 포인트 데이터를 역순으로 표시
-    const paginatedPoints = paginate(reversedPoints, currentPointPage);
-
-    if (paginatedPoints.length === 0) {
-        pointList.style.display = "none";
-        emptyComponent.style.display = "block";
-    } else {
-        pointList.style.display = "block";
-        emptyComponent.style.display = "none";
-        pointList.innerHTML = `
-             <table class="news-center-table" style="margin-top: 0; margin-bottom: 20px;">
-                <colgroup>
-                    <col style="width: 57px;">
-                    <col style="width: 132px;">
-                    <col style="width: 703px;">
-                    <col style="width: 104px;">
-                </colgroup>
-                <thead class="news-center-table-head">
-                    <tr>
-                        <th>번호</th>
-                        <th>포인트</th>
-                        <th>설명</th>
-                        <th>날짜</th>
-                    </tr>
-                </thead>
-                <tbody class="news-center-table-body">
-                ${paginatedPoints
-                    .map(
-                        (point, index) => `
-                    <tr>
-                        <td class="news-center-table-body-number">${
-                            reversedPoints.length -
-                            (currentPointPage - 1) * itemsPerPage -
-                            index
-                        }</td>
-                       <td class="news-center-table-body-category">${
-                           point.points > 0 ? `+${point.points}` : point.points
-                       }</td>
-                             <td class="news-center-table-body-title">${
-                                 point.description
-                             }</td>
-                        <td class="news-center-table-body-date">${
-                            point.date
-                        }</td>
-                    </tr>
-                `
-                    )
-                    .join("")}
-                </tbody>
-            </table>
-        `;
-    }
-
-    updatePaginationButton(reversedPoints, currentPointPage, "mypoints");
-};
-
 // 알림 렌더링 함수
 const renderNotifications = (notificationData = notifications) => {
     const notificationList = document.querySelector(".noti-body");
@@ -1156,18 +1053,11 @@ const renderNotifications = (notificationData = notifications) => {
     );
 };
 
-// 조회 버튼 클릭 시 필터 적용
-document
-    .getElementById("searchPointHistoryList")
-    .addEventListener("click", (event) => {
-        event.preventDefault(); // 기본 동작 방지 (폼 제출 방지)
-        filterPoints(); // 필터링 실행
-    });
 // 초기 렌더링
 renderPosts();
 renderReplies();
 renderInquiries();
-renderPoints();
+// renderPoints();
 renderNotifications();
 
 // 기술명과 경험 필드의 값이 빈 값이 아닌지 확인하는 함수
