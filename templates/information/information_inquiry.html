@@ -9,16 +9,11 @@
             href="../../static/css/information/information_inquiry.css"
         />
         <link
-            rel="stylesheet"
-            href="../../static/css/admin_page_CSS/admin_report/report.css"
-        />
-        <link
             rel="shortcut icon"
             href="https://www.wishket.com/static/favicon.ico"
         />
     </head>
     <body class="app">
-        <div id="header-space" style="width: 100px; height: 100px"></div>
         <div class="wrap">
             <div class="container">
                 <div class="inner">
@@ -57,25 +52,40 @@
                                     <h1 class="post-title">
                                         한국대 고전 문학 자료 공유
                                     </h1>
-                                    <div class="report-container">
-                                        <span class="for-report" id="report-btn"
-                                            ><img
-                                                class="img-report"
-                                                src="../../static/images/report.png"
-                                            />신고하기</span
-                                        >
-                                        <span class="for-report" id="report-btn"
-                                            ><img
-                                                class="img-report"
-                                                src="../../static/images/report.png"
-                                            />수정하기</span
-                                        >
-                                        <span class="for-report" id="report-btn"
-                                            ><img
-                                                class="img-report"
-                                                src="../../static/images/report.png"
-                                            />삭제하기</span
-                                        >
+                                    <div class="report-wrap">
+                                        <div class="report-container">
+                                            <div
+                                                class="for-report"
+                                                id="report-btn"
+                                            >
+                                                <img
+                                                    id="img-report"
+                                                    src="../../static/images/report3.png"
+                                                />신고하기
+                                            </div>
+                                        </div>
+                                        <div class="report-container">
+                                            <div
+                                                class="for-report"
+                                                id="edit-btn"
+                                            >
+                                                <img
+                                                    id="img-edit"
+                                                    src="../../static/images/edit.png"
+                                                />수정하기
+                                            </div>
+                                        </div>
+                                        <div class="report-container">
+                                            <div
+                                                class="for-report"
+                                                id="delete-btn"
+                                            >
+                                                <img
+                                                    id="img-delete"
+                                                    src="../../static/images/delete.png"
+                                                />삭제하기
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="divider"></div>
@@ -452,7 +462,6 @@
                 </button>
             </div>
         </div>
-        <div id="footer-space" style="width: 100px; height: 100px"></div>
     </body>
     <script src="../../static/js/information/information_inquiry.js"></script>
     <script src="../../static/js/adminPage_JS/admin_report/report.js"></script>
